@@ -30,7 +30,7 @@ version = Version [0,1,0,0] []
 bindir, libdir, datadir, libexecdir, sysconfdir :: FilePath
 
 bindir     = "/Users/Rhett/Downloads/betting/.stack-work/install/x86_64-osx/lts-7.15/8.0.1/bin"
-libdir     = "/Users/Rhett/Downloads/betting/.stack-work/install/x86_64-osx/lts-7.15/8.0.1/lib/x86_64-osx-ghc-8.0.1/betting-0.1.0.0-3lPx2a6ywhGJfi7XPbrPKz"
+libdir     = "/Users/Rhett/Downloads/betting/.stack-work/install/x86_64-osx/lts-7.15/8.0.1/lib/x86_64-osx-ghc-8.0.1/betting-0.1.0.0-AdXbSq3NBxYK5FkP3l5dg"
 datadir    = "/Users/Rhett/Downloads/betting/.stack-work/install/x86_64-osx/lts-7.15/8.0.1/share/x86_64-osx-ghc-8.0.1/betting-0.1.0.0"
 libexecdir = "/Users/Rhett/Downloads/betting/.stack-work/install/x86_64-osx/lts-7.15/8.0.1/libexec"
 sysconfdir = "/Users/Rhett/Downloads/betting/.stack-work/install/x86_64-osx/lts-7.15/8.0.1/etc"

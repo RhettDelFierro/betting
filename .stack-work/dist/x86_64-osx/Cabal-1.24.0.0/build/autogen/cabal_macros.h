@@ -7,13 +7,6 @@
   (major1) == 0 && (major2) <  1 || \
   (major1) == 0 && (major2) == 1 && (minor) <= 0)
 
-/* package aeson-0.11.2.1 */
-#define VERSION_aeson "0.11.2.1"
-#define MIN_VERSION_aeson(major1,major2,minor) (\
-  (major1) <  0 || \
-  (major1) == 0 && (major2) <  11 || \
-  (major1) == 0 && (major2) == 11 && (minor) <= 2)
-
 /* package base-4.9.0.0 */
 #define VERSION_base "4.9.0.0"
 #define MIN_VERSION_base(major1,major2,minor) (\
@@ -21,12 +14,26 @@
   (major1) == 4 && (major2) <  9 || \
   (major1) == 4 && (major2) == 9 && (minor) <= 0)
 
+/* package aeson-0.11.2.1 */
+#define VERSION_aeson "0.11.2.1"
+#define MIN_VERSION_aeson(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  11 || \
+  (major1) == 0 && (major2) == 11 && (minor) <= 2)
+
 /* package servant-0.8.1 */
 #define VERSION_servant "0.8.1"
 #define MIN_VERSION_servant(major1,major2,minor) (\
   (major1) <  0 || \
   (major1) == 0 && (major2) <  8 || \
   (major1) == 0 && (major2) == 8 && (minor) <= 1)
+
+/* package text-1.2.2.1 */
+#define VERSION_text "1.2.2.1"
+#define MIN_VERSION_text(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  2 || \
+  (major1) == 1 && (major2) == 2 && (minor) <= 2)
 
 /* tool gcc-4.2.1 */
 #define TOOL_VERSION_gcc "4.2.1"
@@ -70,7 +77,7 @@
   (major1) == 0 && (major2) <  68 || \
   (major1) == 0 && (major2) == 68 && (minor) <= 0)
 
-#define CURRENT_COMPONENT_ID "betting-0.1.0.0-3lPx2a6ywhGJfi7XPbrPKz"
+#define CURRENT_COMPONENT_ID "betting-0.1.0.0-AdXbSq3NBxYK5FkP3l5dg"
 
-#define CURRENT_PACKAGE_KEY "betting-0.1.0.0-3lPx2a6ywhGJfi7XPbrPKz"
+#define CURRENT_PACKAGE_KEY "betting-0.1.0.0-AdXbSq3NBxYK5FkP3l5dg"
 
