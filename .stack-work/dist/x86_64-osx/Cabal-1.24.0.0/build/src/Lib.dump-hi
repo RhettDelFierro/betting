@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-01-17 02:53:50.465919 UTC
+2017-01-17 02:57:22.077203 UTC
 
-interface betting-0.1.0.0-JrOaZ4AaRcJ1pL1Duap4A8:Lib 8001
-  interface hash: ecd1e0ac5f045ff2f4753d19a58424e2
-  ABI hash: e4387f05dd22fbac95d3d30ee2938cef
-  export-list hash: 3c14a47b86b87e953579b3c909a82098
+interface betting-0.1.0.0-3lPx2a6ywhGJfi7XPbrPKz:Lib 8001
+  interface hash: 86824bc89331602f5d01851288b0adde
+  ABI hash: 162838226d060d0284e580ce392eee57
+  export-list hash: 61c6af11bedea38c893a93f70d1fa9de
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: a4046e0fdab24403354cf30558c1ea1c
   sig of: Nothing
@@ -25,25 +25,25 @@ family instance modules: base-4.9.0.0:Control.Applicative
 import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
 import  -/  base-4.9.0.0:System.IO ad985d7a3fc986e9b9c610fb344d9106
 import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
-30911fd11f7d45624c717bc47b9d4715
+7e4352e4cf24c347b909853ed44725a9
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GHC.Types.Module Lib.$trModule2 Lib.$trModule1) -}
-9cb2b4ec7ae1f8fdc2fd608e9ddabdf0
+123d63b3a3bc5c9cf70438bf438d6914
   $trModule1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "Lib"#) -}
-c54ada1924010628d45292c99f6ffe04
+1cd2da2df5d9308e75d0030dff2206e1
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS
-                   "betting-0.1.0.0-JrOaZ4AaRcJ1pL1Duap4A8"#) -}
-7fd865b4d0502a8763e86db2bd2f7d27
+                   "betting-0.1.0.0-3lPx2a6ywhGJfi7XPbrPKz"#) -}
+7fcd3f7e7ac17d93a371a4e7bf4303aa
   someFunc :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Lib.someFunc1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-024203dd7fd9618fc16c21701ca00a54
+41c1d0a9fa4056f489a23eca47ba0f6f
   someFunc1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -55,7 +55,7 @@ c54ada1924010628d45292c99f6ffe04
                    Lib.someFunc2
                    GHC.Types.True
                    eta) -}
-f11e189b46111572d2f6d71958418cce
+0d470d0fd5dbcd231f0ad162e7427acd
   someFunc2 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "someFunc"#) -}
 vectorised variables:

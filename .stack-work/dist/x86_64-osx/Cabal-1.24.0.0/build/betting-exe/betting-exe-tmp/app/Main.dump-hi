@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-01-17 02:53:51.007295 UTC
+2017-01-17 02:57:22.583918 UTC
 
 interface main@main:Main 8001
-  interface hash: 1122325110691fb063218b533da3bcab
-  ABI hash: ca06968edf66894fd9e9386e91ac5296
-  export-list hash: 2e3745baebf04c13fdc5852bc1b71f7c
+  interface hash: bd4b4311f999c4743a4306fd12b0cbca
+  ABI hash: 730bce03fa4f1cb5db804a3544926542
+  export-list hash: 71aebf7660b5bfb7a47cce20ea7f5729
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 5ce78acd0089d9c62cc6504c1bf6abf5
   sig of: Nothing
@@ -15,7 +15,7 @@ exports:
   Main.main
 module dependencies:
 package dependencies: base-4.9.0.0*
-                      betting-0.1.0.0@betting-0.1.0.0-JrOaZ4AaRcJ1pL1Duap4A8
+                      betting-0.1.0.0@betting-0.1.0.0-3lPx2a6ywhGJfi7XPbrPKz
                       ghc-prim-0.5.0.0 integer-gmp-1.0.0.1
 orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
 family instance modules: base-4.9.0.0:Control.Applicative
@@ -24,7 +24,7 @@ family instance modules: base-4.9.0.0:Control.Applicative
                          base-4.9.0.0:GHC.Generics base-4.9.0.0:GHC.IO.Exception
                          base-4.9.0.0:GHC.TypeLits
 import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
-import  -/  betting-0.1.0.0@betting-0.1.0.0-JrOaZ4AaRcJ1pL1Duap4A8:Lib e4387f05dd22fbac95d3d30ee2938cef
+import  -/  betting-0.1.0.0@betting-0.1.0.0-3lPx2a6ywhGJfi7XPbrPKz:Lib 162838226d060d0284e580ce392eee57
 import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
 d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule :: GHC.Types.Module
@@ -38,12 +38,12 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-215dd3fcba4c8e59021fe647477ef204
+8cf840ef53d571e44e6f0e0154495fd2
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Lib.someFunc1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-dd0f722319eb32410158d032e4f9382c
+242fa78904711677ba9592d8d929d3eb
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)

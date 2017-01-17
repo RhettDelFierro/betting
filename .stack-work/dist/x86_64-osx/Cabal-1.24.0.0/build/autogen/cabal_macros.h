@@ -7,6 +7,13 @@
   (major1) == 0 && (major2) <  1 || \
   (major1) == 0 && (major2) == 1 && (minor) <= 0)
 
+/* package aeson-0.11.2.1 */
+#define VERSION_aeson "0.11.2.1"
+#define MIN_VERSION_aeson(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  11 || \
+  (major1) == 0 && (major2) == 11 && (minor) <= 2)
+
 /* package base-4.9.0.0 */
 #define VERSION_base "4.9.0.0"
 #define MIN_VERSION_base(major1,major2,minor) (\
@@ -63,7 +70,7 @@
   (major1) == 0 && (major2) <  68 || \
   (major1) == 0 && (major2) == 68 && (minor) <= 0)
 
-#define CURRENT_COMPONENT_ID "betting-0.1.0.0-JrOaZ4AaRcJ1pL1Duap4A8"
+#define CURRENT_COMPONENT_ID "betting-0.1.0.0-3lPx2a6ywhGJfi7XPbrPKz"
 
-#define CURRENT_PACKAGE_KEY "betting-0.1.0.0-JrOaZ4AaRcJ1pL1Duap4A8"
+#define CURRENT_PACKAGE_KEY "betting-0.1.0.0-3lPx2a6ywhGJfi7XPbrPKz"
 
