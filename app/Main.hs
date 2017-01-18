@@ -13,7 +13,7 @@ main = do
 data WinningTeamStats = WinningTeamStats { pointDiff    :: Int
                                          , fieldGoalPct :: Float
                                          , rebounds     :: Int
-                                         , home         :: Bool
+                                         --, home         :: Bool
                                          , assists      :: Int
                                          , steals       :: Int
                                          , offReb       :: Int
@@ -23,7 +23,6 @@ data WinningTeamStats = WinningTeamStats { pointDiff    :: Int
                                          , freeTAtt     :: Int    --freethrows attempted
                                          , freeTMade    :: Int    --freethrows made
                                          , fouls        :: Int    --fouls commited
-                                         , sFouls       :: Int    --shooting fouls
                                          } deriving (Show, Eq, Ord)
 
 
@@ -106,6 +105,7 @@ data GameResult = GameResult {
                              , getFGA     :: FGA
                              , getFG_Pct  :: FG_Pct
                              , getFG3M    :: FG3M
+                             , getFG3A    :: FG3A
                              , getFG3_Pct :: FG3_Pct
                              , getFTM     :: FTM
                              , getFTA     :: FTA
@@ -132,6 +132,17 @@ checkGameID :: GameResult -> GameResult -> Bool
 checkGameID x y = (==) (getGame_ID x) (getGame_ID y)
 
 winnerStats :: GameResult -> GameResult -> WinngTeamStats
-winnerStats x y = WinningTeamStats {
-                                    pointDiff = (-) (getPTS x) (getPTS y)
+winnerStats x y = WinningTeamStats { pointDiff = (-) (getPTS x) (getPTS y)
+                                   , fieldGoalPct = (-) (getFG_Pct x) (getFG_Pct y)
+                                   , rebounds = (-) (getREB x) (getREB y)
+                                   --, home     = get
+                                   , assists = (-) (getAST x) (getAST y)
+                                   , steals = (-) (getSTL x) (getSTL y)
+                                   , offReb = (-) (getOREB x) (getOREB y)
+                                   , turnovers = (-) (getTOV x) (getTOV y)
+                                   , threeFGA = (-) (getFG3A x) (getFG3A y)
+                                   , threeFGM = (-) (getFG3M x) (getFG3M y)
+                                   , freeTAtt = (-) (getFTA x) (getFTA y)
+                                   , freeTMade = (-) (getFTM x) (getFTM y)
+                                   , fouls = (-) (getPF x) (getPF y)
                                    }
