@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings, DeriveGeneric #-}
+{-# LANGUAGE OverloadedStrings, DeriveGeneric, RecordWildCards #-}
 
 module Main where
 
@@ -11,7 +11,7 @@ main = do
 
 --all of these are differentials.
 data WinningTeamStats = WinningTeamStats { pointDiff    :: Int
-                                         , fieldGoalPct :: Double
+                                         , fieldGoalPct :: Float
                                          , rebounds     :: Int
                                          , home         :: Bool
                                          , assists      :: Int
@@ -119,3 +119,12 @@ data GameResult = GameResult {
                              , getPF      :: PF
                              , getPTS     :: PTS
                              } deriving (Show, Eq, Ord)
+
+getDiff :: GameResult -> GameResult -> WinngTeamStats
+getDiff x y
+    | checkGameID x y = case getWL x of
+                          "W" ->
+                          "L" ->
+
+checkGameID :: GameResult -> GameResult -> Bool
+checkGameID x y = (==) getGame_ID x $ getGame_ID y
