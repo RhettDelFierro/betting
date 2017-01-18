@@ -29,6 +29,7 @@ data WinningTeamStats = WinningTeamStats { pointDiff    :: Int
 
 
 type TeamName  = String
+
 type Team_ID   = Int
 type Game_ID   = String
 type Game_Date = String
@@ -91,6 +92,30 @@ teams = [("Atlanta Hawks", 1610612737)
         , ("Utah Jazz", 1610612762)
         , ("Washington Wizards", 1610612764)
         ]
-data GameResult =
-
-data
+data GameResult = GameResult {
+                             , getTeam_ID :: Team_ID
+                             , getGame_ID :: Game_ID
+                             , getMatchup :: Matchup
+                             , getWL      :: WL
+                             , getWins    :: Wins
+                             , getLosses  :: Losses
+                             , getW_Pct   :: W_Pct
+                             , getMin     :: Min
+                             , getFGM     :: FGM
+                             , getFGA     :: FGA
+                             , getFG_Pct  :: FG_Pct
+                             , getFG3M    :: FG3M
+                             , getFG3_Pct :: FG3_Pct
+                             , getFTM     :: FTM
+                             , getFTA     :: FTA
+                             , getFT_Pct  :: FT_Pct
+                             , getOREB    :: OREB
+                             , getDREB    :: DREB
+                             , getREB     :: REB
+                             , getAST     :: AST
+                             , getSTL     :: STL
+                             , getBLK     :: BLK
+                             , getTOV     :: TOV
+                             , getPF      :: PF
+                             , getPTS     :: PTS
+                             } deriving (Show, Eq, Ord)
