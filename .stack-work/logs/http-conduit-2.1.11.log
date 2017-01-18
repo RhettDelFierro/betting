@@ -1,0 +1,19 @@
+Configuring http-conduit-2.1.11...
+Building http-conduit-2.1.11...
+Preprocessing library http-conduit-2.1.11...
+[1 of 3] Compiling Network.HTTP.Client.Conduit ( Network/HTTP/Client/Conduit.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/Network/HTTP/Client/Conduit.o )
+[2 of 3] Compiling Network.HTTP.Simple ( Network/HTTP/Simple.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/Network/HTTP/Simple.o )
+
+Network/HTTP/Simple.hs:89:1: warning: [-Wunused-imports]
+    The import of ‘Data.Default.Class’ is redundant
+      except perhaps to import instances from ‘Data.Default.Class’
+    To import instances alone, use: import Data.Default.Class()
+[3 of 3] Compiling Network.HTTP.Conduit ( Network/HTTP/Conduit.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/Network/HTTP/Conduit.o )
+
+Network/HTTP/Conduit.hs:238:1: warning: [-Wunused-imports]
+    The import of ‘Control.Exception.Lifted’ is redundant
+      except perhaps to import instances from ‘Control.Exception.Lifted’
+    To import instances alone, use: import Control.Exception.Lifted()
+Installing library in
+/Users/Rhett/.stack/snapshots/x86_64-osx/lts-7.15/8.0.1/lib/x86_64-osx-ghc-8.0.1/http-conduit-2.1.11-EC4vL4GcRJtDqKzYoSe7M2
+Registering http-conduit-2.1.11...

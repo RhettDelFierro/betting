@@ -1,0 +1,44 @@
+
+==================== FINAL INTERFACE ====================
+2017-01-18 02:16:22.453302 UTC
+
+interface main@main:Types 8001
+  interface hash: 282a12ed06ed2fe00de936a4d3eeebfc
+  ABI hash: f7bae5dc5e5d891b22d57a1c8e37f64f
+  export-list hash: 1e51e1ca10f94a1b3ad5308e659c77d6
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 0af3cdc18b2eb4af0cf6420559921c92
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+module dependencies:
+package dependencies: base-4.9.0.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Either base-4.9.0.0:Data.Functor.Const
+                         base-4.9.0.0:Data.Monoid base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:GHC.Generics base-4.9.0.0:GHC.IO.Exception
+                         base-4.9.0.0:GHC.TypeLits
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+1a5292c41cfb76ffc12733c6e453f427
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Types.$trModule2 Types.$trModule1) -}
+ba03922dd37c9f7d4792154d65ea10bd
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Types"#) -}
+353d80ee02cc3bb30df29a319dceae2a
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
