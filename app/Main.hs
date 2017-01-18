@@ -28,9 +28,36 @@ data WinningTeamStats = WinningTeamStats { pointDiff    :: Int
 
 
 
-type TeamName = String
-type TeamID   = Int
-type Teams    = (TeamName,TeamID)
+type TeamName  = String
+type Team_ID   = Int
+type Game_ID   = String
+type Game_Date = String
+type Matchup   = String
+type WL        = Char
+type Wins      = Int
+type Losses    = Int
+type W_Pct     = Float
+type Min       = Int
+type FGM       = Int
+type FGA       = Int
+type FG_Pct    = Float
+type FG3M      = Int
+type FG3A      = Int
+type FG3_Pct   = Float
+type FTM       = Int
+type FTA       = Int
+type FT_Pct    = Float
+type OREB      = Int
+type DREB      = Int
+type REB       = Int
+type AST       = Int
+type STL       = Int
+type BLK       = Int
+type TOV       = Int
+type PF        = Int
+type PTS       = Int
+
+type Teams    = (TeamName,Team_ID)
 
 teams :: [Teams]
 teams = [("Atlanta Hawks", 1610612737)
@@ -64,3 +91,6 @@ teams = [("Atlanta Hawks", 1610612737)
         , ("Utah Jazz", 1610612762)
         , ("Washington Wizards", 1610612764)
         ]
+data GameResult =
+
+data
