@@ -60,6 +60,7 @@ type PTS       = Int
 
 type Teams    = (TeamName,Team_ID)
 
+--will use this to get game logs.
 teams :: [Teams]
 teams = [("Atlanta Hawks", 1610612737)
         , ("Boston Celtics", 1610612738)
@@ -123,8 +124,14 @@ data GameResult = GameResult {
 getDiff :: GameResult -> GameResult -> WinngTeamStats
 getDiff x y
     | checkGameID x y = case getWL x of
-                          "W" ->
-                          "L" ->
+                          "W" -> winnerStats x y--I want to map a function to get the differences in stats from GameResult
+                          "L" -> flip getDiff x y -- will call this function in inverse. BUT keep in mind you will do this for every game, so you may repeat.
+                                --maybe drop both games from the list afterward. Compose the function maybe on a list.
 
 checkGameID :: GameResult -> GameResult -> Bool
-checkGameID x y = (==) getGame_ID x $ getGame_ID y
+checkGameID x y = (==) (getGame_ID x) (getGame_ID y)
+
+winnerStats :: GameResult -> GameResult -> WinngTeamStats
+winnerStats x y = WinningTeamStats {
+                                    pointDiff = (-) (getPTS x) (getPTS y)
+                                   }
