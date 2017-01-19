@@ -24,12 +24,17 @@ jsonURL = "http://stats.nba.com/stats/teamgamelog/?Season=2015-16&SeasonType=Reg
 getJSON :: IO B.ByteString
 getJSON = simpleHttp jsonURL
 
+--main :: IO ()
+--main = do
+--  d <- (eitherDecode <$> getJSON) :: IO (Either String ResultSet)
+--  case d of
+--    Left err -> putStrLn err
+--    Right res -> print res
+
 main :: IO ()
 main = do
-  d <- (eitherDecode <$> getJSON) :: IO (Either String ResultSet)
-  case d of
-    Left err -> putStrLn err
-    Right res -> print res
+  d <- (decode <$> getJSON) :: IO (Maybe Value)
+  print d
 
 --all of these are differentials.
 data WinningTeamStats = WinningTeamStats { pointDiff    :: Int
@@ -49,44 +54,16 @@ data WinningTeamStats = WinningTeamStats { pointDiff    :: Int
 
 
 
-type TeamName  = !Text
-type TeamABBR  = !Text
-
+type TeamName  = String
 type Team_ID   = Int
-type Game_ID   = !Text
-type Game_Date = !Text
-type Matchup   = !Text
-type WL        = Char
-type Wins      = Int
-type Losses    = Int
-type W_Pct     = Float
-type Min       = Int
-type FGM       = Int
-type FGA       = Int
-type FG_Pct    = Float
-type FG3M      = Int
-type FG3A      = Int
-type FG3_Pct   = Float
-type FTM       = Int
-type FTA       = Int
-type FT_Pct    = Float
-type OREB      = Int
-type DREB      = Int
-type REB       = Int
-type AST       = Int
-type STL       = Int
-type BLK       = Int
-type TOV       = Int
-type PF        = Int
-type PTS       = Int
-
+type TeamABBR  = String
 type Teams    = (TeamName,Team_ID, TeamABBR)
 
 --will use this to get game logs.
 teams :: [Teams]
-teams = [("Atlanta Hawks", 1610612737, "ATL")
+teams = [ ("Atlanta Hawks", 1610612737, "ATL")
         , ("Boston Celtics", 1610612738, "BOS")
-        , ("Brooklyn Nets",	1610612751, "BKN")
+        , ("Brooklyn Nets", 1610612751, "BKN")
         , ("Charlotte Hornets", 1610612766, "CHA")
         , ("Chicago Bulls", 1610612741, "CHI")
         , ("Cleveland Cavaliers", 1610612739, "CLE")
@@ -98,7 +75,7 @@ teams = [("Atlanta Hawks", 1610612737, "ATL")
         , ("Indiana Pacers", 1610612754, "IND")
         , ("Los Angeles Clippers", 1610612746, "LAC")
         , ("Los Angeles Lakers", 1610612747, "LAL")
-        , ("Memphis Grizzlies",	1610612763, "MEM")
+        , ("Memphis Grizzlies", 1610612763, "MEM")
         , ("Miami Heat", 1610612748, "MIA")
         , ("Milwaukee Bucks", 1610612749, "MIL")
         , ("Minnesota Timberwolves", 1610612750, "MIN")
@@ -115,34 +92,35 @@ teams = [("Atlanta Hawks", 1610612737, "ATL")
         , ("Utah Jazz", 1610612762, "UTA")
         , ("Washington Wizards", 1610612764, "WAS")
         ]
-data GameResult = GameResult { team_ID :: Team_ID
-                             , game_ID :: Game_ID
-                             , game_date :: Game_Date
-                             , matchup :: Matchup
-                             , wl      :: WL
-                             , w    :: Wins
-                             , l  :: Losses
-                             , w_pct   :: W_Pct
-                             , min     :: Min
-                             , fgm     :: FGM
-                             , fga     :: FGA
-                             , fg_pct  :: FG_Pct
-                             , fg3m    :: FG3M
-                             , fg3a    :: FG3A
-                             , fg3_pct :: FG3_Pct
-                             , ftm     :: FTM
-                             , fta     :: FTA
-                             , ft_pct  :: FT_Pct
-                             , oreb    :: OREB
-                             , dreb    :: DREB
-                             , reb     :: REB
-                             , ast     :: AST
-                             , stl     :: STL
-                             , blk     :: BLK
-                             , tov     :: TOV
-                             , pf      :: PF
-                             , pts     :: PTS
-                             } deriving (Show, Eq, Ord)
+--
+data GameResult = GameResult { team_ID :: Int
+                             , game_ID :: String
+                             , game_date :: String
+                             , matchup :: String
+                             , wl      :: Char
+                             , w    :: Int
+                             , l  :: Int
+                             , w_pct   :: Float
+                             , min     :: Int
+                             , fgm     :: Int
+                             , fga     :: Int
+                             , fg_pct  :: Float
+                             , fg3m    :: Int
+                             , fg3a    :: Int
+                             , fg3_pct :: Float
+                             , ftm     :: Int
+                             , fta     :: Int
+                             , ft_pct  :: Float
+                             , oreb    :: Int
+                             , dreb    :: Int
+                             , reb     :: Int
+                             , ast     :: Int
+                             , stl     :: Int
+                             , blk     :: Int
+                             , tov     :: Int
+                             , pf      :: Int
+                             , pts     :: Int
+                             } deriving (Show, Eq, Ord, Generic)
 data ResultSet = ResultSet { rowSet :: [GameResult] } deriving (Show, Eq, Ord)
 
 {-
@@ -178,25 +156,27 @@ winnerStats x y = WinningTeamStats { pointDiff    = (-) (getPTS x)     (getPTS y
 parseHome :: String -> Bool
 parseHome xs = elem '@' xs
 -}
-instance FromJSON ResultSet where
-  parseJSON (Object v) =
-     ResultSet <$> v .: "rowSet"
+--instance FromJSON ResultSet where
+--  parseJSON (Object v) =
+--     ResultSet <$> v .: "resultSets"
 
-instance FromJSON GameResult where
+--instance FromJSON GameResult where
+--  parseJSON (Object v) =
+--     GameResult <$>
 
-
-instance ToJSON WinningTeamStats where
-  toJSON p = object [ "pointDiff"    .= pointDiff p
-                      "fieldGoalPct" .= fieldGoalPct p
-                      "rebounds"     .= rebounds p
-                      "assists"      .= assists p
-                      "steals"       .= steals p
-                      "offReb"       .= offReb p
-                      "turnovers"    .= turnovers p
-                      "threeFGA"     .= threeFGA p
-                      "threeFGM"     .= threeFGM p
-                      "freeTAtt"     .= freeTAtt p
-                      "freeTMade"    .= freeTMade p
-                      "fouls"        .= fouls p
-                      "home"         .= home p
-                   ]
+--
+--instance ToJSON WinningTeamStats where
+--  toJSON p = object [ "pointDiff"    .= pointDiff p
+--                      "fieldGoalPct" .= fieldGoalPct p
+--                      "rebounds"     .= rebounds p
+--                      "assists"      .= assists p
+--                      "steals"       .= steals p
+--                      "offReb"       .= offReb p
+--                      "turnovers"    .= turnovers p
+--                      "threeFGA"     .= threeFGA p
+--                      "threeFGM"     .= threeFGM p
+--                      "freeTAtt"     .= freeTAtt p
+--                      "freeTMade"    .= freeTMade p
+--                      "fouls"        .= fouls p
+--                      "home"         .= home p
+--                   ]
