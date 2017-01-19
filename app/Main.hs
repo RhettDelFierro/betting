@@ -2,18 +2,34 @@
 
 module Main where
 
-import System.Environment
+--import System.Environment
 import Data.Aeson
 import qualified Data.Map as M
 --import GHC.Exts
 --import qualified Data.Text.Lazy.IO as T
 --import qualified Data.Text.Lazy.Encoding as T
+--import qualified Data.ByteString.Lazy as B
+--import Network.HTTP.Conduit (simpleHttp)
+import Data.Aeson
+import Data.Text
+import Control.Applicative
+import Control.Monad
+import qualified Data.ByteString.Lazy as B
+import Network.HTTP.Conduit (simpleHttp)
+import GHC.Generics
 
+jsonURL :: String
+jsonURL = "http://stats.nba.com/stats/teamgamelog/?Season=2015-16&SeasonType=Regular%20Season&TeamID=1610612747"
 
+getJSON :: IO B.ByteString
+getJSON = simpleHttp jsonURL
 
 main :: IO ()
 main = do
-
+  d <- (eitherDecode <$> getJSON) IO (Either String Result)
+  case d of
+    Left err -> putStrLn err
+    Right res -> print res
 
 --all of these are differentials.
 data WinningTeamStats = WinningTeamStats { pointDiff    :: Int
