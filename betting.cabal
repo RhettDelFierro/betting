@@ -30,6 +30,8 @@ executable betting-exe
                      , servant-server
                      , http-conduit
                      , text
+                     , containers
+                     , bytestring
   default-language:    Haskell2010
 
 test-suite betting-test
