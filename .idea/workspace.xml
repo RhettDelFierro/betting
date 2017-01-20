@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3964baea-1c33-46d8-8636-a532b8f42a23" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.stack-work/install/x86_64-osx/lts-7.15/8.0.1/pkgdb/betting-0.1.0.0-AdXbSq3NBxYK5FkP3l5dg.conf" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/betting-exe/betting-exe" afterPath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/betting-exe/betting-exe" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/betting-exe/betting-exe-tmp/Main.hi" afterPath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/betting-exe/betting-exe-tmp/Main.hi" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/betting-exe/betting-exe-tmp/Main.o" afterPath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/betting-exe/betting-exe-tmp/Main.o" />
@@ -39,8 +38,8 @@
       <file leaf-file-name="Main.hs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Main.hs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="94" column="48" lean-forward="false" selection-start-line="94" selection-start-column="48" selection-end-line="94" selection-end-column="48" />
+            <state relative-caret-position="245">
+              <caret line="66" column="21" lean-forward="false" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -62,6 +61,7 @@
     <findStrings>
       <find>!Text</find>
       <find>resultSets</find>
+      <find>resultset</find>
     </findStrings>
     <replaceStrings>
       <replace>String</replace>
@@ -656,12 +656,12 @@
       <workItem from="1484628417530" duration="8000" />
       <workItem from="1484681313383" duration="5345000" />
       <workItem from="1484713666615" duration="1911000" />
-      <workItem from="1484775345668" duration="25624000" />
+      <workItem from="1484775345668" duration="30262000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38996000" />
+    <option name="totallyTimeSpent" value="43634000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="804" extended-state="6" />
@@ -1105,8 +1105,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Main.hs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="94" column="48" lean-forward="false" selection-start-line="94" selection-start-column="48" selection-end-line="94" selection-end-column="48" />
+        <state relative-caret-position="245">
+          <caret line="66" column="21" lean-forward="false" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
           <folding />
         </state>
       </provider>

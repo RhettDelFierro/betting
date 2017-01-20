@@ -37,7 +37,7 @@ getJSON = simpleHttp jsonURL
 
 main :: IO ()
 main = do
-  d <- (eitherDecode <$> getJSON) :: IO (Either String (Maybe WholeObject)) --decode lifts over IO to hit the B.ByteString contained in the IO.
+  d <- (eitherDecode <$> getJSON) :: IO (Either String (Maybe ResultSets)) --decode lifts over IO to hit the B.ByteString contained in the IO.
   case d of
     Left err -> putStrLn err
     Right ps -> putStrLn (show ps)
@@ -52,58 +52,23 @@ instance FromJSON GameResult where
       GameResult {..} <- parseJSON jsn
       return GameResult {..}
 
---instance FromJSON GameLog where
---    parseJSON = \case
---        (Object obj) -> (obj .: "resultSets") >>= fmap (GameLog . parseJSON)
---        x            -> fail $ "unexpected json: " ++ show x
+newtype ResultSets = ResultSets [Results] deriving (Show, Eq, Read)
 
+data Results = Results { rowSet :: Object } deriving (Show, Eq, Read)
 
---jsonToGameLog :: Value -> Parser GameLog
---jsonToGameLog (Object o) = GameLog
---parseTuple :: Value -> Parser (String, Bool)
---parseTuple (Object obj) = do
---  -- Look up the "a" field.
---  let mbFieldA = HM.lookup "resultSets" obj
---
---  -- Fail if it wasn't found.
---  fieldA <- case mbFieldA of
---    Just x  -> return x
---    Nothing -> fail "no field 'a'"
---
---  -- Extract the value from it, or fail if it's of the wrong type.
---  a <- case fieldA of
---    String x -> return (B.unpack x)
---    _        -> fail "expected a string"
+instance FromJSON ResultSets where
+  parseJSON (Object o) =
+    ResultSets <$> ((o .: "resultSets") >>= (.: "rowSet"))
+  parseJSON _ = mzero
 
-  -- Do all the same for "b" (in a slightly terser way, to save space):
---  b <- case HM.lookup "b" obj of
---    Just (Bool x) -> return x
---    Just _        -> fail "expected a boolean"
---    Nothing       -> fail "no field 'b'"
+instance FromJSON Results where
+  parseJSON jsn = do
+    o <- parseJSON jsn
+    return o
+  parseJSON _ = mzero
 
-  -- That's all!
-  --return a
+--o is [{"names":...},{"headers":[Headers]},{"rowSet",[GameLogs]}]
 
-data WholeObject = WholeObject { resource   :: String
-                               , parameters :: Object
-                               , resultSets :: Array
-                               } deriving (Show, Generic, Eq, Read)
-
---newtype ResultSets = ResultSets [ResultSet]
---
---instance FromJSON ResultSets where
---    parseJSON (Object o) = ResultSets <$> o .: "
-
-instance FromJSON WholeObject where
-    parseJSON (Object o) =
-      WholeObject <$>
-      (o .: "resource")   <*>
-      (o .: "parameters") <*>
-      ((o .: "resultSets")
-
---                      <*> ((o .: "resultSets") >>= (.: "rowSet"))
-
---all of these are differentials.
 data WinningTeamStats = WinningTeamStats { pointDiff    :: Int
                                          , fieldGoalPct :: Float
                                          , rebounds     :: Int
@@ -188,63 +153,3 @@ data GameResult = GameResult { team_ID   :: Int
                              , pf        :: Int
                              , pts       :: Int
                              } deriving (Show, Eq, Ord, Generic, Read)
-
-data ResultSet = ResultSet { rowSet :: [GameResult] } deriving (Show, Eq, Ord)
-
-{-
-
---after the getDiff function is called and the result comes back, he higher funcion should delete those entries from the list.
-    --maybe goes throw the list by each GameID, searches for the next GameID, throws them to these functions, then deletes both from the list before iterating to the next one.
-getDiff :: GameResult -> GameResult -> WinngTeamStats
-getDiff x y
-    | checkGameID x y = case getWL x of
-                          "W" -> winnerStats x y--I want to map a function to get the differences in stats from GameResult
-                          "L" -> flip getDiff x y -- will call this function in inverse. BUT keep in mind you will do this for every game, so you may repeat.
-                                --maybe drop both games from the list afterward. Compose the function maybe on a list.
-
-checkGameID :: GameResult -> GameResult -> Bool
-checkGameID x y = (==) (getGame_ID x) (getGame_ID y)
-
-winnerStats :: GameResult -> GameResult -> WinngTeamStats
-winnerStats x y = WinningTeamStats { pointDiff    = (-) (getPTS x)     (getPTS y)
-                                   , fieldGoalPct = (-) (getFG_Pct x)  (getFG_Pct y)
-                                   , rebounds     = (-) (getREB x)     (getREB y)
-                                   , assists      = (-) (getAST x)     (getAST y)
-                                   , steals       = (-) (getSTL x)     (getSTL y)
-                                   , offReb       = (-) (getOREB x)    (getOREB y)
-                                   , turnovers    = (-) (getTOV x)     (getTOV y)
-                                   , threeFGA     = (-) (getFG3A x)    (getFG3A y)
-                                   , threeFGM     = (-) (getFG3M x)    (getFG3M y)
-                                   , freeTAtt     = (-) (getFTA x)     (getFTA y)
-                                   , freeTMade    = (-) (getFTM x)     (getFTM y)
-                                   , fouls        = (-) (getPF x)      (getPF y)
-                                   , home         = (parseHome . getMatchup) $ x
-                                   }
-
-parseHome :: String -> Bool
-parseHome xs = elem '@' xs
--}
---instance FromJSON ResultSet where
---  parseJSON (Object v) =
---     ResultSet <$> v .: "resultSets"
-
---instance FromJSON GameResult where
---  parseJSON (Object v) =
---     GameResult <$>
-
---
---instance ToJSON WinningTeamStats where
---  toJSON p = object [ "pointDiff"    .= pointDiff p
---                      "fieldGoalPct" .= fieldGoalPct p
---                      "rebounds"     .= rebounds p
---                      "assists"      .= assists p
---                      "steals"       .= steals p
---                      "offReb"       .= offReb p
---                      "turnovers"    .= turnovers p
---                      "threeFGA"     .= threeFGA p
---                      "threeFGM"     .= threeFGM p
---                      "freeTAtt"     .= freeTAtt p
---                      "freeTMade"    .= freeTMade p
---                      "fouls"        .= fouls p
---                      "home"         .= home p
---                   ]
