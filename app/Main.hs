@@ -89,12 +89,17 @@ data WholeObject = WholeObject { resource   :: String
                                , resultSets :: Array
                                } deriving (Show, Generic, Eq, Read)
 
+--newtype ResultSets = ResultSets [ResultSet]
+--
+--instance FromJSON ResultSets where
+--    parseJSON (Object o) = ResultSets <$> o .: "
+
 instance FromJSON WholeObject where
     parseJSON (Object o) =
       WholeObject <$>
       (o .: "resource")   <*>
       (o .: "parameters") <*>
-      (o .: "resultSets")
+      ((o .: "resultSets")
 
 --                      <*> ((o .: "resultSets") >>= (.: "rowSet"))
 
