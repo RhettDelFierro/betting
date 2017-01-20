@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings, DeriveGeneric, RecordWildCards #-}
+{-# LANGUAGE OverloadedStrings, DeriveGeneric, RecordWildCards, LambdaCase #-}
 
 module Main where
 
@@ -6,17 +6,21 @@ module Main where
 import Data.Aeson
 import qualified Data.Map as M
 --import GHC.Exts
---import qualified Data.Text.Lazy.IO as T
---import qualified Data.Text.Lazy.Encoding as T
+import qualified Data.Text.Lazy.IO as T
+import qualified Data.Text.Lazy.Encoding as T
 --import qualified Data.ByteString.Lazy as B
 --import Network.HTTP.Conduit (simpleHttp)
-import Data.Aeson
+import Data.Aeson.Types
 import Data.Text
 import Control.Applicative
 import Control.Monad
 import qualified Data.ByteString.Lazy as B
 import Network.HTTP.Conduit (simpleHttp)
 import GHC.Generics
+import qualified Data.Vector as V
+import qualified Data.HashMap.Strict as HM
+
+import qualified Data.List as L
 
 jsonURL :: String
 jsonURL = "http://stats.nba.com/stats/teamgamelog/?Season=2015-16&SeasonType=Regular%20Season&TeamID=1610612747"
@@ -33,8 +37,58 @@ getJSON = simpleHttp jsonURL
 
 main :: IO ()
 main = do
-  d <- (decode <$> getJSON) :: IO (Maybe Value)
-  print d
+  d <- (eitherDecode <$> getJSON) :: IO (Either String (Maybe WholeObject)) --decode lifts over IO to hit the B.ByteString contained in the IO.
+  case d of
+    Left err -> putStrLn err
+    Right ps -> print ps
+  --print d --this worked to print the Maybe Value
+  --print $ (V.toList . parseTuple) decode d
+--
+
+data GameLog = GameLog [GameResult] deriving (Show, Generic, Eq, Read)
+
+instance FromJSON GameResult where
+    parseJSON jsn = do
+      GameResult {..} <- parseJSON jsn
+      return GameResult {..}
+
+--instance FromJSON GameLog where
+--    parseJSON = \case
+--        (Object obj) -> (obj .: "resultSets") >>= fmap (GameLog . parseJSON)
+--        x            -> fail $ "unexpected json: " ++ show x
+
+
+--jsonToGameLog :: Value -> Parser GameLog
+--jsonToGameLog (Object o) = GameLog
+--parseTuple :: Value -> Parser (String, Bool)
+--parseTuple (Object obj) = do
+--  -- Look up the "a" field.
+--  let mbFieldA = HM.lookup "resultSets" obj
+--
+--  -- Fail if it wasn't found.
+--  fieldA <- case mbFieldA of
+--    Just x  -> return x
+--    Nothing -> fail "no field 'a'"
+--
+--  -- Extract the value from it, or fail if it's of the wrong type.
+--  a <- case fieldA of
+--    String x -> return (B.unpack x)
+--    _        -> fail "expected a string"
+
+  -- Do all the same for "b" (in a slightly terser way, to save space):
+--  b <- case HM.lookup "b" obj of
+--    Just (Bool x) -> return x
+--    Just _        -> fail "expected a boolean"
+--    Nothing       -> fail "no field 'b'"
+
+  -- That's all!
+  --return a
+
+data WholeObject = WholeObject { resultSets :: Array } deriving (Show, Generic, Eq, Read)
+
+instance FromJSON WholeObject where
+    parseJSON (Object o) = WholeObject <$>
+                          ((o .: "resultSets") >>= (.: "rowSet"))
 
 --all of these are differentials.
 data WinningTeamStats = WinningTeamStats { pointDiff    :: Int
@@ -93,34 +147,35 @@ teams = [ ("Atlanta Hawks", 1610612737, "ATL")
         , ("Washington Wizards", 1610612764, "WAS")
         ]
 --
-data GameResult = GameResult { team_ID :: Int
-                             , game_ID :: String
+data GameResult = GameResult { team_ID   :: Int
+                             , game_ID   :: String
                              , game_date :: String
-                             , matchup :: String
-                             , wl      :: Char
-                             , w    :: Int
-                             , l  :: Int
-                             , w_pct   :: Float
-                             , min     :: Int
-                             , fgm     :: Int
-                             , fga     :: Int
-                             , fg_pct  :: Float
-                             , fg3m    :: Int
-                             , fg3a    :: Int
-                             , fg3_pct :: Float
-                             , ftm     :: Int
-                             , fta     :: Int
-                             , ft_pct  :: Float
-                             , oreb    :: Int
-                             , dreb    :: Int
-                             , reb     :: Int
-                             , ast     :: Int
-                             , stl     :: Int
-                             , blk     :: Int
-                             , tov     :: Int
-                             , pf      :: Int
-                             , pts     :: Int
-                             } deriving (Show, Eq, Ord, Generic)
+                             , matchup   :: String
+                             , wl        :: Char
+                             , w         :: Int
+                             , l         :: Int
+                             , w_pct     :: Float
+                             , min       :: Int
+                             , fgm       :: Int
+                             , fga       :: Int
+                             , fg_pct    :: Float
+                             , fg3m      :: Int
+                             , fg3a      :: Int
+                             , fg3_pct   :: Float
+                             , ftm       :: Int
+                             , fta       :: Int
+                             , ft_pct    :: Float
+                             , oreb      :: Int
+                             , dreb      :: Int
+                             , reb       :: Int
+                             , ast       :: Int
+                             , stl       :: Int
+                             , blk       :: Int
+                             , tov       :: Int
+                             , pf        :: Int
+                             , pts       :: Int
+                             } deriving (Show, Eq, Ord, Generic, Read)
+
 data ResultSet = ResultSet { rowSet :: [GameResult] } deriving (Show, Eq, Ord)
 
 {-

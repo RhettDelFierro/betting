@@ -32,6 +32,8 @@ executable betting-exe
                      , text
                      , containers
                      , bytestring
+                     , vector
+                     , unordered-containers
   default-language:    Haskell2010
 
 test-suite betting-test
