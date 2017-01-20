@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-01-20 02:17:51.282914 UTC
+2017-01-20 02:41:18.413117 UTC
 
 interface main@main:Main [family instance module] 8001
-  interface hash: 5897d61e5209f470ccced1f88ac65163
-  ABI hash: f0657f4ab9a31d77542eaa9ab415cf72
-  export-list hash: c675957bc69f7e4db43b9026021e1132
+  interface hash: 0fa6674845cafebaa134ef11dc27a249
+  ABI hash: 96731a490339f8ace0e393ac596afdf0
+  export-list hash: f9d24d2cf7c8d1d7158e2f28d9a32b28
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: a14cf687c459318ae58bdc347ca3e1a6
   sig of: Nothing
@@ -23,7 +23,7 @@ exports:
   Main.TeamName
   Main.Team_ID
   Main.Teams
-  Main.WholeObject{Main.WholeObject resultSets}
+  Main.WholeObject{Main.WholeObject parameters resource resultSets}
   Main.WinningTeamStats{Main.WinningTeamStats assists fieldGoalPct fouls freeTAtt freeTMade offReb pointDiff rebounds steals threeFGA threeFGM turnovers}
 module dependencies:
 package dependencies: aeson-0.11.2.1@aeson-0.11.2.1-AE1BV6NZdP1FqsW2xALCUS
@@ -173,13 +173,13 @@ import  -/  text-1.2.2.1@text-1.2.2.1-9Yh8rJoh8fO2JMLWffT3Qs:Data.Text.Lazy.Enco
 import  -/  text-1.2.2.1@text-1.2.2.1-9Yh8rJoh8fO2JMLWffT3Qs:Data.Text.Lazy.IO bfcb06b33b97aa096c2b5bc987c1c25b
 import  -/  unordered-containers-0.2.7.2@unordered-containers-0.2.7.2-9ObqN3agNul2CNhSIO1Z6T:Data.HashMap.Strict 3f33b5427e5d61eb80cecd2c9f3a1ba5
 import  -/  vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector c1e986e414fb06d8c78b2ec9a85e2dfc
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $fEqGameLog :: GHC.Classes.Eq Main.GameLog
   DFunId
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
      Unfolding: DFun:.
                   @ Main.GameLog Main.$fEqGameLog_$c== Main.$fEqGameLog_$c/= -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $fEqGameLog_$c/= :: Main.GameLog -> Main.GameLog -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
      Strictness: <S(S),1*U(1*U)><S(S),1*U(1*U)>,
@@ -194,14 +194,14 @@ import  -/  vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector c
                         b1 of wild2 {
                    GHC.Types.False -> GHC.Types.True
                    GHC.Types.True -> GHC.Types.False } } }) -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $fEqGameLog_$c== :: Main.GameLog -> Main.GameLog -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
      Strictness: <S(S),1*U(1*U)><S(S),1*U(1*U)>,
      Unfolding: InlineRule (2, True, False)
-                (\ (ds1 :: Main.GameLog) (ds2 :: Main.GameLog) ->
-                 case ds1 of wild { Main.GameLog a1 ->
-                 case ds2 of wild1 { Main.GameLog b1 ->
+                (\ (ds :: Main.GameLog) (ds1 :: Main.GameLog) ->
+                 case ds of wild { Main.GameLog a1 ->
+                 case ds1 of wild1 { Main.GameLog b1 ->
                  GHC.Classes.$fEq[]_$c==
                    @ Main.GameResult
                    Main.$fEqGameResult
@@ -292,13 +292,13 @@ import  -/  vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector c
                    ww55
                    ww56
                    ww57 } } } }) -}
-8ba4248757f9c7d295527fa5c621dd99
+4153643c7bffa197623c3d50439e8020
   $fEqResultSet :: GHC.Classes.Eq Main.ResultSet
   DFunId
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
      Unfolding: DFun:.
                   @ Main.ResultSet Main.$fEqResultSet_$c== Main.$fEqResultSet_$c/= -}
-8ba4248757f9c7d295527fa5c621dd99
+4153643c7bffa197623c3d50439e8020
   $fEqResultSet_$c/= ::
     Main.ResultSet -> Main.ResultSet -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -314,21 +314,21 @@ import  -/  vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector c
                         b1 of wild2 {
                    GHC.Types.False -> GHC.Types.True
                    GHC.Types.True -> GHC.Types.False } } }) -}
-8ba4248757f9c7d295527fa5c621dd99
+4153643c7bffa197623c3d50439e8020
   $fEqResultSet_$c== ::
     Main.ResultSet -> Main.ResultSet -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
      Strictness: <S(S),1*U(1*U)><S(S),1*U(1*U)>,
      Unfolding: InlineRule (2, True, False)
-                (\ (ds1 :: Main.ResultSet) (ds2 :: Main.ResultSet) ->
-                 case ds1 of wild { Main.ResultSet a1 ->
-                 case ds2 of wild1 { Main.ResultSet b1 ->
+                (\ (ds :: Main.ResultSet) (ds1 :: Main.ResultSet) ->
+                 case ds of wild { Main.ResultSet a1 ->
+                 case ds1 of wild1 { Main.ResultSet b1 ->
                  GHC.Classes.$fEq[]_$c==
                    @ Main.GameResult
                    Main.$fEqGameResult
                    a1
                    b1 } }) -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fEqWholeObject :: GHC.Classes.Eq Main.WholeObject
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -336,29 +336,27 @@ import  -/  vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector c
                   @ Main.WholeObject
                   Main.$fEqWholeObject_$c==
                   Main.$fEqWholeObject_$c/= -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fEqWholeObject_$c/= ::
     Main.WholeObject -> Main.WholeObject -> GHC.Types.Bool
   {- Arity: 2,
-     Strictness: <S(S(LSL)),1*U(1*U(U,U,U))><S(S(LSL)),1*U(1*U(U,U,U))>,
+     Strictness: <S(SLL),1*U(1*U,1*U,1*U(U,U,U))><S(SLL),1*U(1*U,1*U,1*U(U,U,U))>,
      Unfolding: InlineRule (2, True, False)
                 (\ (a :: Main.WholeObject) (b :: Main.WholeObject) ->
                  case Main.$fEqWholeObject_$c== a b of wild {
                    GHC.Types.False -> GHC.Types.True
                    GHC.Types.True -> GHC.Types.False }) -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fEqWholeObject_$c== ::
     Main.WholeObject -> Main.WholeObject -> GHC.Types.Bool
   {- Arity: 2,
-     Strictness: <S(S(LSL)),1*U(1*U(U,U,U))><S(S(LSL)),1*U(1*U(U,U,U))>,
+     Strictness: <S(SLL),1*U(1*U,1*U,1*U(U,U,U))><S(SLL),1*U(1*U,1*U,1*U(U,U,U))>,
      Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
                 (\ (w1 :: Main.WholeObject) (w2 :: Main.WholeObject) ->
-                 case w1 of ww { Main.WholeObject ww1 ->
-                 case ww1 of ww2 { Data.Vector.Vector ww3 ww4 ww5 ->
-                 case w2 of ww6 { Main.WholeObject ww7 ->
-                 case ww7 of ww8 { Data.Vector.Vector ww9 ww10 ww11 ->
-                 Main.$w$c==1 ww3 ww4 ww5 ww9 ww10 ww11 } } } }) -}
+                 case w1 of ww { Main.WholeObject ww1 ww2 ww3 ->
+                 case w2 of ww4 { Main.WholeObject ww5 ww6 ww7 ->
+                 Main.$w$c==1 ww1 ww2 ww3 ww5 ww6 ww7 } }) -}
 a2a5df6cc59fdcc3a2a0ec761a0c9c64
   $fEqWinningTeamStats :: GHC.Classes.Eq Main.WinningTeamStats
   DFunId
@@ -452,7 +450,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                 (<Data.Aeson.Types.Internal.Value>_R
                  ->_R Sym (Data.Aeson.Types.Internal.N:Parser[0]
                                <Main.GameResult>_R)) -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fFromJSONWholeObject ::
     Data.Aeson.Types.Class.FromJSON Main.WholeObject
   DFunId
@@ -462,12 +460,12 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                   `cast`
                 (Sym (Data.Aeson.Types.Class.N:FromJSON[0]
                           <Main.WholeObject>_N)) -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fFromJSONWholeObject_$cparseJSON ::
     Data.Aeson.Types.Internal.Value
     -> Data.Aeson.Types.Internal.Parser Main.WholeObject
   {- Arity: 1, Strictness: <S,1*U> -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $fGenericGameLog :: GHC.Generics.Generic Main.GameLog
   DFunId
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -475,13 +473,13 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                   @ Main.GameLog
                   Main.$fGenericGameLog_$cfrom
                   Main.$fGenericGameLog_$cto -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $fGenericGameLog_$cfrom ::
     Main.GameLog -> GHC.Generics.Rep Main.GameLog x
   {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(1*U)>,
      Unfolding: InlineRule (1, True, False)
-                (\ @ x (ds1 :: Main.GameLog) ->
-                 case ds1 of wild { Main.GameLog g1 ->
+                (\ @ x (ds :: Main.GameLog) ->
+                 case ds of wild { Main.GameLog g1 ->
                  g1
                    `cast`
                  (Trans
@@ -530,14 +528,14 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                                                      (GHC.Generics.K1
                                                         GHC.Generics.R [Main.GameResult]))>_R))
                                      (Sub (Sym (Main.Rep_GameLog[0]))))) <x>_N)) }) -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $fGenericGameLog_$cto ::
     GHC.Generics.Rep Main.GameLog x -> Main.GameLog
   {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m,
      Unfolding: InlineRule (1, True, True)
-                (\ @ x (ds1 :: GHC.Generics.Rep Main.GameLog x) ->
+                (\ @ x (ds :: GHC.Generics.Rep Main.GameLog x) ->
                  Main.GameLog
-                   ds1
+                   ds
                      `cast`
                    (Trans
                         (Trans
@@ -3422,7 +3420,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                              <GHC.Generics.R>_P
                              <GHC.Types.Int>_R
                              <x>_P)) } } } } } } } } } } } } } } } } } } } } } } } } } }) -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fGenericWholeObject :: GHC.Generics.Generic Main.WholeObject
   DFunId
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -3430,123 +3428,302 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                   @ Main.WholeObject
                   Main.$fGenericWholeObject_$cfrom
                   Main.$fGenericWholeObject_$cto -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fGenericWholeObject_$cfrom ::
     Main.WholeObject -> GHC.Generics.Rep Main.WholeObject x
-  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(1*U(U,U,U))>m,
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(U,U,U)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ @ x (ds1 :: Main.WholeObject) ->
-                 case ds1 of wild { Main.WholeObject g1 ->
-                 g1
+                (\ @ x (ds :: Main.WholeObject) ->
+                 case ds of wild { Main.WholeObject g1 g2 g3 ->
+                 (GHC.Generics.:*:
+                    @ (GHC.Generics.M1
+                         GHC.Generics.S
+                         ('GHC.Generics.MetaSel
+                            ('GHC.Base.Just "resource")
+                            'GHC.Generics.NoSourceUnpackedness
+                            'GHC.Generics.NoSourceStrictness
+                            'GHC.Generics.DecidedLazy)
+                         (GHC.Generics.K1 GHC.Generics.R GHC.Base.String))
+                    @ (GHC.Generics.M1
+                         GHC.Generics.S
+                         ('GHC.Generics.MetaSel
+                            ('GHC.Base.Just "parameters")
+                            'GHC.Generics.NoSourceUnpackedness
+                            'GHC.Generics.NoSourceStrictness
+                            'GHC.Generics.DecidedLazy)
+                         (GHC.Generics.K1 GHC.Generics.R Data.Aeson.Types.Internal.Object)
+                       GHC.Generics.:*: GHC.Generics.M1
+                                          GHC.Generics.S
+                                          ('GHC.Generics.MetaSel
+                                             ('GHC.Base.Just "resultSets")
+                                             'GHC.Generics.NoSourceUnpackedness
+                                             'GHC.Generics.NoSourceStrictness
+                                             'GHC.Generics.DecidedLazy)
+                                          (GHC.Generics.K1
+                                             GHC.Generics.R Data.Aeson.Types.Internal.Array))
+                    @ x
+                    g1
+                      `cast`
+                    (Trans
+                         (Sym (GHC.Generics.N:K1[0]
+                                   <GHC.Generics.R>_P <GHC.Base.String>_R <x>_P))
+                         (Sym (GHC.Generics.N:M1[0]
+                                   <GHC.Generics.S>_P
+                                   <'GHC.Generics.MetaSel
+                                      ('GHC.Base.Just "resource")
+                                      'GHC.Generics.NoSourceUnpackedness
+                                      'GHC.Generics.NoSourceStrictness
+                                      'GHC.Generics.DecidedLazy>_P
+                                   <GHC.Generics.K1 GHC.Generics.R GHC.Base.String>_R) <x>_N))
+                    (GHC.Generics.:*:
+                       @ (GHC.Generics.M1
+                            GHC.Generics.S
+                            ('GHC.Generics.MetaSel
+                               ('GHC.Base.Just "parameters")
+                               'GHC.Generics.NoSourceUnpackedness
+                               'GHC.Generics.NoSourceStrictness
+                               'GHC.Generics.DecidedLazy)
+                            (GHC.Generics.K1 GHC.Generics.R Data.Aeson.Types.Internal.Object))
+                       @ (GHC.Generics.M1
+                            GHC.Generics.S
+                            ('GHC.Generics.MetaSel
+                               ('GHC.Base.Just "resultSets")
+                               'GHC.Generics.NoSourceUnpackedness
+                               'GHC.Generics.NoSourceStrictness
+                               'GHC.Generics.DecidedLazy)
+                            (GHC.Generics.K1 GHC.Generics.R Data.Aeson.Types.Internal.Array))
+                       @ x
+                       g2
+                         `cast`
+                       (Trans
+                            (Sym (GHC.Generics.N:K1[0]
+                                      <GHC.Generics.R>_P
+                                      <Data.Aeson.Types.Internal.Object>_R
+                                      <x>_P))
+                            (Sym (GHC.Generics.N:M1[0]
+                                      <GHC.Generics.S>_P
+                                      <'GHC.Generics.MetaSel
+                                         ('GHC.Base.Just "parameters")
+                                         'GHC.Generics.NoSourceUnpackedness
+                                         'GHC.Generics.NoSourceStrictness
+                                         'GHC.Generics.DecidedLazy>_P
+                                      <GHC.Generics.K1
+                                         GHC.Generics.R Data.Aeson.Types.Internal.Object>_R) <x>_N))
+                       g3
+                         `cast`
+                       (Trans
+                            (Sym (GHC.Generics.N:K1[0]
+                                      <GHC.Generics.R>_P <Data.Aeson.Types.Internal.Array>_R <x>_P))
+                            (Sym (GHC.Generics.N:M1[0]
+                                      <GHC.Generics.S>_P
+                                      <'GHC.Generics.MetaSel
+                                         ('GHC.Base.Just "resultSets")
+                                         'GHC.Generics.NoSourceUnpackedness
+                                         'GHC.Generics.NoSourceStrictness
+                                         'GHC.Generics.DecidedLazy>_P
+                                      <GHC.Generics.K1
+                                         GHC.Generics.R
+                                         Data.Aeson.Types.Internal.Array>_R) <x>_N))))
                    `cast`
                  (Trans
-                      (Sym (GHC.Generics.N:K1[0]
-                                <GHC.Generics.R>_P <Data.Aeson.Types.Internal.Array>_R <x>_P))
-                      (Trans
-                           (Sym (GHC.Generics.N:M1[0]
-                                     <GHC.Generics.S>_P
-                                     <'GHC.Generics.MetaSel
-                                        ('GHC.Base.Just "resultSets")
-                                        'GHC.Generics.NoSourceUnpackedness
-                                        'GHC.Generics.NoSourceStrictness
-                                        'GHC.Generics.DecidedLazy>_P
-                                     <GHC.Generics.K1
-                                        GHC.Generics.R Data.Aeson.Types.Internal.Array>_R))
-                           (Trans
-                                (Sym (GHC.Generics.N:M1[0]
-                                          <GHC.Generics.C>_P
-                                          <'GHC.Generics.MetaCons
-                                             "WholeObject" 'GHC.Generics.PrefixI 'GHC.Types.True>_P
-                                          <GHC.Generics.M1
-                                             GHC.Generics.S
-                                             ('GHC.Generics.MetaSel
-                                                ('GHC.Base.Just "resultSets")
-                                                'GHC.Generics.NoSourceUnpackedness
-                                                'GHC.Generics.NoSourceStrictness
-                                                'GHC.Generics.DecidedLazy)
-                                             (GHC.Generics.K1
-                                                GHC.Generics.R Data.Aeson.Types.Internal.Array)>_R))
-                                (Trans
-                                     (Sym (GHC.Generics.N:M1[0]
-                                               <GHC.Generics.D>_P
-                                               <'GHC.Generics.MetaData
-                                                  "WholeObject" "Main" "main" 'GHC.Types.False>_P
-                                               <GHC.Generics.M1
-                                                  GHC.Generics.C
-                                                  ('GHC.Generics.MetaCons
-                                                     "WholeObject"
-                                                     'GHC.Generics.PrefixI
-                                                     'GHC.Types.True)
-                                                  (GHC.Generics.M1
+                      (Sym (GHC.Generics.N:M1[0]
+                                <GHC.Generics.C>_P
+                                <'GHC.Generics.MetaCons
+                                   "WholeObject" 'GHC.Generics.PrefixI 'GHC.Types.True>_P
+                                <GHC.Generics.M1
+                                   GHC.Generics.S
+                                   ('GHC.Generics.MetaSel
+                                      ('GHC.Base.Just "resource")
+                                      'GHC.Generics.NoSourceUnpackedness
+                                      'GHC.Generics.NoSourceStrictness
+                                      'GHC.Generics.DecidedLazy)
+                                   (GHC.Generics.K1 GHC.Generics.R GHC.Base.String)
+                                 GHC.Generics.:*: (GHC.Generics.M1
                                                      GHC.Generics.S
                                                      ('GHC.Generics.MetaSel
-                                                        ('GHC.Base.Just "resultSets")
+                                                        ('GHC.Base.Just "parameters")
                                                         'GHC.Generics.NoSourceUnpackedness
                                                         'GHC.Generics.NoSourceStrictness
                                                         'GHC.Generics.DecidedLazy)
                                                      (GHC.Generics.K1
                                                         GHC.Generics.R
-                                                        Data.Aeson.Types.Internal.Array))>_R))
-                                     (Sub (Sym (Main.Rep_WholeObject[0]))))) <x>_N)) }) -}
-87e1f3487c23706eb3c74ccae888fe6c
+                                                        Data.Aeson.Types.Internal.Object)
+                                                   GHC.Generics.:*: GHC.Generics.M1
+                                                                      GHC.Generics.S
+                                                                      ('GHC.Generics.MetaSel
+                                                                         ('GHC.Base.Just
+                                                                            "resultSets")
+                                                                         'GHC.Generics.NoSourceUnpackedness
+                                                                         'GHC.Generics.NoSourceStrictness
+                                                                         'GHC.Generics.DecidedLazy)
+                                                                      (GHC.Generics.K1
+                                                                         GHC.Generics.R
+                                                                         Data.Aeson.Types.Internal.Array))>_R))
+                      (Trans
+                           (Sym (GHC.Generics.N:M1[0]
+                                     <GHC.Generics.D>_P
+                                     <'GHC.Generics.MetaData
+                                        "WholeObject" "Main" "main" 'GHC.Types.False>_P
+                                     <GHC.Generics.M1
+                                        GHC.Generics.C
+                                        ('GHC.Generics.MetaCons
+                                           "WholeObject" 'GHC.Generics.PrefixI 'GHC.Types.True)
+                                        (GHC.Generics.M1
+                                           GHC.Generics.S
+                                           ('GHC.Generics.MetaSel
+                                              ('GHC.Base.Just "resource")
+                                              'GHC.Generics.NoSourceUnpackedness
+                                              'GHC.Generics.NoSourceStrictness
+                                              'GHC.Generics.DecidedLazy)
+                                           (GHC.Generics.K1 GHC.Generics.R GHC.Base.String)
+                                         GHC.Generics.:*: (GHC.Generics.M1
+                                                             GHC.Generics.S
+                                                             ('GHC.Generics.MetaSel
+                                                                ('GHC.Base.Just "parameters")
+                                                                'GHC.Generics.NoSourceUnpackedness
+                                                                'GHC.Generics.NoSourceStrictness
+                                                                'GHC.Generics.DecidedLazy)
+                                                             (GHC.Generics.K1
+                                                                GHC.Generics.R
+                                                                Data.Aeson.Types.Internal.Object)
+                                                           GHC.Generics.:*: GHC.Generics.M1
+                                                                              GHC.Generics.S
+                                                                              ('GHC.Generics.MetaSel
+                                                                                 ('GHC.Base.Just
+                                                                                    "resultSets")
+                                                                                 'GHC.Generics.NoSourceUnpackedness
+                                                                                 'GHC.Generics.NoSourceStrictness
+                                                                                 'GHC.Generics.DecidedLazy)
+                                                                              (GHC.Generics.K1
+                                                                                 GHC.Generics.R
+                                                                                 Data.Aeson.Types.Internal.Array)))>_R))
+                           (Sub (Sym (Main.Rep_WholeObject[0])))) <x>_N) }) -}
+70e41688728c72825039332c93b384d4
   $fGenericWholeObject_$cto ::
     GHC.Generics.Rep Main.WholeObject x -> Main.WholeObject
-  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m,
-     Unfolding: InlineRule (1, True, True)
-                (\ @ x (ds1 :: GHC.Generics.Rep Main.WholeObject x) ->
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(U,1*U(U,U))>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ x (ds :: GHC.Generics.Rep Main.WholeObject x) ->
+                 case ds
+                        `cast`
+                      (Trans
+                           (Sub (Main.Rep_WholeObject[0]))
+                           (Trans
+                                (GHC.Generics.N:M1[0]
+                                     <GHC.Generics.D>_P
+                                     <'GHC.Generics.MetaData
+                                        "WholeObject" "Main" "main" 'GHC.Types.False>_P
+                                     <GHC.Generics.M1
+                                        GHC.Generics.C
+                                        ('GHC.Generics.MetaCons
+                                           "WholeObject" 'GHC.Generics.PrefixI 'GHC.Types.True)
+                                        (GHC.Generics.M1
+                                           GHC.Generics.S
+                                           ('GHC.Generics.MetaSel
+                                              ('GHC.Base.Just "resource")
+                                              'GHC.Generics.NoSourceUnpackedness
+                                              'GHC.Generics.NoSourceStrictness
+                                              'GHC.Generics.DecidedLazy)
+                                           (GHC.Generics.K1 GHC.Generics.R GHC.Base.String)
+                                         GHC.Generics.:*: (GHC.Generics.M1
+                                                             GHC.Generics.S
+                                                             ('GHC.Generics.MetaSel
+                                                                ('GHC.Base.Just "parameters")
+                                                                'GHC.Generics.NoSourceUnpackedness
+                                                                'GHC.Generics.NoSourceStrictness
+                                                                'GHC.Generics.DecidedLazy)
+                                                             (GHC.Generics.K1
+                                                                GHC.Generics.R
+                                                                Data.Aeson.Types.Internal.Object)
+                                                           GHC.Generics.:*: GHC.Generics.M1
+                                                                              GHC.Generics.S
+                                                                              ('GHC.Generics.MetaSel
+                                                                                 ('GHC.Base.Just
+                                                                                    "resultSets")
+                                                                                 'GHC.Generics.NoSourceUnpackedness
+                                                                                 'GHC.Generics.NoSourceStrictness
+                                                                                 'GHC.Generics.DecidedLazy)
+                                                                              (GHC.Generics.K1
+                                                                                 GHC.Generics.R
+                                                                                 Data.Aeson.Types.Internal.Array)))>_R)
+                                (GHC.Generics.N:M1[0]
+                                     <GHC.Generics.C>_P
+                                     <'GHC.Generics.MetaCons
+                                        "WholeObject" 'GHC.Generics.PrefixI 'GHC.Types.True>_P
+                                     <GHC.Generics.M1
+                                        GHC.Generics.S
+                                        ('GHC.Generics.MetaSel
+                                           ('GHC.Base.Just "resource")
+                                           'GHC.Generics.NoSourceUnpackedness
+                                           'GHC.Generics.NoSourceStrictness
+                                           'GHC.Generics.DecidedLazy)
+                                        (GHC.Generics.K1 GHC.Generics.R GHC.Base.String)
+                                      GHC.Generics.:*: (GHC.Generics.M1
+                                                          GHC.Generics.S
+                                                          ('GHC.Generics.MetaSel
+                                                             ('GHC.Base.Just "parameters")
+                                                             'GHC.Generics.NoSourceUnpackedness
+                                                             'GHC.Generics.NoSourceStrictness
+                                                             'GHC.Generics.DecidedLazy)
+                                                          (GHC.Generics.K1
+                                                             GHC.Generics.R
+                                                             Data.Aeson.Types.Internal.Object)
+                                                        GHC.Generics.:*: GHC.Generics.M1
+                                                                           GHC.Generics.S
+                                                                           ('GHC.Generics.MetaSel
+                                                                              ('GHC.Base.Just
+                                                                                 "resultSets")
+                                                                              'GHC.Generics.NoSourceUnpackedness
+                                                                              'GHC.Generics.NoSourceStrictness
+                                                                              'GHC.Generics.DecidedLazy)
+                                                                           (GHC.Generics.K1
+                                                                              GHC.Generics.R
+                                                                              Data.Aeson.Types.Internal.Array))>_R)) <x>_N) of wild { GHC.Generics.:*: ds1 ds2 ->
+                 case ds2 of wild1 { GHC.Generics.:*: ds3 ds4 ->
                  Main.WholeObject
                    ds1
                      `cast`
                    (Trans
-                        (Trans
-                             (Sub (Main.Rep_WholeObject[0]))
-                             (Trans
-                                  (GHC.Generics.N:M1[0]
-                                       <GHC.Generics.D>_P
-                                       <'GHC.Generics.MetaData
-                                          "WholeObject" "Main" "main" 'GHC.Types.False>_P
-                                       <GHC.Generics.M1
-                                          GHC.Generics.C
-                                          ('GHC.Generics.MetaCons
-                                             "WholeObject" 'GHC.Generics.PrefixI 'GHC.Types.True)
-                                          (GHC.Generics.M1
-                                             GHC.Generics.S
-                                             ('GHC.Generics.MetaSel
-                                                ('GHC.Base.Just "resultSets")
-                                                'GHC.Generics.NoSourceUnpackedness
-                                                'GHC.Generics.NoSourceStrictness
-                                                'GHC.Generics.DecidedLazy)
-                                             (GHC.Generics.K1
-                                                GHC.Generics.R Data.Aeson.Types.Internal.Array))>_R)
-                                  (Trans
-                                       (GHC.Generics.N:M1[0]
-                                            <GHC.Generics.C>_P
-                                            <'GHC.Generics.MetaCons
-                                               "WholeObject"
-                                               'GHC.Generics.PrefixI
-                                               'GHC.Types.True>_P
-                                            <GHC.Generics.M1
-                                               GHC.Generics.S
-                                               ('GHC.Generics.MetaSel
-                                                  ('GHC.Base.Just "resultSets")
-                                                  'GHC.Generics.NoSourceUnpackedness
-                                                  'GHC.Generics.NoSourceStrictness
-                                                  'GHC.Generics.DecidedLazy)
-                                               (GHC.Generics.K1
-                                                  GHC.Generics.R
-                                                  Data.Aeson.Types.Internal.Array)>_R)
-                                       (GHC.Generics.N:M1[0]
-                                            <GHC.Generics.S>_P
-                                            <'GHC.Generics.MetaSel
-                                               ('GHC.Base.Just "resultSets")
-                                               'GHC.Generics.NoSourceUnpackedness
-                                               'GHC.Generics.NoSourceStrictness
-                                               'GHC.Generics.DecidedLazy>_P
-                                            <GHC.Generics.K1
-                                               GHC.Generics.R
-                                               Data.Aeson.Types.Internal.Array>_R))) <x>_N)
+                        (GHC.Generics.N:M1[0]
+                             <GHC.Generics.S>_P
+                             <'GHC.Generics.MetaSel
+                                ('GHC.Base.Just "resource")
+                                'GHC.Generics.NoSourceUnpackedness
+                                'GHC.Generics.NoSourceStrictness
+                                'GHC.Generics.DecidedLazy>_P
+                             <GHC.Generics.K1 GHC.Generics.R GHC.Base.String>_R <x>_N)
                         (GHC.Generics.N:K1[0]
-                             <GHC.Generics.R>_P <Data.Aeson.Types.Internal.Array>_R <x>_P))) -}
+                             <GHC.Generics.R>_P <GHC.Base.String>_R <x>_P))
+                   ds3
+                     `cast`
+                   (Trans
+                        (GHC.Generics.N:M1[0]
+                             <GHC.Generics.S>_P
+                             <'GHC.Generics.MetaSel
+                                ('GHC.Base.Just "parameters")
+                                'GHC.Generics.NoSourceUnpackedness
+                                'GHC.Generics.NoSourceStrictness
+                                'GHC.Generics.DecidedLazy>_P
+                             <GHC.Generics.K1
+                                GHC.Generics.R Data.Aeson.Types.Internal.Object>_R <x>_N)
+                        (GHC.Generics.N:K1[0]
+                             <GHC.Generics.R>_P <Data.Aeson.Types.Internal.Object>_R <x>_P))
+                   ds4
+                     `cast`
+                   (Trans
+                        (GHC.Generics.N:M1[0]
+                             <GHC.Generics.S>_P
+                             <'GHC.Generics.MetaSel
+                                ('GHC.Base.Just "resultSets")
+                                'GHC.Generics.NoSourceUnpackedness
+                                'GHC.Generics.NoSourceStrictness
+                                'GHC.Generics.DecidedLazy>_P
+                             <GHC.Generics.K1
+                                GHC.Generics.R Data.Aeson.Types.Internal.Array>_R <x>_N)
+                        (GHC.Generics.N:K1[0]
+                             <GHC.Generics.R>_P
+                             <Data.Aeson.Types.Internal.Array>_R
+                             <x>_P)) } }) -}
 977cbcae151eabe0bb3624dbfff13168
   $fOrdGameResult :: GHC.Classes.Ord Main.GameResult
   DFunId
@@ -3914,7 +4091,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                 (\ (x :: Main.GameResult) (y :: Main.GameResult) ->
                  case Main.$fOrdGameResult_$c<= x y of wild {
                    GHC.Types.False -> y GHC.Types.True -> x }) -}
-8ba4248757f9c7d295527fa5c621dd99
+4153643c7bffa197623c3d50439e8020
   $fOrdResultSet :: GHC.Classes.Ord Main.ResultSet
   DFunId
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -3928,7 +4105,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                   Main.$fOrdResultSet_$c>=
                   Main.$fOrdResultSet_$cmax
                   Main.$fOrdResultSet_$cmin -}
-8ba4248757f9c7d295527fa5c621dd99
+4153643c7bffa197623c3d50439e8020
   $fOrdResultSet_$c< ::
     Main.ResultSet -> Main.ResultSet -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -3943,7 +4120,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                         a1
                         b1 of wild2 {
                    DEFAULT -> GHC.Types.False GHC.Types.LT -> GHC.Types.True } } }) -}
-8ba4248757f9c7d295527fa5c621dd99
+4153643c7bffa197623c3d50439e8020
   $fOrdResultSet_$c<= ::
     Main.ResultSet -> Main.ResultSet -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -3958,7 +4135,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                         a1
                         b1 of wild2 {
                    DEFAULT -> GHC.Types.True GHC.Types.GT -> GHC.Types.False } } }) -}
-8ba4248757f9c7d295527fa5c621dd99
+4153643c7bffa197623c3d50439e8020
   $fOrdResultSet_$c> ::
     Main.ResultSet -> Main.ResultSet -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -3973,7 +4150,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                         a1
                         b1 of wild2 {
                    DEFAULT -> GHC.Types.False GHC.Types.GT -> GHC.Types.True } } }) -}
-8ba4248757f9c7d295527fa5c621dd99
+4153643c7bffa197623c3d50439e8020
   $fOrdResultSet_$c>= ::
     Main.ResultSet -> Main.ResultSet -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -3988,7 +4165,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                         a1
                         b1 of wild2 {
                    DEFAULT -> GHC.Types.True GHC.Types.LT -> GHC.Types.False } } }) -}
-8ba4248757f9c7d295527fa5c621dd99
+4153643c7bffa197623c3d50439e8020
   $fOrdResultSet_$ccompare ::
     Main.ResultSet -> Main.ResultSet -> GHC.Types.Ordering
   {- Arity: 2, HasNoCafRefs,
@@ -4002,7 +4179,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                    Main.$fOrdGameResult
                    a1
                    b1 } }) -}
-8ba4248757f9c7d295527fa5c621dd99
+4153643c7bffa197623c3d50439e8020
   $fOrdResultSet_$cmax ::
     Main.ResultSet -> Main.ResultSet -> Main.ResultSet
   {- Arity: 2, HasNoCafRefs, Strictness: <S(S),1*U(U)><S(S),1*U(U)>m,
@@ -4016,7 +4193,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                         a1
                         b1 of wild2 {
                    DEFAULT -> wild1 GHC.Types.GT -> wild } } }) -}
-8ba4248757f9c7d295527fa5c621dd99
+4153643c7bffa197623c3d50439e8020
   $fOrdResultSet_$cmin ::
     Main.ResultSet -> Main.ResultSet -> Main.ResultSet
   {- Arity: 2, HasNoCafRefs, Strictness: <S(S),1*U(U)><S(S),1*U(U)>m,
@@ -4250,7 +4427,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                 (\ (x :: Main.WinningTeamStats) (y :: Main.WinningTeamStats) ->
                  case Main.$fOrdWinningTeamStats_$c<= x y of wild {
                    GHC.Types.False -> y GHC.Types.True -> x }) -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $fReadGameLog :: GHC.Read.Read Main.GameLog
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -4260,7 +4437,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                   Main.$fReadGameLog_$creadList
                   Main.$fReadGameLog_$creadPrec
                   Main.$fReadGameLog_$creadListPrec -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $fReadGameLog1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -4279,7 +4456,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                              <Main.GameLog>_R))
                    @ b
                    eta1) -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $fReadGameLog2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP Main.GameLog
@@ -4294,7 +4471,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                                        <Main.GameLog>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                   <Main.GameLog>_R)))) -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $fReadGameLog3 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -4338,7 +4515,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                    (w2 :: Main.GameResult -> Text.ParserCombinators.ReadP.P b) ->
                  case w1 of ww { GHC.Types.I# ww1 ->
                  Main.$w$creadPrec1 ww1 @ b w2 }) -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $fReadGameLog7 :: Text.ParserCombinators.ReadP.P [Main.GameLog]
   {- Unfolding: (GHC.Read.$wlist
                    @ Main.GameLog
@@ -4349,14 +4526,14 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                    @ [Main.GameLog]
                    (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                       @ [Main.GameLog])) -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $fReadGameLog_$creadList ::
     Text.ParserCombinators.ReadP.ReadS [Main.GameLog]
   {- Arity: 1,
      Unfolding: (Text.ParserCombinators.ReadP.run
                    @ [Main.GameLog]
                    Main.$fReadGameLog7) -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $fReadGameLog_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [Main.GameLog]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -4369,7 +4546,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                                     <[Main.GameLog]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                <[Main.GameLog]>_R))) -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $fReadGameLog_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec Main.GameLog
   {- Arity: 1,
@@ -4378,7 +4555,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                           <Main.GameLog>_R)) -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $fReadGameLog_$creadsPrec ::
     GHC.Types.Int -> Text.ParserCombinators.ReadP.ReadS Main.GameLog
   {- Arity: 1, Strictness: <L,U>,
@@ -4496,7 +4673,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                       @ Main.GameResult
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                          @ Main.GameResult))) -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fReadWholeObject :: GHC.Read.Read Main.WholeObject
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -4506,7 +4683,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                   Main.$fReadWholeObject_$creadList
                   Main.$fReadWholeObject_$creadPrec
                   Main.$fReadWholeObject_$creadListPrec -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fReadWholeObject1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -4525,7 +4702,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                              <Main.WholeObject>_R))
                    @ b
                    eta1) -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fReadWholeObject2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP Main.WholeObject
@@ -4540,7 +4717,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                                        <Main.WholeObject>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                   <Main.WholeObject>_R)))) -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fReadWholeObject3 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -4553,7 +4730,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                    (w2 :: Main.WholeObject -> Text.ParserCombinators.ReadP.P b) ->
                  case w1 of ww { GHC.Types.I# ww1 ->
                  Main.$w$creadPrec2 ww1 @ b w2 }) -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fReadWholeObject4 ::
     Text.ParserCombinators.ReadP.P [Main.WholeObject]
   {- Unfolding: (GHC.Read.$wlist
@@ -4565,14 +4742,14 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                    @ [Main.WholeObject]
                    (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                       @ [Main.WholeObject])) -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fReadWholeObject_$creadList ::
     Text.ParserCombinators.ReadP.ReadS [Main.WholeObject]
   {- Arity: 1,
      Unfolding: (Text.ParserCombinators.ReadP.run
                    @ [Main.WholeObject]
                    Main.$fReadWholeObject4) -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fReadWholeObject_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [Main.WholeObject]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -4585,7 +4762,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                                     <[Main.WholeObject]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                <[Main.WholeObject]>_R))) -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fReadWholeObject_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec Main.WholeObject
   {- Arity: 1,
@@ -4594,7 +4771,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                           <Main.WholeObject>_R)) -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fReadWholeObject_$creadsPrec ::
     GHC.Types.Int
     -> Text.ParserCombinators.ReadP.ReadS Main.WholeObject
@@ -4619,7 +4796,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                       @ Main.WholeObject
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                          @ Main.WholeObject))) -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $fShowGameLog :: GHC.Show.Show Main.GameLog
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -4628,7 +4805,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                   Main.$fShowGameLog_$cshowsPrec
                   Main.$fShowGameLog_$cshow
                   Main.$fShowGameLog_$cshowList -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $fShowGameLog1 :: Main.GameLog -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (\ (w1 :: Main.GameLog) (w2 :: GHC.Base.String) ->
@@ -4671,7 +4848,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
 83ff1d57797b6c5cfa798c5209c3e910
   $fShowGameLog3 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "GameLog "#) -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $fShowGameLog_$cshow :: Main.GameLog -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U(1*U)>,
      Unfolding: InlineRule (1, True, False)
@@ -4688,13 +4865,13 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                       Main.$fShowGameLog2
                       b1
                       (GHC.Types.[] @ GHC.Types.Char)) }) -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $fShowGameLog_$cshowList :: [Main.GameLog] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Main.GameLog
                    Main.$fShowGameLog1) -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $fShowGameLog_$cshowsPrec ::
     GHC.Types.Int -> Main.GameLog -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <S(S),1*U(U)><S,1*U(1*U)><L,U>,
@@ -4770,7 +4947,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                    ww27
                    ww28
                    ww29 } }) -}
-8ba4248757f9c7d295527fa5c621dd99
+4153643c7bffa197623c3d50439e8020
   $fShowResultSet :: GHC.Show.Show Main.ResultSet
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -4779,13 +4956,13 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                   Main.$fShowResultSet_$cshowsPrec
                   Main.$fShowResultSet_$cshow
                   Main.$fShowResultSet_$cshowList -}
-8ba4248757f9c7d295527fa5c621dd99
+4153643c7bffa197623c3d50439e8020
   $fShowResultSet1 :: Main.ResultSet -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (\ (w1 :: Main.ResultSet) (w2 :: GHC.Base.String) ->
                  case w1 of ww { Main.ResultSet ww1 ->
                  Main.$w$cshowsPrec2 0# ww1 w2 }) -}
-8ba4248757f9c7d295527fa5c621dd99
+4153643c7bffa197623c3d50439e8020
   $fShowResultSet_$cshow :: Main.ResultSet -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U(1*U)>,
      Unfolding: InlineRule (1, True, False)
@@ -4794,13 +4971,13 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                    GHC.Show.shows22
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-8ba4248757f9c7d295527fa5c621dd99
+4153643c7bffa197623c3d50439e8020
   $fShowResultSet_$cshowList :: [Main.ResultSet] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Main.ResultSet
                    Main.$fShowResultSet1) -}
-8ba4248757f9c7d295527fa5c621dd99
+4153643c7bffa197623c3d50439e8020
   $fShowResultSet_$cshowsPrec ::
     GHC.Types.Int -> Main.ResultSet -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <S(S),1*U(U)><S,1*U(1*U)><L,U>,
@@ -4812,7 +4989,7 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                  case w1 of ww { GHC.Types.I# ww1 ->
                  case w2 of ww2 { Main.ResultSet ww3 ->
                  Main.$w$cshowsPrec2 ww1 ww3 w3 } }) -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fShowWholeObject :: GHC.Show.Show Main.WholeObject
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -4821,47 +4998,56 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                   Main.$fShowWholeObject_$cshowsPrec
                   Main.$fShowWholeObject_$cshow
                   Main.$fShowWholeObject_$cshowList -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fShowWholeObject1 :: Main.WholeObject -> GHC.Show.ShowS
   {- Arity: 1,
      Unfolding: (\ (w1 :: Main.WholeObject) ->
-                 case w1 of ww { Main.WholeObject ww1 ->
-                 Main.$w$cshowsPrec3 0# ww1 }) -}
+                 case w1 of ww { Main.WholeObject ww1 ww2 ww3 ->
+                 Main.$w$cshowsPrec3 0# ww1 ww2 ww3 }) -}
 650851b4cac62209e102eb484bf24814
   $fShowWholeObject2 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "}"#) -}
 f72610fdd2e8fb9ded3e80fdbd65cff7
   $fShowWholeObject3 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "resultSets = "#) -}
-e0086cd81725a5e1391e6dcf690caa5a
+07eb3c687366b62ddb2c3bbaff2c102c
   $fShowWholeObject4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "parameters = "#) -}
+a4a696467085e370cb48f3bef8dcb975
+  $fShowWholeObject5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ", "#) -}
+3158d2e3778602caa99edd6d758efa6a
+  $fShowWholeObject6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "resource = "#) -}
+901f1142b36c540a690453cc4e56aa30
+  $fShowWholeObject7 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "WholeObject {"#) -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fShowWholeObject_$cshow :: Main.WholeObject -> GHC.Base.String
-  {- Arity: 1, Strictness: <S,1*U(1*U(U,U,U))>,
+  {- Arity: 1, Strictness: <S,1*U(U,1*U,1*U(U,U,U))>,
      Unfolding: InlineRule (1, True, False)
                 (\ (x :: Main.WholeObject) ->
                  Main.$fShowWholeObject_$cshowsPrec
                    GHC.Show.shows22
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fShowWholeObject_$cshowList ::
     [Main.WholeObject] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Main.WholeObject
                    Main.$fShowWholeObject1) -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $fShowWholeObject_$cshowsPrec ::
     GHC.Types.Int -> Main.WholeObject -> GHC.Show.ShowS
-  {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U(1*U(U,U,U))>,
+  {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U(U,1*U,1*U(U,U,U))>,
      Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
                 (\ (w1 :: GHC.Types.Int) (w2 :: Main.WholeObject) ->
                  case w1 of ww { GHC.Types.I# ww1 ->
-                 case w2 of ww2 { Main.WholeObject ww3 ->
-                 Main.$w$cshowsPrec3 ww1 ww3 } }) -}
+                 case w2 of ww2 { Main.WholeObject ww3 ww4 ww5 ->
+                 Main.$w$cshowsPrec3 ww1 ww3 ww4 ww5 } }) -}
 a2a5df6cc59fdcc3a2a0ec761a0c9c64
   $fShowWinningTeamStats :: GHC.Show.Show Main.WinningTeamStats
   DFunId
@@ -5714,71 +5900,90 @@ a0036df6f0d6c2d30224802f147a4953
   {- Arity: 54, HasNoCafRefs,
      Strictness: <S,U><L,1*U><L,1*U><L,1*U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><S,U><L,1*U><L,1*U><L,1*U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
      Inline: [0] -}
-e83ac573c203e02210d790682b60a5f3
+f71a678bdf854ef4c50b7da42b80ed06
   $w$c==1 ::
-    GHC.Prim.Int#
-    -> GHC.Prim.Int#
-    -> GHC.Prim.Array# Data.Aeson.Types.Internal.Value
-    -> GHC.Prim.Int#
-    -> GHC.Prim.Int#
-    -> GHC.Prim.Array# Data.Aeson.Types.Internal.Value
+    GHC.Base.String
+    -> Data.Aeson.Types.Internal.Object
+    -> Data.Aeson.Types.Internal.Array
+    -> GHC.Base.String
+    -> Data.Aeson.Types.Internal.Object
+    -> Data.Aeson.Types.Internal.Array
     -> GHC.Types.Bool
-  {- Arity: 6, Strictness: <L,U><S,U><L,U><L,U><S,U><L,U>,
+  {- Arity: 6,
+     Strictness: <S,1*U><L,1*U><L,1*U(U,U,U)><S,1*U><L,1*U><L,1*U(U,U,U)>,
      Inline: [0],
-     Unfolding: (\ (ww :: GHC.Prim.Int#)
-                   (ww1 :: GHC.Prim.Int#)
-                   (ww2 :: GHC.Prim.Array# Data.Aeson.Types.Internal.Value)
-                   (ww3 :: GHC.Prim.Int#)
-                   (ww4 :: GHC.Prim.Int#)
-                   (ww5 :: GHC.Prim.Array# Data.Aeson.Types.Internal.Value) ->
-                 letrec {
-                   $weq_loop0 :: GHC.Types.SPEC
-                                 -> GHC.Prim.Int#
-                                 -> GHC.Prim.Int#
-                                 -> Data.Vector.Fusion.Util.Id GHC.Types.Bool
-                     {- Arity: 3, Strictness: <S,1*U><S,U><S,U>, Inline: [0] -}
-                   = \ (w1 :: GHC.Types.SPEC)
-                       (ww6 :: GHC.Prim.Int#)
-                       (ww7 :: GHC.Prim.Int#) ->
-                     case w1 of ds9 { DEFAULT ->
-                     case GHC.Prim.tagToEnum#
-                            @ GHC.Types.Bool
-                            (GHC.Prim.>=# ww6 ww1) of wild {
-                       GHC.Types.False
-                       -> case GHC.Prim.tagToEnum#
-                                 @ GHC.Types.Bool
-                                 (GHC.Prim.>=# ww7 ww4) of wild1 {
-                            GHC.Types.False
-                            -> case GHC.Prim.indexArray#
-                                      @ Data.Aeson.Types.Internal.Value
-                                      ww2
-                                      (GHC.Prim.+# ww ww6) of ds2 { Unit# ipv ->
-                               case GHC.Prim.indexArray#
-                                      @ Data.Aeson.Types.Internal.Value
-                                      ww5
-                                      (GHC.Prim.+# ww3 ww7) of ds1 { Unit# ipv2 ->
-                               case Data.Aeson.Types.Internal.$fEqValue_$c== ipv ipv2 of wild5 {
+     Unfolding: (\ (ww :: GHC.Base.String)
+                   (ww1 :: Data.Aeson.Types.Internal.Object)
+                   (ww2 :: Data.Aeson.Types.Internal.Array)
+                   (ww3 :: GHC.Base.String)
+                   (ww4 :: Data.Aeson.Types.Internal.Object)
+                   (ww5 :: Data.Aeson.Types.Internal.Array) ->
+                 case GHC.Base.eqString ww ww3 of wild {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True
+                   -> case Data.HashMap.Base.equal
+                             @ Data.Text.Internal.Text
+                             @ Data.Aeson.Types.Internal.Value
+                             Data.Text.$fEqText
+                             Data.Aeson.Types.Internal.$fEqValue
+                             ww1
+                             ww4 of wild1 {
+                        GHC.Types.False -> GHC.Types.False
+                        GHC.Types.True
+                        -> case ww2 of v2 { Data.Vector.Vector ipv ipv2 ipv3 ->
+                           case ww5 of v1 { Data.Vector.Vector ipv4 ipv5 ipv6 ->
+                           letrec {
+                             $weq_loop0 :: GHC.Types.SPEC
+                                           -> GHC.Prim.Int#
+                                           -> GHC.Prim.Int#
+                                           -> Data.Vector.Fusion.Util.Id GHC.Types.Bool
+                               {- Arity: 3, Strictness: <S,1*U><S,U><S,U>, Inline: [0] -}
+                             = \ (w1 :: GHC.Types.SPEC)
+                                 (ww6 :: GHC.Prim.Int#)
+                                 (ww7 :: GHC.Prim.Int#) ->
+                               case w1 of ds9 { DEFAULT ->
+                               case GHC.Prim.tagToEnum#
+                                      @ GHC.Types.Bool
+                                      (GHC.Prim.>=# ww6 ipv2) of wild2 {
                                  GHC.Types.False
-                                 -> GHC.Types.False
-                                      `cast`
-                                    (Sym (Data.Vector.Fusion.Util.N:Id[0] <GHC.Types.Bool>_R))
+                                 -> case GHC.Prim.tagToEnum#
+                                           @ GHC.Types.Bool
+                                           (GHC.Prim.>=# ww7 ipv5) of wild3 {
+                                      GHC.Types.False
+                                      -> case GHC.Prim.indexArray#
+                                                @ Data.Aeson.Types.Internal.Value
+                                                ipv3
+                                                (GHC.Prim.+# ipv ww6) of ds2 { Unit# ipv7 ->
+                                         case GHC.Prim.indexArray#
+                                                @ Data.Aeson.Types.Internal.Value
+                                                ipv6
+                                                (GHC.Prim.+# ipv4 ww7) of ds1 { Unit# ipv8 ->
+                                         case Data.Aeson.Types.Internal.$fEqValue_$c==
+                                                ipv7
+                                                ipv8 of wild5 {
+                                           GHC.Types.False
+                                           -> GHC.Types.False
+                                                `cast`
+                                              (Sym (Data.Vector.Fusion.Util.N:Id[0]
+                                                        <GHC.Types.Bool>_R))
+                                           GHC.Types.True
+                                           -> $weq_loop0
+                                                GHC.Types.SPEC
+                                                (GHC.Prim.+# ww6 1#)
+                                                (GHC.Prim.+# ww7 1#) } } }
+                                      GHC.Types.True
+                                      -> GHC.Types.False
+                                           `cast`
+                                         (Sym (Data.Vector.Fusion.Util.N:Id[0]
+                                                   <GHC.Types.Bool>_R)) }
                                  GHC.Types.True
-                                 -> $weq_loop0
-                                      GHC.Types.SPEC
-                                      (GHC.Prim.+# ww6 1#)
-                                      (GHC.Prim.+# ww7 1#) } } }
-                            GHC.Types.True
-                            -> GHC.Types.False
-                                 `cast`
-                               (Sym (Data.Vector.Fusion.Util.N:Id[0] <GHC.Types.Bool>_R)) }
-                       GHC.Types.True
-                       -> (GHC.Prim.tagToEnum# @ GHC.Types.Bool (GHC.Prim.>=# ww7 ww4))
-                            `cast`
-                          (Sym (Data.Vector.Fusion.Util.N:Id[0] <GHC.Types.Bool>_R)) } }
-                 } in
-                 ($weq_loop0 GHC.Types.SPEC 0# 0#)
-                   `cast`
-                 (Data.Vector.Fusion.Util.N:Id[0] <GHC.Types.Bool>_R)) -}
+                                 -> (GHC.Prim.tagToEnum# @ GHC.Types.Bool (GHC.Prim.>=# ww7 ipv5))
+                                      `cast`
+                                    (Sym (Data.Vector.Fusion.Util.N:Id[0] <GHC.Types.Bool>_R)) } }
+                           } in
+                           ($weq_loop0 GHC.Types.SPEC 0# 0#)
+                             `cast`
+                           (Data.Vector.Fusion.Util.N:Id[0] <GHC.Types.Bool>_R) } } } }) -}
 90ee74db907c150a74912b9ae9fbd367
   $w$c==2 ::
     GHC.Prim.Int#
@@ -6774,7 +6979,7 @@ a1a56cf25020bbfebd6cac808865193e
 f5372241d74a0946a66d785f951d31fd
   $w$cparseJSON :: GHC.Prim.Void# -> f r
   {- Arity: 1, Strictness: <L,U>b, Inline: [0] -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   $w$creadPrec ::
     GHC.Prim.Int#
     -> forall b.
@@ -6790,9 +6995,9 @@ f5372241d74a0946a66d785f951d31fd
                    GHC.Types.False -> Text.ParserCombinators.ReadP.Fail @ b
                    GHC.Types.True
                    -> let {
-                        lvl96 :: Text.ParserCombinators.ReadP.P b
+                        lvl98 :: Text.ParserCombinators.ReadP.P b
                         = let {
-                            lvl97 :: Text.ParserCombinators.ReadP.P b
+                            lvl99 :: Text.ParserCombinators.ReadP.P b
                             = GHC.Read.$wlist
                                 @ Main.GameResult
                                 Main.$fReadGameLog5
@@ -6810,13 +7015,13 @@ f5372241d74a0946a66d785f951d31fd
                                Text.Read.Lex.Ident a2
                                -> case GHC.Base.eqString a2 Main.$fReadGameLog4 of wild1 {
                                     GHC.Types.False -> Text.ParserCombinators.ReadP.Fail @ b
-                                    GHC.Types.True -> lvl97 } })
+                                    GHC.Types.True -> lvl99 } })
                       } in
                       let {
                         k :: () -> Text.ParserCombinators.ReadP.P b
                           {- Arity: 1, Strictness: <L,A>, Inline: INLINE[0],
-                             Unfolding: InlineRule (1, True, True) (\ (w4 :: ()) -> lvl96) -}
-                        = \ (w4 :: ()) -> lvl96
+                             Unfolding: InlineRule (1, True, True) (\ (w4 :: ()) -> lvl98) -}
+                        = \ (w4 :: ()) -> lvl98
                       } in
                       Text.ParserCombinators.ReadP.Look
                         @ b
@@ -6833,7 +7038,7 @@ f5372241d74a0946a66d785f951d31fd
        (Main.GameResult -> Text.ParserCombinators.ReadP.P b)
        -> Text.ParserCombinators.ReadP.P b
   {- Arity: 2, Strictness: <S,U><L,C(U)>, Inline: [0] -}
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   $w$creadPrec2 ::
     GHC.Prim.Int#
     -> forall b.
@@ -6907,31 +7112,48 @@ f5372241d74a0946a66d785f951d31fd
     GHC.Prim.Int#
     -> [Main.GameResult] -> GHC.Base.String -> GHC.Base.String
   {- Arity: 3, Strictness: <S,U><L,1*U><L,U>, Inline: [0] -}
-36d20a6f8665be43345a60e2fd61ca7e
+5768c4147a9c4a736643ea5fd610fa67
   $w$cshowsPrec3 ::
-    GHC.Prim.Int# -> Data.Aeson.Types.Internal.Array -> GHC.Show.ShowS
-  {- Arity: 2, Strictness: <S,U><L,1*U(U,U,U)>, Inline: [0],
+    GHC.Prim.Int#
+    -> GHC.Base.String
+    -> Data.Aeson.Types.Internal.Object
+    -> Data.Aeson.Types.Internal.Array
+    -> GHC.Show.ShowS
+  {- Arity: 4, Strictness: <S,U><L,U><L,1*U><L,1*U(U,U,U)>,
+     Inline: [0],
      Unfolding: (\ (ww :: GHC.Prim.Int#)
-                   (ww1 :: Data.Aeson.Types.Internal.Array) ->
+                   (ww1 :: GHC.Base.String)
+                   (ww2 :: Data.Aeson.Types.Internal.Object)
+                   (ww3 :: Data.Aeson.Types.Internal.Array) ->
+                 let {
+                   f :: GHC.Base.String -> GHC.Base.String
+                   = Data.HashMap.Base.$w$cshowsPrec
+                       @ Data.Text.Internal.Text
+                       @ Data.Aeson.Types.Internal.Value
+                       Data.Text.Show.$fShowText
+                       Data.Aeson.Types.Internal.$fShowValue
+                       0#
+                       ww2
+                 } in
                  let {
                    eta :: [Data.Aeson.Types.Internal.Value]
-                   = case ww1 of v2 { Data.Vector.Vector ipv ipv2 ipv3 ->
+                   = case ww3 of v2 { Data.Vector.Vector ipv ipv2 ipv3 ->
                      letrec {
                        $wgo1 :: GHC.Prim.Int# -> [Data.Aeson.Types.Internal.Value]
                          {- Arity: 1, Strictness: <S,U>, Inline: [0] -}
-                       = \ (ww2 :: GHC.Prim.Int#) ->
+                       = \ (ww4 :: GHC.Prim.Int#) ->
                          case GHC.Prim.tagToEnum#
                                 @ GHC.Types.Bool
-                                (GHC.Prim.>=# ww2 ipv2) of wild {
+                                (GHC.Prim.>=# ww4 ipv2) of wild {
                            GHC.Types.False
                            -> case GHC.Prim.indexArray#
                                      @ Data.Aeson.Types.Internal.Value
                                      ipv3
-                                     (GHC.Prim.+# ipv ww2) of ds2 { Unit# ipv4 ->
+                                     (GHC.Prim.+# ipv ww4) of ds2 { Unit# ipv4 ->
                               GHC.Types.:
                                 @ Data.Aeson.Types.Internal.Value
                                 ipv4
-                                ($wgo1 (GHC.Prim.+# ww2 1#)) }
+                                ($wgo1 (GHC.Prim.+# ww4 1#)) }
                            GHC.Types.True -> GHC.Types.[] @ Data.Aeson.Types.Internal.Value }
                      } in
                      $wgo1 0# }
@@ -6941,13 +7163,36 @@ f5372241d74a0946a66d785f951d31fd
                    = \ (x :: GHC.Base.String) ->
                      GHC.Base.++
                        @ GHC.Types.Char
-                       Main.$fShowWholeObject4
+                       Main.$fShowWholeObject7
                        (GHC.Base.++
                           @ GHC.Types.Char
-                          Main.$fShowWholeObject3
-                          (Data.Aeson.Types.Internal.$fShowValue_$cshowList
-                             eta
-                             (GHC.Base.++ @ GHC.Types.Char Main.$fShowWholeObject2 x)))
+                          Main.$fShowWholeObject6
+                          (GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows8
+                             (GHC.Show.showLitString
+                                ww1
+                                (GHC.Types.:
+                                   @ GHC.Types.Char
+                                   GHC.Show.shows8
+                                   (GHC.Base.++
+                                      @ GHC.Types.Char
+                                      Main.$fShowWholeObject5
+                                      (GHC.Base.++
+                                         @ GHC.Types.Char
+                                         Main.$fShowWholeObject4
+                                         (f (GHC.Base.++
+                                               @ GHC.Types.Char
+                                               Main.$fShowWholeObject5
+                                               (GHC.Base.++
+                                                  @ GHC.Types.Char
+                                                  Main.$fShowWholeObject3
+                                                  (Data.Aeson.Types.Internal.$fShowValue_$cshowList
+                                                     eta
+                                                     (GHC.Base.++
+                                                        @ GHC.Types.Char
+                                                        Main.$fShowWholeObject2
+                                                        x)))))))))))
                  } in
                  case GHC.Prim.tagToEnum#
                         @ GHC.Types.Bool
@@ -6978,7 +7223,7 @@ f5372241d74a0946a66d785f951d31fd
   {- Arity: 13,
      Strictness: <S,U><L,U(U)><L,1*U(U)><L,U(U)><L,U(U)><L,U(U)><L,U(U)><L,U(U)><L,U(U)><L,U(U)><L,U(U)><L,U(U)><L,U(U)>,
      Inline: [0] -}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   data GameLog = GameLog [Main.GameResult]
 977cbcae151eabe0bb3624dbfff13168
   data GameResult
@@ -7009,7 +7254,7 @@ f5372241d74a0946a66d785f951d31fd
                   tov :: GHC.Types.Int,
                   pf :: GHC.Types.Int,
                   pts :: GHC.Types.Int}
-16e3fa23eaa14613442f62b10c42ff16
+af6c30003b1d18971c57633ce1d7ff4f
   axiom Rep_GameLog::
       GHC.Generics.Rep Main.GameLog
         = GHC.Generics.D1
@@ -7245,7 +7490,7 @@ f5372241d74a0946a66d785f951d31fd
                                                                                                               'GHC.Generics.DecidedLazy)
                                                                                                            (GHC.Generics.Rec0
                                                                                                               GHC.Types.Int)))))))
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   axiom Rep_WholeObject::
       GHC.Generics.Rep Main.WholeObject
         = GHC.Generics.D1
@@ -7256,12 +7501,27 @@ f5372241d74a0946a66d785f951d31fd
                   "WholeObject" 'GHC.Generics.PrefixI 'GHC.Types.True)
                (GHC.Generics.S1
                   ('GHC.Generics.MetaSel
-                     ('GHC.Base.Just "resultSets")
+                     ('GHC.Base.Just "resource")
                      'GHC.Generics.NoSourceUnpackedness
                      'GHC.Generics.NoSourceStrictness
                      'GHC.Generics.DecidedLazy)
-                  (GHC.Generics.Rec0 Data.Aeson.Types.Internal.Array)))
-8ba4248757f9c7d295527fa5c621dd99
+                  (GHC.Generics.Rec0 GHC.Base.String)
+                GHC.Generics.:*: (GHC.Generics.S1
+                                    ('GHC.Generics.MetaSel
+                                       ('GHC.Base.Just "parameters")
+                                       'GHC.Generics.NoSourceUnpackedness
+                                       'GHC.Generics.NoSourceStrictness
+                                       'GHC.Generics.DecidedLazy)
+                                    (GHC.Generics.Rec0 Data.Aeson.Types.Internal.Object)
+                                  GHC.Generics.:*: GHC.Generics.S1
+                                                     ('GHC.Generics.MetaSel
+                                                        ('GHC.Base.Just "resultSets")
+                                                        'GHC.Generics.NoSourceUnpackedness
+                                                        'GHC.Generics.NoSourceStrictness
+                                                        'GHC.Generics.DecidedLazy)
+                                                     (GHC.Generics.Rec0
+                                                        Data.Aeson.Types.Internal.Array))))
+4153643c7bffa197623c3d50439e8020
   data ResultSet = ResultSet {rowSet :: [Main.GameResult]}
 0ecd00e1341796231ac5703ece0d41a0
   type TeamABBR = GHC.Base.String
@@ -7271,9 +7531,11 @@ f62061127124d932506c7a632bf81843
   type Team_ID = GHC.Types.Int
 9dfa4155747fbb31f6d7bde852ac46e0
   type Teams = (Main.TeamName, Main.Team_ID, Main.TeamABBR)
-87e1f3487c23706eb3c74ccae888fe6c
+70e41688728c72825039332c93b384d4
   data WholeObject
-    = WholeObject {resultSets :: Data.Aeson.Types.Internal.Array}
+    = WholeObject {resource :: GHC.Base.String,
+                   parameters :: Data.Aeson.Types.Internal.Object,
+                   resultSets :: Data.Aeson.Types.Internal.Array}
 a2a5df6cc59fdcc3a2a0ec761a0c9c64
   data WinningTeamStats
     = WinningTeamStats {pointDiff :: GHC.Types.Int,
@@ -7288,177 +7550,177 @@ a2a5df6cc59fdcc3a2a0ec761a0c9c64
                         freeTAtt :: GHC.Types.Int,
                         freeTMade :: GHC.Types.Int,
                         fouls :: GHC.Types.Int}
-70e28e8221632b03a8f4fafe74e47a08
+82ebef066a3e9e7602f57bf3884883a9
   assists :: Main.WinningTeamStats -> GHC.Types.Int
   RecSel Left Main.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLSLLLLLLLL),1*U(A,A,A,1*U(U),A,A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.WinningTeamStats) ->
-                 case ds1 of wild { Main.WinningTeamStats ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ->
-                 ds5 }) -}
-282b741b75e0acd9391a301bd3c17acd
+                (\ (ds :: Main.WinningTeamStats) ->
+                 case ds of wild { Main.WinningTeamStats ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds4 }) -}
+fc52b609e10ce1fa28b20e77b5684068
   ast :: Main.GameResult -> GHC.Types.Int
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLLLLLLLLLLLLLSLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U),A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds23 }) -}
-3cc14107146a72fa0939b346223b4123
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds22 }) -}
+abd28125584a3e692a6819c38e0107f0
   blk :: Main.GameResult -> GHC.Types.Int
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLLLLLLLLLLLLLLLSLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U),A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds25 }) -}
-7cb87f91237161ccb55180c97984944c
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds24 }) -}
+3b4b20da978ff3fb088fb69f9fe7a703
   dreb :: Main.GameResult -> GHC.Types.Int
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLLLLLLLLLLLSLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U),A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds21 }) -}
-46cc7386b2e0fe9f99883831ad6602cd
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds20 }) -}
+31f06119f14e20b1d27248fc2ea38ca8
   fg3_pct :: Main.GameResult -> GHC.Types.Float
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLLLLLLSLLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U),A,A,A,A,A,A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds16 }) -}
-748825e0cd6d986834fa17ae39783587
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds15 }) -}
+049ddab14221ec35e556596ef2789670
   fg3a :: Main.GameResult -> GHC.Types.Int
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLLLLLSLLLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U),A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds15 }) -}
-86570d9d0399aaa92ddc6dc589003017
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds14 }) -}
+5b6d00c549b267c7108ab4e27c6d5cdc
   fg3m :: Main.GameResult -> GHC.Types.Int
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLLLLSLLLLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,1*U(U),A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds14 }) -}
-8590c0059b62601bafc469621f020251
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds13 }) -}
+2d726dc34477a26d98c2c95b3d9fbe89
   fg_pct :: Main.GameResult -> GHC.Types.Float
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLLLSLLLLLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,1*U(U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds13 }) -}
-d920cf615037fc8ada649571e24c9036
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds12 }) -}
+673af35060fc6b1231d159a9b95af35f
   fga :: Main.GameResult -> GHC.Types.Int
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLLSLLLLLLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,1*U(U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds12 }) -}
-0002a9661e93fbd05e75994323acc5f3
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds11 }) -}
+9ccb680fcd4edbb9128f24336e31bd9f
   fgm :: Main.GameResult -> GHC.Types.Int
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLSLLLLLLLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,1*U(U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds11 }) -}
-6dc59b3c492ff12aaa2bc6e53a338691
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds10 }) -}
+98525711cc8a03f9b34fddfbb8993c2f
   fieldGoalPct :: Main.WinningTeamStats -> GHC.Types.Float
   RecSel Left Main.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LSLLLLLLLLLL),1*U(A,1*U(U),A,A,A,A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.WinningTeamStats) ->
-                 case ds1 of wild { Main.WinningTeamStats ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ->
-                 ds3 }) -}
-af61a1aa23784e53c80bb6a34b10b23e
+                (\ (ds :: Main.WinningTeamStats) ->
+                 case ds of wild { Main.WinningTeamStats ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds2 }) -}
+b957a3900e549129707acc8625054c64
   fouls :: Main.WinningTeamStats -> GHC.Types.Int
   RecSel Left Main.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLLLS),1*U(A,A,A,A,A,A,A,A,A,A,A,1*U(U))>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.WinningTeamStats) ->
-                 case ds1 of wild { Main.WinningTeamStats ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ->
-                 ds13 }) -}
-469b01d3541ee841802da9cde35fb78e
+                (\ (ds :: Main.WinningTeamStats) ->
+                 case ds of wild { Main.WinningTeamStats ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds12 }) -}
+ca1cab7b5bec6416ed5fb640d56f3d50
   freeTAtt :: Main.WinningTeamStats -> GHC.Types.Int
   RecSel Left Main.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLSLL),1*U(A,A,A,A,A,A,A,A,A,1*U(U),A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.WinningTeamStats) ->
-                 case ds1 of wild { Main.WinningTeamStats ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ->
-                 ds11 }) -}
-013a75d160158bf43fa7b1ff779421c7
+                (\ (ds :: Main.WinningTeamStats) ->
+                 case ds of wild { Main.WinningTeamStats ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds10 }) -}
+d20cd78c3d8971bc2c163782160938ae
   freeTMade :: Main.WinningTeamStats -> GHC.Types.Int
   RecSel Left Main.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLLSL),1*U(A,A,A,A,A,A,A,A,A,A,1*U(U),A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.WinningTeamStats) ->
-                 case ds1 of wild { Main.WinningTeamStats ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ->
-                 ds12 }) -}
-935b60dee4208864ece941b8b131663e
+                (\ (ds :: Main.WinningTeamStats) ->
+                 case ds of wild { Main.WinningTeamStats ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds11 }) -}
+8aa91ee9883e8e52dc58fee11dd59d5b
   ft_pct :: Main.GameResult -> GHC.Types.Float
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLLLLLLLLLSLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U),A,A,A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds19 }) -}
-b04395f0245235311316ecbf69f32571
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds18 }) -}
+ea12de47495db7b587bcf43dc8396ea4
   fta :: Main.GameResult -> GHC.Types.Int
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLLLLLLLLSLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U),A,A,A,A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds18 }) -}
-c9eb92cbf70912a59d048ac80af067ee
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds17 }) -}
+f4d2428133b1edf6f9a41be4eb8981ed
   ftm :: Main.GameResult -> GHC.Types.Int
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLLLLLLLSLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U),A,A,A,A,A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds17 }) -}
-c7c2e7bc34bbb2c790c1bad78a443cb3
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds16 }) -}
+cf09c4a3125411ab06e5706dc3c75175
   game_ID :: Main.GameResult -> GHC.Base.String
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LSLLLLLLLLLLLLLLLLLLLLLLLLL),1*U(A,1*U,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds3 }) -}
-29947ac977103be634aa808db662628b
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds2 }) -}
+8ef3bf385ce03ebee4d7c7076ece2ae0
   game_date :: Main.GameResult -> GHC.Base.String
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLSLLLLLLLLLLLLLLLLLLLLLLLL),1*U(A,A,1*U,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds4 }) -}
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds3 }) -}
 71c5c37ef5b10117805563cc550ac2e4
   getJSON :: GHC.Types.IO Data.ByteString.Lazy.Internal.ByteString
   {- Unfolding: (Network.HTTP.Conduit.simpleHttp
@@ -7469,15 +7731,15 @@ c7c2e7bc34bbb2c790c1bad78a443cb3
   jsonURL :: GHC.Base.String
   {- Unfolding: (GHC.CString.unpackCString#
                    "http://stats.nba.com/stats/teamgamelog/?Season=2015-16&SeasonType=Regular%20Season&TeamID=1610612747"#) -}
-fdb83dbc860d8ba10cfee452faeba4f2
+221d6792fa3ced965dcb9f7bf570cfda
   l :: Main.GameResult -> GHC.Types.Int
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLSLLLLLLLLLLLLLLLLLLLL),1*U(A,A,A,A,A,A,1*U(U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds8 }) -}
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds7 }) -}
 d9c0dee8a685c5ed422401aaa63f23bf
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
@@ -7496,128 +7758,143 @@ b08d228f4059532a99441778635cdde9
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
-b7e910ca3d68fafe9efbadb0ca78609a
+7fb852bb458c24bc562459806b5064cc
   matchup :: Main.GameResult -> GHC.Base.String
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLSLLLLLLLLLLLLLLLLLLLLLLL),1*U(A,A,A,1*U,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds5 }) -}
-081a44982373c0b2e7d6030d639e6596
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds4 }) -}
+2db5a38d018ac688637b7887609139f6
   min :: Main.GameResult -> GHC.Types.Int
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLSLLLLLLLLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,1*U(U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds10 }) -}
-4734003d5f8b068f57f5c1f0b176cb69
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds9 }) -}
+1eda230b9529dee659055b82a88b042d
   offReb :: Main.WinningTeamStats -> GHC.Types.Int
   RecSel Left Main.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLSLLLLLL),1*U(A,A,A,A,A,1*U(U),A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.WinningTeamStats) ->
-                 case ds1 of wild { Main.WinningTeamStats ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ->
-                 ds7 }) -}
-6055d0c215bbf2a1373c5cf4e8068db1
+                (\ (ds :: Main.WinningTeamStats) ->
+                 case ds of wild { Main.WinningTeamStats ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds6 }) -}
+773e6bad2d18c5f55460a7c851e67c6d
   oreb :: Main.GameResult -> GHC.Types.Int
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLLLLLLLLLLSLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U),A,A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds20 }) -}
-c3427f3b79d47ea496723dd42b843b73
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds19 }) -}
+0c7955fe2cc656c43752b71a2cfa4ae8
+  parameters :: Main.WholeObject -> Data.Aeson.Types.Internal.Object
+  RecSel Left Main.WholeObject
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LSL),1*U(A,1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Main.WholeObject) ->
+                 case ds of wild { Main.WholeObject ds1 ds2 ds3 -> ds2 }) -}
+f509d99442966740e7232d0e9cacd757
   pf :: Main.GameResult -> GHC.Types.Int
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLLLLLLLLLLLLLLLLLSL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U),A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds27 }) -}
-64ea1257dd77b28f4a0890aabece2b89
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds26 }) -}
+7b2a904be42b89ab49016d1a8391dea8
   pointDiff :: Main.WinningTeamStats -> GHC.Types.Int
   RecSel Left Main.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(SLLLLLLLLLLL),1*U(1*U(U),A,A,A,A,A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.WinningTeamStats) ->
-                 case ds1 of wild { Main.WinningTeamStats ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ->
-                 ds2 }) -}
-6ba699e0aa72a255b544fd7899783faa
+                (\ (ds :: Main.WinningTeamStats) ->
+                 case ds of wild { Main.WinningTeamStats ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds1 }) -}
+0696b04549244a00d402d7766392b580
   pts :: Main.GameResult -> GHC.Types.Int
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLLLLLLLLLLLLLLLLLLS),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U))>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds28 }) -}
-f5d4740c3c20c66784544e60dfcb3006
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds27 }) -}
+ad74841ebe740f6f8425bf91db7965c8
   reb :: Main.GameResult -> GHC.Types.Int
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLLLLLLLLLLLLSLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U),A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds22 }) -}
-1432e824cc5c7cb0eb32d53a5e6766fe
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds21 }) -}
+a2fb05ff815e926b5308c65ce2b7fa9b
   rebounds :: Main.WinningTeamStats -> GHC.Types.Int
   RecSel Left Main.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLSLLLLLLLLL),1*U(A,A,1*U(U),A,A,A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.WinningTeamStats) ->
-                 case ds1 of wild { Main.WinningTeamStats ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ->
-                 ds4 }) -}
-c06b67a9bc4a6406af5c1b0d6bf61dfa
+                (\ (ds :: Main.WinningTeamStats) ->
+                 case ds of wild { Main.WinningTeamStats ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds3 }) -}
+69fa2ff01ae3ac74fbad74d1a8ec2e78
+  resource :: Main.WholeObject -> GHC.Base.String
+  RecSel Left Main.WholeObject
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SLL),1*U(1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Main.WholeObject) ->
+                 case ds of wild { Main.WholeObject ds1 ds2 ds3 -> ds1 }) -}
+487f08a3588cc9e25303db8e66e0c8c0
   resultSets :: Main.WholeObject -> Data.Aeson.Types.Internal.Array
   RecSel Left Main.WholeObject
-  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(1*U(U,U,U))>m,
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLS),1*U(A,A,1*U(U,U,U))>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.WholeObject) ->
-                 case ds1 of wild { Main.WholeObject ds2 -> ds2 }) -}
-876c75c73d3ef23daad0a7b4f857b28f
+                (\ (ds :: Main.WholeObject) ->
+                 case ds of wild { Main.WholeObject ds1 ds2 ds3 -> ds3 }) -}
+5ff1e43ce6038fea07671ea622eaad42
   rowSet :: Main.ResultSet -> [Main.GameResult]
   RecSel Left Main.ResultSet
   {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(1*U)>,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.ResultSet) ->
-                 case ds1 of wild { Main.ResultSet ds2 -> ds2 }) -}
-9dcdaca157584a315e411b4f58992e4e
+                (\ (ds :: Main.ResultSet) ->
+                 case ds of wild { Main.ResultSet ds1 -> ds1 }) -}
+aebe227451fedc12dac5ea4ff6ec5794
   steals :: Main.WinningTeamStats -> GHC.Types.Int
   RecSel Left Main.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLSLLLLLLL),1*U(A,A,A,A,1*U(U),A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.WinningTeamStats) ->
-                 case ds1 of wild { Main.WinningTeamStats ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ->
-                 ds6 }) -}
-d2e9903e1392279a24b48e9ca2734f84
+                (\ (ds :: Main.WinningTeamStats) ->
+                 case ds of wild { Main.WinningTeamStats ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds5 }) -}
+e7aa0146260698fed7ddbcae62cc2c80
   stl :: Main.GameResult -> GHC.Types.Int
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLLLLLLLLLLLLLLSLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U),A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds24 }) -}
-f831096a1b67345033c24482ab52f2d3
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds23 }) -}
+3cf78d4bed8cdb9fa0ac4e289efe680e
   team_ID :: Main.GameResult -> GHC.Types.Int
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(SLLLLLLLLLLLLLLLLLLLLLLLLLL),1*U(1*U(U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds2 }) -}
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds1 }) -}
 72d3da228ab303199c72c759e9455653
   teams :: [Main.Teams]
   {- Strictness: m2,
@@ -8168,69 +8445,69 @@ ce9260ad43688db1621bc66d7abc998a
 5d543ee5c787f9c8dbe61b5437ca04b8
   teams99 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "LAC"#) -}
-a75d5872da527a6899daa7eaa52dcfda
+4b41adc08a8c90229bc9305d25299ded
   threeFGA :: Main.WinningTeamStats -> GHC.Types.Int
   RecSel Left Main.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLSLLLL),1*U(A,A,A,A,A,A,A,1*U(U),A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.WinningTeamStats) ->
-                 case ds1 of wild { Main.WinningTeamStats ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ->
-                 ds9 }) -}
-718324db99e4234903a3fff3d4bc1a60
+                (\ (ds :: Main.WinningTeamStats) ->
+                 case ds of wild { Main.WinningTeamStats ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds8 }) -}
+2fd86c33249680407a97a3ba2c3d1b75
   threeFGM :: Main.WinningTeamStats -> GHC.Types.Int
   RecSel Left Main.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLSLLL),1*U(A,A,A,A,A,A,A,A,1*U(U),A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.WinningTeamStats) ->
-                 case ds1 of wild { Main.WinningTeamStats ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ->
-                 ds10 }) -}
-c5d5f6bd6e96fde36506d90660746111
+                (\ (ds :: Main.WinningTeamStats) ->
+                 case ds of wild { Main.WinningTeamStats ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds9 }) -}
+f4a697a345c2067c3dd7188e4bb1c819
   tov :: Main.GameResult -> GHC.Types.Int
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLLLLLLLLLLLLLLLLLLSLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U),A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds26 }) -}
-7b60f78d7ca52497aaa4647d875122e9
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds25 }) -}
+ea29965de162cffa92f0757326ddfde5
   turnovers :: Main.WinningTeamStats -> GHC.Types.Int
   RecSel Left Main.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLSLLLLL),1*U(A,A,A,A,A,A,1*U(U),A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.WinningTeamStats) ->
-                 case ds1 of wild { Main.WinningTeamStats ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ->
-                 ds8 }) -}
-fae9984e087c7a8741200034c0f81eba
+                (\ (ds :: Main.WinningTeamStats) ->
+                 case ds of wild { Main.WinningTeamStats ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds7 }) -}
+878925cec0752280919bd3e901cb49c6
   w :: Main.GameResult -> GHC.Types.Int
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLSLLLLLLLLLLLLLLLLLLLLL),1*U(A,A,A,A,A,1*U(U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds7 }) -}
-de4b9bbdad2bd961a8523cc609eba7ed
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds6 }) -}
+dd0070ead32d4cffacf74dfaccc2cdd4
   w_pct :: Main.GameResult -> GHC.Types.Float
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLLLLSLLLLLLLLLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,1*U(U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds9 }) -}
-d0c135b6399cda95f46015d25127f670
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds8 }) -}
+79c0b3bb87a5b31b0694f09584e3d3be
   wl :: Main.GameResult -> GHC.Types.Char
   RecSel Left Main.GameResult
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLSLLLLLLLLLLLLLLLLLLLLLL),1*U(A,A,A,A,1*U(U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (ds1 :: Main.GameResult) ->
-                 case ds1 of wild { Main.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
-                 ds6 }) -}
+                (\ (ds :: Main.GameResult) ->
+                 case ds of wild { Main.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 ds5 }) -}
 instance GHC.Classes.Eq [Main.GameLog] = Main.$fEqGameLog
 instance GHC.Classes.Eq [Main.GameResult] = Main.$fEqGameResult
 instance GHC.Classes.Eq [Main.ResultSet] = Main.$fEqResultSet

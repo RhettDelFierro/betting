@@ -40,7 +40,7 @@ main = do
   d <- (eitherDecode <$> getJSON) :: IO (Either String (Maybe WholeObject)) --decode lifts over IO to hit the B.ByteString contained in the IO.
   case d of
     Left err -> putStrLn err
-    Right ps -> print ps
+    Right ps -> putStrLn (show ps)
   --print d --this worked to print the Maybe Value
   --print $ (V.toList . parseTuple) decode d
 --
@@ -84,11 +84,19 @@ instance FromJSON GameResult where
   -- That's all!
   --return a
 
-data WholeObject = WholeObject { resultSets :: Array } deriving (Show, Generic, Eq, Read)
+data WholeObject = WholeObject { resource   :: String
+                               , parameters :: Object
+                               , resultSets :: Array
+                               } deriving (Show, Generic, Eq, Read)
 
 instance FromJSON WholeObject where
-    parseJSON (Object o) = WholeObject <$>
-                          ((o .: "resultSets") >>= (.: "rowSet"))
+    parseJSON (Object o) =
+      WholeObject <$>
+      (o .: "resource")   <*>
+      (o .: "parameters") <*>
+      (o .: "resultSets")
+
+--                      <*> ((o .: "resultSets") >>= (.: "rowSet"))
 
 --all of these are differentials.
 data WinningTeamStats = WinningTeamStats { pointDiff    :: Int
