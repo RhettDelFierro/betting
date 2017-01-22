@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings, DeriveGeneric, RecordWildCards, LambdaCase #-}
+{-# LANGUAGE OverloadedStrings, DeriveGeneric, RecordWildCards, LambdaCase, FlexibleInstances #-}
 
 module Main where
 
@@ -45,27 +45,35 @@ main = do
   --print $ (V.toList . parseTuple) decode d
 --
 
-data GameLog = GameLog [GameResult] deriving (Show, Generic, Eq, Read)
+--data GameLog = GameLog [GameResult] deriving (Show, Generic, Eq, Read)
 
-instance FromJSON GameResult where
-    parseJSON jsn = do
-      GameResult {..} <- parseJSON jsn
-      return GameResult {..}
+--instance FromJSON GameResult where
+--    parseJSON jsn = do
+--      GameResult {..} <- parseJSON jsn
+--      return GameResult {..}
 
-newtype ResultSets = ResultSets [Results] deriving (Show, Eq, Read)
+--newtype ResultSets = ResultSets ResultSet deriving (Show, Eq, Read)
 
-data Results = Results { rowSet :: Object } deriving (Show, Eq, Read)
+data ResultSets = ResultSets { resultSet :: Array } deriving (Show, Eq, Read)
+
+
 
 instance FromJSON ResultSets where
-  parseJSON (Object o) =
-    ResultSets <$> ((o .: "resultSets") >>= (.: "rowSet"))
-  parseJSON _ = mzero
+  parseJSON (Object o) = ResultSets <$> (o .: "resultSets")
+                         --ResultSets <$> ((o .: "resultSets") >>= (.: "rowSet"))
+  --parseJSON _ = mzero
 
-instance FromJSON Results where
-  parseJSON jsn = do
-    o <- parseJSON jsn
-    return o
-  parseJSON _ = mzero
+
+
+--instance FromJSON [ResultSet] where
+--  parseJSON arr = do
+--      obj <- parseJSON arr
+--      return obj
+--
+----this is the single Results
+--instance FromJSON ResultSet where
+--  parseJSON (Object o) = (o .: "rowSet")
+--  parseJSON _ = mzero
 
 --o is [{"names":...},{"headers":[Headers]},{"rowSet",[GameLogs]}]
 
