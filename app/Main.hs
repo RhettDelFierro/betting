@@ -54,8 +54,13 @@ main = do
 
 --newtype ResultSets = ResultSets ResultSet deriving (Show, Eq, Read)
 
-data ResultSets = ResultSets { resultSet :: Array } deriving (Show, Eq, Read)
+data ResultSet = ResultSet { rowSet :: Array } deriving (Show, Eq, Read)
+data ResultSets = ResultSets [ResultSet] deriving (Show, Eq, Read)
+--data ResultSet  = ResultSet  { rowSet :: Object}    deriving (Show, Eq, Read)
 
+--
+--instance FromJSON ResultSets where
+--  parseJSON (Object o) = ResultSets <$> (o .: "resultSets")
 
 
 instance FromJSON ResultSets where
@@ -63,6 +68,8 @@ instance FromJSON ResultSets where
                          --ResultSets <$> ((o .: "resultSets") >>= (.: "rowSet"))
   --parseJSON _ = mzero
 
+instance FromJSON ResultSet where
+  parseJSON (Object o) = ResultSet <$> (o .: "rowSet")
 
 
 --instance FromJSON [ResultSet] where
