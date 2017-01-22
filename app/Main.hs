@@ -53,15 +53,14 @@ main = do
 --      return GameResult {..}
 
 --newtype ResultSets = ResultSets ResultSet deriving (Show, Eq, Read)
-
-data ResultSet = ResultSet { rowSet :: Array } deriving (Show, Eq, Read)
+data GameRe     = GameRe { gameRe :: Array } deriving (Show, Eq, Read)
+data ResultSet  = ResultSet [GameRe] deriving (Show, Eq, Read)
+--data ResultSet = ResultSet { rowSet :: Array } deriving (Show, Eq, Read)
 data ResultSets = ResultSets [ResultSet] deriving (Show, Eq, Read)
 --data ResultSet  = ResultSet  { rowSet :: Object}    deriving (Show, Eq, Read)
 
---
 --instance FromJSON ResultSets where
 --  parseJSON (Object o) = ResultSets <$> (o .: "resultSets")
-
 
 instance FromJSON ResultSets where
   parseJSON (Object o) = ResultSets <$> (o .: "resultSets")
@@ -70,6 +69,11 @@ instance FromJSON ResultSets where
 
 instance FromJSON ResultSet where
   parseJSON (Object o) = ResultSet <$> (o .: "rowSet")
+
+instance FromJSON GameRe where
+  parseJSON arr = do
+    blah <- parseJSON arr
+    return $ GameRe blah
 
 
 --instance FromJSON [ResultSet] where
@@ -98,8 +102,6 @@ data WinningTeamStats = WinningTeamStats { pointDiff    :: Int
                                          , freeTMade    :: Int    --freethrows made
                                          , fouls        :: Int    --fouls commited
                                          } deriving (Show, Eq, Ord)
-
-
 
 type TeamName  = String
 type Team_ID   = Int
