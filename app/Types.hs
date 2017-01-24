@@ -1,24 +1,11 @@
-Just (Object (fromList [("resource",String "teamgamelog"),
-     ("parameters",Object (fromList [("LeagueID",Null),("DateFrom",Null),("Season",String "2015-16"),("TeamID",Number 1.610612747e9),("DateTo",Null),("SeasonType",String "Regular Season")]
-                          )
+{-# LANGUAGE OverloadedStrings, DeriveGeneric, RecordWildCards, LambdaCase, FlexibleInstances, NamedFieldPuns, DataKinds #-}
 
-     ),
-     ("resultSets",Array [Object (fromList [("headers",Array [String "Team_ID",String "Game_ID",String "GAME_DATE",String "MATCHUP",String "WL",String "W",String "L",String "W_PCT",String "MIN",String "FGM",String "FGA",String "FG_PCT",String "FG3M",String "FG3A",String "FG3_PCT",String "FTM",String "FTA",String "FT_PCT",String "OREB",String "DREB",String "REB",String "AST",String "STL",String "BLK",String "TOV",String "PF",String "PTS"
-                                                             ]
-                                            )
-                                            ,("name",String "TeamGameLog")
-                                            ,("rowSet",Array [Array [Number 1.610612747e9,String "0021501228",String "APR 13, 2016",String "LAL vs. UTA",String "W",Number 17.0,Number 65.0,Number 0.207,Number 240.0,Number 41.0,Number 85.0,Number 0.482,Number 6.0,Number 25.0,Number 0.24,Number 13.0,Number 15.0,Number 0.867,Number 8.0,Number 39.0,Number 47.0,Number 19.0,Number 6.0,Number 3.0,Number 13.0,Number 17.0,Number 101.0],
-                                                              Array [Number 1.610612747e9,String "0021501209",String "APR 11, 2016",String "LAL @ OKC",String "L",Number 16.0,Number 65.0,Number 0.198,Number 240.0,Number 23.0,Number 81.0,Number 0.284,Number 7.0,Number 31.0,Number 0.226,Number 26.0,Number 30.0,Number 0.867,Number 10.0,Number 38.0,Number 48.0,Number 15.0,Number 8.0,Number 1.0,Number 15.0,Number 20.0,Number 79.0],
-                                                              Array [Number 1.610612747e9,String "0021501195",String "APR 10, 2016",String "LAL @ HOU",String "L",Number 16.0,Number 64.0,Number 0.2,Number 240.0,Number 41.0,Number 83.0,Number 0.494,Number 12.0,Number 28.0,Number 0.429,Number 16.0,Number 19.0,Number 0.842,Number 7.0,Number 33.0,Number 40.0,Number 25.0,Number 10.0,Number 3.0,Number 18.0,Number 15.0,Number 110.0],
-                                                              Array [Number 1.610612747e9,String "0021501184",String "APR 08, 2016",String "LAL @ NOP",String "L",Number 16.0,Number 63.0,Number 0.203,Number 240.0,Number 34.0,Number 81.0,Number 0.42,Number 11.0,Number 24.0,Number 0.458,Number 23.0,Number 27.0,Number 0.852,Number 10.0,Number 24.0,Number 34.0,Number 18.0,Number 9.0,Number 5.0,Number 13.0,Number 23.0,Number 102.0]
-                                                             ]
-                                            ])
-                                            ]
-                                  )
-                          ]
-     )]
-            )
-     )
+module Types where
+
+type TeamName  = String
+type Team_ID   = Int
+type TeamABBR  = String
+type Teams    = (TeamName,Team_ID, TeamABBR)
 
 data WinningTeamStats = WinningTeamStats { pointDiff    :: Int
                                          , fieldGoalPct :: Float
@@ -33,4 +20,68 @@ data WinningTeamStats = WinningTeamStats { pointDiff    :: Int
                                          , freeTAtt     :: Int    --freethrows attempted
                                          , freeTMade    :: Int    --freethrows made
                                          , fouls        :: Int    --fouls commited
-                                         } deriving (Show, Eq, Ord)
+                                         } deriving (Show, Eq, Ord, Read)
+
+data GameResult = GameResult { team_ID   :: Int
+                             , game_ID   :: String
+                             , game_date :: String
+                             , matchup   :: String
+                             , wl        :: Char
+                             , wi         :: Int
+                             , lo         :: Int
+                             , w_pct     :: Float
+                             , min       :: Int
+                             , fgm       :: Int
+                             , fga       :: Int
+                             , fg_pct    :: Float
+                             , fg3m      :: Int
+                             , fg3a      :: Int
+                             , fg3_pct   :: Float
+                             , ftm       :: Int
+                             , fta       :: Int
+                             , ft_pct    :: Float
+                             , oreb      :: Int
+                             , dreb      :: Int
+                             , reb       :: Int
+                             , ast       :: Int
+                             , stl       :: Int
+                             , blk       :: Int
+                             , tov       :: Int
+                             , pf        :: Int
+                             , pts       :: Int
+                             } deriving (Show, Eq, Read, Ord)
+
+teams :: [Teams]
+teams = [ ("Atlanta Hawks", 1610612737, "ATL")
+        , ("Boston Celtics", 1610612738, "BOS")
+        , ("Brooklyn Nets", 1610612751, "BKN")
+        , ("Charlotte Hornets", 1610612766, "CHA")
+        , ("Chicago Bulls", 1610612741, "CHI")
+        , ("Cleveland Cavaliers", 1610612739, "CLE")
+        , ("Dallas Mavericks", 1610612742, "DAL")
+        , ("Denver Nuggets", 1610612743, "DEN")
+        , ("Detroit Pistons", 1610612765, "DET")
+        , ("Golden State Warriors", 1610612744, "GSW")
+        , ("Houston Rockets", 1610612745, "HOU")
+        , ("Indiana Pacers", 1610612754, "IND")
+        , ("Los Angeles Clippers", 1610612746, "LAC")
+        , ("Los Angeles Lakers", 1610612747, "LAL")
+        , ("Memphis Grizzlies", 1610612763, "MEM")
+        , ("Miami Heat", 1610612748, "MIA")
+        , ("Milwaukee Bucks", 1610612749, "MIL")
+        , ("Minnesota Timberwolves", 1610612750, "MIN")
+        , ("New Orleans Pelicans", 1610612740, "NOP")
+        , ("New York Knicks", 1610612752, "NYK")
+        , ("Oklahoma City Thunder",	1610612760, "OKC")
+        , ("Orlando Magic", 1610612753, "ORL")
+        , ("Philadelphia 76ers", 1610612755, "PHI")
+        , ("Phoenix Suns", 1610612756, "PHX")
+        , ("Portland Trail Blazers", 1610612757, "POR")
+        , ("Sacramento Kings", 1610612758, "SAC")
+        , ("San Antonio Spurs", 1610612759, "SAS")
+        , ("Toronto Raptors", 1610612761, "TOR")
+        , ("Utah Jazz", 1610612762, "UTA")
+        , ("Washington Wizards", 1610612764, "WAS")
+        ]
+
+data GameLogs = GameLogs [(Team_ID,[GameResult])] deriving (Show, Eq, Read, Ord)
