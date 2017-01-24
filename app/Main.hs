@@ -9,38 +9,67 @@ import qualified Data.Map as M
 import qualified Data.ByteString.Lazy.Char8 as L
 --import qualified Data.ByteString.Lazy as B
 import Data.Aeson.Types
-import Data.Text as T
+import qualified Data.Text as T
+import Data.Traversable as DT
 import Control.Applicative
 import Control.Monad
+import Control.Monad.Trans
 import qualified Data.ByteString.Lazy as B
 import Network.HTTP.Conduit (simpleHttp)
 import qualified Data.List as DL
 import Types
 
+teamURLS :: [String]
+teamURLS = fmap makeURL teams
+    where makeURL = (\(_,team_id,_) -> "http://stats.nba.com/stats/teamgamelog/?Season=2015-16&SeasonType=Regular%20Season&TeamID=" ++ show team_id)
+
 jsonURL :: String
 jsonURL = "http://stats.nba.com/stats/teamgamelog/?Season=2015-16&SeasonType=Regular%20Season&TeamID=1610612747"
 
-getJSON :: IO B.ByteString
-getJSON = simpleHttp jsonURL
+getJSON :: IO [B.ByteString]
+getJSON = mapM simpleHttp teamURLS
 
 main :: IO ()
 main = do
-  d <- (eitherDecode <$> getJSON) :: IO (Either String (Maybe FullPage)) --decode lifts over IO to hit the B.ByteString contained in the IO.
+  d <- (eitherDecode <$> getJSON) :: IO (Either String ([Maybe FullPage])) --decode lifts over IO to hit the B.ByteString contained in the IO.
   case d of
     Left err -> putStrLn err
-    Right ps -> putStrLn (show $ showResult ps)
+    Right pss -> case pss of
+                 Just ps  -> putStrLn $ show $ fmap showResult ps
+                 Nothing -> putStrLn "Maybe did not go through"
     --Right ps -> putStrLn (show ps)
 --    Right ps -> (\case Just x -> putStrLn (show $ rowSet $ resultSets x)
 --                       _      -> putStrLn "failed")
     --Right ps -> do
 --        rowSet resultSets ps
 
-showResult :: Maybe FullPage -> Maybe [GameResult]
-showResult (Just fp) = Just (rowSet . DL.head . resultSets $ fp)
-showResult _         = Nothing
+showResult :: FullPage -> [GameResult]
+showResult = (rowSet . DL.head . resultSets)
 
-data ResultSets = ResultSets { rowSet :: [GameResult] } deriving (Show, Eq, Read)
-data FullPage = FullPage { resultSets :: [ResultSets]} deriving (Show, Eq, Read)
+
+
+--gatherResults :: [GameResult] -> GameLogs
+--gatherResults gr = case gr of
+--                     Just x ->
+--                     Nothing ->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+data ResultSets = ResultSets { rowSet :: [GameResult] }     deriving (Show, Eq, Read)
+data FullPage   = FullPage   { resultSets :: [ResultSets] } deriving (Show, Eq, Read)
 
 instance FromJSON FullPage where
   parseJSON = withObject "Result Sets" $ \o -> do
