@@ -42,6 +42,13 @@
   (major1) == 2 && (major2) <  1 || \
   (major1) == 2 && (major2) == 1 && (minor) <= 11)
 
+/* package lens-aeson-1.0.0.5 */
+#define VERSION_lens_aeson "1.0.0.5"
+#define MIN_VERSION_lens_aeson(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  0 || \
+  (major1) == 1 && (major2) == 0 && (minor) <= 0)
+
 /* package servant-0.8.1 */
 #define VERSION_servant "0.8.1"
 #define MIN_VERSION_servant(major1,major2,minor) (\
