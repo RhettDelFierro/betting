@@ -13,15 +13,20 @@ import qualified Data.Text as T
 import Data.Traversable as DT
 import Control.Applicative
 import Control.Monad
-import Control.Monad.Trans
 import qualified Data.ByteString.Lazy as B
 import Network.HTTP.Conduit (simpleHttp)
 import qualified Data.List as DL
 import Types
 
+
+--teamURLS :: [String]
+--teamURLS = fmap makeURL [("sf;kjsf",1610612737,"salkdjflkasdflkjasdf"),("sdakhfkadsjhf",1610612741,"ksdahjfkasdjf")]
+--    where makeURL = (\(_,team_id,_) -> "http://stats.nba.com/stats/teamgamelog/?Season=2015-16&SeasonType=Regular%20Season&TeamID=" ++ show team_id)
+
 teamURLS :: [String]
 teamURLS = fmap makeURL teams
     where makeURL = (\(_,team_id,_) -> "http://stats.nba.com/stats/teamgamelog/?Season=2015-16&SeasonType=Regular%20Season&TeamID=" ++ show team_id)
+
 
 jsonURL :: String
 jsonURL = "http://stats.nba.com/stats/teamgamelog/?Season=2015-16&SeasonType=Regular%20Season&TeamID=1610612747"
@@ -29,19 +34,35 @@ jsonURL = "http://stats.nba.com/stats/teamgamelog/?Season=2015-16&SeasonType=Reg
 getJSON :: IO [B.ByteString]
 getJSON = mapM simpleHttp teamURLS
 
+--main :: IO ()
+--main = do
+--  d <- (eitherDecode <$> getJSON) :: IO (Either String ([Maybe FullPage])) --decode lifts over IO to hit the B.ByteString contained in the IO.
+--  case d of
+--    Left err -> putStrLn err
+--    Right pss -> case pss of
+--                 Just ps  -> putStrLn $ show $ fmap showResult ps
+--                 Nothing -> putStrLn "Maybe did not go through"
+
 main :: IO ()
 main = do
-  d <- (eitherDecode <$> getJSON) :: IO (Either String ([Maybe FullPage])) --decode lifts over IO to hit the B.ByteString contained in the IO.
-  case d of
-    Left err -> putStrLn err
-    Right pss -> case pss of
-                 Just ps  -> putStrLn $ show $ fmap showResult ps
-                 Nothing -> putStrLn "Maybe did not go through"
-    --Right ps -> putStrLn (show ps)
---    Right ps -> (\case Just x -> putStrLn (show $ rowSet $ resultSets x)
---                       _      -> putStrLn "failed")
-    --Right ps -> do
---        rowSet resultSets ps
+  --d <- (getJSON >>= (\arr -> return (eitherDecode <$> arr))) :: IO (Either String ([Maybe FullPage]))
+  ds <- getJSON
+  d <- return (eitherDecode <$> ds) :: IO [Either String (Maybe FullPage)]
+--  --d <- (eitherDecode <$> ds) :: IO (Either String ([Maybe FullPage])) --decode lifts over IO to hit the B.ByteString contained in the IO.
+ -- putStrLn . show $ d
+  putStrLn $ show (fmap check d)
+                   where check = (\case Right ds -> case ds of
+                                                        Just x  -> show . showResult $ x
+                                                        Nothing -> "Maybe did not go through"
+                                        Left err -> err)
+
+--  case d of
+--    Left err -> putStrLn err
+--    Right pss -> case pss of
+--                   Just pss ->
+--                   Nothing -> putStrLn "Maybe did not go through."
+--                 Just ps  -> putStrLn $ show $ fmap showResult ps
+--                 Nothing -> putStrLn "Maybe did not go through"
 
 showResult :: FullPage -> [GameResult]
 showResult = (rowSet . DL.head . resultSets)
