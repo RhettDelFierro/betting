@@ -61,20 +61,20 @@ main = do
 --data ResultSets = ResultSets [RowSet] deriving (Show, Eq, Read)
 --data ResultSet  = ResultSet  { rowSet :: Object}    deriving (Show, Eq, Read)
 --newtype GameResults = GameResults  deriving (Show, Eq, Read)
-data ResultSets     = ResultSets { name :: String, headers :: [String], rowSet :: [GameResult] } deriving (Show, Eq, Read)
-data FullPage = FullPage { resultSets :: [ResultSets], resource :: String, parameters :: Object } deriving (Show, Eq, Read)
+data ResultSets     = ResultSets { rowSet :: [GameResult] } deriving (Show, Eq, Read)
+data FullPage = FullPage { resultSets :: [ResultSets]} deriving (Show, Eq, Read)
 
 instance FromJSON FullPage where
   parseJSON = withObject "Result Sets" $ \o -> do
-      resource    <- o .: "resource"
-      parameters  <- o .: "parameters"
+--      resource    <- o .: "resource"
+--      parameters  <- o .: "parameters"
       resultSets  <- o .: "resultSets"
       return FullPage{..}
 
 instance FromJSON ResultSets where
   parseJSON = withObject "Row Sets" $ \o -> do
-      name    <- o .: "name"
-      headers <- o .: "headers"
+--      name    <- o .: "name"
+--      headers <- o .: "headers"
       rowSet  <- o .: "rowSet"
       return ResultSets{..}
 
