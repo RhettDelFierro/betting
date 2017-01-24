@@ -2,7 +2,6 @@
 
 module Main where
 
---import System.Environment
 import Data.Aeson
 import Data.Aeson.Lens
 import qualified Data.Map as M
@@ -15,10 +14,6 @@ import Control.Applicative
 import Control.Monad
 import qualified Data.ByteString.Lazy as B
 import Network.HTTP.Conduit (simpleHttp)
-import GHC.Generics
-import qualified Data.Vector as V
-import qualified Data.HashMap.Strict as HM
-
 import qualified Data.List as DL
 
 jsonURL :: String
@@ -27,40 +22,14 @@ jsonURL = "http://stats.nba.com/stats/teamgamelog/?Season=2015-16&SeasonType=Reg
 getJSON :: IO B.ByteString
 getJSON = simpleHttp jsonURL
 
---main :: IO ()
---main = do
---  d <- (eitherDecode <$> getJSON) :: IO (Either String ResultSet)
---  case d of
---    Left err -> putStrLn err
---    Right res -> print res
 main :: IO ()
 main = do
   d <- (eitherDecode <$> getJSON) :: IO (Either String (Maybe FullPage)) --decode lifts over IO to hit the B.ByteString contained in the IO.
---  let Just v = (decode getJSON :: IO (Maybe Value))
---  print v
 
   case d of
     Left err -> putStrLn err
     Right ps -> putStrLn (show ps)
-  --print d --this worked to print the Maybe Value
-  --print $ (V.toList . parseTuple) decode d
---
 
---data GameLog = GameLog [GameResult] deriving (Show, Generic, Eq, Read)
-
---instance FromJSON GameResult where
---    parseJSON jsn = do
---      GameResult {..} <- parseJSON jsn
---      return GameResult {..}
-
---newtype ResultSets = ResultSets ResultSet deriving (Show, Eq, Read)
---data GameRe     = GameRe { gameRe :: Array } deriving (Show, Eq, Read)
---newtype GameResultArr = GameResultArr [GameResult] deriving (Show, Eq, Read)
---newtype RowSet  = RowSet [GameResult] deriving (Show, Eq, Read)
---data ResultSet = ResultSet { rowSet :: Array } deriving (Show, Eq, Read)
---data ResultSets = ResultSets [RowSet] deriving (Show, Eq, Read)
---data ResultSet  = ResultSet  { rowSet :: Object}    deriving (Show, Eq, Read)
---newtype GameResults = GameResults  deriving (Show, Eq, Read)
 data ResultSets     = ResultSets { rowSet :: [GameResult] } deriving (Show, Eq, Read)
 data FullPage = FullPage { resultSets :: [ResultSets]} deriving (Show, Eq, Read)
 
@@ -111,178 +80,7 @@ instance FromJSON GameResult where
     pts <- parseJSON a1
     return GameResult{..}
 
-      --[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,a1] <- arr
---      x <- arr
---      return $ GameResults <$> arr
-      --GameResult <$> a <*> b <*> c <*> d <*> e <*> f <*> g <*> h <*> i <*> j <*> k <*> l <*> m <*> n <*> o <*> p <*> q <*> r <*> s <*> t <*> u <*> v <*> w <*> x <*> y <*> z <*> a1
 
---instance FromJSON ResultSets where
---  parseJSON (Object o) = ResultSets <$> (o .: "resultSets")
-
---instance FromJSON ResultSets where
---  parseJSON (Object o) = ResultSets <$> (o .: "resultSets")
---                         --ResultSets <$> ((o .: "resultSets") >>= (.: "rowSet"))
---  --parseJSON _ = mzero
---
---instance FromJSON RowSet where
---  parseJSON (Object o) = RowSet <$> (o .: "rowSet")
---
-----instance FromJSON GameResultArr where
-----  parseJSON arr = GameResultArr <$> parseJSON arr
---
---instance FromJSON GameResult where
---  parseJSON arr = do
---    [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,a1] <- parseJSON arr
---    GameResult <$> a <*> b <*> c <*> d <*> e <*> f <*> g <*> h <*> i <*> j <*> k <*> l <*> m <*> n <*> o <*> p <*> q <*> r <*> s <*> t <*> u <*> v <*> w <*> x <*> y <*> z <*> a1
---     --let boxscore = GameResult a b c d e f g h i j k l m n o p q r s t u v w x y z a1
---        --return boxscore
-
-
---     team_ID <- a
---     game_ID <- b
---     game_date <- c
---     matchup <- d
---     wl <- e
---     w <- f
---     l <- g
---     w_pct <- h
---     min <- i
---     fgm <- j
---     fga <- k
---     fg_pct <- l
---     fg3m <- m
---     fg3a <- n
---     fg3_pct <- o
---     ftm <- p
---     fta <- q
---     ft_pct <- r
---     oreb <- s
---     dreb <- t
---     reb <- u
---     ast <- v
---     stl <- w
---     blk <- x
---     tov <- y
---     pf <- z
---     pts <- a1
---     team_ID <- parseJSON a
---     game_ID <- parseJSON b
---     game_date <- parseJSON c
---     matchup <- parseJSON d
---     wl <- parseJSON e
---     w <- parseJSON f
---     l <- parseJSON g
---     w_pct <- parseJSON h
---     min <- parseJSON i
---     fgm <- parseJSON j
---     fga <- parseJSON k
---     fg_pct <- parseJSON l
---     fg3m <- parseJSON m
---     fg3a <- parseJSON n
---     fg3_pct <- parseJSON o
---     ftm <- parseJSON p
---     fta <- parseJSON q
---     ft_pct <- parseJSON r
---     oreb <- parseJSON s
---     dreb <- parseJSON t
---     reb <- parseJSON u
---     ast <- parseJSON v
---     stl <- parseJSON w
---     blk <- parseJSON x
---     tov <- parseJSON y
---     pf <- parseJSON z
---     pts <- parseJSON a1
---     return GameResult{..}
---     return GameResult { team_ID = team_ID <$> a
---                       }
---makeGameResult :: [Value] -> GameResult
-----makeGameResult arr = do
-----    GameResult{..} <-
---makeGameResult = withArray "array" $ \[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,a1] -> do
---    team_ID <- parseJSON a
---    game_ID <- parseJSON b
---    game_date <- parseJSON c
---    matchup <- parseJSON d
---    wl <- parseJSON e
---    w <- parseJSON f
---    l <- parseJSON g
---    w_pct <- parseJSON h
---    min <- parseJSON i
---    fgm <- parseJSON j
---    fga <- parseJSON k
---    fg_pct <- parseJSON l
---    fg3m <- parseJSON m
---    fg3a <- parseJSON n
---    fg3_pct <- parseJSON o
---    ftm <- parseJSON p
---    fta <- parseJSON q
---    ft_pct <- parseJSON r
---    oreb <- parseJSON s
---    dreb <- parseJSON t
---    reb <- parseJSON u
---    ast <- parseJSON v
---    stl <- parseJSON w
---    blk <- parseJSON x
---    tov <- parseJSON y
---    pf <- parseJSON z
---    pts <- parseJSON a1
---    GameResult{..}
-
---    GameResult { team_ID <$> a
---               , game_ID <$> b
---               , game_date =parseJSON c
---               , matchup <$> d
---               , wl <$> e
---               , w =parseJSON f
---               , l <$> g
---               , w_pct <$> h
---               , min <$> i
---               , fgm <$> j
---               , fga <$> k
---               , fg_pct <$> l
---               , fg3m <$> m
---               , fg3a <$> n
---               , fg3_pct <$> o
---               , ftm <$> p
---               , fta <$> q
---               , ft_pct <$> r
---               , oreb <$> s
---               , dreb <$> t
---               , reb <$> u
---               , ast <$> v
---               , stl <$> w
---               , blk <$> x
---               , tov <$> y
---               , pf <$> z
---               , pts = parsonJSON a1
---               }
-
---instance FromJSON [ResultSet] where
---  parseJSON arr = do
---      obj <- parseJSON arr
---      return obj
---
-----this is the single Results
---instance FromJSON ResultSet where
---  parseJSON (Object o) = (o .: "rowSet")
---  parseJSON _ = mzero
-
---o is [{"names":...},{"headers":[Headers]},{"rowSet",[GameLogs]}]
-
-data WinningTeamStats = WinningTeamStats { pointDiff    :: Int
-                                         , fieldGoalPct :: Float
-                                         , rebounds     :: Int
-                                         --, home         :: Bool
-                                         , assists      :: Int
-                                         , steals       :: Int
-                                         , offReb       :: Int
-                                         , turnovers    :: Int
-                                         , threeFGA     :: Int
-                                         , threeFGM     :: Int    --3p fg%
-                                         , freeTAtt     :: Int    --freethrows attempted
-                                         , freeTMade    :: Int    --freethrows made
-                                         , fouls        :: Int    --fouls commited
-                                         } deriving (Show, Eq, Ord)
 
 type TeamName  = String
 type Team_ID   = Int
@@ -350,33 +148,4 @@ data GameResult = GameResult { team_ID   :: Int
                              , tov       :: Int
                              , pf        :: Int
                              , pts       :: Int
-                             } deriving (Show, Eq, Generic, Read)
-
---data GameResult = GameResult { team_ID   :: Int
---                             , game_ID   :: Int
---                             , game_date :: Int
---                             , matchup   :: Int
---                             , wl        :: Int
---                             , w         :: Int
---                             , l         :: Int
---                             , w_pct     :: Int
---                             , min       :: Int
---                             , fgm       :: Int
---                             , fga       :: Int
---                             , fg_pct    :: Int
---                             , fg3m      :: Int
---                             , fg3a      :: Int
---                             , fg3_pct   :: Int
---                             , ftm       :: Int
---                             , fta       :: Int
---                             , ft_pct    :: Int
---                             , oreb      :: Int
---                             , dreb      :: Int
---                             , reb       :: Int
---                             , ast       :: Int
---                             , stl       :: Int
---                             , blk       :: Int
---                             , tov       :: Int
---                             , pf        :: Int
---                             , pts       :: Int
---                             } deriving (Show, Eq, Ord, Generic, Read)
+                             } deriving (Show, Eq, Read)
