@@ -25,7 +25,7 @@ import Types
 
 teamURLS :: [String]
 teamURLS = fmap makeURL teams
-    where makeURL = (\(_,team_id,_) -> "http://stats.nba.com/stats/teamgamelog/?Season=2015-16&SeasonType=Regular%20Season&TeamID=" ++ show team_id)
+    where makeURL = (\(_,team_id,_) -> "http://stats.nba.com/stats/teamgamelog/?Season=2014-15&SeasonType=Regular%20Season&TeamID=" ++ show team_id)
 
 getJSON :: IO [B.ByteString]
 getJSON = mapM simpleHttp teamURLS
