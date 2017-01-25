@@ -25,6 +25,7 @@ data WinningTeamStats = WinningTeamStats { pointDiff    :: Double
                                          , blocks       :: Double
                                          , eFGPct       :: Double
                                          , home         :: Double
+                                         , b2b          :: Double
                                          } deriving (Show, Eq, Ord, Read)
 
 data GameResult = GameResult { team_ID   :: Int

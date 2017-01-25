@@ -70,6 +70,13 @@
   (major1) == 1 && (major2) <  2 || \
   (major1) == 1 && (major2) == 2 && (minor) <= 2)
 
+/* package time-1.6.0.1 */
+#define VERSION_time "1.6.0.1"
+#define MIN_VERSION_time(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  6 || \
+  (major1) == 1 && (major2) == 6 && (minor) <= 0)
+
 /* package unordered-containers-0.2.7.2 */
 #define VERSION_unordered_containers "0.2.7.2"
 #define MIN_VERSION_unordered_containers(major1,major2,minor) (\

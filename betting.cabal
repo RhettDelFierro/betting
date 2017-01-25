@@ -35,6 +35,7 @@ executable betting-exe
                      , vector
                      , unordered-containers
                      , lens-aeson
+                     , time
 
   default-language:    Haskell2010
 

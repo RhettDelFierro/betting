@@ -11,6 +11,10 @@ import Data.Aeson.Types
 import qualified Data.Text as T
 import Data.Traversable as DT
 import Data.Function (on)
+import Data.Time
+import Data.Time.Format
+import Data.Time.Clock (utctDay)
+import Data.TimeCalendar (diffDays)
 import Control.Applicative
 import Control.Monad
 import qualified Data.ByteString.Lazy as B
@@ -32,25 +36,36 @@ main = do
   ds <- getJSON
   d <- return (eitherDecode <$> ds) :: IO [Either String (Maybe FullPage)]
   --putStrLn . show $ d
-  let x = fmap checkFullPage $ d
-      y = (map read x) :: [[GameResult]]
-      z = getBoxScores . removeOvertime . DL.concat $ y
+  let u = fmap checkFullPage $ d
+      v = (map read u) :: [[GameResult]]
+      w = DL.concat v --::[GameResult]
+      x = removeOvertime w --::[GameResult] with no overtime
+      y = getBoxScores x -- [(GameResult,GameResult)] with no overtime
   --print z
-  print $ WinningTeamStats { pointDiff    = (/) (sumInts pts z)   (fromIntegral $ length z)
-                           , fieldGoalPct = (/) (sumPct fg_pct z) (fromIntegral $ length z) * 100
-                           , rebounds     = (/) (sumInts reb z)   (fromIntegral $ length z)
-                           , assists      = (/) (sumInts ast z)   (fromIntegral $ length z)
-                           , steals       = (/) (sumInts stl z)   (fromIntegral $ length z)
-                           , offReb       = (/) (sumInts oreb z)  (fromIntegral $ length z)
-                           , turnovers    = (/) (sumInts tov z)   (fromIntegral $ length z)
-                           , threeFGA     = (/) (sumInts fg3a z)  (fromIntegral $ length z)
-                           , threeFGM     = (/) (sumInts fg3m z)  (fromIntegral $ length z)
-                           , freeTAtt     = (/) (sumInts fta z)   (fromIntegral $ length z)
-                           , freeTMade    = (/) (sumInts ftm z)   (fromIntegral $ length z)
-                           , blocks       = (/) (sumInts blk z)   (fromIntegral $ length z)
-                           , eFGPct       = (/) (effectiveFieldGoalPct z)            (fromIntegral $ length z)
-                           , home         = (/) (fromIntegral (checkHome matchup z)) (fromIntegral $ length z) * 100
+  print $ WinningTeamStats { pointDiff    = (/) (sumInts pts y)   (fromIntegral $ length y)
+                           , fieldGoalPct = (/) (sumPct fg_pct y) (fromIntegral $ length y) * 100
+                           , rebounds     = (/) (sumInts reb y)   (fromIntegral $ length y)
+                           , assists      = (/) (sumInts ast y)   (fromIntegral $ length y)
+                           , steals       = (/) (sumInts stl y)   (fromIntegral $ length y)
+                           , offReb       = (/) (sumInts oreb y)  (fromIntegral $ length y)
+                           , turnovers    = (/) (sumInts tov y)   (fromIntegral $ length y)
+                           , threeFGA     = (/) (sumInts fg3a y)  (fromIntegral $ length y)
+                           , threeFGM     = (/) (sumInts fg3m y)  (fromIntegral $ length y)
+                           , freeTAtt     = (/) (sumInts fta y)   (fromIntegral $ length y)
+                           , freeTMade    = (/) (sumInts ftm y)   (fromIntegral $ length y)
+                           , blocks       = (/) (sumInts blk y)   (fromIntegral $ length y)
+                           , eFGPct       = (/) (effectiveFieldGoalPct y)            (fromIntegral $ length y)
+                           , home         = (/) (fromIntegral (checkHome matchup y)) (fromIntegral $ length y) * 100
+                           , b2b          = (/) (checkB2B w y)(fromIntegral $ length y)
                            }
+
+checkB2B :: [GameResult] -> [(GameResult,GameResult)] -> Double
+checkB2B whole tup = length $
+
+checkDates :: String -> Integer -> String -> Bool
+checkDates day1 dayDiff day2 = let d1     = parseTimeOrError False defaultTimeLocale "%b %d, %Y" day1 :: Day
+                                   d2     = parseTimeOrError False defaultTimeLocale "%b %d, %Y" day2 :: Day
+                                in (diffDays d1 d2 <= dayDiff)
 
 removeOvertime :: [GameResult] -> [GameResult]
 removeOvertime = DL.filter (\x -> minutes x <= 240)
