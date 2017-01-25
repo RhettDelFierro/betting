@@ -22,6 +22,8 @@ data WinningTeamStats = WinningTeamStats { pointDiff    :: Double
                                          , threeFGM     :: Double    --3p fg%
                                          , freeTAtt     :: Double    --freethrows attempted
                                          , freeTMade    :: Double    --freethrows made
+                                         , blocks       :: Double
+                                         , eFGPct       :: Double
                                          } deriving (Show, Eq, Ord, Read)
 
 data GameResult = GameResult { team_ID   :: Int
@@ -32,7 +34,7 @@ data GameResult = GameResult { team_ID   :: Int
                              , wi         :: Int
                              , lo         :: Int
                              , w_pct     :: Float
-                             , min       :: Int
+                             , minutes       :: Int
                              , fgm       :: Int
                              , fga       :: Int
                              , fg_pct    :: Double

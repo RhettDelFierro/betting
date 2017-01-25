@@ -19,36 +19,22 @@ import qualified Data.List as DL
 import Types
 
 
---teamURLS :: [String]
---teamURLS = fmap makeURL [("sf;kjsf",1610612737,"salkdjflkasdflkjasdf"),("sdakhfkadsjhf",1610612741,"ksdahjfkasdjf")]
---    where makeURL = (\(_,team_id,_) -> "http://stats.nba.com/stats/teamgamelog/?Season=2015-16&SeasonType=Regular%20Season&TeamID=" ++ show team_id)
-
 teamURLS :: [String]
 teamURLS = fmap makeURL teams
-    where makeURL = (\(_,team_id,_) -> "http://stats.nba.com/stats/teamgamelog/?Season=2014-15&SeasonType=Regular%20Season&TeamID=" ++ show team_id)
+    where makeURL = (\(_,team_id,_) -> "http://stats.nba.com/stats/teamgamelog/?Season=2016-17&SeasonType=Regular%20Season&TeamID=" ++ show team_id)
 
 getJSON :: IO [B.ByteString]
 getJSON = mapM simpleHttp teamURLS
 
---main :: IO ()
---main = do
---  d <- (eitherDecode <$> getJSON) :: IO (Either String ([Maybe FullPage])) --decode lifts over IO to hit the B.ByteString contained in the IO.
---  case d of
---    Left err -> putStrLn err
---    Right pss -> case pss of
---                 Just ps  -> putStrLn $ show $ fmap showResult ps
---                 Nothing -> putStrLn "Maybe did not go through"
 
 main :: IO ()
 main = do
-  --d <- (getJSON >>= (\arr -> return (eitherDecode <$> arr))) :: IO (Either String ([Maybe FullPage]))
   ds <- getJSON
   d <- return (eitherDecode <$> ds) :: IO [Either String (Maybe FullPage)]
---  --d <- (eitherDecode <$> ds) :: IO (Either String ([Maybe FullPage])) --decode lifts over IO to hit the B.ByteString contained in the IO.
   --putStrLn . show $ d
   let x = fmap checkFullPage $ d
       y = (map read x) :: [[GameResult]]
-      z = getBoxScores . DL.concat $ y
+      z = getBoxScores . removeOvertime . DL.concat $ y
   --print z
   print $ WinningTeamStats { pointDiff = (fromIntegral (sumInts pts z)) / (fromIntegral $ length z)
                            , fieldGoalPct = ((sumPct fg_pct z) * 100) / (fromIntegral $ length z)
@@ -61,42 +47,24 @@ main = do
                            , threeFGM = (fromIntegral (sumInts fg3m z)) / (fromIntegral $ length z)
                            , freeTAtt = (fromIntegral (sumInts fta z)) / (fromIntegral $ length z)
                            , freeTMade = (fromIntegral (sumInts ftm z)) / (fromIntegral $ length z)
+                           , blocks = (fromIntegral (sumInts blk z)) / (fromIntegral $ length z)
+                           , eFGPct = (effectiveFieldGoalPct z) / (fromIntegral $ length z)
                            }
---  print $ WinningTeamStats { pointDiff = (fromIntegral (foldIntField pts z)) / (fromIntegral $ length z)
---                           , fieldGoalPct = ((foldPctField fg_pct z) * 100) / (fromIntegral $ length z)
---                           , rebounds = (fromIntegral (foldIntField reb z)) / (fromIntegral $ length z)
---                           , assists = (fromIntegral (foldIntField ast z)) / (fromIntegral $ length z)
---                           , steals = (fromIntegral (foldIntField stl z)) / (fromIntegral $ length z)
---                           , offReb = (fromIntegral (foldIntField oreb z)) / (fromIntegral $ length z)
---                           , turnovers = (fromIntegral (foldIntField tov z)) / (fromIntegral $ length z)
---                           , threeFGA = (fromIntegral (foldIntField fg3a z)) / (fromIntegral $ length z)
---                           , threeFGM = (fromIntegral (foldIntField fg3m z)) / (fromIntegral $ length z)
---                           , freeTAtt = (fromIntegral (foldIntField fta z)) / (fromIntegral $ length z)
---                           , freeTMade = (fromIntegral (foldIntField ftm z)) / (fromIntegral $ length z)
---                           }
 
---  putStrLn . show $ (fmap check d)
---                        where check = (\case Left err -> err
---                                             Right ds -> showResult $ ds)
+removeOvertime :: [GameResult] -> [GameResult]
+removeOvertime = DL.filter (\x -> minutes x <= 240)
 
---  case d of
---    Left err -> putStrLn err
---    Right pss -> case pss of
---                   Just pss ->
---                   Nothing -> putStrLn "Maybe did not go through."
---                 Just ps  -> putStrLn $ show $ fmap showResult ps
---                 Nothing -> putStrLn "Maybe did not go through"
+effectiveFieldGoalPct :: [(GameResult,GameResult)] -> Double
+effectiveFieldGoalPct arr = sum $
+    map (\(x,y) -> ((fromIntegral (fgm x)) - (fromIntegral (fgm y)))
+            + 0.5 * ((fromIntegral (fg3m x)) - (fromIntegral (fg3m y)))
+                / ((fromIntegral (fga x)) - (fromIntegral (fga y)))) arr
+
 sumInts :: (GameResult -> Int) -> [(GameResult,GameResult)] -> Int
 sumInts f arr = sum $ map (\(x,y) -> (f x) - (f y)) arr
 
 sumPct :: (GameResult -> Double) -> [(GameResult,GameResult)] -> Double
 sumPct f arr = sum $ map (\(x,y) -> (f x) - (f y)) arr
-
---foldIntField :: (GameResult -> Int) -> [(GameResult,GameResult)] -> Int
---foldIntField f arr = foldr (\(x,y) acc -> ((f x) - (f y)) +) 0 arr
---
---foldPctField :: (GameResult -> Double) -> [(GameResult,GameResult)] -> Double
---foldPctField f arr = foldr (\(x,y) acc -> ((f x) - (f y)) +) 0 arr
 
 checkFullPage :: Either String (Maybe FullPage) -> String
 checkFullPage = (\case Left err -> err
@@ -108,17 +76,6 @@ showResult :: FullPage -> [GameResult]
 showResult = (rowSet . DL.head . resultSets)
 
 getBoxScores :: [GameResult] -> [(GameResult,GameResult)]
-
---getBoxScores (x:y) = (team_ID x,y)
---getBoxScores (x:xs) = (\case { Just b -> (x,b); Nothing -> (x,x) }) $ DL.find (\y -> (game_ID x) == (game_ID y)) xs
---getBoxScores arr = DL.groupBy ((==) `on` game_ID) $ arr
---    where comp [x,y]
---            | (wl x) == 'W' = (x,y)
---            | otherwise     = (y,x)
---getBoxScores arr = DL.nub [boxscore x y | x <- arr , y <- arr, ((game_ID x) == (game_ID y)) && ((team_ID x) /= (team_ID y))]
---      where boxscore t1 t2
---                | (wl t1) == 'W' = (t1,t2)
---                | otherwise      = (t2,t1)
 getBoxScores []     = []
 getBoxScores (x:xs) =
     let sameGame = [boxscore a | a <- xs, (game_ID x) == (game_ID a) ]
@@ -126,11 +83,6 @@ getBoxScores (x:xs) =
         where boxscore t2
                  | (wl x) == 'W' = (x,t2)
                  | otherwise      = (t2,x)
---gatherResults :: [GameResult] -> GameLogs
---gatherResults gr = case gr of
---                     Just x ->
---                     Nothing ->
-
 
 
 
@@ -173,7 +125,7 @@ instance FromJSON GameResult where
     wi <- parseJSON f
     lo <- parseJSON g
     w_pct <- parseJSON h
-    min <- parseJSON i
+    minutes <- parseJSON i
     fgm <- parseJSON j
     fga <- parseJSON k
     fg_pct <- parseJSON l
