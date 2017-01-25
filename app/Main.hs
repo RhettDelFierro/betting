@@ -14,7 +14,7 @@ import Data.Function (on)
 import Data.Time
 import Data.Time.Format
 import Data.Time.Clock (utctDay)
-import Data.TimeCalendar (diffDays)
+import Data.Time.Calendar (diffDays)
 import Control.Applicative
 import Control.Monad
 import qualified Data.ByteString.Lazy as B
@@ -25,7 +25,7 @@ import Types
 
 teamURLS :: [String]
 teamURLS = fmap makeURL teams
-    where makeURL = (\(_,team_id,_) -> "http://stats.nba.com/stats/teamgamelog/?Season=2016-17&SeasonType=Regular%20Season&TeamID=" ++ show team_id)
+    where makeURL = (\(_,team_id,_) -> "http://stats.nba.com/stats/teamgamelog/?Season=2015-16&SeasonType=Regular%20Season&TeamID=" ++ show team_id)
 
 getJSON :: IO [B.ByteString]
 getJSON = mapM simpleHttp teamURLS
@@ -38,9 +38,9 @@ main = do
   --putStrLn . show $ d
   let u = fmap checkFullPage $ d
       v = (map read u) :: [[GameResult]]
-      w = DL.concat v --::[GameResult]
-      x = removeOvertime w --::[GameResult] with no overtime
-      y = getBoxScores x -- [(GameResult,GameResult)] with no overtime
+      w = DL.concat v
+      x = removeOvertime w
+      y = getBoxScores x
   --print z
   print $ WinningTeamStats { pointDiff    = (/) (sumInts pts y)   (fromIntegral $ length y)
                            , fieldGoalPct = (/) (sumPct fg_pct y) (fromIntegral $ length y) * 100
@@ -59,17 +59,24 @@ main = do
                            , b2b          = (/) (fromIntegral (checkB2B w y))(fromIntegral $ length y)
                            }
 
-checkB2B :: [GameResult] -> [(GameResult,GameResult)] -> Double
-checkB2B whole tup = length $ gameDayInterval
+checkB2B :: [GameResult] -> [(GameResult,GameResult)] -> Int
+checkB2B whole tup = length $ gameDayInterval whole
+                                (map (\(x,_) -> (team_ID x,game_date x)) tup) 1
 
-gameDayInterval :: [GameResults] -> Team_ID -> GameDate -> DayDiff -> [GameResults]
-gameDayInterval grs teamid gamedate interval =
-    filter (\g -> ((team_id g) == teamid) && (checkDates gamedate interval $ game_date g) grs
+gameDayInterval :: [GameResult] -> [(Team_ID,GameDate)] -> DayDiff -> [GameResult]
+gameDayInterval _   []     _        = []
+gameDayInterval grs (x:xs) interval =
+    filter (\g -> ((team_ID g) == (fst x)) && (checkDates (snd x) interval (game_date g))) grs
+        ++ (gameDayInterval grs xs interval)
 
-checkDates :: String -> Integer -> String -> Bool
-checkDates day1 dayDiff day2 = let d1     = parseTimeOrError False defaultTimeLocale "%b %d, %Y" day1 :: Day
-                                   d2     = parseTimeOrError False defaultTimeLocale "%b %d, %Y" day2 :: Day
-                                in (diffDays d1 d2 <= dayDiff)
+--gameDayInterval :: [GameResults] -> (Team_ID,GameDate) -> DayDiff -> [GameResults]
+--gameDayInterval grs (t_id,gamedate) interval =
+--    filter (\g -> ((team_id g) == t_id) && (checkDates gamedate interval $ game_date g) grs
+
+checkDates :: GameDate -> DayDiff -> GameDate -> Bool
+checkDates day1 dayDiff day2 = let d1 = parseTimeOrError False defaultTimeLocale "%b %d, %Y" day1 :: Day
+                                   d2 = parseTimeOrError False defaultTimeLocale "%b %d, %Y" day2 :: Day
+                               in ( (0 < (diffDays d1 d2)) && ((diffDays d1 d2) <= dayDiff) )
 
 removeOvertime :: [GameResult] -> [GameResult]
 removeOvertime = DL.filter (\x -> minutes x <= 240)
