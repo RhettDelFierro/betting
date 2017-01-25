@@ -9,6 +9,8 @@ type Teams               = (TeamName,Team_ID,TeamABBR)
 type WinningTeamBoxscore = GameResult
 type LosingTeamBoxscore  = GameResult
 type BoxScore            = (WinningTeamBoxscore,LosingTeamBoxscore)
+type DayDiff             = Integer
+type GameDate            = String
 
 data WinningTeamStats = WinningTeamStats { pointDiff    :: Double
                                          , fieldGoalPct :: Double

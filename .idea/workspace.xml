@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3964baea-1c33-46d8-8636-a532b8f42a23" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/betting-exe/betting-exe" afterPath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/betting-exe/betting-exe" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/betting-exe/betting-exe-tmp/Main.hi" afterPath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/betting-exe/betting-exe-tmp/Main.hi" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/betting-exe/betting-exe-tmp/Main.o" afterPath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/betting-exe/betting-exe-tmp/Main.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/betting-exe/betting-exe-tmp/Types.hi" afterPath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/betting-exe/betting-exe-tmp/Types.hi" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/betting-exe/betting-exe-tmp/Types.o" afterPath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/betting-exe/betting-exe-tmp/Types.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/setup-config" afterPath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/setup-config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/stack-build-cache" afterPath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/stack-build-cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/stack-cabal-mod" afterPath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/stack-cabal-mod" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/stack-config-cache" afterPath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/stack-config-cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.stack-work/install/x86_64-osx/lts-7.15/8.0.1/bin/betting-exe" afterPath="$PROJECT_DIR$/.stack-work/install/x86_64-osx/lts-7.15/8.0.1/bin/betting-exe" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.stack-work/install/x86_64-osx/lts-7.15/8.0.1/flag-cache/betting-0.1.0.0-AdXbSq3NBxYK5FkP3l5dg" afterPath="$PROJECT_DIR$/.stack-work/install/x86_64-osx/lts-7.15/8.0.1/flag-cache/betting-0.1.0.0-AdXbSq3NBxYK5FkP3l5dg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/autogen/cabal_macros.h" afterPath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/autogen/cabal_macros.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/betting-exe/betting-exe-tmp/app/Main.dump-hi" afterPath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/betting-exe/betting-exe-tmp/app/Main.dump-hi" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/betting-exe/betting-exe-tmp/app/Types.dump-hi" afterPath="$PROJECT_DIR$/.stack-work/dist/x86_64-osx/Cabal-1.24.0.0/build/betting-exe/betting-exe-tmp/app/Types.dump-hi" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Main.hs" afterPath="$PROJECT_DIR$/app/Main.hs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Types.hs" afterPath="$PROJECT_DIR$/app/Types.hs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/betting.cabal" afterPath="$PROJECT_DIR$/betting.cabal" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,8 +31,8 @@
       <file leaf-file-name="Main.hs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Main.hs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="66" column="108" lean-forward="false" selection-start-line="66" selection-start-column="108" selection-end-line="66" selection-end-column="108" />
+            <state relative-caret-position="375">
+              <caret line="64" column="58" lean-forward="true" selection-start-line="64" selection-start-column="58" selection-end-line="64" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -57,8 +41,8 @@
       <file leaf-file-name="Types.hs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Types.hs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="32" column="50" lean-forward="true" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+            <state relative-caret-position="180">
+              <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -646,12 +630,12 @@
       <workItem from="1485107924836" duration="9541000" />
       <workItem from="1485127987607" duration="7581000" />
       <workItem from="1485213024296" duration="17935000" />
-      <workItem from="1485276171292" duration="44405000" />
+      <workItem from="1485276171292" duration="44696000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124412000" />
+    <option name="totallyTimeSpent" value="124703000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="806" extended-state="6" />
@@ -1096,16 +1080,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Types.hs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="32" column="50" lean-forward="true" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+        <state relative-caret-position="180">
+          <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Main.hs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="66" column="108" lean-forward="false" selection-start-line="66" selection-start-column="108" selection-end-line="66" selection-end-column="108" />
+        <state relative-caret-position="375">
+          <caret line="64" column="58" lean-forward="true" selection-start-line="64" selection-start-column="58" selection-end-line="64" selection-end-column="58" />
           <folding />
         </state>
       </provider>

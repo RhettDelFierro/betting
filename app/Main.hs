@@ -56,11 +56,15 @@ main = do
                            , blocks       = (/) (sumInts blk y)   (fromIntegral $ length y)
                            , eFGPct       = (/) (effectiveFieldGoalPct y)            (fromIntegral $ length y)
                            , home         = (/) (fromIntegral (checkHome matchup y)) (fromIntegral $ length y) * 100
-                           , b2b          = (/) (checkB2B w y)(fromIntegral $ length y)
+                           , b2b          = (/) (fromIntegral (checkB2B w y))(fromIntegral $ length y)
                            }
 
 checkB2B :: [GameResult] -> [(GameResult,GameResult)] -> Double
-checkB2B whole tup = length $
+checkB2B whole tup = length $ gameDayInterval
+
+gameDayInterval :: [GameResults] -> Team_ID -> GameDate -> DayDiff -> [GameResults]
+gameDayInterval grs teamid gamedate interval =
+    filter (\g -> ((team_id g) == teamid) && (checkDates gamedate interval $ game_date g) grs
 
 checkDates :: String -> Integer -> String -> Bool
 checkDates day1 dayDiff day2 = let d1     = parseTimeOrError False defaultTimeLocale "%b %d, %Y" day1 :: Day
