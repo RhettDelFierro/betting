@@ -36,19 +36,20 @@ main = do
       y = (map read x) :: [[GameResult]]
       z = getBoxScores . removeOvertime . DL.concat $ y
   --print z
-  print $ WinningTeamStats { pointDiff = (fromIntegral (sumInts pts z)) / (fromIntegral $ length z)
+  print $ WinningTeamStats { pointDiff = (sumInts pts z) / (fromIntegral $ length z)
                            , fieldGoalPct = ((sumPct fg_pct z) * 100) / (fromIntegral $ length z)
-                           , rebounds = (fromIntegral (sumInts reb z)) / (fromIntegral $ length z)
-                           , assists = (fromIntegral (sumInts ast z)) / (fromIntegral $ length z)
-                           , steals = (fromIntegral (sumInts stl z)) / (fromIntegral $ length z)
-                           , offReb = (fromIntegral (sumInts oreb z)) / (fromIntegral $ length z)
-                           , turnovers = (fromIntegral (sumInts tov z)) / (fromIntegral $ length z)
-                           , threeFGA = (fromIntegral (sumInts fg3a z)) / (fromIntegral $ length z)
-                           , threeFGM = (fromIntegral (sumInts fg3m z)) / (fromIntegral $ length z)
-                           , freeTAtt = (fromIntegral (sumInts fta z)) / (fromIntegral $ length z)
-                           , freeTMade = (fromIntegral (sumInts ftm z)) / (fromIntegral $ length z)
-                           , blocks = (fromIntegral (sumInts blk z)) / (fromIntegral $ length z)
-                           , eFGPct = (effectiveFieldGoalPct z) / (fromIntegral $ length z)
+                           , rebounds = (sumInts reb z) / (fromIntegral $ length z)
+                           , assists = (sumInts ast z) / (fromIntegral $ length z)
+                           , steals = (sumInts stl z) / (fromIntegral $ length z)
+                           , offReb = (sumInts oreb z) / (fromIntegral $ length z)
+                           , turnovers = (sumInts tov z) / (fromIntegral $ length z)
+                           , threeFGA = (sumInts fg3a z) / (fromIntegral $ length z)
+                           , threeFGM = (sumInts fg3m z) / (fromIntegral $ length z)
+                           , freeTAtt = (sumInts fta z) / (fromIntegral $ length z)
+                           , freeTMade = (sumInts ftm z) / (fromIntegral $ length z)
+                           , blocks = (sumInts blk z) / (fromIntegral $ length z)
+                           , eFGPct = ((effectiveFieldGoalPct z) * 100)/ (fromIntegral $ length z)
+                           , home = (fromIntegral (checkHome matchup z)) / (fromIntegral $ length z)
                            }
 
 removeOvertime :: [GameResult] -> [GameResult]
@@ -56,11 +57,12 @@ removeOvertime = DL.filter (\x -> minutes x <= 240)
 
 effectiveFieldGoalPct :: [(GameResult,GameResult)] -> Double
 effectiveFieldGoalPct arr = sum $
-    map (\(x,y) -> ((fromIntegral (fgm x)) - (fromIntegral (fgm y)))
-            + 0.5 * ((fromIntegral (fg3m x)) - (fromIntegral (fg3m y)))
-                / ((fromIntegral (fga x)) - (fromIntegral (fga y)))) arr
+    map (\(x,y) -> let a = ((fgm x) - ((fgm y)))
+                       b = 0.5 * ((fg3m x) - ((fg3m y)))
+                       c = ((fga x) - ((fga y)))
+                   in ((a + b) / c)) arr
 
-sumInts :: (GameResult -> Int) -> [(GameResult,GameResult)] -> Int
+sumInts :: (GameResult -> Double) -> [(GameResult,GameResult)] -> Double
 sumInts f arr = sum $ map (\(x,y) -> (f x) - (f y)) arr
 
 sumPct :: (GameResult -> Double) -> [(GameResult,GameResult)] -> Double
@@ -84,10 +86,8 @@ getBoxScores (x:xs) =
                  | (wl x) == 'W' = (x,t2)
                  | otherwise      = (t2,x)
 
-
-
-
-
+checkHome :: (GameResult -> String) -> [(GameResult,GameResult)] -> Int
+checkHome f arr = length $ filter  (\x -> x /= []) . (\(x,_) -> dropWhile (== '@') $ f x ) arr
 
 
 

@@ -24,6 +24,7 @@ data WinningTeamStats = WinningTeamStats { pointDiff    :: Double
                                          , freeTMade    :: Double    --freethrows made
                                          , blocks       :: Double
                                          , eFGPct       :: Double
+                                         , home         :: Double
                                          } deriving (Show, Eq, Ord, Read)
 
 data GameResult = GameResult { team_ID   :: Int
@@ -31,28 +32,28 @@ data GameResult = GameResult { team_ID   :: Int
                              , game_date :: String
                              , matchup   :: String
                              , wl        :: Char
-                             , wi         :: Int
-                             , lo         :: Int
+                             , wi         :: Double --
+                             , lo         :: Double --
                              , w_pct     :: Float
-                             , minutes       :: Int
-                             , fgm       :: Int
-                             , fga       :: Int
+                             , minutes       :: Double --
+                             , fgm       :: Double --
+                             , fga       :: Double --
                              , fg_pct    :: Double
-                             , fg3m      :: Int
-                             , fg3a      :: Int
+                             , fg3m      :: Double --
+                             , fg3a      :: Double --
                              , fg3_pct   :: Float
-                             , ftm       :: Int
-                             , fta       :: Int
+                             , ftm       :: Double --
+                             , fta       :: Double --
                              , ft_pct    :: Float
-                             , oreb      :: Int
-                             , dreb      :: Int
-                             , reb       :: Int
-                             , ast       :: Int
-                             , stl       :: Int
-                             , blk       :: Int
-                             , tov       :: Int
-                             , pf        :: Int
-                             , pts       :: Int
+                             , oreb      :: Double --
+                             , dreb      :: Double --
+                             , reb       :: Double --
+                             , ast       :: Double --
+                             , stl       :: Double --
+                             , blk       :: Double --
+                             , tov       :: Double --
+                             , pf        :: Double --
+                             , pts       :: Double --
                              } deriving (Show, Eq, Read, Ord)
 
 teams :: [Teams]
