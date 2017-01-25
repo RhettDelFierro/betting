@@ -2,10 +2,13 @@
 
 module Types where
 
-type TeamName  = String
-type Team_ID   = Int
-type TeamABBR  = String
-type Teams    = (TeamName,Team_ID, TeamABBR)
+type TeamName            = String
+type Team_ID             = Int
+type TeamABBR            = String
+type Teams               = (TeamName,Team_ID,TeamABBR)
+type WinningTeamBoxscore = GameResult
+type LosingTeamBoxscore  = GameResult
+type BoxScore            = (WinningTeamBoxscore,LosingTeamBoxscore)
 
 data WinningTeamStats = WinningTeamStats { pointDiff    :: Int
                                          , fieldGoalPct :: Float
@@ -84,4 +87,4 @@ teams = [ ("Atlanta Hawks",1610612737,"ATL")
         , ("Washington Wizards",1610612764,"WAS")
         ]
 
-data GameLogs = GameLogs [(Team_ID,[GameResult])] deriving (Show, Eq, Read, Ord)
+data GameLogsByTeam = GameLogsByTeam [(Team_ID,[GameResult])] deriving (Show, Eq, Read, Ord)

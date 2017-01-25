@@ -3,7 +3,6 @@
 module Main where
 
 import Data.Aeson
-import Data.Aeson.Lens
 import qualified Data.Map as M
 --import GHC.Exts
 import qualified Data.ByteString.Lazy.Char8 as L
@@ -11,6 +10,7 @@ import qualified Data.ByteString.Lazy.Char8 as L
 import Data.Aeson.Types
 import qualified Data.Text as T
 import Data.Traversable as DT
+import Data.Function (on)
 import Control.Applicative
 import Control.Monad
 import qualified Data.ByteString.Lazy as B
@@ -49,12 +49,11 @@ main = do
   ds <- getJSON
   d <- return (eitherDecode <$> ds) :: IO [Either String (Maybe FullPage)]
 --  --d <- (eitherDecode <$> ds) :: IO (Either String ([Maybe FullPage])) --decode lifts over IO to hit the B.ByteString contained in the IO.
- -- putStrLn . show $ d
-  putStrLn $ show (fmap check d)
-                   where check = (\case Right ds -> case ds of
-                                                        Just x  -> show . showResult $ x
-                                                        Nothing -> "Maybe did not go through"
-                                        Left err -> err)
+  putStrLn . show $ d
+  putStrLn . show $ fmap checkFullPage $ d
+--  putStrLn . show $ (fmap check d)
+--                        where check = (\case Left err -> err
+--                                             Right ds -> showResult $ ds)
 
 --  case d of
 --    Left err -> putStrLn err
@@ -64,11 +63,32 @@ main = do
 --                 Just ps  -> putStrLn $ show $ fmap showResult ps
 --                 Nothing -> putStrLn "Maybe did not go through"
 
+checkFullPage :: Either String (Maybe FullPage) -> String
+checkFullPage = (\case Left err -> err
+                       Right ds -> case ds of
+                                      Just x -> show . showResult $ x
+                                      _      -> "Maybe failed somewhere.")
+
 showResult :: FullPage -> [GameResult]
 showResult = (rowSet . DL.head . resultSets)
 
-
-
+getBoxScores :: [GameResult] -> [(GameResult,GameResult)]
+--getBoxScores (x:xs) = (\case { Just b -> (x,b); Nothing -> (x,x) }) $ DL.find (\y -> (game_ID x) == (game_ID y)) xs
+--getBoxScores arr = DL.groupBy ((==) `on` game_ID) $ arr
+--    where comp [x,y]
+--            | (wl x) == 'W' = (x,y)
+--            | otherwise     = (y,x)
+--getBoxScores arr = DL.nub [boxscore x y | x <- arr , y <- arr, ((game_ID x) == (game_ID y)) && ((team_ID x) /= (team_ID y))]
+--      where boxscore t1 t2
+--                | (wl t1) == 'W' = (t1,t2)
+--                | otherwise      = (t2,t1)
+getBoxScores []     = []
+getBoxScores (x:xs) =
+    let sameGame = [boxscore a | a <- xs, (game_ID x) == (game_ID a) ]
+    in getBoxScores xs ++ sameGame
+        where boxscore t2
+                 | (wl x) == 'W' = (x,t2)
+                 | otherwise      = (t2,x)
 --gatherResults :: [GameResult] -> GameLogs
 --gatherResults gr = case gr of
 --                     Just x ->

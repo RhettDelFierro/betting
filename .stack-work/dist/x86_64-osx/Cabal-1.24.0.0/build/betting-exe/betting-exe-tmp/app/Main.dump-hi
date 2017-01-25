@@ -1,17 +1,18 @@
 
 ==================== FINAL INTERFACE ====================
-2017-01-24 21:18:31.874772 UTC
+2017-01-25 00:55:38.305083 UTC
 
 interface main@main:Main [orphan module] 8001
-  interface hash: 4a898ecd37109eae03671a5080b73c2c
-  ABI hash: c0dfe0a635768353f53897d61c289f55
-  export-list hash: 6f27a3aac3f609d8433f493d3f26fc5d
-  orphan hash: f8ee648c78e5dce8092f42c40c8d7c6d
+  interface hash: dcbea02549b54d3fcf56357041da37d2
+  ABI hash: 5e63e96f4fd2f3875007c5f6fc17f838
+  export-list hash: 60c601802de4cadd5d5cda661cff2950
+  orphan hash: 6241cc66834c8041a6df6dd7af4a9200
   flag hash: 2bce8219fc00bd60a63986a7e930b5c8
   sig of: Nothing
   used TH splices: False
   where
 exports:
+  Main.getBoxScores
   Main.getJSON
   Main.jsonURL
   Main.main
@@ -20,9 +21,7 @@ exports:
   Main.FullPage{Main.FullPage resultSets}
   Main.ResultSets{Main.ResultSets rowSet}
 module dependencies: Types
-package dependencies: StateVar-1.1.0.4@StateVar-1.1.0.4-CJpWsiXJdd89SnV9dZtTwc
-                      adjunctions-4.3@adjunctions-4.3-BIQVAIEnfLtLNEj0XCC7J3
-                      aeson-0.11.2.1@aeson-0.11.2.1-AE1BV6NZdP1FqsW2xALCUS
+package dependencies: aeson-0.11.2.1@aeson-0.11.2.1-AE1BV6NZdP1FqsW2xALCUS
                       array-0.5.1.1@array-0.5.1.1
                       asn1-encoding-0.9.4@asn1-encoding-0.9.4-2Zu5ldLYD571Aw26w0CWF6
                       asn1-parse-0.9.4@asn1-parse-0.9.4-Ai83ACtrOir9VlSOQtWm2F
@@ -30,29 +29,23 @@ package dependencies: StateVar-1.1.0.4@StateVar-1.1.0.4-CJpWsiXJdd89SnV9dZtTwc
                       async-2.1.1@async-2.1.1-xFiBzw9xoB8HPZAuxUY2o
                       attoparsec-0.13.1.0@attoparsec-0.13.1.0-2AyzLuPV4T95RcYDl03Ghe
                       base-4.9.0.0
-                      base-orphans-0.5.4@base-orphans-0.5.4-5IQvrjd7gNP548VkOOyIq6
                       base64-bytestring-1.0.0.1@base64-bytestring-1.0.0.1-In9M41tLtcS9QYt3QpGpNY
-                      bifunctors-5.4.1@bifunctors-5.4.1-BUyhm4m6iuFEx37mC8MRZI
                       binary-0.8.3.0@binary-0.8.3.0
                       blaze-builder-0.4.0.2@blaze-builder-0.4.0.2-6Lw6V3wDhf3KDMasjNOEeG
                       byteable-0.1.1@byteable-0.1.1-15aIBCArSOBEnGxArzrDTM
                       bytestring-0.10.8.1@bytestring-0.10.8.1
                       case-insensitive-1.2.0.7@case-insensitive-1.2.0.7-FDS9muZSKvyFFsDxjwuYX9
                       cereal-0.5.4.0@cereal-0.5.4.0-2FJYHGgtE5C3SxaZjt25xS
-                      comonad-5@comonad-5-9D9S5LwK2gXLxU20i3cZzW
                       conduit-1.2.8@conduit-1.2.8-5fgvzhyiRP8I8gw0elzssW
                       connection-0.2.6@connection-0.2.6-HdqI1haOFiwKHVrIKjItoA
                       containers-0.5.7.1@containers-0.5.7.1
-                      contravariant-1.4@contravariant-1.4-8JKfZTNGDL78gUMj4VH9zF
                       cookie-0.4.2.1@cookie-0.4.2.1-5P6dolSQSje7mJQ7M5DM5i
                       cryptonite-0.19@cryptonite-0.19-G9PYO4oOEqhDTta2u9rAaU
                       data-default-class-0.1.2.0@data-default-class-0.1.2.0-FYQpjIylblBDctdkHAFeXA
                       deepseq-1.4.2.0@deepseq-1.4.2.0 directory-1.2.6.2@directory-1.2.6.2
-                      distributive-0.5.1@distributive-0.5.1-5St8fnipE6nCxzbgGHU2c
                       dlist-0.8.0.2@dlist-0.8.0.2-GWAMmbX9rLg3tqrbOizHGv
                       exceptions-0.8.3@exceptions-0.8.3-7py7fmRxowDFpHmiHGKrTb
                       filepath-1.4.1.0@filepath-1.4.1.0
-                      free-4.12.4@free-4.12.4-8Cwydt0EC7H5oHvcl7A2k0
                       ghc-boot-th-8.0.1@ghc-boot-th-8.0.1 ghc-prim-0.5.0.0
                       hashable-1.2.4.0@hashable-1.2.4.0-Ctl752zbguF6QanxurLOm2
                       hourglass-0.2.10@hourglass-0.2.10-I8h0J4RSF89FN6CuD9x2Xx
@@ -61,9 +54,6 @@ package dependencies: StateVar-1.1.0.4@StateVar-1.1.0.4-CJpWsiXJdd89SnV9dZtTwc
                       http-conduit-2.1.11@http-conduit-2.1.11-EC4vL4GcRJtDqKzYoSe7M2
                       http-types-0.9.1@http-types-0.9.1-BTSIP6lzG5DE6u136Payws
                       integer-gmp-1.0.0.1
-                      kan-extensions-5.0.1@kan-extensions-5.0.1-2yhPUYbLQYY2NCkSFNlrRm
-                      lens-4.14@lens-4.14-FVZNaEdMDs2JF36eEyAl2w
-                      lens-aeson-1.0.0.5@lens-aeson-1.0.0.5-IYLdR9EuQRg4D9vrqZdq8d
                       lifted-base-0.2.3.8@lifted-base-0.2.3.8-KLkd0w1UJqu6nE8oVTTEBy
                       memory-0.13@memory-0.13-ABHR5331zHK9scHPRr7afU
                       mmorph-1.0.9@mmorph-1.0.9-DmSwQqk5nLj7roLAcydGz
@@ -73,15 +63,10 @@ package dependencies: StateVar-1.1.0.4@StateVar-1.1.0.4-CJpWsiXJdd89SnV9dZtTwc
                       network-uri-2.6.1.0@network-uri-2.6.1.0-6PuDgH21OiwGLI4QZ1g9kt
                       parsec-3.1.11@parsec-3.1.11-37j7M1YEHqtEooY7BpJdri
                       pem-0.2.2@pem-0.2.2-qPMQP6sZm3HgQEmiBojNt
-                      prelude-extras-0.4.0.3@prelude-extras-0.4.0.3-FAyB4iuuM7cHXdrLMZtdXq
-                      pretty-1.1.3.3@pretty-1.1.3.3
                       primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa
                       process-1.4.2.0@process-1.4.2.0
-                      profunctors-5.2@profunctors-5.2-8vPNb2bBbM7FSFFjhuJPxd
-                      reflection-2.1.2@reflection-2.1.2-J1ZzlxijzaHGRixYxgxlf9
                       resourcet-1.1.9@resourcet-1.1.9-965WSCM4zVm5AReELsOl9B
                       scientific-0.3.4.9@scientific-0.3.4.9-ENrtAw13zTS8y4klTK3l4D
-                      semigroupoids-5.1@semigroupoids-5.1-6vsBkLu6sb7EEvV5Krb5yw
                       socks-0.5.5@socks-0.5.5-GieRokcgjQCIzUyRn9wVby
                       stm-2.4.4.1@stm-2.4.4.1-4z2NRWnB0NIIUvSJsHW0kF
                       streaming-commons-0.1.16@streaming-commons-0.1.16-3F5ilGqdpiI2CBV4Mk7gyK
@@ -92,7 +77,6 @@ package dependencies: StateVar-1.1.0.4@StateVar-1.1.0.4-CJpWsiXJdd89SnV9dZtTwc
                       tls-1.3.8@tls-1.3.8-5FNpX1ar5fUDvPXr9oTBwU
                       transformers-0.5.2.0@transformers-0.5.2.0
                       transformers-base-0.4.4@transformers-base-0.4.4-25SoAegOdaF8rLEnnb5jPI
-                      transformers-compat-0.5.1.4@transformers-compat-0.5.1.4-81lZyuOJOvsD0zyCv2TKld
                       unix-2.7.2.0@unix-2.7.2.0
                       unordered-containers-0.2.7.2@unordered-containers-0.2.7.2-9ObqN3agNul2CNhSIO1Z6T
                       vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3
@@ -110,9 +94,7 @@ orphans: aeson-0.11.2.1@aeson-0.11.2.1-AE1BV6NZdP1FqsW2xALCUS:Data.Aeson.Types.G
          bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
          hashable-1.2.4.0@hashable-1.2.4.0-Ctl752zbguF6QanxurLOm2:Data.Hashable.Generic
          http-client-0.4.31.2@http-client-0.4.31.2-CTnfNOBjDfGBLnvRmIntNQ:Network.HTTP.Client.Request
-         lens-aeson-1.0.0.5@lens-aeson-1.0.0.5-IYLdR9EuQRg4D9vrqZdq8d:Data.Aeson.Lens
          network-2.6.3.1@network-2.6.3.1-G4Up1CPKbp7DeFsnywOnGG:Network.Socket
-         reflection-2.1.2@reflection-2.1.2-J1ZzlxijzaHGRixYxgxlf9:Data.Reflection
          stm-2.4.4.1@stm-2.4.4.1-4z2NRWnB0NIIUvSJsHW0kF:Control.Monad.STM
          text-1.2.2.1@text-1.2.2.1-9Yh8rJoh8fO2JMLWffT3Qs:Data.Text
          text-1.2.2.1@text-1.2.2.1-9Yh8rJoh8fO2JMLWffT3Qs:Data.Text.Lazy
@@ -123,26 +105,16 @@ orphans: aeson-0.11.2.1@aeson-0.11.2.1-AE1BV6NZdP1FqsW2xALCUS:Data.Aeson.Types.G
          transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
          vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Fusion.Bundle
          vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Unboxed
-family instance modules: adjunctions-4.3@adjunctions-4.3-BIQVAIEnfLtLNEj0XCC7J3:Data.Functor.Rep
-                         attoparsec-0.13.1.0@attoparsec-0.13.1.0-2AyzLuPV4T95RcYDl03Ghe:Data.Attoparsec.Internal.Types
+family instance modules: attoparsec-0.13.1.0@attoparsec-0.13.1.0-2AyzLuPV4T95RcYDl03Ghe:Data.Attoparsec.Internal.Types
                          base-4.9.0.0:Control.Applicative base-4.9.0.0:Data.Complex
                          base-4.9.0.0:Data.Either base-4.9.0.0:Data.Functor.Compose
                          base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
-                         base-4.9.0.0:Data.Functor.Product base-4.9.0.0:Data.Functor.Sum
-                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
-                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
-                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
-                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
-                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
-                         bifunctors-5.4.1@bifunctors-5.4.1-BUyhm4m6iuFEx37mC8MRZI:Data.Bifunctor.Biff
-                         bifunctors-5.4.1@bifunctors-5.4.1-BUyhm4m6iuFEx37mC8MRZI:Data.Bifunctor.Clown
-                         bifunctors-5.4.1@bifunctors-5.4.1-BUyhm4m6iuFEx37mC8MRZI:Data.Bifunctor.Flip
-                         bifunctors-5.4.1@bifunctors-5.4.1-BUyhm4m6iuFEx37mC8MRZI:Data.Bifunctor.Join
-                         bifunctors-5.4.1@bifunctors-5.4.1-BUyhm4m6iuFEx37mC8MRZI:Data.Bifunctor.Joker
-                         bifunctors-5.4.1@bifunctors-5.4.1-BUyhm4m6iuFEx37mC8MRZI:Data.Bifunctor.Product
-                         bifunctors-5.4.1@bifunctors-5.4.1-BUyhm4m6iuFEx37mC8MRZI:Data.Bifunctor.Sum
-                         bifunctors-5.4.1@bifunctors-5.4.1-BUyhm4m6iuFEx37mC8MRZI:Data.Bifunctor.Tannen
-                         bifunctors-5.4.1@bifunctors-5.4.1-BUyhm4m6iuFEx37mC8MRZI:Data.Bifunctor.Wrapped
+                         base-4.9.0.0:Data.Functor.Product base-4.9.0.0:Data.List.NonEmpty
+                         base-4.9.0.0:Data.Monoid base-4.9.0.0:Data.Semigroup
+                         base-4.9.0.0:Data.Type.Equality base-4.9.0.0:Data.Version
+                         base-4.9.0.0:Data.Void base-4.9.0.0:GHC.Exts
+                         base-4.9.0.0:GHC.Generics base-4.9.0.0:GHC.IO.Exception
+                         base-4.9.0.0:GHC.TypeLits
                          containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
                          containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
                          containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
@@ -151,21 +123,9 @@ family instance modules: adjunctions-4.3@adjunctions-4.3-BIQVAIEnfLtLNEj0XCC7J3:
                          dlist-0.8.0.2@dlist-0.8.0.2-GWAMmbX9rLg3tqrbOizHGv:Data.DList
                          ghc-boot-th-8.0.1@ghc-boot-th-8.0.1:GHC.LanguageExtensions.Type
                          http-client-0.4.31.2@http-client-0.4.31.2-CTnfNOBjDfGBLnvRmIntNQ:Network.HTTP.Client
-                         kan-extensions-5.0.1@kan-extensions-5.0.1-2yhPUYbLQYY2NCkSFNlrRm:Data.Functor.Day
-                         kan-extensions-5.0.1@kan-extensions-5.0.1-2yhPUYbLQYY2NCkSFNlrRm:Data.Functor.Yoneda
-                         lens-4.14@lens-4.14-FVZNaEdMDs2JF36eEyAl2w:Control.Lens.At
-                         lens-4.14@lens-4.14-FVZNaEdMDs2JF36eEyAl2w:Control.Lens.Internal.Indexed
-                         lens-4.14@lens-4.14-FVZNaEdMDs2JF36eEyAl2w:Control.Lens.Reified
-                         lens-4.14@lens-4.14-FVZNaEdMDs2JF36eEyAl2w:Control.Lens.Tuple
-                         lens-4.14@lens-4.14-FVZNaEdMDs2JF36eEyAl2w:Control.Lens.Wrapped
-                         lens-4.14@lens-4.14-FVZNaEdMDs2JF36eEyAl2w:Control.Lens.Zoom
-                         lens-aeson-1.0.0.5@lens-aeson-1.0.0.5-IYLdR9EuQRg4D9vrqZdq8d:Data.Aeson.Lens
                          monad-control-1.0.1.0@monad-control-1.0.1.0-HoNEBoNfniX3vjSfkI7WTT:Control.Monad.Trans.Control
                          network-uri-2.6.1.0@network-uri-2.6.1.0-6PuDgH21OiwGLI4QZ1g9kt:Network.URI
-                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
-                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
                          primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa:Control.Monad.Primitive
-                         profunctors-5.2@profunctors-5.2-8vPNb2bBbM7FSFFjhuJPxd:Data.Profunctor.Rep
                          resourcet-1.1.9@resourcet-1.1.9-965WSCM4zVm5AReELsOl9B:Control.Monad.Trans.Resource.Internal
                          tagged-0.8.5@tagged-0.8.5-CtgV6EcN0do8F92i1S6iYx:Data.Tagged
                          template-haskell-2.11.0.0:Language.Haskell.TH.Syntax
@@ -186,6 +146,7 @@ import  -/  aeson-0.11.2.1@aeson-0.11.2.1-AE1BV6NZdP1FqsW2xALCUS:Data.Aeson.Type
 import  -/  base-4.9.0.0:Control.Applicative 7728b33d6969dce59e89474349eb1397
 import  -/  base-4.9.0.0:Control.Monad 7767aebfd53f0b584cef2fe66ad3986c
 import  -/  base-4.9.0.0:Data.Either bd9f099b82d4ed2d98c56d7144ac6957
+import  -/  base-4.9.0.0:Data.Function 0e2e66c2e87e48a960f18fa702dab405
 import  -/  base-4.9.0.0:Data.Functor 6fc476505db88d678632a4a838125f13
 import  -/  base-4.9.0.0:Data.List 49b86831b79b49ce5d4d9416ecba61df
 import  -/  base-4.9.0.0:Data.Traversable 7ce5b7ee67475ac3d03ae825b86efd9f
@@ -204,47 +165,46 @@ import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map 8f3eaf1368a7ea2785799
 import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
 import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
 import  -/  http-conduit-2.1.11@http-conduit-2.1.11-EC4vL4GcRJtDqKzYoSe7M2:Network.HTTP.Conduit 20e8a617303d82477b111e8b9bf2d77a
-import  -/  lens-aeson-1.0.0.5@lens-aeson-1.0.0.5-IYLdR9EuQRg4D9vrqZdq8d:Data.Aeson.Lens db1f7ad8f410ab1877c2cae08590e80c
-import  -/  Types b460a51fead384942bec5d162e4f3095
-  exports: ef56590bec9e182c00e7d04c2fe6f0ec
-  GameResult 65f31444615f8663ebffc3e32e730fe5
-  GameResult 51b87c8b8053b714fa416d2dc3e8e4a3
-  ast 8f68af178f890d05222713ed88ad14e0
-  blk abf27d68192d6d22b92798cd956353c9
-  dreb 68647bb314596a967991310785cbaefd
-  fg3_pct 960c24a5f768dd0281c515831292fddb
-  fg3a a7030da0dbdb813c7e5a4b2b51dac55e
-  fg3m a0ac20008f3b0bdf7fe7f4648b40fc37
-  fg_pct 1d7ef377b3e077039c75a65c255c4cdf
-  fga a6caac8472f8a442ecc1bbe6a066dc22
-  fgm 10542dd893294435545d9fbd911c9df9
-  ft_pct d5ee990dabd1d12700dc2938caa7d79e
-  fta 38c52d0ce5bbc02a39e6978513a53c6b
-  ftm c471cd0bad01563b0761aa546b92b270
-  game_ID d352405d77bfc267e470a776129cc6e0
-  game_date 02be0e0b29887232b40e4ac965e8f82a
-  lo 9cd8091b42479b968d7c2c3e272e8ec7
-  matchup 2402d031166364e3c9bceec6f517c9f8
-  min aec49062e5c65f4a773e74a0f982dfa6
-  oreb 661391dc81470de707df31604d45c924
-  pf d7db3e2eed4a97364b97a54d09a40781
-  pts 71f6ce17b004350879512c0df7827849
-  reb 574e3ff81b98b46e664e230f39320365
-  stl a6585a0b93ebd0ea84ee5b33b46a5b07
-  team_ID be9014a4da27dd7db39f9da35fc2cb41
+import  -/  Types 82278cb014634a93e4f314e0bb2db6a9
+  exports: 6ffaf5c5bdae0147bcc3d8cc8cd4132c
+  GameResult b4094fc5a413cad3ff9db4696ad052f8
+  GameResult 78632a65db0e9641612bbaead0c93238
+  ast 0234f8c3fd5bc9fb2608d4c2ec1e50cd
+  blk 4ee0a3e2d0649f1f4f5bac3a4f977e48
+  dreb d9e71bf392305fdac03ae0d13a276cb3
+  fg3_pct c826f8fbf300e501b80af6384b045118
+  fg3a d58fa509e2a4af94b29589b6be250ab4
+  fg3m f1fddb030dd9a96ad29cc6923cbbe366
+  fg_pct 80c83f2663c32539ffbd4a5451b4fe8b
+  fga 21f1edaaf34b1f68018003bf52051c9e
+  fgm 50976b9b0556fdd03990fd52970fed69
+  ft_pct c22fddbf224b044238bc41ad03485d73
+  fta f7d427fa8cd4cdf229590280589597b1
+  ftm c29d5fc2be5a4e0312c9eff3a0229dd3
+  game_ID 69d1e3acf8bd86bf15138ca94c41a14b
+  game_date 18728403cc77bc0073aa83f76bdfeb9a
+  lo b4324d1d14c9e76b86ed761f600f865c
+  matchup 15a9e7140563fc77c4202d6388c3c8cb
+  min ffa0fbe67320be9201e7f57ebbd84242
+  oreb 983e5224314c05dd3366aa83826bc0f7
+  pf 77b98c90a3c45d0ee485319a72f06392
+  pts 4db3cceab647dace25257c3b43c389aa
+  reb cf14f16a08fe9a3e76c353b250594fc3
+  stl 491d2e60959b0403e4b62b6782fc4d43
+  team_ID dda82e605da0f353ae8a4b83f4299986
   teams 1519a97f1d5dc903076e4d698a7df16d
-  tov 16dff0c47c0a234950a3c9c61a166a9b
-  w_pct 952b4369287f49ac5f80d92e4df226e6
-  wi 53a3729d1d02a72bf29153ccbcfdd08d
-  wl f7c01daef3deb0c836ff9a67a4c01a2a
+  tov 79c20f49e57d7ee05108ab5f66071a14
+  w_pct e89fb75bd1c0ca28e06a5a53f6007ba7
+  wi 754c84f5948df1f7a0786bf7fdcf0e22
+  wl aed7946824a1d1e72bc7c259cdf41fe4
 import  -/  text-1.2.2.1@text-1.2.2.1-9Yh8rJoh8fO2JMLWffT3Qs:Data.Text 1e73069de2859bae8530c14767b0c6af
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $fEqFullPage :: GHC.Classes.Eq Main.FullPage
   DFunId
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
      Unfolding: DFun:.
                   @ Main.FullPage Main.$fEqFullPage_$c== Main.$fEqFullPage_$c/= -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $fEqFullPage_$c/= ::
     Main.FullPage -> Main.FullPage -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -260,7 +220,7 @@ import  -/  text-1.2.2.1@text-1.2.2.1-9Yh8rJoh8fO2JMLWffT3Qs:Data.Text 1e73069de
                         b1 of wild2 {
                    GHC.Types.False -> GHC.Types.True
                    GHC.Types.True -> GHC.Types.False } } }) -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $fEqFullPage_$c== ::
     Main.FullPage -> Main.FullPage -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -274,7 +234,7 @@ import  -/  text-1.2.2.1@text-1.2.2.1-9Yh8rJoh8fO2JMLWffT3Qs:Data.Text 1e73069de
                    Main.$fEqResultSets
                    a2
                    b1 } }) -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $fEqResultSets :: GHC.Classes.Eq Main.ResultSets
   DFunId
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -282,7 +242,7 @@ c8f0bdc78ecae26c3467b5505240c479
                   @ Main.ResultSets
                   Main.$fEqResultSets_$c==
                   Main.$fEqResultSets_$c/= -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $fEqResultSets_$c/= ::
     Main.ResultSets -> Main.ResultSets -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -298,7 +258,7 @@ c8f0bdc78ecae26c3467b5505240c479
                         b1 of wild2 {
                    GHC.Types.False -> GHC.Types.True
                    GHC.Types.True -> GHC.Types.False } } }) -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $fEqResultSets_$c== ::
     Main.ResultSets -> Main.ResultSets -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -312,7 +272,7 @@ c8f0bdc78ecae26c3467b5505240c479
                    Types.$fEqGameResult
                    a2
                    b1 } }) -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $fFromJSONFullPage :: Data.Aeson.Types.Class.FromJSON Main.FullPage
   DFunId
   {- Arity: 1, Inline: INLINE (sat-args=0),
@@ -320,7 +280,7 @@ c8f0bdc78ecae26c3467b5505240c479
                 Main.$fFromJSONFullPage_$cparseJSON
                   `cast`
                 (Sym (Data.Aeson.Types.Class.N:FromJSON[0] <Main.FullPage>_N)) -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $fFromJSONFullPage1 ::
     Data.Aeson.Types.Internal.Object
     -> Data.Aeson.Types.Internal.Parser Main.FullPage
@@ -328,7 +288,7 @@ c8f0bdc78ecae26c3467b5505240c479
 38a94afd73bdb6a29c0ddf560771cac7
   $fFromJSONFullPage2 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Result Sets"#) -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $fFromJSONFullPage_$cparseJSON ::
     Data.Aeson.Types.Internal.Value
     -> Data.Aeson.Types.Internal.Parser Main.FullPage
@@ -337,7 +297,7 @@ c8f0bdc78ecae26c3467b5505240c479
                    @ Main.FullPage
                    Main.$fFromJSONFullPage2
                    Main.$fFromJSONFullPage1) -}
-6ed4571eb81885ef2695373d54d6b051
+841b3f2ceb3600ffbd2b3481859c9a8a
   $fFromJSONGameResult ::
     Data.Aeson.Types.Class.FromJSON Types.GameResult
   DFunId
@@ -347,12 +307,12 @@ c8f0bdc78ecae26c3467b5505240c479
                   `cast`
                 (Sym (Data.Aeson.Types.Class.N:FromJSON[0]
                           <Types.GameResult>_N)) -}
-e317e65a112235d3db73045b4a17465d
+0616fd55aa6e5bbf9cd8ad12da5eac77
   $fFromJSONGameResult_$cparseJSON ::
     Data.Aeson.Types.Internal.Value
     -> Data.Aeson.Types.Internal.Parser Types.GameResult
   {- Arity: 1, Strictness: <L,1*U> -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $fFromJSONResultSets ::
     Data.Aeson.Types.Class.FromJSON Main.ResultSets
   DFunId
@@ -361,7 +321,7 @@ c8f0bdc78ecae26c3467b5505240c479
                 Main.$fFromJSONResultSets_$cparseJSON
                   `cast`
                 (Sym (Data.Aeson.Types.Class.N:FromJSON[0] <Main.ResultSets>_N)) -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $fFromJSONResultSets1 ::
     Data.Aeson.Types.Internal.Object
     -> Data.Aeson.Types.Internal.Parser Main.ResultSets
@@ -369,7 +329,7 @@ c8f0bdc78ecae26c3467b5505240c479
 433b219fd3ff1e9122b6e41d6c13d78e
   $fFromJSONResultSets2 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Row Sets"#) -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $fFromJSONResultSets_$cparseJSON ::
     Data.Aeson.Types.Internal.Value
     -> Data.Aeson.Types.Internal.Parser Main.ResultSets
@@ -378,7 +338,7 @@ c8f0bdc78ecae26c3467b5505240c479
                    @ Main.ResultSets
                    Main.$fFromJSONResultSets2
                    Main.$fFromJSONResultSets1) -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $fReadFullPage :: GHC.Read.Read Main.FullPage
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -388,7 +348,7 @@ c8f0bdc78ecae26c3467b5505240c479
                   Main.$fReadFullPage_$creadList
                   Main.$fReadFullPage_$creadPrec
                   Main.$fReadFullPage_$creadListPrec -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $fReadFullPage1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -407,7 +367,7 @@ c8f0bdc78ecae26c3467b5505240c479
                              <Main.FullPage>_R))
                    @ b
                    eta1) -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $fReadFullPage2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP Main.FullPage
@@ -422,7 +382,7 @@ c8f0bdc78ecae26c3467b5505240c479
                                        <Main.FullPage>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                   <Main.FullPage>_R)))) -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $fReadFullPage3 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -435,7 +395,7 @@ c8f0bdc78ecae26c3467b5505240c479
                    (w1 :: Main.FullPage -> Text.ParserCombinators.ReadP.P b) ->
                  case w of ww { GHC.Types.I# ww1 ->
                  Main.$w$creadPrec ww1 @ b w1 }) -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $fReadFullPage4 :: Text.ParserCombinators.ReadP.P [Main.FullPage]
   {- Unfolding: (GHC.Read.$wlist
                    @ Main.FullPage
@@ -446,14 +406,14 @@ c8f0bdc78ecae26c3467b5505240c479
                    @ [Main.FullPage]
                    (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                       @ [Main.FullPage])) -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $fReadFullPage_$creadList ::
     Text.ParserCombinators.ReadP.ReadS [Main.FullPage]
   {- Arity: 1,
      Unfolding: (Text.ParserCombinators.ReadP.run
                    @ [Main.FullPage]
                    Main.$fReadFullPage4) -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $fReadFullPage_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [Main.FullPage]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -466,7 +426,7 @@ c8f0bdc78ecae26c3467b5505240c479
                                     <[Main.FullPage]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                <[Main.FullPage]>_R))) -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $fReadFullPage_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec Main.FullPage
   {- Arity: 1,
@@ -475,7 +435,7 @@ c8f0bdc78ecae26c3467b5505240c479
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                           <Main.FullPage>_R)) -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $fReadFullPage_$creadsPrec ::
     GHC.Types.Int -> Text.ParserCombinators.ReadP.ReadS Main.FullPage
   {- Arity: 1, Strictness: <L,U>,
@@ -499,7 +459,7 @@ c8f0bdc78ecae26c3467b5505240c479
                       @ Main.FullPage
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                          @ Main.FullPage))) -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $fReadResultSets :: GHC.Read.Read Main.ResultSets
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -509,7 +469,7 @@ c8f0bdc78ecae26c3467b5505240c479
                   Main.$fReadResultSets_$creadList
                   Main.$fReadResultSets_$creadPrec
                   Main.$fReadResultSets_$creadListPrec -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $fReadResultSets1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -528,7 +488,7 @@ c8f0bdc78ecae26c3467b5505240c479
                              <Main.ResultSets>_R))
                    @ b
                    eta1) -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $fReadResultSets2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP Main.ResultSets
@@ -543,7 +503,7 @@ c8f0bdc78ecae26c3467b5505240c479
                                        <Main.ResultSets>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                   <Main.ResultSets>_R)))) -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $fReadResultSets3 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -556,7 +516,7 @@ c8f0bdc78ecae26c3467b5505240c479
                    (w1 :: Main.ResultSets -> Text.ParserCombinators.ReadP.P b) ->
                  case w of ww { GHC.Types.I# ww1 ->
                  Main.$w$creadPrec1 ww1 @ b w1 }) -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $fReadResultSets4 ::
     Text.ParserCombinators.ReadP.P [Main.ResultSets]
   {- Unfolding: (GHC.Read.$wlist
@@ -568,14 +528,14 @@ c8f0bdc78ecae26c3467b5505240c479
                    @ [Main.ResultSets]
                    (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                       @ [Main.ResultSets])) -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $fReadResultSets_$creadList ::
     Text.ParserCombinators.ReadP.ReadS [Main.ResultSets]
   {- Arity: 1,
      Unfolding: (Text.ParserCombinators.ReadP.run
                    @ [Main.ResultSets]
                    Main.$fReadResultSets4) -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $fReadResultSets_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [Main.ResultSets]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -588,7 +548,7 @@ c8f0bdc78ecae26c3467b5505240c479
                                     <[Main.ResultSets]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                <[Main.ResultSets]>_R))) -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $fReadResultSets_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec Main.ResultSets
   {- Arity: 1,
@@ -597,7 +557,7 @@ c8f0bdc78ecae26c3467b5505240c479
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                           <Main.ResultSets>_R)) -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $fReadResultSets_$creadsPrec ::
     GHC.Types.Int -> Text.ParserCombinators.ReadP.ReadS Main.ResultSets
   {- Arity: 1, Strictness: <L,U>,
@@ -621,7 +581,7 @@ c8f0bdc78ecae26c3467b5505240c479
                       @ Main.ResultSets
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                          @ Main.ResultSets))) -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $fShowFullPage :: GHC.Show.Show Main.FullPage
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -630,7 +590,7 @@ c8f0bdc78ecae26c3467b5505240c479
                   Main.$fShowFullPage_$cshowsPrec
                   Main.$fShowFullPage_$cshow
                   Main.$fShowFullPage_$cshowList -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $fShowFullPage1 :: Main.FullPage -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (\ (w :: Main.FullPage) (w1 :: GHC.Base.String) ->
@@ -651,7 +611,7 @@ df6f04bd9c66376a53f5745269b2e746
 c5b3bf77add0d712f4ebb14edd4ec620
   $fShowFullPage6 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "FullPage {"#) -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $fShowFullPage_$cshow :: Main.FullPage -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U(1*U)>,
      Unfolding: InlineRule (1, True, False)
@@ -660,13 +620,13 @@ c5b3bf77add0d712f4ebb14edd4ec620
                    GHC.Show.shows22
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $fShowFullPage_$cshowList :: [Main.FullPage] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Main.FullPage
                    Main.$fShowFullPage1) -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $fShowFullPage_$cshowsPrec ::
     GHC.Types.Int -> Main.FullPage -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <S(S),1*U(U)><S,1*U(1*U)><L,U>,
@@ -678,7 +638,7 @@ c5b3bf77add0d712f4ebb14edd4ec620
                  case w of ww { GHC.Types.I# ww1 ->
                  case w1 of ww2 { Main.FullPage ww3 ->
                  Main.$w$cshowsPrec ww1 ww3 w2 } }) -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $fShowResultSets :: GHC.Show.Show Main.ResultSets
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -687,13 +647,13 @@ c8f0bdc78ecae26c3467b5505240c479
                   Main.$fShowResultSets_$cshowsPrec
                   Main.$fShowResultSets_$cshow
                   Main.$fShowResultSets_$cshowList -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $fShowResultSets1 :: Main.ResultSets -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (\ (w :: Main.ResultSets) (w1 :: GHC.Base.String) ->
                  case w of ww { Main.ResultSets ww1 ->
                  Main.$w$cshowsPrec1 0# ww1 w1 }) -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $fShowResultSets_$cshow :: Main.ResultSets -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U(1*U)>,
      Unfolding: InlineRule (1, True, False)
@@ -702,13 +662,13 @@ c8f0bdc78ecae26c3467b5505240c479
                    GHC.Show.shows22
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $fShowResultSets_$cshowList :: [Main.ResultSets] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Main.ResultSets
                    Main.$fShowResultSets1) -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $fShowResultSets_$cshowsPrec ::
     GHC.Types.Int -> Main.ResultSets -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <S(S),1*U(U)><S,1*U(1*U)><L,U>,
@@ -720,7 +680,7 @@ c8f0bdc78ecae26c3467b5505240c479
                  case w of ww { GHC.Types.I# ww1 ->
                  case w1 of ww2 { Main.ResultSets ww3 ->
                  Main.$w$cshowsPrec1 ww1 ww3 w2 } }) -}
-a46aabeb83b5727169217a6002d7a6b3
+ad24ed9bedf9ca97437ff5f2f3eb38e7
   $s.:10 ::
     [Data.Aeson.Types.Internal.Parser Main.ResultSets]
     -> forall (f :: * -> *) r.
@@ -729,7 +689,7 @@ a46aabeb83b5727169217a6002d7a6b3
        -> Data.Aeson.Types.Internal.Success [Main.ResultSets] f r
        -> f r
   {- Arity: 4, HasNoCafRefs, Strictness: <S,1*U><L,U><L,U><L,C(U)> -}
-23a1fa61bc638c6d9719835df6689df3
+d36012768c30a79293ea7126a736c2fb
   $s.:4 ::
     [Data.Aeson.Types.Internal.Parser Types.GameResult]
     -> forall (f :: * -> *) r.
@@ -741,7 +701,7 @@ a46aabeb83b5727169217a6002d7a6b3
 23999074360c7916b632f45b2c69931e
   $s.:5 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "[a]"#) -}
-61834b6f2c6ef136259a1f6c27f202e0
+dcdad100ef9c7fadf36d00d3c9e45059
   $s.:_f1 ::
     GHC.Types.Int
     -> Data.Aeson.Types.Internal.Value
@@ -779,7 +739,7 @@ a46aabeb83b5727169217a6002d7a6b3
 2da11b27c8bcf5d52cacbe85740fb6f2
   $s.:_f2 :: [GHC.Types.Int]
   {- Unfolding: (GHC.Enum.eftInt 0# 9223372036854775807#) -}
-9dc14fb04ee8410d61c0a457def51dd3
+590a3aa8e5bcef1bf163a427e321df2e
   $s.:_f4 ::
     GHC.Types.Int
     -> Data.Aeson.Types.Internal.Value
@@ -913,21 +873,21 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   $w$creadPrec ::
     GHC.Prim.Int#
     -> forall b.
        (Main.FullPage -> Text.ParserCombinators.ReadP.P b)
        -> Text.ParserCombinators.ReadP.P b
   {- Arity: 2, Strictness: <S,U><L,C(U)>, Inline: [0] -}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   $w$creadPrec1 ::
     GHC.Prim.Int#
     -> forall b.
        (Main.ResultSets -> Text.ParserCombinators.ReadP.P b)
        -> Text.ParserCombinators.ReadP.P b
   {- Arity: 2, Strictness: <S,U><L,C(U)>, Inline: [0] -}
-ca8e11ab7fc8a5b27cf033ebff3a3017
+9de5398e70b746b4744d5d842363a9b2
   $w$cshowsPrec ::
     GHC.Prim.Int#
     -> [Main.ResultSets] -> GHC.Base.String -> GHC.Base.String
@@ -986,7 +946,7 @@ ca8e11ab7fc8a5b27cf033ebff3a3017
                         @ GHC.Types.Char
                         GHC.Show.shows9
                         (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows6 w)) }) -}
-143ab80f8cd850dd375ecb57e0112eff
+acd5407038a52a6c1a096176ad10edb6
   $w$cshowsPrec1 ::
     GHC.Prim.Int#
     -> [Types.GameResult] -> GHC.Base.String -> GHC.Base.String
@@ -1013,7 +973,7 @@ ca8e11ab7fc8a5b27cf033ebff3a3017
                              -> GHC.Types.:
                                   @ GHC.Types.Char
                                   GHC.Show.showList__2
-                                  (Types.$fShowGameLogs3
+                                  (Types.$fShowGameLogsByTeam3
                                      x1
                                      (let {
                                         lvl27 :: [GHC.Types.Char]
@@ -1029,7 +989,7 @@ ca8e11ab7fc8a5b27cf033ebff3a3017
                                             -> GHC.Types.:
                                                  @ GHC.Types.Char
                                                  GHC.Show.shows7
-                                                 (Types.$fShowGameLogs3 y (showl ys)) }
+                                                 (Types.$fShowGameLogsByTeam3 y (showl ys)) }
                                       } in
                                       showl xs)) }))
                  } in
@@ -1042,7 +1002,7 @@ ca8e11ab7fc8a5b27cf033ebff3a3017
                         @ GHC.Types.Char
                         GHC.Show.shows9
                         (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows6 w)) }) -}
-aee311b399f460131eaaac35a8c09f94
+61d012cef1a1f9c907f46f10a306a973
   $w$j ::
     Data.Aeson.Types.Internal.Value
     -> Data.Either.Either
@@ -1096,10 +1056,14 @@ aee311b399f460131eaaac35a8c09f94
                         @ [GHC.Types.Char]
                         @ (GHC.Base.Maybe Main.FullPage)
                         (GHC.Base.Nothing @ Main.FullPage) }) -}
-4769e5113899efab90684e40156a97fb
+44dfdd5ae46bfccf49c0aa0ae37bea84
   data FullPage = FullPage {resultSets :: [Main.ResultSets]}
-c8f0bdc78ecae26c3467b5505240c479
+51bcd9f8b5d641299b5ee256455c2e8d
   data ResultSets = ResultSets {rowSet :: [Types.GameResult]}
+4aba57d9c3b8d30e1b1a59062c0631c1
+  getBoxScores ::
+    [Types.GameResult] -> [(Types.GameResult, Types.GameResult)]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
 ccb8e18071b2c436be44a8833cb05b32
   getJSON :: GHC.Types.IO [Data.ByteString.Lazy.Internal.ByteString]
   {- Arity: 1,
@@ -1125,12 +1089,12 @@ ccb8e18071b2c436be44a8833cb05b32
   jsonURL :: GHC.Base.String
   {- Unfolding: (GHC.CString.unpackCString#
                    "http://stats.nba.com/stats/teamgamelog/?Season=2015-16&SeasonType=Regular%20Season&TeamID=1610612747"#) -}
-50194a287c8d814d61b304b39a02c5cb
+bb0c9b3299a5b32ca987f8ebea2f72ab
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-9f10c4422e81c9ed2373d3647c82b068
+5005f7f30a2c93668752401a62d184e1
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -1150,7 +1114,7 @@ ccb8e18071b2c436be44a8833cb05b32
                       (GHC.Types.[] @ GHC.Types.Char))
                    GHC.Types.True
                    ipv }) -}
-11e7ed1663bf4b8daea5f155612c8aaa
+1b8f778afaf7d6cdef22addb64090d27
   main2 ::
     Data.ByteString.Lazy.Internal.ByteString -> GHC.Base.String
   {- Arity: 1,
@@ -1209,7 +1173,7 @@ ccb8e18071b2c436be44a8833cb05b32
                         -> case Main.$w$j v of wild2 {
                              Data.Either.Left err -> err
                              Data.Either.Right ds1 -> Main.main3 ds1 } } }) -}
-3c1b04895f49dbcfa3931724b3dda9c4
+58ec6ead678e3776ac2acc3a08f0bb78
   main3 :: GHC.Base.Maybe Main.FullPage -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: (\ (ds :: GHC.Base.Maybe Main.FullPage)[OneShot] ->
@@ -1223,14 +1187,14 @@ ccb8e18071b2c436be44a8833cb05b32
                         -> case x1 of wild3 { Main.ResultSets ds3 ->
                            GHC.Show.showList__
                              @ Types.GameResult
-                             Types.$fShowGameLogs3
+                             Types.$fShowGameLogsByTeam3
                              ds3
                              (GHC.Types.[] @ GHC.Types.Char) } } } }) -}
-fb9fbe398c8fda0ea666752cacfc82e0
+7b8c28a4bad8d8a74447cb15cb91e101
   main4 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
-                   "Maybe did not go through"#) -}
-79b63603be6a1898ddc7772dbf3bccb5
+                   "Maybe shows nothing."#) -}
+9b9ea39290e11f74d4d8fbdb432c5a08
   main5 ::
     Main.FullPage
     -> Data.Aeson.Types.Internal.IResult (GHC.Base.Maybe Main.FullPage)
@@ -1282,7 +1246,7 @@ fb9fbe398c8fda0ea666752cacfc82e0
                           -> Data.Attoparsec.Internal.Types.IResult
                                Data.ByteString.Internal.ByteString
                                Data.Aeson.Types.Internal.Value>_R)) -}
-15eb224c0e645a37e0528388caa74d35
+87348469e574e8b12ddfa68c5e87169c
   main8 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -1290,21 +1254,21 @@ fb9fbe398c8fda0ea666752cacfc82e0
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
-e71d08c18617b40c6b711b3094bcefd5
+d31bd3bc18fece8dca4e5778e45a1d8f
   resultSets :: Main.FullPage -> [Main.ResultSets]
   RecSel Left Main.FullPage
   {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(1*U)>,
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: Main.FullPage) ->
                  case ds of wild { Main.FullPage ds1 -> ds1 }) -}
-8b742170bf8a6e8361be4832dfe4e71a
+56ac005236812304a36d511d07e6afce
   rowSet :: Main.ResultSets -> [Types.GameResult]
   RecSel Left Main.ResultSets
   {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(1*U)>,
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: Main.ResultSets) ->
                  case ds of wild { Main.ResultSets ds1 -> ds1 }) -}
-2e7b47c4230d563beb5764e1ec77e68b
+69dfa501f1b4458c370bff3650a52693
   showResult :: Main.FullPage -> [Types.GameResult]
   {- Arity: 1, Strictness: <S(S),1*U(1*U)>,
      Unfolding: InlineRule (1, True, False)
