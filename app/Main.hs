@@ -36,20 +36,20 @@ main = do
       y = (map read x) :: [[GameResult]]
       z = getBoxScores . removeOvertime . DL.concat $ y
   --print z
-  print $ WinningTeamStats { pointDiff = (sumInts pts z) / (fromIntegral $ length z)
-                           , fieldGoalPct = ((sumPct fg_pct z) * 100) / (fromIntegral $ length z)
-                           , rebounds = (sumInts reb z) / (fromIntegral $ length z)
-                           , assists = (sumInts ast z) / (fromIntegral $ length z)
-                           , steals = (sumInts stl z) / (fromIntegral $ length z)
-                           , offReb = (sumInts oreb z) / (fromIntegral $ length z)
-                           , turnovers = (sumInts tov z) / (fromIntegral $ length z)
-                           , threeFGA = (sumInts fg3a z) / (fromIntegral $ length z)
-                           , threeFGM = (sumInts fg3m z) / (fromIntegral $ length z)
-                           , freeTAtt = (sumInts fta z) / (fromIntegral $ length z)
-                           , freeTMade = (sumInts ftm z) / (fromIntegral $ length z)
-                           , blocks = (sumInts blk z) / (fromIntegral $ length z)
-                           , eFGPct = ((effectiveFieldGoalPct z) * 100)/ (fromIntegral $ length z)
-                           , home = (fromIntegral (checkHome matchup z)) / (fromIntegral $ length z)
+  print $ WinningTeamStats { pointDiff    = (/) (sumInts pts z)   (fromIntegral $ length z)
+                           , fieldGoalPct = (/) (sumPct fg_pct z) (fromIntegral $ length z) * 100
+                           , rebounds     = (/) (sumInts reb z)   (fromIntegral $ length z)
+                           , assists      = (/) (sumInts ast z)   (fromIntegral $ length z)
+                           , steals       = (/) (sumInts stl z)   (fromIntegral $ length z)
+                           , offReb       = (/) (sumInts oreb z)  (fromIntegral $ length z)
+                           , turnovers    = (/) (sumInts tov z)   (fromIntegral $ length z)
+                           , threeFGA     = (/) (sumInts fg3a z)  (fromIntegral $ length z)
+                           , threeFGM     = (/) (sumInts fg3m z)  (fromIntegral $ length z)
+                           , freeTAtt     = (/) (sumInts fta z)   (fromIntegral $ length z)
+                           , freeTMade    = (/) (sumInts ftm z)   (fromIntegral $ length z)
+                           , blocks       = (/) (sumInts blk z)   (fromIntegral $ length z)
+                           , eFGPct       = (/) (effectiveFieldGoalPct z)            (fromIntegral $ length z) * 100
+                           , home         = (/) (fromIntegral (checkHome matchup z)) (fromIntegral $ length z) * 100
                            }
 
 removeOvertime :: [GameResult] -> [GameResult]
@@ -87,7 +87,7 @@ getBoxScores (x:xs) =
                  | otherwise      = (t2,x)
 
 checkHome :: (GameResult -> String) -> [(GameResult,GameResult)] -> Int
-checkHome f arr = length $ filter  (\x -> x /= []) . (\(x,_) -> dropWhile (== '@') $ f x ) arr
+checkHome f arr = length $ filter (\(x,_) -> elem '@' $ f x) arr
 
 
 
@@ -117,33 +117,33 @@ instance FromJSON GameResult where
   --parseJSON arr = GameResults <$> (parseJSON arr)
   parseJSON arr = do
     [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,a1] <- parseJSON arr
-    team_ID <- parseJSON a
-    game_ID <- parseJSON b
+    team_ID   <- parseJSON a
+    game_ID   <- parseJSON b
     game_date <- parseJSON c
-    matchup <- parseJSON d
-    wl <- parseJSON e
-    wi <- parseJSON f
-    lo <- parseJSON g
-    w_pct <- parseJSON h
-    minutes <- parseJSON i
-    fgm <- parseJSON j
-    fga <- parseJSON k
-    fg_pct <- parseJSON l
-    fg3m <- parseJSON m
-    fg3a <- parseJSON n
-    fg3_pct <- parseJSON o
-    ftm <- parseJSON p
-    fta <- parseJSON q
-    ft_pct <- parseJSON r
-    oreb <- parseJSON s
-    dreb <- parseJSON t
-    reb <- parseJSON u
-    ast <- parseJSON v
-    stl <- parseJSON w
-    blk <- parseJSON x
-    tov <- parseJSON y
-    pf <- parseJSON z
-    pts <- parseJSON a1
+    matchup   <- parseJSON d
+    wl        <- parseJSON e
+    wi        <- parseJSON f
+    lo        <- parseJSON g
+    w_pct     <- parseJSON h
+    minutes   <- parseJSON i
+    fgm       <- parseJSON j
+    fga       <- parseJSON k
+    fg_pct    <- parseJSON l
+    fg3m      <- parseJSON m
+    fg3a      <- parseJSON n
+    fg3_pct   <- parseJSON o
+    ftm       <- parseJSON p
+    fta       <- parseJSON q
+    ft_pct    <- parseJSON r
+    oreb      <- parseJSON s
+    dreb      <- parseJSON t
+    reb       <- parseJSON u
+    ast       <- parseJSON v
+    stl       <- parseJSON w
+    blk       <- parseJSON x
+    tov       <- parseJSON y
+    pf        <- parseJSON z
+    pts       <- parseJSON a1
     return GameResult{..}
 
 
