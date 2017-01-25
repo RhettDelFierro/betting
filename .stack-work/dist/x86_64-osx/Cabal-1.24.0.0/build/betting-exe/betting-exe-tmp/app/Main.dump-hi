@@ -1,20 +1,20 @@
 
 ==================== FINAL INTERFACE ====================
-2017-01-25 00:55:38.305083 UTC
+2017-01-25 02:28:30.507451 UTC
 
 interface main@main:Main [orphan module] 8001
-  interface hash: dcbea02549b54d3fcf56357041da37d2
-  ABI hash: 5e63e96f4fd2f3875007c5f6fc17f838
-  export-list hash: 60c601802de4cadd5d5cda661cff2950
+  interface hash: e0e1de47c3e32be8f53e8b35033a1996
+  ABI hash: facaf24d2a8be0fe0a440f29b0c047b1
+  export-list hash: fa698b9f7ed814f2d337351a423576eb
   orphan hash: 6241cc66834c8041a6df6dd7af4a9200
   flag hash: 2bce8219fc00bd60a63986a7e930b5c8
   sig of: Nothing
   used TH splices: False
   where
 exports:
+  Main.checkFullPage
   Main.getBoxScores
   Main.getJSON
-  Main.jsonURL
   Main.main
   Main.showResult
   Main.teamURLS
@@ -157,6 +157,7 @@ import  -/  base-4.9.0.0:GHC.Show 952347a6ab730bcb25c0854d8bc6ca51
 import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
 import  -/  base-4.9.0.0:System.IO ad985d7a3fc986e9b9c610fb344d9106
 import  -/  base-4.9.0.0:Text.ParserCombinators.ReadPrec 9512e2f4b227f507f87a150887202aed
+import  -/  base-4.9.0.0:Text.Read 9c1be14f7e5eac8b18bcb566c5763677
 import  -/  base-4.9.0.0:Text.Read.Lex fe3dd7b823826bf6870140c5363f9596
 import  -/  bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Lazy a6af578022042da0a57ba0b919bc6c78
 import  -/  bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Lazy.Char8 22406b4bf44ab096084a9ba406db8a02
@@ -781,8 +782,8 @@ dcdad100ef9c7fadf36d00d3c9e45059
                    `cast`
                  (Sym (Data.Aeson.Types.Internal.N:Parser[0]
                            <Main.ResultSets>_R))) -}
-b66a3e3d8421983f917bcdd92e600292
-  $sparseJSON8 ::
+f8e6d4f635ce4b37ac47669d0cc93989
+  $sparseJSON4 ::
     GHC.Types.Int
     -> Data.Aeson.Types.Internal.Value
     -> forall (f :: * -> *) r.
@@ -803,8 +804,8 @@ b66a3e3d8421983f917bcdd92e600292
                    (eta2 :: Data.Aeson.Types.Internal.Success
                               Data.Aeson.Types.Internal.Value f r) ->
                  eta2 value) -}
-76ba2c81d812beccfebce9d16ec8cafb
-  $sparseJSON9 ::
+c49f29181ae911e063df5ce906e2638f
+  $sparseJSON5 ::
     [Data.Aeson.Types.Internal.Parser Data.Aeson.Types.Internal.Value]
     -> forall (f :: * -> *) r.
        Data.Aeson.Types.Internal.JSONPath
@@ -1002,7 +1003,7 @@ acd5407038a52a6c1a096176ad10edb6
                         @ GHC.Types.Char
                         GHC.Show.shows9
                         (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows6 w)) }) -}
-61d012cef1a1f9c907f46f10a306a973
+5d40eff6a2107dd38f808f86410a9835
   $w$j ::
     Data.Aeson.Types.Internal.Value
     -> Data.Either.Either
@@ -1021,7 +1022,7 @@ acd5407038a52a6c1a096176ad10edb6
                              @ (GHC.Base.Maybe Main.FullPage)
                              (GHC.Types.[] @ Data.Aeson.Types.Internal.JSONPathElement)
                              (Data.Aeson.Types.Internal.IError @ (GHC.Base.Maybe Main.FullPage))
-                             Main.main5 of wild1 {
+                             Main.main3 of wild1 {
                         Data.Aeson.Types.Internal.IError path msg4
                         -> Data.Either.Left
                              @ [GHC.Types.Char]
@@ -1040,7 +1041,7 @@ acd5407038a52a6c1a096176ad10edb6
                              @ (GHC.Base.Maybe Main.FullPage)
                              (GHC.Types.[] @ Data.Aeson.Types.Internal.JSONPathElement)
                              (Data.Aeson.Types.Internal.IError @ (GHC.Base.Maybe Main.FullPage))
-                             Main.main5 of wild1 {
+                             Main.main3 of wild1 {
                         Data.Aeson.Types.Internal.IError path msg4
                         -> Data.Either.Left
                              @ [GHC.Types.Char]
@@ -1060,6 +1061,33 @@ acd5407038a52a6c1a096176ad10edb6
   data FullPage = FullPage {resultSets :: [Main.ResultSets]}
 51bcd9f8b5d641299b5ee256455c2e8d
   data ResultSets = ResultSets {rowSet :: [Types.GameResult]}
+558eaebfc2a96e68d19368265f8e5ea3
+  checkFullPage ::
+    Data.Either.Either GHC.Base.String (GHC.Base.Maybe Main.FullPage)
+    -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: Data.Either.Either
+                            GHC.Base.String (GHC.Base.Maybe Main.FullPage)) ->
+                 case ds of wild {
+                   Data.Either.Left err -> err
+                   Data.Either.Right ds1
+                   -> case ds1 of wild1 {
+                        GHC.Base.Nothing -> Main.checkFullPage1
+                        GHC.Base.Just x
+                        -> case x of wild2 { Main.FullPage ds2 ->
+                           case ds2 of wild3 {
+                             [] -> case GHC.List.badHead ret_ty GHC.Base.String of {}
+                             : x1 ds3
+                             -> case x1 of wild4 { Main.ResultSets ds4 ->
+                                GHC.Show.showList__
+                                  @ Types.GameResult
+                                  Types.$fShowGameLogsByTeam3
+                                  ds4
+                                  (GHC.Types.[] @ GHC.Types.Char) } } } } }) -}
+cdc378a52189da925a1e6464eadcc643
+  checkFullPage1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Maybe failed somewhere."#) -}
 4aba57d9c3b8d30e1b1a59062c0631c1
   getBoxScores ::
     [Types.GameResult] -> [(Types.GameResult, Types.GameResult)]
@@ -1085,16 +1113,12 @@ ccb8e18071b2c436be44a8833cb05b32
     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
           [Data.ByteString.Lazy.Internal.ByteString] #)
   {- Arity: 2, Strictness: <S,1*U><S,U> -}
-88fac18010da7c4a4a22aa4fad960886
-  jsonURL :: GHC.Base.String
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "http://stats.nba.com/stats/teamgamelog/?Season=2015-16&SeasonType=Regular%20Season&TeamID=1610612747"#) -}
-bb0c9b3299a5b32ca987f8ebea2f72ab
+d1a5fe9046d9e722ce8ed75dc70e6d46
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-5005f7f30a2c93668752401a62d184e1
+ca49364e9a83b7c87679b45516a59ee5
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -1104,98 +1128,91 @@ bb0c9b3299a5b32ca987f8ebea2f72ab
                  GHC.IO.Handle.Text.hPutStr2
                    GHC.IO.Handle.FD.stdout
                    (GHC.Show.showList__
-                      @ [GHC.Types.Char]
-                      GHC.Show.shows_$cshowList
+                      @ Types.GameResult
+                      Types.$fShowGameLogsByTeam3
                       (GHC.Base.map
                          @ Data.ByteString.Lazy.Internal.ByteString
-                         @ [GHC.Types.Char]
+                         @ Types.GameResult
                          Main.main2
                          ipv1)
                       (GHC.Types.[] @ GHC.Types.Char))
                    GHC.Types.True
                    ipv }) -}
-1b8f778afaf7d6cdef22addb64090d27
+95712c121b8aa43bbb564410253cc3d0
   main2 ::
-    Data.ByteString.Lazy.Internal.ByteString -> GHC.Base.String
+    Data.ByteString.Lazy.Internal.ByteString -> Types.GameResult
   {- Arity: 1,
      Unfolding: (\ (x :: Data.ByteString.Lazy.Internal.ByteString) ->
-                 case x of wild {
-                   Data.ByteString.Lazy.Internal.Empty
-                   -> case Main.main6 of wild1 {
-                        Data.Attoparsec.ByteString.Lazy.Fail ds ds1 msg4
-                        -> Data.Aeson.Types.Internal.formatError
-                             (GHC.Types.[] @ Data.Aeson.Types.Internal.JSONPathElement)
-                             msg4
-                        Data.Attoparsec.ByteString.Lazy.Done ds v
-                        -> case Main.$w$j v of wild2 {
-                             Data.Either.Left err -> err
-                             Data.Either.Right ds1 -> Main.main3 ds1 } }
-                   Data.ByteString.Lazy.Internal.Chunk dt dt1 dt2 dt3 xs
-                   -> case Data.Attoparsec.ByteString.Lazy.parse_go
-                             @ Data.Aeson.Types.Internal.Value
-                             (Data.Aeson.Parser.Internal.$wjsonEOF
-                                @ Data.Aeson.Types.Internal.Value
-                                dt
-                                dt1
-                                dt2
-                                dt3
-                                dt3
-                                0#
-                                0#
-                                Data.Attoparsec.Internal.Types.Incomplete
-                                (Data.Attoparsec.ByteString.Internal.failK
-                                   @ Data.Aeson.Types.Internal.Value)
-                                  `cast`
-                                (Sub (Sym (Data.Attoparsec.Internal.Types.D:R:StateByteString[0]))
-                                 ->_R <Data.Attoparsec.Internal.Types.Pos
-                                       -> Data.Attoparsec.Internal.Types.More
-                                       -> [GHC.Base.String]
-                                       -> GHC.Base.String
-                                       -> Data.Attoparsec.Internal.Types.IResult
-                                            Data.ByteString.Internal.ByteString
-                                            Data.Aeson.Types.Internal.Value>_R)
-                                (Data.Attoparsec.ByteString.Internal.successK
-                                   @ Data.Aeson.Types.Internal.Value)
-                                  `cast`
-                                (Sub (Sym (Data.Attoparsec.Internal.Types.D:R:StateByteString[0]))
-                                 ->_R <Data.Attoparsec.Internal.Types.Pos
-                                       -> Data.Attoparsec.Internal.Types.More
-                                       -> Data.Aeson.Types.Internal.Value
-                                       -> Data.Attoparsec.Internal.Types.IResult
-                                            Data.ByteString.Internal.ByteString
-                                            Data.Aeson.Types.Internal.Value>_R))
-                             xs of wild1 {
-                        Data.Attoparsec.ByteString.Lazy.Fail ds ds1 msg4
-                        -> Data.Aeson.Types.Internal.formatError
-                             (GHC.Types.[] @ Data.Aeson.Types.Internal.JSONPathElement)
-                             msg4
-                        Data.Attoparsec.ByteString.Lazy.Done ds v
-                        -> case Main.$w$j v of wild2 {
-                             Data.Either.Left err -> err
-                             Data.Either.Right ds1 -> Main.main3 ds1 } } }) -}
-58ec6ead678e3776ac2acc3a08f0bb78
-  main3 :: GHC.Base.Maybe Main.FullPage -> GHC.Base.String
-  {- Arity: 1, Strictness: <S,1*U>,
-     Unfolding: (\ (ds :: GHC.Base.Maybe Main.FullPage)[OneShot] ->
-                 case ds of wild {
-                   GHC.Base.Nothing -> Main.main4
-                   GHC.Base.Just x
-                   -> case x of wild1 { Main.FullPage ds1 ->
-                      case ds1 of wild2 {
-                        [] -> case GHC.List.badHead ret_ty GHC.Base.String of {}
-                        : x1 ds2
-                        -> case x1 of wild3 { Main.ResultSets ds3 ->
-                           GHC.Show.showList__
+                 case Text.Read.readEither6
+                        @ Types.GameResult
+                        (Text.ParserCombinators.ReadP.run
+                           @ Types.GameResult
+                           Main.main6
+                           (case x of wild {
+                              Data.ByteString.Lazy.Internal.Empty
+                              -> case Main.main4 of wild1 {
+                                   Data.Attoparsec.ByteString.Lazy.Fail ds ds1 msg4
+                                   -> Data.Aeson.Types.Internal.formatError
+                                        (GHC.Types.[] @ Data.Aeson.Types.Internal.JSONPathElement)
+                                        msg4
+                                   Data.Attoparsec.ByteString.Lazy.Done ds v
+                                   -> Main.checkFullPage (Main.$w$j v) }
+                              Data.ByteString.Lazy.Internal.Chunk dt dt1 dt2 dt3 xs
+                              -> case Data.Attoparsec.ByteString.Lazy.parse_go
+                                        @ Data.Aeson.Types.Internal.Value
+                                        (Data.Aeson.Parser.Internal.$wjsonEOF
+                                           @ Data.Aeson.Types.Internal.Value
+                                           dt
+                                           dt1
+                                           dt2
+                                           dt3
+                                           dt3
+                                           0#
+                                           0#
+                                           Data.Attoparsec.Internal.Types.Incomplete
+                                           (Data.Attoparsec.ByteString.Internal.failK
+                                              @ Data.Aeson.Types.Internal.Value)
+                                             `cast`
+                                           (Sub (Sym (Data.Attoparsec.Internal.Types.D:R:StateByteString[0]))
+                                            ->_R <Data.Attoparsec.Internal.Types.Pos
+                                                  -> Data.Attoparsec.Internal.Types.More
+                                                  -> [GHC.Base.String]
+                                                  -> GHC.Base.String
+                                                  -> Data.Attoparsec.Internal.Types.IResult
+                                                       Data.ByteString.Internal.ByteString
+                                                       Data.Aeson.Types.Internal.Value>_R)
+                                           (Data.Attoparsec.ByteString.Internal.successK
+                                              @ Data.Aeson.Types.Internal.Value)
+                                             `cast`
+                                           (Sub (Sym (Data.Attoparsec.Internal.Types.D:R:StateByteString[0]))
+                                            ->_R <Data.Attoparsec.Internal.Types.Pos
+                                                  -> Data.Attoparsec.Internal.Types.More
+                                                  -> Data.Aeson.Types.Internal.Value
+                                                  -> Data.Attoparsec.Internal.Types.IResult
+                                                       Data.ByteString.Internal.ByteString
+                                                       Data.Aeson.Types.Internal.Value>_R))
+                                        xs of wild1 {
+                                   Data.Attoparsec.ByteString.Lazy.Fail ds ds1 msg4
+                                   -> Data.Aeson.Types.Internal.formatError
+                                        (GHC.Types.[] @ Data.Aeson.Types.Internal.JSONPathElement)
+                                        msg4
+                                   Data.Attoparsec.ByteString.Lazy.Done ds v
+                                   -> Main.checkFullPage (Main.$w$j v) } })) of wild {
+                   []
+                   -> GHC.Err.errorWithoutStackTrace
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Types.GameResult
+                        Text.Read.readEither4
+                   : x1 ds
+                   -> case ds of wild1 {
+                        [] -> x1
+                        : ipv ipv1
+                        -> GHC.Err.errorWithoutStackTrace
+                             @ 'GHC.Types.PtrRepLifted
                              @ Types.GameResult
-                             Types.$fShowGameLogsByTeam3
-                             ds3
-                             (GHC.Types.[] @ GHC.Types.Char) } } } }) -}
-7b8c28a4bad8d8a74447cb15cb91e101
-  main4 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "Maybe shows nothing."#) -}
-9b9ea39290e11f74d4d8fbdb432c5a08
-  main5 ::
+                             Text.Read.readEither2 } }) -}
+ebf4719659f1462ad8d75044edf98fef
+  main3 ::
     Main.FullPage
     -> Data.Aeson.Types.Internal.IResult (GHC.Base.Maybe Main.FullPage)
   {- Arity: 1, HasNoCafRefs, Strictness: <L,U>,
@@ -1204,15 +1221,15 @@ bb0c9b3299a5b32ca987f8ebea2f72ab
                  Data.Aeson.Types.Internal.ISuccess
                    @ (GHC.Base.Maybe Main.FullPage)
                    (GHC.Base.Just @ Main.FullPage a2)) -}
-5f6278dda5d336efafe3a08526ed5b5c
-  main6 ::
+11ed2cf2fcb27c361bdaa242fcc843c5
+  main4 ::
     Data.Attoparsec.ByteString.Lazy.Result
       Data.Aeson.Types.Internal.Value
   {- Unfolding: (Data.Attoparsec.ByteString.Lazy.parse_$sgo
                    @ Data.Aeson.Types.Internal.Value
-                   Main.main7) -}
-7a76839b5abae79399b592e66aa30f6c
-  main7 ::
+                   Main.main5) -}
+aa6ed16e051df3cbe998a07b6f1355ed
+  main5 ::
     Data.Attoparsec.Internal.Types.IResult
       Data.ByteString.Internal.ByteString Data.Aeson.Types.Internal.Value
   {- Unfolding: (Data.Aeson.Parser.Internal.$wjsonEOF
@@ -1246,8 +1263,25 @@ bb0c9b3299a5b32ca987f8ebea2f72ab
                           -> Data.Attoparsec.Internal.Types.IResult
                                Data.ByteString.Internal.ByteString
                                Data.Aeson.Types.Internal.Value>_R)) -}
-87348469e574e8b12ddfa68c5e87169c
-  main8 ::
+1af93f906ff95b7c709023719e39529a
+  main6 :: Text.ParserCombinators.ReadP.P Types.GameResult
+  {- Unfolding: ((GHC.Read.$fReadDouble10
+                    @ Types.GameResult
+                    Types.$fReadGameResult3
+                      `cast`
+                    (Trans
+                         (<Text.ParserCombinators.ReadPrec.Prec>_R
+                          ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                        <Types.GameResult>_R))
+                         (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                   <Types.GameResult>_R)))
+                    Text.ParserCombinators.ReadPrec.minPrec)
+                   `cast`
+                 (Text.ParserCombinators.ReadP.N:ReadP[0] <Types.GameResult>_R)
+                   @ Types.GameResult
+                   (Text.Read.readEither5 @ Types.GameResult)) -}
+c9a3fd5dca190e37aea4fa2a7d6fa0ae
+  main7 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
