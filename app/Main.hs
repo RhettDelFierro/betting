@@ -47,7 +47,7 @@ main = do
 --  --d <- (eitherDecode <$> ds) :: IO (Either String ([Maybe FullPage])) --decode lifts over IO to hit the B.ByteString contained in the IO.
   --putStrLn . show $ d
   let x = fmap checkFullPage $ d
-      y = fmap (getBoxScores . read) x
+      y = (map read x) :: [[GameResult]]
 
   print y
 --  putStrLn . show $ (fmap check d)
@@ -71,8 +71,8 @@ checkFullPage = (\case Left err -> err
 showResult :: FullPage -> [GameResult]
 showResult = (rowSet . DL.head . resultSets)
 
-getBoxScores :: [GameResult] -> (GameResult,GameResult)
-getBoxScores (x:y:ys) = (x,y)
+--getBoxScores :: [GameResult] -> (GameResult,GameResult)
+--getBoxScores (x:y) = (team_ID x,y)
 --getBoxScores (x:xs) = (\case { Just b -> (x,b); Nothing -> (x,x) }) $ DL.find (\y -> (game_ID x) == (game_ID y)) xs
 --getBoxScores arr = DL.groupBy ((==) `on` game_ID) $ arr
 --    where comp [x,y]
