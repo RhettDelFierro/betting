@@ -48,7 +48,7 @@ main = do
                            , freeTAtt     = (/) (sumInts fta z)   (fromIntegral $ length z)
                            , freeTMade    = (/) (sumInts ftm z)   (fromIntegral $ length z)
                            , blocks       = (/) (sumInts blk z)   (fromIntegral $ length z)
-                           , eFGPct       = (/) (effectiveFieldGoalPct z)            (fromIntegral $ length z) * 100
+                           , eFGPct       = (/) (effectiveFieldGoalPct z)            (fromIntegral $ length z)
                            , home         = (/) (fromIntegral (checkHome matchup z)) (fromIntegral $ length z) * 100
                            }
 
@@ -57,10 +57,9 @@ removeOvertime = DL.filter (\x -> minutes x <= 240)
 
 effectiveFieldGoalPct :: [(GameResult,GameResult)] -> Double
 effectiveFieldGoalPct arr = sum $
-    map (\(x,y) -> let a = ((fgm x) - ((fgm y)))
-                       b = 0.5 * ((fg3m x) - ((fg3m y)))
-                       c = ((fga x) - ((fga y)))
-                   in ((a + b) / c)) arr
+    map (\(x,y) -> let a = ((fgm x) + (0.5 * (fg3m x))) / (fga x)
+                       b = ((fgm y) + (0.5 * (fg3m y))) / (fga y)
+                   in (a - b) * 100) arr
 
 sumInts :: (GameResult -> Double) -> [(GameResult,GameResult)] -> Double
 sumInts f arr = sum $ map (\(x,y) -> (f x) - (f y)) arr
