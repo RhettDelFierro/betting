@@ -10,19 +10,18 @@ type WinningTeamBoxscore = GameResult
 type LosingTeamBoxscore  = GameResult
 type BoxScore            = (WinningTeamBoxscore,LosingTeamBoxscore)
 
-data WinningTeamStats = WinningTeamStats { pointDiff    :: Int
-                                         , fieldGoalPct :: Float
-                                         , rebounds     :: Int
+data WinningTeamStats = WinningTeamStats { pointDiff    :: Double
+                                         , fieldGoalPct :: Double
+                                         , rebounds     :: Double
                                          --, home         :: Bool
-                                         , assists      :: Int
-                                         , steals       :: Int
-                                         , offReb       :: Int
-                                         , turnovers    :: Int
-                                         , threeFGA     :: Int
-                                         , threeFGM     :: Int    --3p fg%
-                                         , freeTAtt     :: Int    --freethrows attempted
-                                         , freeTMade    :: Int    --freethrows made
-                                         , fouls        :: Int    --fouls commited
+                                         , assists      :: Double
+                                         , steals       :: Double
+                                         , offReb       :: Double
+                                         , turnovers    :: Double
+                                         , threeFGA     :: Double
+                                         , threeFGM     :: Double    --3p fg%
+                                         , freeTAtt     :: Double    --freethrows attempted
+                                         , freeTMade    :: Double    --freethrows made
                                          } deriving (Show, Eq, Ord, Read)
 
 data GameResult = GameResult { team_ID   :: Int
@@ -36,7 +35,7 @@ data GameResult = GameResult { team_ID   :: Int
                              , min       :: Int
                              , fgm       :: Int
                              , fga       :: Int
-                             , fg_pct    :: Float
+                             , fg_pct    :: Double
                              , fg3m      :: Int
                              , fg3a      :: Int
                              , fg3_pct   :: Float

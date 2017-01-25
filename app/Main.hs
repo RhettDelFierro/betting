@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings, DeriveGeneric, RecordWildCards, LambdaCase, FlexibleInstances, NamedFieldPuns, DataKinds #-}
+{-# LANGUAGE FlexibleContexts, OverloadedStrings, DeriveGeneric, RecordWildCards, LambdaCase, FlexibleInstances, NamedFieldPuns, DataKinds #-}
 
 module Main where
 
@@ -50,7 +50,30 @@ main = do
       y = (map read x) :: [[GameResult]]
       z = getBoxScores . DL.concat $ y
   --print z
-
+  print $ WinningTeamStats { pointDiff = (fromIntegral (sumInts pts z)) / (fromIntegral $ length z)
+                           , fieldGoalPct = ((sumPct fg_pct z) * 100) / (fromIntegral $ length z)
+                           , rebounds = (fromIntegral (sumInts reb z)) / (fromIntegral $ length z)
+                           , assists = (fromIntegral (sumInts ast z)) / (fromIntegral $ length z)
+                           , steals = (fromIntegral (sumInts stl z)) / (fromIntegral $ length z)
+                           , offReb = (fromIntegral (sumInts oreb z)) / (fromIntegral $ length z)
+                           , turnovers = (fromIntegral (sumInts tov z)) / (fromIntegral $ length z)
+                           , threeFGA = (fromIntegral (sumInts fg3a z)) / (fromIntegral $ length z)
+                           , threeFGM = (fromIntegral (sumInts fg3m z)) / (fromIntegral $ length z)
+                           , freeTAtt = (fromIntegral (sumInts fta z)) / (fromIntegral $ length z)
+                           , freeTMade = (fromIntegral (sumInts ftm z)) / (fromIntegral $ length z)
+                           }
+--  print $ WinningTeamStats { pointDiff = (fromIntegral (foldIntField pts z)) / (fromIntegral $ length z)
+--                           , fieldGoalPct = ((foldPctField fg_pct z) * 100) / (fromIntegral $ length z)
+--                           , rebounds = (fromIntegral (foldIntField reb z)) / (fromIntegral $ length z)
+--                           , assists = (fromIntegral (foldIntField ast z)) / (fromIntegral $ length z)
+--                           , steals = (fromIntegral (foldIntField stl z)) / (fromIntegral $ length z)
+--                           , offReb = (fromIntegral (foldIntField oreb z)) / (fromIntegral $ length z)
+--                           , turnovers = (fromIntegral (foldIntField tov z)) / (fromIntegral $ length z)
+--                           , threeFGA = (fromIntegral (foldIntField fg3a z)) / (fromIntegral $ length z)
+--                           , threeFGM = (fromIntegral (foldIntField fg3m z)) / (fromIntegral $ length z)
+--                           , freeTAtt = (fromIntegral (foldIntField fta z)) / (fromIntegral $ length z)
+--                           , freeTMade = (fromIntegral (foldIntField ftm z)) / (fromIntegral $ length z)
+--                           }
 
 --  putStrLn . show $ (fmap check d)
 --                        where check = (\case Left err -> err
@@ -63,6 +86,17 @@ main = do
 --                   Nothing -> putStrLn "Maybe did not go through."
 --                 Just ps  -> putStrLn $ show $ fmap showResult ps
 --                 Nothing -> putStrLn "Maybe did not go through"
+sumInts :: (GameResult -> Int) -> [(GameResult,GameResult)] -> Int
+sumInts f arr = sum $ map (\(x,y) -> (f x) - (f y)) arr
+
+sumPct :: (GameResult -> Double) -> [(GameResult,GameResult)] -> Double
+sumPct f arr = sum $ map (\(x,y) -> (f x) - (f y)) arr
+
+--foldIntField :: (GameResult -> Int) -> [(GameResult,GameResult)] -> Int
+--foldIntField f arr = foldr (\(x,y) acc -> ((f x) - (f y)) +) 0 arr
+--
+--foldPctField :: (GameResult -> Double) -> [(GameResult,GameResult)] -> Double
+--foldPctField f arr = foldr (\(x,y) acc -> ((f x) - (f y)) +) 0 arr
 
 checkFullPage :: Either String (Maybe FullPage) -> String
 checkFullPage = (\case Left err -> err
@@ -96,10 +130,6 @@ getBoxScores (x:xs) =
 --gatherResults gr = case gr of
 --                     Just x ->
 --                     Nothing ->
-
-getWinningStats :: [(GameResult,GameResult)] -> WinningTeamStats
-getWinningStats (x,y):xs |
-    |
 
 
 
