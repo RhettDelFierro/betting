@@ -25,11 +25,10 @@ import Types
 
 teamURLS :: [String]
 teamURLS = fmap makeURL teams
-    where makeURL = (\(_,team_id,_) -> "http://stats.nba.com/stats/teamgamelog/?Season=2015-16&SeasonType=Regular%20Season&TeamID=" ++ show team_id)
+    where makeURL = (\(_,team_id,_) -> "http://stats.nba.com/stats/teamgamelog/?Season=2016-17&SeasonType=Regular%20Season&TeamID=" ++ show team_id)
 
 getJSON :: IO [B.ByteString]
 getJSON = mapM simpleHttp teamURLS
-
 
 main :: IO ()
 main = do
@@ -42,36 +41,38 @@ main = do
       x = removeOvertime w
       y = getBoxScores x
   --print z
-  print $ WinningTeamStats { pointDiff    = (/) (sumInts pts y)   (fromIntegral $ length y)
-                           , fieldGoalPct = (/) (sumPct fg_pct y) (fromIntegral $ length y) * 100
-                           , rebounds     = (/) (sumInts reb y)   (fromIntegral $ length y)
-                           , assists      = (/) (sumInts ast y)   (fromIntegral $ length y)
-                           , steals       = (/) (sumInts stl y)   (fromIntegral $ length y)
-                           , offReb       = (/) (sumInts oreb y)  (fromIntegral $ length y)
-                           , turnovers    = (/) (sumInts tov y)   (fromIntegral $ length y)
-                           , threeFGA     = (/) (sumInts fg3a y)  (fromIntegral $ length y)
-                           , threeFGM     = (/) (sumInts fg3m y)  (fromIntegral $ length y)
-                           , freeTAtt     = (/) (sumInts fta y)   (fromIntegral $ length y)
-                           , freeTMade    = (/) (sumInts ftm y)   (fromIntegral $ length y)
-                           , blocks       = (/) (sumInts blk y)   (fromIntegral $ length y)
-                           , eFGPct       = (/) (effectiveFieldGoalPct y)            (fromIntegral $ length y)
-                           , home         = (/) (fromIntegral (checkHome matchup y)) (fromIntegral $ length y) * 100
-                           , b2b          = (/) (fromIntegral (checkB2B w y))(fromIntegral $ length y)
-                           }
+  let results = winningTeamDefault { pointDiff    = (/) (sumInts pts y)   (fromIntegral $ length y)
+                                   , fieldGoalPct = (/) (sumPct fg_pct y) (fromIntegral $ length y) * 100
+                                   , rebounds     = (/) (sumInts reb y)   (fromIntegral $ length y)
+                                   , assists      = (/) (sumInts ast y)   (fromIntegral $ length y)
+                                   , steals       = (/) (sumInts stl y)   (fromIntegral $ length y)
+                                   , offReb       = (/) (sumInts oreb y)  (fromIntegral $ length y)
+                                   , turnovers    = (/) (sumInts tov y)   (fromIntegral $ length y)
+                                   , threeFGA     = (/) (sumInts fg3a y)  (fromIntegral $ length y)
+                                   , threeFGM     = (/) (sumInts fg3m y)  (fromIntegral $ length y)
+                                   , freeTAtt     = (/) (sumInts fta y)   (fromIntegral $ length y)
+                                   , freeTMade    = (/) (sumInts ftm y)   (fromIntegral $ length y)
+                                   , blocks       = (/) (sumInts blk y)   (fromIntegral $ length y)
+                                   , eFGPct       = (/) (effectiveFieldGoalPct y)            (fromIntegral $ length y)
+                                   , home         = (/) (fromIntegral (checkHome matchup y)) (fromIntegral $ length y) * 100
+                                   , b2b          = (/) (fromIntegral (checkInterval w y 1 1)) (fromIntegral $ length y)
+                                   , threeInFour  = (/) (fromIntegral (checkInterval w y 4 2)) (fromIntegral $ length y)
+                                   , fourInSix    = (/) (fromIntegral (checkInterval w y 6 3)) (fromIntegral $ length y)
+                                   }
+  print $ results
+--this organized the winning ang losing teams from the [(GameResult,GameResult)] parameter, then throws into gamedayInterval.
+checkInterval :: [GameResult] -> [(GameResult,GameResult)] -> DayDiff -> NumGamesPlayed -> Int
+--checkB2B whole tup interval= length $ gameDayInterval whole
+--                                (map (\(x,_) -> (team_ID x,game_date x)) tup) interval
+checkInterval whole tup interval games_played = length $
+    gameDayInterval whole (map (\(x,_) -> (team_ID x,game_date x)) tup) interval games_played
 
-checkB2B :: [GameResult] -> [(GameResult,GameResult)] -> Int
-checkB2B whole tup = length $ gameDayInterval whole
-                                (map (\(x,_) -> (team_ID x,game_date x)) tup) 1
-
-gameDayInterval :: [GameResult] -> [(Team_ID,GameDate)] -> DayDiff -> [GameResult]
-gameDayInterval _   []     _        = []
-gameDayInterval grs (x:xs) interval =
-    filter (\g -> ((team_ID g) == (fst x)) && (checkDates (snd x) interval (game_date g))) grs
-        ++ (gameDayInterval grs xs interval)
-
---gameDayInterval :: [GameResults] -> (Team_ID,GameDate) -> DayDiff -> [GameResults]
---gameDayInterval grs (t_id,gamedate) interval =
---    filter (\g -> ((team_id g) == t_id) && (checkDates gamedate interval $ game_date g) grs
+gameDayInterval :: [GameResult] -> [(WinningTeamID,GameDate)] -> DayDiff -> NumGamesPlayed -> [[GameResult]]
+gameDayInterval _ [] _  _ = []
+gameDayInterval grs (x:xs) interval games_played =
+    (filter (\arr -> (length arr) >= games_played) . DL.groupBy ((==) `on` (team_ID )) .
+        filter (\g -> ((team_ID g) == (fst x)) && (checkDates (snd x) interval (game_date g))) $ grs)
+            ++ (gameDayInterval grs xs interval games_played)
 
 checkDates :: GameDate -> DayDiff -> GameDate -> Bool
 checkDates day1 dayDiff day2 = let d1 = parseTimeOrError False defaultTimeLocale "%b %d, %Y" day1 :: Day
@@ -102,7 +103,7 @@ checkFullPage = (\case Left err -> err
 showResult :: FullPage -> [GameResult]
 showResult = (rowSet . DL.head . resultSets)
 
-getBoxScores :: [GameResult] -> [(GameResult,GameResult)]
+getBoxScores :: [GameResult] -> [(WinningTeamGameResult,LosingTeamGameResult)]
 getBoxScores []     = []
 getBoxScores (x:xs) =
     let sameGame = [boxscore a | a <- xs, (game_ID x) == (game_ID a) ]
@@ -170,10 +171,3 @@ instance FromJSON GameResult where
     pf        <- parseJSON z
     pts       <- parseJSON a1
     return GameResult{..}
-
-
-
-
---will use this to get game logs.
-
-

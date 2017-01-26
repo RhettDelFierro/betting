@@ -2,15 +2,17 @@
 
 module Types where
 
-type TeamName            = String
-type Team_ID             = Int
-type TeamABBR            = String
-type Teams               = (TeamName,Team_ID,TeamABBR)
-type WinningTeamBoxscore = GameResult
-type LosingTeamBoxscore  = GameResult
-type BoxScore            = (WinningTeamBoxscore,LosingTeamBoxscore)
-type DayDiff             = Integer
-type GameDate            = String
+type TeamName              = String
+type Team_ID               = Int
+type TeamABBR              = String
+type Teams                 = (TeamName,Team_ID,TeamABBR)
+type WinningTeamID         = Int
+type WinningTeamGameResult = GameResult
+type LosingTeamGameResult  = GameResult
+type BoxScore              = (WinningTeamGameResult,LosingTeamGameResult)
+type DayDiff               = Integer
+type GameDate              = String
+type NumGamesPlayed        = Int
 
 data WinningTeamStats = WinningTeamStats { pointDiff    :: Double
                                          , fieldGoalPct :: Double
@@ -28,7 +30,29 @@ data WinningTeamStats = WinningTeamStats { pointDiff    :: Double
                                          , eFGPct       :: Double
                                          , home         :: Double
                                          , b2b          :: Double
+                                         , threeInFour  :: Double
+                                         , fourInSix    :: Double
                                          } deriving (Show, Eq, Ord, Read)
+winningTeamDefault :: WinningTeamStats
+winningTeamDefault = WinningTeamStats { pointDiff = 0
+                                      , fieldGoalPct = 0
+                                      , rebounds = 0
+                                         --, home         :: Bool
+                                      , assists = 0
+                                      , steals = 0
+                                      , offReb = 0
+                                      , turnovers = 0
+                                      , threeFGA = 0
+                                      , threeFGM = 0    --3p fg%
+                                      , freeTAtt = 0    --freethrows attempted
+                                      , freeTMade = 0    --freethrows made
+                                      , blocks = 0
+                                      , eFGPct = 0
+                                      , home = 0
+                                      , b2b = 0
+                                      , threeInFour = 0
+                                      , fourInSix = 0
+                                      }
 
 data GameResult = GameResult { team_ID   :: Int
                              , game_ID   :: String

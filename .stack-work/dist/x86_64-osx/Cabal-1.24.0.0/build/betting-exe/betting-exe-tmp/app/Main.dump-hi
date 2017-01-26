@@ -1,20 +1,23 @@
 
 ==================== FINAL INTERFACE ====================
-2017-01-25 20:36:12.279512 UTC
+2017-01-26 03:45:13.871782 UTC
 
 interface main@main:Main [orphan module] 8001
-  interface hash: c8aa16cb5120e9982e462641c218bf5d
-  ABI hash: 572825f416806f320b03d4304590e08b
-  export-list hash: 048f282760c8c718c53e0f808c5e5e06
+  interface hash: a181ac4095652f46fb13e23e2a820039
+  ABI hash: 72ac7cf0bcbbd6b5a476b236e56cbbca
+  export-list hash: f106782269afd3e475ab45f064feb59c
   orphan hash: d2e5ac0f82a4838786698966cc775386
   flag hash: 5688540879a7f6bf6c99fd7bb39c8ad1
   sig of: Nothing
   used TH splices: False
   where
 exports:
+  Main.checkDates
   Main.checkFullPage
   Main.checkHome
+  Main.checkInterval
   Main.effectiveFieldGoalPct
+  Main.gameDayInterval
   Main.getBoxScores
   Main.getJSON
   Main.main
@@ -155,7 +158,9 @@ import  -/  base-4.9.0.0:Data.Foldable 8aeb682f6c74f97fcf0ace0d608a43ea
 import  -/  base-4.9.0.0:Data.Function 0e2e66c2e87e48a960f18fa702dab405
 import  -/  base-4.9.0.0:Data.Functor 6fc476505db88d678632a4a838125f13
 import  -/  base-4.9.0.0:Data.List 49b86831b79b49ce5d4d9416ecba61df
+import  -/  base-4.9.0.0:Data.OldList 0058409f994fb13ae0616e3f1e5b4dae
 import  -/  base-4.9.0.0:Data.Traversable 7ce5b7ee67475ac3d03ae825b86efd9f
+import  -/  base-4.9.0.0:Data.Tuple acb0ed10307ed88df6c81b8589f4de16
 import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
 import  -/  base-4.9.0.0:GHC.List 13d2451194c1c6e53b4f4f07947736dd
 import  -/  base-4.9.0.0:GHC.Num 48f506a8f4ecf06285d0a0706594dcc0
@@ -174,62 +179,77 @@ import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map 8f3eaf1368a7ea2785799
 import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
 import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
 import  -/  http-conduit-2.1.11@http-conduit-2.1.11-EC4vL4GcRJtDqKzYoSe7M2:Network.HTTP.Conduit 20e8a617303d82477b111e8b9bf2d77a
-import  -/  Types 7533f9e5ac156f5e135f53beb3c8496b
-  exports: ab7d720d7592ef5c0fa127a6c3c4e87d
+import  -/  Types 142e3ec74bbd29b11584f08cc88f45bf
+  exports: af2106ce5dc600a9ef8eefd269d2b1da
+  DayDiff bb35b49f74cc1d810e139ef880e8ee92
+  GameDate 3b93c766a88f70c74b0a10d2bd2f31dd
   GameResult 41b51b42c649ef1a0e4381f9f3c74778
   GameResult fe4c82377322beebabc83f52178dd2b6
-  WinningTeamStats 15824a74884a523f3776db075927fd59
-  assists c89a223f7d2127346eb5a0ae0042c4ae
+  LosingTeamGameResult f5e5b8491016f1f280a22cf9a305f7c3
+  NumGamesPlayed 51ff151c748568059e3807ac8fec55d9
+  WinningTeamGameResult 27b8d4b517d3b0ffbc8a8d5e9dd51732
+  WinningTeamID a6098eb3a7fa68c996fa1886168655b0
+  assists e36873ac2f13513426c1eb76feb1eb0d
   ast c0221d5ebdcfa9589de4add349b25ba9
+  b2b 0b20781c1c4bc3e25f8e1d8582dfb3f8
   blk b08a67a4a20fbc56b6f4d94d20c4320f
-  blocks b7405bbf9f353ec885d6341a7eabdab1
+  blocks d000d2543dae4283e1ee3a87eda3bfcc
   dreb 1d3ce95f110bb5a8e7bd03d1cae81106
-  eFGPct 1d83086fc7ec8254498fd1c78d0fd3dc
+  eFGPct ae12551652199ecfc6358e050df74500
   fg3_pct c49f08a12c80cd2e46082f3d9c92eebc
   fg3a bf006156e0975c692012c2609b581947
   fg3m fb3c14fa742f6545ad4fca58568bfc00
   fg_pct 32ab154662bd499b5fdd7e1226326f54
   fga f3f4bd717fb5004a5eea9ca1d25f9dbe
   fgm 4cbfd69051b05d52aeef58e50438b123
-  fieldGoalPct 0a27373d8fa944888b1faf7753b32acb
-  freeTAtt f04f8257bd271a733a7439c7b8130269
-  freeTMade 1d1d816fd06e6c247d2587fbcc7d1035
+  fieldGoalPct 2031eddec9048f61456686edd3e4f72c
+  fourInSix 555045eda040f39313dbf15f5fe575cc
+  freeTAtt d14fbe6ead9d9734dce6748071599184
+  freeTMade 65740400be83e3287dfb79fa3d7fe931
   ft_pct 298d5c2418766d37dbb18751f4d44af4
   fta 8a1650515a4b016a309983c9e6c45acf
   ftm b1b9a8ff0794cd1fba110b0305028043
   game_ID 89e6b05fd3defb2d59bf8da573dd73df
   game_date 354a6820bd2924154c35b956da888d62
-  home 0d99a4d50b95526bb2f6f46676751de8
+  home 07ff4cec4fb9511d4d8a5585cec6d4f3
   lo f1d8ba0f1209592dbb897f8adb172975
   matchup 00c23e82abb3750546fa7479be58fabd
   minutes dfa04a86ec7ed5af3013bedb408a952a
-  offReb fafc8c86b996fac60363e949713c73fd
+  offReb 93daa941f3d965455bf3a6d7825da5a4
   oreb ef5de1d5bfa5da2941521a6c55f184e6
   pf 1c12d0872237567b24a4abbaffcbcb7f
-  pointDiff d28f32b4ceafb08c0a356c785a589a66
+  pointDiff d57ba62f34f9f192fd946d2f96f2bafd
   pts b181d56453d87a6fec9c1b24f495c7e3
   reb f7a787f1ff8ea1576096e9888c53563c
-  rebounds 964df91bae514280882d9eb0b3ad7899
-  steals e999796ec0555f25da001b1b86f70ce2
+  rebounds 7c52bcfeec93d97c7f7b19855f2085b3
+  steals 99b4d78984a4a324875df6102d0f7289
   stl abf7670e0c93f29d17b1781a855e9b8b
   team_ID 05a242662ea7c7b8ad1a57bfd840272d
   teams 1519a97f1d5dc903076e4d698a7df16d
-  threeFGA 427ea9e8c7c54c25b55f6f232bdc4fbb
-  threeFGM 636157e0687556fa0a23c86ce25139f5
+  threeFGA 0d26cf4fb296a33a0e7880957d000c84
+  threeFGM 2143f0696a9a81c0922a56c98085d673
+  threeInFour c5913f692f1bf9c7788dbee4247c9afa
   tov 5cd795dea29d68d62aeae7d0c51ec7f6
-  turnovers 60bc94b27673323bc5ff300bf2e4a013
+  turnovers 12d59e07a3e65f75c4fd6a4c56a0f23d
   w_pct 74c637e4507479533b99482ec407637d
   wi 9dcfcced1f004a6c448cd4eba2badba7
+  winningTeamDefault 40a853cab94ee52a2da753481eb805c8
   wl d0e48850dabf85c50e5ca18c2a440281
 import  -/  text-1.2.2.1@text-1.2.2.1-9Yh8rJoh8fO2JMLWffT3Qs:Data.Text 1e73069de2859bae8530c14767b0c6af
+import  -/  time-1.6.0.1@time-1.6.0.1:Data.Time 780e2aecb1fb9ccddcc7e0dc4518a593
+import  -/  time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar 44843125e625ba0c33d003b4a74e290d
+import  -/  time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Days 78fb08170477ff7a05d07a106538d707
+import  -/  time-1.6.0.1@time-1.6.0.1:Data.Time.Clock 123f4f3108b813affbe0d12c8a29799f
 import  -/  time-1.6.0.1@time-1.6.0.1:Data.Time.Format 27cb95f964a30cb92bacdbe49c3edd92
-28ab3ccba28c754e047fe281e8b58bc7
+import  -/  time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Locale c145edcf6f9ed5eb13f88f2adc21a4ef
+import  -/  time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse 104244d33e67a9ff260ef78e1b23f17f
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $fEqFullPage :: GHC.Classes.Eq Main.FullPage
   DFunId
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
      Unfolding: DFun:.
                   @ Main.FullPage Main.$fEqFullPage_$c== Main.$fEqFullPage_$c/= -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $fEqFullPage_$c/= ::
     Main.FullPage -> Main.FullPage -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -245,7 +265,7 @@ import  -/  time-1.6.0.1@time-1.6.0.1:Data.Time.Format 27cb95f964a30cb92bacdbe49
                         b1 of wild2 {
                    GHC.Types.False -> GHC.Types.True
                    GHC.Types.True -> GHC.Types.False } } }) -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $fEqFullPage_$c== ::
     Main.FullPage -> Main.FullPage -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -259,7 +279,7 @@ import  -/  time-1.6.0.1@time-1.6.0.1:Data.Time.Format 27cb95f964a30cb92bacdbe49
                    Main.$fEqResultSets
                    a3
                    b1 } }) -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $fEqResultSets :: GHC.Classes.Eq Main.ResultSets
   DFunId
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -267,7 +287,7 @@ a79e4e90602d68891c6798f17100f2d5
                   @ Main.ResultSets
                   Main.$fEqResultSets_$c==
                   Main.$fEqResultSets_$c/= -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $fEqResultSets_$c/= ::
     Main.ResultSets -> Main.ResultSets -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -283,7 +303,7 @@ a79e4e90602d68891c6798f17100f2d5
                         b1 of wild2 {
                    GHC.Types.False -> GHC.Types.True
                    GHC.Types.True -> GHC.Types.False } } }) -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $fEqResultSets_$c== ::
     Main.ResultSets -> Main.ResultSets -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -297,7 +317,7 @@ a79e4e90602d68891c6798f17100f2d5
                    Types.$fEqGameResult
                    a3
                    b1 } }) -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $fFromJSONFullPage :: Data.Aeson.Types.Class.FromJSON Main.FullPage
   DFunId
   {- Arity: 1, Inline: INLINE (sat-args=0),
@@ -305,7 +325,7 @@ a79e4e90602d68891c6798f17100f2d5
                 Main.$fFromJSONFullPage_$cparseJSON
                   `cast`
                 (Sym (Data.Aeson.Types.Class.N:FromJSON[0] <Main.FullPage>_N)) -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $fFromJSONFullPage1 ::
     Data.Aeson.Types.Internal.Object
     -> Data.Aeson.Types.Internal.Parser Main.FullPage
@@ -313,7 +333,7 @@ a79e4e90602d68891c6798f17100f2d5
 38a94afd73bdb6a29c0ddf560771cac7
   $fFromJSONFullPage2 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Result Sets"#) -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $fFromJSONFullPage_$cparseJSON ::
     Data.Aeson.Types.Internal.Value
     -> Data.Aeson.Types.Internal.Parser Main.FullPage
@@ -337,7 +357,7 @@ a79e4e90602d68891c6798f17100f2d5
     Data.Aeson.Types.Internal.Value
     -> Data.Aeson.Types.Internal.Parser Types.GameResult
   {- Arity: 1, Strictness: <L,1*U> -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $fFromJSONResultSets ::
     Data.Aeson.Types.Class.FromJSON Main.ResultSets
   DFunId
@@ -346,7 +366,7 @@ a79e4e90602d68891c6798f17100f2d5
                 Main.$fFromJSONResultSets_$cparseJSON
                   `cast`
                 (Sym (Data.Aeson.Types.Class.N:FromJSON[0] <Main.ResultSets>_N)) -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $fFromJSONResultSets1 ::
     Data.Aeson.Types.Internal.Object
     -> Data.Aeson.Types.Internal.Parser Main.ResultSets
@@ -354,7 +374,7 @@ a79e4e90602d68891c6798f17100f2d5
 433b219fd3ff1e9122b6e41d6c13d78e
   $fFromJSONResultSets2 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Row Sets"#) -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $fFromJSONResultSets_$cparseJSON ::
     Data.Aeson.Types.Internal.Value
     -> Data.Aeson.Types.Internal.Parser Main.ResultSets
@@ -363,7 +383,7 @@ a79e4e90602d68891c6798f17100f2d5
                    @ Main.ResultSets
                    Main.$fFromJSONResultSets2
                    Main.$fFromJSONResultSets1) -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $fReadFullPage :: GHC.Read.Read Main.FullPage
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -373,7 +393,7 @@ a79e4e90602d68891c6798f17100f2d5
                   Main.$fReadFullPage_$creadList
                   Main.$fReadFullPage_$creadPrec
                   Main.$fReadFullPage_$creadListPrec -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $fReadFullPage1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -392,7 +412,7 @@ a79e4e90602d68891c6798f17100f2d5
                              <Main.FullPage>_R))
                    @ b
                    eta1) -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $fReadFullPage2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP Main.FullPage
@@ -407,7 +427,7 @@ a79e4e90602d68891c6798f17100f2d5
                                        <Main.FullPage>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                   <Main.FullPage>_R)))) -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $fReadFullPage3 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -420,7 +440,7 @@ a79e4e90602d68891c6798f17100f2d5
                    (w1 :: Main.FullPage -> Text.ParserCombinators.ReadP.P b) ->
                  case w of ww { GHC.Types.I# ww1 ->
                  Main.$w$creadPrec ww1 @ b w1 }) -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $fReadFullPage4 :: Text.ParserCombinators.ReadP.P [Main.FullPage]
   {- Unfolding: (GHC.Read.$wlist
                    @ Main.FullPage
@@ -431,14 +451,14 @@ a79e4e90602d68891c6798f17100f2d5
                    @ [Main.FullPage]
                    (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                       @ [Main.FullPage])) -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $fReadFullPage_$creadList ::
     Text.ParserCombinators.ReadP.ReadS [Main.FullPage]
   {- Arity: 1,
      Unfolding: (Text.ParserCombinators.ReadP.run
                    @ [Main.FullPage]
                    Main.$fReadFullPage4) -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $fReadFullPage_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [Main.FullPage]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -451,7 +471,7 @@ a79e4e90602d68891c6798f17100f2d5
                                     <[Main.FullPage]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                <[Main.FullPage]>_R))) -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $fReadFullPage_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec Main.FullPage
   {- Arity: 1,
@@ -460,7 +480,7 @@ a79e4e90602d68891c6798f17100f2d5
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                           <Main.FullPage>_R)) -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $fReadFullPage_$creadsPrec ::
     GHC.Types.Int -> Text.ParserCombinators.ReadP.ReadS Main.FullPage
   {- Arity: 1, Strictness: <L,U>,
@@ -484,7 +504,7 @@ a79e4e90602d68891c6798f17100f2d5
                       @ Main.FullPage
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                          @ Main.FullPage))) -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $fReadResultSets :: GHC.Read.Read Main.ResultSets
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -494,7 +514,7 @@ a79e4e90602d68891c6798f17100f2d5
                   Main.$fReadResultSets_$creadList
                   Main.$fReadResultSets_$creadPrec
                   Main.$fReadResultSets_$creadListPrec -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $fReadResultSets1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -513,7 +533,7 @@ a79e4e90602d68891c6798f17100f2d5
                              <Main.ResultSets>_R))
                    @ b
                    eta1) -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $fReadResultSets2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP Main.ResultSets
@@ -528,7 +548,7 @@ a79e4e90602d68891c6798f17100f2d5
                                        <Main.ResultSets>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                   <Main.ResultSets>_R)))) -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $fReadResultSets3 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -541,7 +561,7 @@ a79e4e90602d68891c6798f17100f2d5
                    (w1 :: Main.ResultSets -> Text.ParserCombinators.ReadP.P b) ->
                  case w of ww { GHC.Types.I# ww1 ->
                  Main.$w$creadPrec1 ww1 @ b w1 }) -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $fReadResultSets4 ::
     Text.ParserCombinators.ReadP.P [Main.ResultSets]
   {- Unfolding: (GHC.Read.$wlist
@@ -553,14 +573,14 @@ a79e4e90602d68891c6798f17100f2d5
                    @ [Main.ResultSets]
                    (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                       @ [Main.ResultSets])) -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $fReadResultSets_$creadList ::
     Text.ParserCombinators.ReadP.ReadS [Main.ResultSets]
   {- Arity: 1,
      Unfolding: (Text.ParserCombinators.ReadP.run
                    @ [Main.ResultSets]
                    Main.$fReadResultSets4) -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $fReadResultSets_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [Main.ResultSets]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -573,7 +593,7 @@ a79e4e90602d68891c6798f17100f2d5
                                     <[Main.ResultSets]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                <[Main.ResultSets]>_R))) -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $fReadResultSets_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec Main.ResultSets
   {- Arity: 1,
@@ -582,7 +602,7 @@ a79e4e90602d68891c6798f17100f2d5
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                           <Main.ResultSets>_R)) -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $fReadResultSets_$creadsPrec ::
     GHC.Types.Int -> Text.ParserCombinators.ReadP.ReadS Main.ResultSets
   {- Arity: 1, Strictness: <L,U>,
@@ -606,7 +626,7 @@ a79e4e90602d68891c6798f17100f2d5
                       @ Main.ResultSets
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                          @ Main.ResultSets))) -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $fShowFullPage :: GHC.Show.Show Main.FullPage
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -615,7 +635,7 @@ a79e4e90602d68891c6798f17100f2d5
                   Main.$fShowFullPage_$cshowsPrec
                   Main.$fShowFullPage_$cshow
                   Main.$fShowFullPage_$cshowList -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $fShowFullPage1 :: Main.FullPage -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (\ (w :: Main.FullPage) (w1 :: GHC.Base.String) ->
@@ -636,7 +656,7 @@ df6f04bd9c66376a53f5745269b2e746
 c5b3bf77add0d712f4ebb14edd4ec620
   $fShowFullPage6 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "FullPage {"#) -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $fShowFullPage_$cshow :: Main.FullPage -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U(1*U)>,
      Unfolding: InlineRule (1, True, False)
@@ -645,13 +665,13 @@ c5b3bf77add0d712f4ebb14edd4ec620
                    GHC.Show.shows22
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $fShowFullPage_$cshowList :: [Main.FullPage] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Main.FullPage
                    Main.$fShowFullPage1) -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $fShowFullPage_$cshowsPrec ::
     GHC.Types.Int -> Main.FullPage -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <S(S),1*U(U)><S,1*U(1*U)><L,U>,
@@ -663,7 +683,7 @@ c5b3bf77add0d712f4ebb14edd4ec620
                  case w of ww { GHC.Types.I# ww1 ->
                  case w1 of ww2 { Main.FullPage ww3 ->
                  Main.$w$cshowsPrec ww1 ww3 w2 } }) -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $fShowResultSets :: GHC.Show.Show Main.ResultSets
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -672,13 +692,13 @@ a79e4e90602d68891c6798f17100f2d5
                   Main.$fShowResultSets_$cshowsPrec
                   Main.$fShowResultSets_$cshow
                   Main.$fShowResultSets_$cshowList -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $fShowResultSets1 :: Main.ResultSets -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (\ (w :: Main.ResultSets) (w1 :: GHC.Base.String) ->
                  case w of ww { Main.ResultSets ww1 ->
                  Main.$w$cshowsPrec1 0# ww1 w1 }) -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $fShowResultSets_$cshow :: Main.ResultSets -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U(1*U)>,
      Unfolding: InlineRule (1, True, False)
@@ -687,13 +707,13 @@ a79e4e90602d68891c6798f17100f2d5
                    GHC.Show.shows22
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $fShowResultSets_$cshowList :: [Main.ResultSets] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Main.ResultSets
                    Main.$fShowResultSets1) -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $fShowResultSets_$cshowsPrec ::
     GHC.Types.Int -> Main.ResultSets -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <S(S),1*U(U)><S,1*U(1*U)><L,U>,
@@ -705,7 +725,7 @@ a79e4e90602d68891c6798f17100f2d5
                  case w of ww { GHC.Types.I# ww1 ->
                  case w1 of ww2 { Main.ResultSets ww3 ->
                  Main.$w$cshowsPrec1 ww1 ww3 w2 } }) -}
-338427b7a7d1edda7869160dea9c2b36
+48c130e6436fc63d532782eed6a5173f
   $s.:10 ::
     [Data.Aeson.Types.Internal.Parser Main.ResultSets]
     -> forall (f :: * -> *) r.
@@ -764,7 +784,7 @@ da6c933a911106fd67294705ef1eac90
 2da11b27c8bcf5d52cacbe85740fb6f2
   $s.:_f2 :: [GHC.Types.Int]
   {- Unfolding: (GHC.Enum.eftInt 0# 9223372036854775807#) -}
-dd0be2277c5ff7f2836d017b7bb0e5b9
+63dc3fb4281f05d3b941ad8101d13dc6
   $s.:_f4 ::
     GHC.Types.Int
     -> Data.Aeson.Types.Internal.Value
@@ -898,21 +918,21 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   $w$creadPrec ::
     GHC.Prim.Int#
     -> forall b.
        (Main.FullPage -> Text.ParserCombinators.ReadP.P b)
        -> Text.ParserCombinators.ReadP.P b
   {- Arity: 2, Strictness: <S,U><L,C(U)>, Inline: [0] -}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   $w$creadPrec1 ::
     GHC.Prim.Int#
     -> forall b.
        (Main.ResultSets -> Text.ParserCombinators.ReadP.P b)
        -> Text.ParserCombinators.ReadP.P b
   {- Arity: 2, Strictness: <S,U><L,C(U)>, Inline: [0] -}
-8a8efd957f2a9b0f4781642ec5d6b720
+51dc566eb89cf8ccedc8c5e105ecfbfb
   $w$cshowsPrec ::
     GHC.Prim.Int#
     -> [Main.ResultSets] -> GHC.Base.String -> GHC.Base.String
@@ -944,7 +964,7 @@ a79e4e90602d68891c6798f17100f2d5
                                      0#
                                      ww3
                                      (let {
-                                        lvl30 :: [GHC.Types.Char]
+                                        lvl39 :: [GHC.Types.Char]
                                         = GHC.Types.: @ GHC.Types.Char GHC.Show.showList__1 s
                                       } in
                                       letrec {
@@ -952,7 +972,7 @@ a79e4e90602d68891c6798f17100f2d5
                                           {- Arity: 1, Strictness: <S,1*U> -}
                                         = \ (ds2 :: [Main.ResultSets]) ->
                                           case ds2 of wild1 {
-                                            [] -> lvl30
+                                            [] -> lvl39
                                             : y ys
                                             -> GHC.Types.:
                                                  @ GHC.Types.Char
@@ -971,7 +991,7 @@ a79e4e90602d68891c6798f17100f2d5
                         @ GHC.Types.Char
                         GHC.Show.shows9
                         (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows6 w)) }) -}
-65503e8ed72682ed47a0b2520e7a5463
+0d81a7d9bae43df8b295ae841331a178
   $w$cshowsPrec1 ::
     GHC.Prim.Int#
     -> [Types.GameResult] -> GHC.Base.String -> GHC.Base.String
@@ -1001,7 +1021,7 @@ a79e4e90602d68891c6798f17100f2d5
                                   (Types.$fShowGameLogsByTeam3
                                      x1
                                      (let {
-                                        lvl30 :: [GHC.Types.Char]
+                                        lvl39 :: [GHC.Types.Char]
                                         = GHC.Types.: @ GHC.Types.Char GHC.Show.showList__1 s
                                       } in
                                       letrec {
@@ -1009,7 +1029,7 @@ a79e4e90602d68891c6798f17100f2d5
                                           {- Arity: 1, Strictness: <S,1*U> -}
                                         = \ (ds2 :: [Types.GameResult]) ->
                                           case ds2 of wild1 {
-                                            [] -> lvl30
+                                            [] -> lvl39
                                             : y ys
                                             -> GHC.Types.:
                                                  @ GHC.Types.Char
@@ -1105,11 +1125,64 @@ a79e4e90602d68891c6798f17100f2d5
                           $wgo2 ys (GHC.Prim.+## ww (GHC.Prim.-## x1 y2)) } } } }
                  } in
                  $wgo2 w1 0.0##) -}
-28ab3ccba28c754e047fe281e8b58bc7
+e5e3275cdb0ba8ffbe61db63767fd4cc
   data FullPage = FullPage {resultSets :: [Main.ResultSets]}
-a79e4e90602d68891c6798f17100f2d5
+650bc6224a60e01eba51409849a44b4f
   data ResultSets = ResultSets {rowSet :: [Types.GameResult]}
-2201a65addbaeed614ea798a30b18b75
+9b384ca677b738808fd0ca5bf7248a0b
+  checkDates ::
+    Types.GameDate -> Types.DayDiff -> Types.GameDate -> GHC.Types.Bool
+  {- Arity: 3, Strictness: <L,U><L,U><L,U>,
+     Unfolding: (\ (day1 :: Types.GameDate)
+                   (dayDiff :: Types.DayDiff)
+                   (day2 :: Types.GameDate) ->
+                 let {
+                   d2 :: Data.Time.Calendar.Days.Day
+                   = Data.Time.Format.Parse.parseTimeOrError
+                       @ Data.Time.Calendar.Days.Day
+                       Data.Time.Format.Parse.$fParseTimeDay_$cbuildTime
+                         `cast`
+                       (Sym (Data.Time.Format.Parse.N:ParseTime[0]
+                                 <Data.Time.Calendar.Days.Day>_N))
+                       GHC.Types.False
+                       Data.Time.Format.Locale.defaultTimeLocale
+                       Main.checkDates2
+                       day2
+                 } in
+                 let {
+                   d1 :: Data.Time.Calendar.Days.Day
+                   = Data.Time.Format.Parse.parseTimeOrError
+                       @ Data.Time.Calendar.Days.Day
+                       Data.Time.Format.Parse.$fParseTimeDay_$cbuildTime
+                         `cast`
+                       (Sym (Data.Time.Format.Parse.N:ParseTime[0]
+                                 <Data.Time.Calendar.Days.Day>_N))
+                       GHC.Types.False
+                       Data.Time.Format.Locale.defaultTimeLocale
+                       Main.checkDates2
+                       day1
+                 } in
+                 case GHC.Integer.Type.ltInteger#
+                        Main.checkDates1
+                        (GHC.Integer.Type.minusInteger
+                           d1 `cast` (Data.Time.Calendar.Days.N:Day[0])
+                           d2 `cast` (Data.Time.Calendar.Days.N:Day[0])) of wild { DEFAULT ->
+                 case GHC.Prim.tagToEnum# @ GHC.Types.Bool wild of wild1 {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True
+                   -> case GHC.Integer.Type.leInteger#
+                             (GHC.Integer.Type.minusInteger
+                                d1 `cast` (Data.Time.Calendar.Days.N:Day[0])
+                                d2 `cast` (Data.Time.Calendar.Days.N:Day[0]))
+                             dayDiff of wild2 { DEFAULT ->
+                      GHC.Prim.tagToEnum# @ GHC.Types.Bool wild2 } } }) -}
+743aae70eadf8a3bf3b0920163799e6c
+  checkDates1 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (0) -}
+17fd2560ad3347eeb2b858e854f95a8a
+  checkDates2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "%b %d, %Y"#) -}
+aa103f757e6503d58aad109660edd080
   checkFullPage ::
     Data.Either.Either GHC.Base.String (GHC.Base.Maybe Main.FullPage)
     -> GHC.Base.String
@@ -1149,6 +1222,43 @@ cdc378a52189da925a1e6464eadcc643
 aaf4b30611e5fff6b3090ce67379cbcb
   checkHome1 :: GHC.Types.Char
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.C# '@'#) -}
+debf7e3ba3524935189bfa488b7f23eb
+  checkInterval ::
+    [Types.GameResult]
+    -> [(Types.GameResult, Types.GameResult)]
+    -> Types.DayDiff
+    -> Types.NumGamesPlayed
+    -> GHC.Types.Int
+  {- Arity: 4, Strictness: <L,U><S,1*U><L,U><L,U(U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, False)
+                (\ (w :: [Types.GameResult])
+                   (w1 :: [(Types.GameResult, Types.GameResult)])
+                   (w2 :: Types.DayDiff)
+                   (w3 :: Types.NumGamesPlayed) ->
+                 case GHC.List.$wlenAcc
+                        @ [Types.GameResult]
+                        (Main.gameDayInterval
+                           w
+                           (GHC.Base.map
+                              @ (Types.GameResult, Types.GameResult)
+                              @ (GHC.Types.Int, GHC.Base.String)
+                              Main.checkInterval1
+                              w1)
+                           w2
+                           w3)
+                        0# of ww { DEFAULT ->
+                 GHC.Types.I# ww }) -}
+eb8e8b073221f56394b550ae3f7ac50c
+  checkInterval1 ::
+    (Types.GameResult, Types.GameResult)
+    -> (GHC.Types.Int, GHC.Base.String)
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S,1*U(U(1*U(U),A,1*U,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A),A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: (Types.GameResult, Types.GameResult)) ->
+                 case ds of wild { (,) x ds1 ->
+                 (Types.team_ID x, Types.game_date x) }) -}
 531459068699b00c3b4962a8fa7a8729
   effectiveFieldGoalPct ::
     [(Types.GameResult, Types.GameResult)] -> GHC.Types.Double
@@ -1156,9 +1266,18 @@ aaf4b30611e5fff6b3090ce67379cbcb
      Unfolding: InlineRule (1, True, False)
                 (\ (w :: [(Types.GameResult, Types.GameResult)]) ->
                  case Main.$wgo w 0.0## of ww { DEFAULT -> GHC.Types.D# ww }) -}
-a7199181d96b43b07fbd2583f37cef9b
+c9f2161a6ee0c19d399f830d2f2ed1f2
+  gameDayInterval ::
+    [Types.GameResult]
+    -> [(Types.WinningTeamID, Types.GameDate)]
+    -> Types.DayDiff
+    -> Types.NumGamesPlayed
+    -> [[Types.GameResult]]
+  {- Arity: 4, Strictness: <L,U><S,1*U><L,U><L,U(U)> -}
+349378eee9bc3947b7d1f7b9eb334b44
   getBoxScores ::
-    [Types.GameResult] -> [(Types.GameResult, Types.GameResult)]
+    [Types.GameResult]
+    -> [(Types.WinningTeamGameResult, Types.LosingTeamGameResult)]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
 f1c35f7b0e4c66658ce47455ccc5c51c
   getJSON :: GHC.Types.IO [Data.ByteString.Lazy.Internal.ByteString]
@@ -1216,21 +1335,21 @@ b08d228f4059532a99441778635cdde9
                  GHC.Prim.tagToEnum#
                    @ GHC.Types.Bool
                    (GHC.Prim.<=## x1 240.0##) } }) -}
-ff02040556a7d2945d050dece8c26455
+4907870efa37fbac34ba882b9be80bdc
   resultSets :: Main.FullPage -> [Main.ResultSets]
   RecSel Left Main.FullPage
   {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(1*U)>,
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: Main.FullPage) ->
                  case ds of wild { Main.FullPage ds1 -> ds1 }) -}
-ee15c18d8f0ee157b86264d2ae3b612d
+5307a295f23185af7e5f8dc787c4748e
   rowSet :: Main.ResultSets -> [Types.GameResult]
   RecSel Left Main.ResultSets
   {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(1*U)>,
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: Main.ResultSets) ->
                  case ds of wild { Main.ResultSets ds1 -> ds1 }) -}
-6c489b8e8b3774299f53b9c4cda47e4b
+ab44d43214d8f87ff4dc402ff972a3fd
   showResult :: Main.FullPage -> [Types.GameResult]
   {- Arity: 1, Strictness: <S(S),1*U(1*U)>,
      Unfolding: InlineRule (1, True, False)
