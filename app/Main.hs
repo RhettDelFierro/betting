@@ -25,7 +25,7 @@ import Types
 
 teamURLS :: [String]
 teamURLS = fmap makeURL teams
-    where makeURL = (\(_,team_id,_) -> "http://stats.nba.com/stats/teamgamelog/?Season=2016-17&SeasonType=Regular%20Season&TeamID=" ++ show team_id)
+    where makeURL = (\(_,team_id,_) -> "http://stats.nba.com/stats/teamgamelog/?Season=2015-16&SeasonType=Regular%20Season&TeamID=" ++ show team_id)
 
 getJSON :: IO [B.ByteString]
 getJSON = mapM simpleHttp teamURLS
@@ -54,7 +54,8 @@ main = do
                                    , freeTMade    = (/) (sumInts ftm y)   (fromIntegral $ length y)
                                    , blocks       = (/) (sumInts blk y)   (fromIntegral $ length y)
                                    , eFGPct       = (/) (effectiveFieldGoalPct y)            (fromIntegral $ length y)
-                                   , home         = (/) (fromIntegral (checkHomeWinning matchup y)) (fromIntegral $ length y) * 100
+--                                   , home         = (/) (fromIntegral (checkHomeWinning matchup y)) (fromIntegral $ length y) * 100
+                                   , home         = (/) (fromIntegral (length . fst. splitWinLossTeams . fst . splitHomeAwayTeams $ w)) (fromIntegral $ length y) * 100
                                    , b2b          = (/) (fromIntegral (checkInterval w y 1 1)) (fromIntegral $ length y)
                                    , threeInFour  = (/) (fromIntegral (checkInterval w y 4 2)) (fromIntegral $ length y)
                                    , fourInSix    = (/) (fromIntegral (checkInterval w y 6 3)) (fromIntegral $ length y)
@@ -114,13 +115,11 @@ getBoxScores (x:xs) =
 checkHomeWinning :: (GameResult -> String) -> [(WinningTeamGameResult,LosingTeamGameResult)] -> Int
 checkHomeWinning f arr = length $ filter (\(x,_) -> elem '@' $ f x) arr
 
-getHomeTeams :: [GameResult] -> [GameResult]
-getHomeTeams = filter ((elem '@') . matchup)
+splitHomeAwayTeams :: [GameResult] -> ([HomeTeamGameResult],[AwayTeamGameResult])
+splitHomeAwayTeams = DL.partition ((elem '@') . matchup)
 
-
-
-
-
+splitWinLossTeams :: [GameResult] -> ([WinningTeamGameResult],[LosingTeamGameResult])
+splitWinLossTeams = DL.partition ((== 'W') . wl)
 
 data ResultSets = ResultSets { rowSet :: [GameResult] }     deriving (Show, Eq, Read)
 data FullPage   = FullPage   { resultSets :: [ResultSets] } deriving (Show, Eq, Read)

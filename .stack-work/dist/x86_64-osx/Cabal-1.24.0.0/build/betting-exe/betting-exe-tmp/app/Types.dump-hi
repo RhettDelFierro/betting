@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-01-26 07:44:24.069533 UTC
+2017-01-27 03:54:35.859127 UTC
 
 interface main@main:Types 8001
-  interface hash: a696cf37e82290bd29ce51993afe407b
-  ABI hash: 16c81e7e21c0017cb70fc38cb8a08d49
-  export-list hash: af2106ce5dc600a9ef8eefd269d2b1da
+  interface hash: a085bfacb8110a76152f473cb2b50985
+  ABI hash: 594dd3304e77ee612db5513e4abdda0a
+  export-list hash: f9a48f070db70edec7073c74b2bf6c65
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 8c8a5a2e85ae3bd50fc2b401b806d89b
   sig of: Nothing
@@ -14,11 +14,13 @@ interface main@main:Types 8001
 exports:
   Types.teams
   Types.winningTeamDefault
+  Types.AwayTeamGameResult
   Types.BoxScore
   Types.DayDiff
   Types.GameDate
   Types.GameLogsByTeam{Types.GameLogsByTeam}
   Types.GameResult{Types.GameResult ast blk dreb fg3_pct fg3a fg3m fg_pct fga fgm ft_pct fta ftm game_ID game_date lo matchup minutes oreb pf pts reb stl team_ID tov w_pct wi wl}
+  Types.HomeTeamGameResult
   Types.LosingTeamGameResult
   Types.NumGamesPlayed
   Types.TeamABBR
@@ -4373,6 +4375,8 @@ a25f5b9dce3bc18be12d3f778de61299
   {- Arity: 18,
      Strictness: <S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
      Inline: [0] -}
+74bcfd44f653605b0a0b9095ff9bdc94
+  type AwayTeamGameResult = Types.GameResult
 a7f163b72d191b090ab805fd21b30c26
   type BoxScore =
     (Types.WinningTeamGameResult, Types.LosingTeamGameResult)
@@ -4412,6 +4416,8 @@ fe4c82377322beebabc83f52178dd2b6
                   tov :: GHC.Types.Double,
                   pf :: GHC.Types.Double,
                   pts :: GHC.Types.Double}
+f78742e514b4e9fd794af4746801cd1d
+  type HomeTeamGameResult = Types.GameResult
 f5e5b8491016f1f280a22cf9a305f7c3
   type LosingTeamGameResult = Types.GameResult
 51ff151c748568059e3807ac8fec55d9
