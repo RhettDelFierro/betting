@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-01-26 07:44:26.802468 UTC
+2017-01-27 03:36:45.82008 UTC
 
 interface main@main:Main [orphan module] 8001
-  interface hash: 5ebd456f334b81bf6f1c97314280cdd3
-  ABI hash: 72ac7cf0bcbbd6b5a476b236e56cbbca
-  export-list hash: f106782269afd3e475ab45f064feb59c
+  interface hash: 494a2443e1d763a44cb85870183fe6d3
+  ABI hash: d70ce495a2ab11c62afcb958a61f028e
+  export-list hash: 4ae7d188c55c8c4689a8cfdc40ab9223
   orphan hash: d2e5ac0f82a4838786698966cc775386
   flag hash: 5688540879a7f6bf6c99fd7bb39c8ad1
   sig of: Nothing
@@ -14,11 +14,12 @@ interface main@main:Main [orphan module] 8001
 exports:
   Main.checkDates
   Main.checkFullPage
-  Main.checkHome
+  Main.checkHomeWinning
   Main.checkInterval
   Main.effectiveFieldGoalPct
   Main.gameDayInterval
   Main.getBoxScores
+  Main.getHomeTeams
   Main.getJSON
   Main.main
   Main.removeOvertime
@@ -1047,19 +1048,21 @@ e5e3275cdb0ba8ffbe61db63767fd4cc
                         @ GHC.Types.Char
                         GHC.Show.shows9
                         (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows6 w)) }) -}
-013b31c3c0507de831fa8850a0479b99
-  $wcheckHome ::
+5f36a1475b41764c8f89a44059895dd9
+  $wcheckHomeWinning ::
     (Types.GameResult -> GHC.Base.String)
-    -> [(Types.GameResult, Types.GameResult)] -> GHC.Prim.Int#
+    -> [(Types.WinningTeamGameResult, Types.LosingTeamGameResult)]
+    -> GHC.Prim.Int#
   {- Arity: 2, HasNoCafRefs, Strictness: <L,C(U)><S,1*U>,
      Inline: [0],
      Unfolding: (\ (w :: Types.GameResult -> GHC.Base.String)
-                   (w1 :: [(Types.GameResult, Types.GameResult)]) ->
+                   (w1 :: [(Types.WinningTeamGameResult,
+                            Types.LosingTeamGameResult)]) ->
                  letrec {
-                   $wgo2 :: [(Types.GameResult, Types.GameResult)]
+                   $wgo2 :: [(Types.GameResult, Types.LosingTeamGameResult)]
                             -> GHC.Prim.Int# -> GHC.Prim.Int#
                      {- Arity: 2, Strictness: <S,1*U><L,U>, Inline: [0] -}
-                   = \ (w2 :: [(Types.GameResult, Types.GameResult)])
+                   = \ (w2 :: [(Types.GameResult, Types.LosingTeamGameResult)])
                        (ww :: GHC.Prim.Int#) ->
                      case w2 of wild {
                        [] -> ww
@@ -1068,7 +1071,7 @@ e5e3275cdb0ba8ffbe61db63767fd4cc
                           case GHC.List.elem
                                  @ GHC.Types.Char
                                  GHC.Classes.$fEqChar
-                                 Main.checkHome1
+                                 Main.checkHomeWinning1
                                  (w x) of wild2 {
                             GHC.Types.False -> $wgo2 ys ww
                             GHC.Types.True -> $wgo2 ys (GHC.Prim.+# ww 1#) } } }
@@ -1209,18 +1212,21 @@ cdc378a52189da925a1e6464eadcc643
   checkFullPage1 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "Maybe failed somewhere."#) -}
-2d22a29379759537e852885a927999e1
-  checkHome ::
+44ea6da6fc7b7673ba2e0a1427e15fcd
+  checkHomeWinning ::
     (Types.GameResult -> GHC.Base.String)
-    -> [(Types.GameResult, Types.GameResult)] -> GHC.Types.Int
+    -> [(Types.WinningTeamGameResult, Types.LosingTeamGameResult)]
+    -> GHC.Types.Int
   {- Arity: 2, HasNoCafRefs, Strictness: <L,C(U)><S,1*U>m,
      Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
                 (\ (w :: Types.GameResult -> GHC.Base.String)
-                   (w1 :: [(Types.GameResult, Types.GameResult)]) ->
-                 case Main.$wcheckHome w w1 of ww { DEFAULT -> GHC.Types.I# ww }) -}
-aaf4b30611e5fff6b3090ce67379cbcb
-  checkHome1 :: GHC.Types.Char
+                   (w1 :: [(Types.WinningTeamGameResult,
+                            Types.LosingTeamGameResult)]) ->
+                 case Main.$wcheckHomeWinning w w1 of ww { DEFAULT ->
+                 GHC.Types.I# ww }) -}
+1ca170ea7667d989f386c89b576de63a
+  checkHomeWinning1 :: GHC.Types.Char
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.C# '@'#) -}
 debf7e3ba3524935189bfa488b7f23eb
   checkInterval ::
@@ -1279,6 +1285,24 @@ c9f2161a6ee0c19d399f830d2f2ed1f2
     [Types.GameResult]
     -> [(Types.WinningTeamGameResult, Types.LosingTeamGameResult)]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+b59ba0d87ac3d4429e44581e48e52ed5
+  getHomeTeams :: [Types.GameResult] -> [Types.GameResult]
+  {- Arity: 1, HasNoCafRefs,
+     Unfolding: (GHC.List.filter
+                   @ Types.GameResult
+                   Main.getHomeTeams1) -}
+cf95cabd4e56afbcb2540b1969c40740
+  getHomeTeams1 :: Types.GameResult -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLSLLLLLLLLLLLLLLLLLLLLLLL),1*U(A,A,A,1*U,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Types.GameResult) ->
+                 case x of wild { Types.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
+                 GHC.List.elem
+                   @ GHC.Types.Char
+                   GHC.Classes.$fEqChar
+                   Main.checkHomeWinning1
+                   ds4 }) -}
 f1c35f7b0e4c66658ce47455ccc5c51c
   getJSON :: GHC.Types.IO [Data.ByteString.Lazy.Internal.ByteString]
   {- Arity: 1,

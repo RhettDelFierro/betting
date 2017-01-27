@@ -114,7 +114,8 @@ getBoxScores (x:xs) =
 checkHomeWinning :: (GameResult -> String) -> [(WinningTeamGameResult,LosingTeamGameResult)] -> Int
 checkHomeWinning f arr = length $ filter (\(x,_) -> elem '@' $ f x) arr
 
-
+getHomeTeams :: [GameResult] -> [GameResult]
+getHomeTeams = filter ((elem '@') . matchup)
 
 
 
