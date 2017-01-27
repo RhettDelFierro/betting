@@ -54,7 +54,7 @@ main = do
                                    , freeTMade    = (/) (sumInts ftm y)   (fromIntegral $ length y)
                                    , blocks       = (/) (sumInts blk y)   (fromIntegral $ length y)
                                    , eFGPct       = (/) (effectiveFieldGoalPct y)            (fromIntegral $ length y)
-                                   , home         = (/) (fromIntegral (checkHome matchup y)) (fromIntegral $ length y) * 100
+                                   , home         = (/) (fromIntegral (checkHomeWinning matchup y)) (fromIntegral $ length y) * 100
                                    , b2b          = (/) (fromIntegral (checkInterval w y 1 1)) (fromIntegral $ length y)
                                    , threeInFour  = (/) (fromIntegral (checkInterval w y 4 2)) (fromIntegral $ length y)
                                    , fourInSix    = (/) (fromIntegral (checkInterval w y 6 3)) (fromIntegral $ length y)
@@ -69,10 +69,9 @@ checkInterval whole tup interval games_played = length $
 
 gameDayInterval :: [GameResult] -> [(WinningTeamID,GameDate)] -> DayDiff -> NumGamesPlayed -> [[GameResult]]
 gameDayInterval _ [] _  _ = []
-gameDayInterval grs (x:xs) interval games_played =
-    (filter (\arr -> (length arr) >= games_played) . DL.groupBy ((==) `on` (team_ID )) .
-        filter (\g -> ((team_ID g) == (fst x)) && (checkDates (snd x) interval (game_date g))) $ grs)
-            ++ (gameDayInterval grs xs interval games_played)
+gameDayInterval grs (x:xs) interval games_played = ((func1 . func2) $ grs) ++ (gameDayInterval grs xs interval games_played)
+    where func1 = filter (((>= games_played) . length)) . DL.groupBy ((==) `on` (team_ID ))
+          func2 = filter (\g -> ((team_ID g) == (fst x)) && (checkDates (snd x) interval (game_date g)))
 
 checkDates :: GameDate -> DayDiff -> GameDate -> Bool
 checkDates day1 dayDiff day2 = let d1 = parseTimeOrError False defaultTimeLocale "%b %d, %Y" day1 :: Day
@@ -112,8 +111,8 @@ getBoxScores (x:xs) =
                  | (wl x) == 'W' = (x,t2)
                  | otherwise      = (t2,x)
 
-checkHome :: (GameResult -> String) -> [(GameResult,GameResult)] -> Int
-checkHome f arr = length $ filter (\(x,_) -> elem '@' $ f x) arr
+checkHomeWinning :: (GameResult -> String) -> [(WinningTeamGameResult,LosingTeamGameResult)] -> Int
+checkHomeWinning f arr = length $ filter (\(x,_) -> elem '@' $ f x) arr
 
 
 

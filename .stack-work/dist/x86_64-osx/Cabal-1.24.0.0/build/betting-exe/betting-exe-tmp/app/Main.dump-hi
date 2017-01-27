@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2017-01-26 03:45:13.871782 UTC
+2017-01-26 07:44:26.802468 UTC
 
 interface main@main:Main [orphan module] 8001
-  interface hash: a181ac4095652f46fb13e23e2a820039
+  interface hash: 5ebd456f334b81bf6f1c97314280cdd3
   ABI hash: 72ac7cf0bcbbd6b5a476b236e56cbbca
   export-list hash: f106782269afd3e475ab45f064feb59c
   orphan hash: d2e5ac0f82a4838786698966cc775386
@@ -179,7 +179,7 @@ import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map 8f3eaf1368a7ea2785799
 import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
 import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
 import  -/  http-conduit-2.1.11@http-conduit-2.1.11-EC4vL4GcRJtDqKzYoSe7M2:Network.HTTP.Conduit 20e8a617303d82477b111e8b9bf2d77a
-import  -/  Types 142e3ec74bbd29b11584f08cc88f45bf
+import  -/  Types 16c81e7e21c0017cb70fc38cb8a08d49
   exports: af2106ce5dc600a9ef8eefd269d2b1da
   DayDiff bb35b49f74cc1d810e139ef880e8ee92
   GameDate 3b93c766a88f70c74b0a10d2bd2f31dd
@@ -233,7 +233,7 @@ import  -/  Types 142e3ec74bbd29b11584f08cc88f45bf
   turnovers 12d59e07a3e65f75c4fd6a4c56a0f23d
   w_pct 74c637e4507479533b99482ec407637d
   wi 9dcfcced1f004a6c448cd4eba2badba7
-  winningTeamDefault 40a853cab94ee52a2da753481eb805c8
+  winningTeamDefault e461ec61d2992dd0e5aae76c51f397cf
   wl d0e48850dabf85c50e5ca18c2a440281
 import  -/  text-1.2.2.1@text-1.2.2.1-9Yh8rJoh8fO2JMLWffT3Qs:Data.Text 1e73069de2859bae8530c14767b0c6af
 import  -/  time-1.6.0.1@time-1.6.0.1:Data.Time 780e2aecb1fb9ccddcc7e0dc4518a593

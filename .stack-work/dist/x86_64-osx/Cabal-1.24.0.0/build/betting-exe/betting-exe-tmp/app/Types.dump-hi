@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-01-26 03:45:10.646846 UTC
+2017-01-26 07:44:24.069533 UTC
 
 interface main@main:Types 8001
-  interface hash: 422472a89942ead53c989cecf7be02e0
-  ABI hash: 142e3ec74bbd29b11584f08cc88f45bf
+  interface hash: a696cf37e82290bd29ce51993afe407b
+  ABI hash: 16c81e7e21c0017cb70fc38cb8a08d49
   export-list hash: af2106ce5dc600a9ef8eefd269d2b1da
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 8c8a5a2e85ae3bd50fc2b401b806d89b
@@ -5471,31 +5471,29 @@ c5913f692f1bf9c7788dbee4247c9afa
                 (\ (ds :: Types.GameResult) ->
                  case ds of wild { Types.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
                  ds6 }) -}
-40a853cab94ee52a2da753481eb805c8
+e461ec61d2992dd0e5aae76c51f397cf
   winningTeamDefault :: Types.WinningTeamStats
-  {- Unfolding: (Types.WinningTeamStats
-                   Types.winningTeamDefault2
-                   Types.winningTeamDefault2
-                   Types.winningTeamDefault2
-                   Types.winningTeamDefault2
-                   Types.winningTeamDefault2
-                   Types.winningTeamDefault2
-                   Types.winningTeamDefault2
-                   Types.winningTeamDefault2
-                   Types.winningTeamDefault2
-                   Types.winningTeamDefault2
-                   Types.winningTeamDefault2
-                   Types.winningTeamDefault2
-                   Types.winningTeamDefault2
-                   Types.winningTeamDefault2
-                   Types.winningTeamDefault2
-                   Types.winningTeamDefault2
+  {- HasNoCafRefs,
+     Unfolding: (Types.WinningTeamStats
+                   Types.winningTeamDefault1
+                   Types.winningTeamDefault1
+                   Types.winningTeamDefault1
+                   Types.winningTeamDefault1
+                   Types.winningTeamDefault1
+                   Types.winningTeamDefault1
+                   Types.winningTeamDefault1
+                   Types.winningTeamDefault1
+                   Types.winningTeamDefault1
+                   Types.winningTeamDefault1
+                   Types.winningTeamDefault1
+                   Types.winningTeamDefault1
+                   Types.winningTeamDefault1
+                   Types.winningTeamDefault1
+                   Types.winningTeamDefault1
+                   Types.winningTeamDefault1
                    Types.winningTeamDefault1) -}
-51f7dc4f3cc21181e21902d750e82e78
+64ea998367a1f0b68c1189b08e1eba21
   winningTeamDefault1 :: GHC.Types.Double
-  {- Strictness: x -}
-9b8be9c50bdcb4971063900b51c62b3b
-  winningTeamDefault2 :: GHC.Types.Double
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 0.0##) -}
 d0e48850dabf85c50e5ca18c2a440281
   wl :: Types.GameResult -> GHC.Types.Char
