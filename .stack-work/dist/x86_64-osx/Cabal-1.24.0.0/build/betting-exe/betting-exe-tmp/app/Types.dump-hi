@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-01-27 03:54:35.859127 UTC
+2017-01-27 21:27:02.50865 UTC
 
 interface main@main:Types 8001
-  interface hash: a085bfacb8110a76152f473cb2b50985
-  ABI hash: 594dd3304e77ee612db5513e4abdda0a
-  export-list hash: f9a48f070db70edec7073c74b2bf6c65
+  interface hash: 32832b87a6e32b219ede9935a40cceab
+  ABI hash: 8d56b31631775c52b1de06fc59518db1
+  export-list hash: 2d4c20be6ad519dea7dfb8d542b57b13
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 8c8a5a2e85ae3bd50fc2b401b806d89b
   sig of: Nothing
@@ -27,6 +27,8 @@ exports:
   Types.TeamName
   Types.Team_ID
   Types.Teams
+  Types.TotalGames
+  Types.WinPct
   Types.WinningTeamGameResult
   Types.WinningTeamID
   Types.WinningTeamStats{Types.WinningTeamStats assists b2b blocks eFGPct fieldGoalPct fourInSix freeTAtt freeTMade home offReb pointDiff rebounds steals threeFGA threeFGM threeInFour turnovers}
@@ -4430,6 +4432,10 @@ f5e5b8491016f1f280a22cf9a305f7c3
   type Team_ID = GHC.Types.Int
 b0e0b359a3fe649a806f6b9dc72a9392
   type Teams = (Types.TeamName, Types.Team_ID, Types.TeamABBR)
+6cded5470f499fae83fc869e139d21cc
+  type TotalGames = GHC.Types.Double
+3d2cdf2ae0beb6884ebfcb7f3fe266db
+  type WinPct = GHC.Types.Double
 27b8d4b517d3b0ffbc8a8d5e9dd51732
   type WinningTeamGameResult = Types.GameResult
 a6098eb3a7fa68c996fa1886168655b0

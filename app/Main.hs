@@ -22,6 +22,8 @@ import Network.HTTP.Conduit (simpleHttp)
 import qualified Data.List as DL
 import Types
 
+import Debug.Trace
+
 
 teamURLS :: [String]
 teamURLS = fmap makeURL teams
@@ -35,11 +37,13 @@ main = do
   ds <- getJSON
   d <- return (eitherDecode <$> ds) :: IO [Either String (Maybe FullPage)]
   --putStrLn . show $ d
-  let u = fmap checkFullPage $ d
-      v = (map read u) :: [[GameResult]]
-      w = DL.concat v
-      x = removeOvertime w
-      y = getBoxScores x
+  let u  = fmap checkFullPage $ d
+      v  = (map read u) :: [[GameResult]]
+      w  = DL.concat v
+      x  = removeOvertime w
+      y  = getBoxScores x
+      y' = getBoxScores w
+      gamesWon = length $ filter ((=='W') . wl)  w
   --print z
   let results = winningTeamDefault { pointDiff    = (/) (sumInts pts y)   (fromIntegral $ length y)
                                    , fieldGoalPct = (/) (sumPct fg_pct y) (fromIntegral $ length y) * 100
@@ -54,25 +58,28 @@ main = do
                                    , freeTMade    = (/) (sumInts ftm y)   (fromIntegral $ length y)
                                    , blocks       = (/) (sumInts blk y)   (fromIntegral $ length y)
                                    , eFGPct       = (/) (effectiveFieldGoalPct y)            (fromIntegral $ length y)
---                                   , home         = (/) (fromIntegral (checkHomeWinning matchup y)) (fromIntegral $ length y) * 100
                                    , home         = (/) (fromIntegral (length . fst. splitWinLossTeams . fst . splitHomeAwayTeams $ w)) (fromIntegral $ length y) * 100
-                                   , b2b          = (/) (fromIntegral (checkInterval w y 1 1)) (fromIntegral $ length y)
-                                   , threeInFour  = (/) (fromIntegral (checkInterval w y 4 2)) (fromIntegral $ length y)
-                                   , fourInSix    = (/) (fromIntegral (checkInterval w y 6 3)) (fromIntegral $ length y)
+                                   , b2b          = checkInterval w y' 1 1
+                                   , threeInFour  = checkInterval w y' 4 2
+                                   , fourInSix    = checkInterval w y' 6 3
                                    }
   print $ results
---this organized the winning ang losing teams from the [(GameResult,GameResult)] parameter, then throws into gamedayInterval.
-checkInterval :: [GameResult] -> [(GameResult,GameResult)] -> DayDiff -> NumGamesPlayed -> Int
+
+checkInterval :: [GameResult] -> [(GameResult,GameResult)] -> DayDiff -> NumGamesPlayed -> [(Team_ID,Int)]
 --checkB2B whole tup interval= length $ gameDayInterval whole
 --                                (map (\(x,_) -> (team_ID x,game_date x)) tup) interval
-checkInterval whole tup interval games_played = length $
-    gameDayInterval whole (map (\(x,_) -> (team_ID x,game_date x)) tup) interval games_played
+checkInterval whole tup interval games_played = winsThroughDays $
+     gameDayInterval whole (map (\(x,_) -> (team_ID x,game_date x)) tup) interval games_played
 
 gameDayInterval :: [GameResult] -> [(WinningTeamID,GameDate)] -> DayDiff -> NumGamesPlayed -> [[GameResult]]
 gameDayInterval _ [] _  _ = []
 gameDayInterval grs (x:xs) interval games_played = ((func1 . func2) $ grs) ++ (gameDayInterval grs xs interval games_played)
     where func1 = filter (((>= games_played) . length)) . DL.groupBy ((==) `on` (team_ID ))
+    --where func1 = DL.groupBy ((==) `on` (team_ID ))
           func2 = filter (\g -> ((team_ID g) == (fst x)) && (checkDates (snd x) interval (game_date g)))
+
+intervalOfGames :: NumGamesPlayed -> [[GameResult]] -> [[GameResult]]
+intervalOfGames games_played arr = filter (((>= games_played) . length)) $ trace ("here are the games:" ++ show arr) arr
 
 checkDates :: GameDate -> DayDiff -> GameDate -> Bool
 checkDates day1 dayDiff day2 = let d1 = parseTimeOrError False defaultTimeLocale "%b %d, %Y" day1 :: Day
@@ -94,14 +101,7 @@ sumInts f arr = sum $ map (\(x,y) -> (f x) - (f y)) arr
 sumPct :: (GameResult -> Double) -> [(GameResult,GameResult)] -> Double
 sumPct f arr = sum $ map (\(x,y) -> (f x) - (f y)) arr
 
-checkFullPage :: Either String (Maybe FullPage) -> String
-checkFullPage = (\case Left err -> err
-                       Right ds -> case ds of
-                                      Just x -> show . showResult $ x
-                                      _      -> "Maybe failed somewhere.")
 
-showResult :: FullPage -> [GameResult]
-showResult = (rowSet . DL.head . resultSets)
 
 getBoxScores :: [GameResult] -> [(WinningTeamGameResult,LosingTeamGameResult)]
 getBoxScores []     = []
@@ -112,14 +112,36 @@ getBoxScores (x:xs) =
                  | (wl x) == 'W' = (x,t2)
                  | otherwise      = (t2,x)
 
-checkHomeWinning :: (GameResult -> String) -> [(WinningTeamGameResult,LosingTeamGameResult)] -> Int
-checkHomeWinning f arr = length $ filter (\(x,_) -> elem '@' $ f x) arr
+--checkHomeWinning :: (GameResult -> String) -> [(WinningTeamGameResult,LosingTeamGameResult)] -> Int
+--checkHomeWinning f arr = length $ filter (\(x,_) -> elem '@' $ f x) arr
 
 splitHomeAwayTeams :: [GameResult] -> ([HomeTeamGameResult],[AwayTeamGameResult])
 splitHomeAwayTeams = DL.partition ((elem '@') . matchup)
 
 splitWinLossTeams :: [GameResult] -> ([WinningTeamGameResult],[LosingTeamGameResult])
 splitWinLossTeams = DL.partition ((== 'W') . wl)
+
+--to separate by records, just check the winning percentage of the other team. Unless you want tiers. But this will give you the team's current place in the league.
+--maybe get the total record at the end of the season if you want a comparison. Just get the GameResults of teams 
+
+winsThroughDays :: [[GameResult]] -> [(Team_ID,Int)]
+winsThroughDays gr = frequency $ fmap (team_ID . head) gr
+
+frequency :: [Team_ID] -> [(Team_ID, Int)]
+frequency xs = M.toList (M.fromListWith (+) [(x, 1) | x <- xs])
+
+
+
+
+
+checkFullPage :: Either String (Maybe FullPage) -> String
+checkFullPage = (\case Left err -> err
+                       Right ds -> case ds of
+                                      Just x -> show . showResult $ x
+                                      _      -> "Maybe failed somewhere.")
+
+showResult :: FullPage -> [GameResult]
+showResult = (rowSet . DL.head . resultSets)
 
 data ResultSets = ResultSets { rowSet :: [GameResult] }     deriving (Show, Eq, Read)
 data FullPage   = FullPage   { resultSets :: [ResultSets] } deriving (Show, Eq, Read)

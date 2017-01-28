@@ -7,6 +7,8 @@ type Team_ID               = Int
 type TeamABBR              = String
 type Teams                 = (TeamName,Team_ID,TeamABBR)
 type WinningTeamID         = Int
+type WinPct                = Double
+type TotalGames            = Double
 type WinningTeamGameResult = GameResult
 type LosingTeamGameResult  = GameResult
 type HomeTeamGameResult    = GameResult
@@ -31,9 +33,9 @@ data WinningTeamStats = WinningTeamStats { pointDiff    :: Double
                                          , blocks       :: Double
                                          , eFGPct       :: Double
                                          , home         :: Double
-                                         , b2b          :: Double
-                                         , threeInFour  :: Double
-                                         , fourInSix    :: Double
+                                         , b2b          :: [(Team_ID,Int)]
+                                         , threeInFour  :: [(Team_ID,Int)]
+                                         , fourInSix    :: [(Team_ID,Int)]
                                          } deriving (Show, Eq, Ord, Read)
 winningTeamDefault :: WinningTeamStats
 winningTeamDefault = WinningTeamStats { pointDiff = 0
@@ -51,9 +53,9 @@ winningTeamDefault = WinningTeamStats { pointDiff = 0
                                       , blocks = 0
                                       , eFGPct = 0
                                       , home = 0
-                                      , b2b = 0
-                                      , threeInFour = 0
-                                      , fourInSix = 0
+                                      , b2b = [(1610612747, 82)]
+                                      , threeInFour = [(1610612747, 82)]
+                                      , fourInSix = [(1610612747, 82)]
                                       }
 
 data GameResult = GameResult { team_ID   :: Int
