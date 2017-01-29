@@ -1,12 +1,12 @@
 
 ==================== FINAL INTERFACE ====================
-2017-01-27 21:27:02.50865 UTC
+2017-01-28 02:36:19.462525 UTC
 
 interface main@main:Types 8001
-  interface hash: 32832b87a6e32b219ede9935a40cceab
-  ABI hash: 8d56b31631775c52b1de06fc59518db1
-  export-list hash: 2d4c20be6ad519dea7dfb8d542b57b13
-  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  interface hash: df81c4211fca2db814102171326bddc4
+  ABI hash: 02aa191c303dc999e907c2eb2f5a5ade
+  export-list hash: 20dee1ce69657c51d74826e2ed397e4a
+  orphan hash: a322ce4fb1f6a301ed1e4cfd291ae442
   flag hash: 8c8a5a2e85ae3bd50fc2b401b806d89b
   sig of: Nothing
   used TH splices: False
@@ -50,7 +50,7 @@ import  -/  base-4.9.0.0:Text.Read.Lex fe3dd7b823826bf6870140c5363f9596
 import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
 import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
 import  -/  integer-gmp-1.0.0.1:GHC.Integer.Type 62c0e736506aac47ef40569f5b82e19d
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fEqGameLogsByTeam :: GHC.Classes.Eq Types.GameLogsByTeam
   DFunId
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -58,7 +58,7 @@ d8e0353799ed5c38db27f5da011b679e
                   @ Types.GameLogsByTeam
                   Types.$fEqGameLogsByTeam_$c==
                   Types.$fEqGameLogsByTeam_$c/= -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fEqGameLogsByTeam_$c/= ::
     Types.GameLogsByTeam -> Types.GameLogsByTeam -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -74,7 +74,7 @@ d8e0353799ed5c38db27f5da011b679e
                         b1 of wild2 {
                    GHC.Types.False -> GHC.Types.True
                    GHC.Types.True -> GHC.Types.False } } }) -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fEqGameLogsByTeam_$c== ::
     Types.GameLogsByTeam -> Types.GameLogsByTeam -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -225,7 +225,7 @@ fe4c82377322beebabc83f52178dd2b6
                    ww55
                    ww56
                    ww57 } } } }) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fEqWinningTeamStats :: GHC.Classes.Eq Types.WinningTeamStats
   DFunId
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -233,21 +233,21 @@ a25f5b9dce3bc18be12d3f778de61299
                   @ Types.WinningTeamStats
                   Types.$fEqWinningTeamStats_$c==
                   Types.$fEqWinningTeamStats_$c/= -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fEqWinningTeamStats_$c/= ::
     Types.WinningTeamStats -> Types.WinningTeamStats -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
-     Strictness: <S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U))><S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U))>,
+     Strictness: <S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U,1*U,1*U)><S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U,1*U,1*U)>,
      Unfolding: InlineRule (2, True, False)
                 (\ (a :: Types.WinningTeamStats) (b :: Types.WinningTeamStats) ->
                  case Types.$fEqWinningTeamStats_$c== a b of wild {
                    GHC.Types.False -> GHC.Types.True
                    GHC.Types.True -> GHC.Types.False }) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fEqWinningTeamStats_$c== ::
     Types.WinningTeamStats -> Types.WinningTeamStats -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
-     Strictness: <S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U))><S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U))>,
+     Strictness: <S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U,1*U,1*U)><S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U,1*U,1*U)>,
      Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
                 (\ (w :: Types.WinningTeamStats) (w1 :: Types.WinningTeamStats) ->
@@ -290,7 +290,23 @@ a25f5b9dce3bc18be12d3f778de61299
                    ww35
                    ww36
                    ww37 } } } }) -}
-d8e0353799ed5c38db27f5da011b679e
+70e3f9440206acf8b6b08cf9f2f8e69a
+  $fEqWinningTeamStats_$s$fEq(,) ::
+    GHC.Classes.Eq (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (GHC.Types.Int, GHC.Types.Int)
+                  (GHC.Classes.$fEq(,)_$c==
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     Types.$fEqGameLogsByTeam_$dEq1
+                     Types.$fEqGameLogsByTeam_$dEq1)
+                  (GHC.Classes.$fEq(,)_$c/=
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     Types.$fEqGameLogsByTeam_$dEq1
+                     Types.$fEqGameLogsByTeam_$dEq1) -}
+524bd195092ec0393d7497dbf95f3992
   $fOrdGameLogsByTeam :: GHC.Classes.Ord Types.GameLogsByTeam
   DFunId
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -309,7 +325,7 @@ d8e0353799ed5c38db27f5da011b679e
   {- Strictness: m,
      Unfolding: InlineRule (0, True, True)
                 Types.$fOrdGameLogsByTeam_$s$fOrd[] -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fOrdGameLogsByTeam_$c< ::
     Types.GameLogsByTeam -> Types.GameLogsByTeam -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -324,7 +340,7 @@ d8e0353799ed5c38db27f5da011b679e
                         a1
                         b1 of wild2 {
                    DEFAULT -> GHC.Types.False GHC.Types.LT -> GHC.Types.True } } }) -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fOrdGameLogsByTeam_$c<= ::
     Types.GameLogsByTeam -> Types.GameLogsByTeam -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -339,7 +355,7 @@ d8e0353799ed5c38db27f5da011b679e
                         a1
                         b1 of wild2 {
                    DEFAULT -> GHC.Types.True GHC.Types.GT -> GHC.Types.False } } }) -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fOrdGameLogsByTeam_$c> ::
     Types.GameLogsByTeam -> Types.GameLogsByTeam -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -354,7 +370,7 @@ d8e0353799ed5c38db27f5da011b679e
                         a1
                         b1 of wild2 {
                    DEFAULT -> GHC.Types.False GHC.Types.GT -> GHC.Types.True } } }) -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fOrdGameLogsByTeam_$c>= ::
     Types.GameLogsByTeam -> Types.GameLogsByTeam -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -369,7 +385,7 @@ d8e0353799ed5c38db27f5da011b679e
                         a1
                         b1 of wild2 {
                    DEFAULT -> GHC.Types.True GHC.Types.LT -> GHC.Types.False } } }) -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fOrdGameLogsByTeam_$ccompare ::
     Types.GameLogsByTeam -> Types.GameLogsByTeam -> GHC.Types.Ordering
   {- Arity: 2, HasNoCafRefs,
@@ -383,7 +399,7 @@ d8e0353799ed5c38db27f5da011b679e
                    Types.$fOrdGameLogsByTeam_$s$fOrd(,)
                    a1
                    b1 } }) -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fOrdGameLogsByTeam_$cmax ::
     Types.GameLogsByTeam
     -> Types.GameLogsByTeam -> Types.GameLogsByTeam
@@ -398,7 +414,7 @@ d8e0353799ed5c38db27f5da011b679e
                         a1
                         b1 of wild2 {
                    DEFAULT -> wild1 GHC.Types.GT -> wild } } }) -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fOrdGameLogsByTeam_$cmin ::
     Types.GameLogsByTeam
     -> Types.GameLogsByTeam -> Types.GameLogsByTeam
@@ -915,7 +931,7 @@ fe4c82377322beebabc83f52178dd2b6
                 (\ (x :: Types.GameResult) (y :: Types.GameResult) ->
                  case Types.$fOrdGameResult_$c<= x y of wild {
                    GHC.Types.False -> y GHC.Types.True -> x }) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fOrdWinningTeamStats :: GHC.Classes.Ord Types.WinningTeamStats
   DFunId
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -929,11 +945,11 @@ a25f5b9dce3bc18be12d3f778de61299
                   Types.$fOrdWinningTeamStats_$c>=
                   Types.$fOrdWinningTeamStats_$cmax
                   Types.$fOrdWinningTeamStats_$cmin -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fOrdWinningTeamStats_$c< ::
     Types.WinningTeamStats -> Types.WinningTeamStats -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
-     Strictness: <S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U))><S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U))>,
+     Strictness: <S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U,1*U,1*U)><S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U,1*U,1*U)>,
      Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
                 (\ (w :: Types.WinningTeamStats) (w1 :: Types.WinningTeamStats) ->
@@ -976,11 +992,11 @@ a25f5b9dce3bc18be12d3f778de61299
                    ww35
                    ww36
                    ww37 } } } }) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fOrdWinningTeamStats_$c<= ::
     Types.WinningTeamStats -> Types.WinningTeamStats -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
-     Strictness: <S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U))><S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U))>,
+     Strictness: <S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U,1*U,1*U)><S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U,1*U,1*U)>,
      Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
                 (\ (w :: Types.WinningTeamStats) (w1 :: Types.WinningTeamStats) ->
@@ -1023,11 +1039,11 @@ a25f5b9dce3bc18be12d3f778de61299
                    ww35
                    ww36
                    ww37 } } } }) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fOrdWinningTeamStats_$c> ::
     Types.WinningTeamStats -> Types.WinningTeamStats -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
-     Strictness: <S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U))><S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U))>,
+     Strictness: <S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U,1*U,1*U)><S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U,1*U,1*U)>,
      Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
                 (\ (w :: Types.WinningTeamStats) (w1 :: Types.WinningTeamStats) ->
@@ -1070,11 +1086,11 @@ a25f5b9dce3bc18be12d3f778de61299
                    ww35
                    ww36
                    ww37 } } } }) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fOrdWinningTeamStats_$c>= ::
     Types.WinningTeamStats -> Types.WinningTeamStats -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
-     Strictness: <S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U))><S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U))>,
+     Strictness: <S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U,1*U,1*U)><S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U,1*U,1*U)>,
      Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
                 (\ (w :: Types.WinningTeamStats) (w1 :: Types.WinningTeamStats) ->
@@ -1117,12 +1133,12 @@ a25f5b9dce3bc18be12d3f778de61299
                    ww35
                    ww36
                    ww37 } } } }) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fOrdWinningTeamStats_$ccompare ::
     Types.WinningTeamStats
     -> Types.WinningTeamStats -> GHC.Types.Ordering
   {- Arity: 2, HasNoCafRefs,
-     Strictness: <S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U))><S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U))>,
+     Strictness: <S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U,1*U,1*U)><S(S(S)LLLLLLLLLLLLLLLL),1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U,1*U,1*U)>,
      Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
                 (\ (w :: Types.WinningTeamStats) (w1 :: Types.WinningTeamStats) ->
@@ -1165,27 +1181,75 @@ a25f5b9dce3bc18be12d3f778de61299
                    ww35
                    ww36
                    ww37 } } } }) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fOrdWinningTeamStats_$cmax ::
     Types.WinningTeamStats
     -> Types.WinningTeamStats -> Types.WinningTeamStats
   {- Arity: 2, HasNoCafRefs,
-     Strictness: <S(S(S)LLLLLLLLLLLLLLLL),U(U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U))><S(S(S)LLLLLLLLLLLLLLLL),U(U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U))>m,
+     Strictness: <S(S(S)LLLLLLLLLLLLLLLL),U(U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U,U,U)><S(S(S)LLLLLLLLLLLLLLLL),U(U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U,U,U)>m,
      Unfolding: InlineRule (2, True, False)
                 (\ (x :: Types.WinningTeamStats) (y :: Types.WinningTeamStats) ->
                  case Types.$fOrdWinningTeamStats_$c<= x y of wild {
                    GHC.Types.False -> x GHC.Types.True -> y }) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fOrdWinningTeamStats_$cmin ::
     Types.WinningTeamStats
     -> Types.WinningTeamStats -> Types.WinningTeamStats
   {- Arity: 2, HasNoCafRefs,
-     Strictness: <S(S(S)LLLLLLLLLLLLLLLL),U(U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U))><S(S(S)LLLLLLLLLLLLLLLL),U(U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U))>m,
+     Strictness: <S(S(S)LLLLLLLLLLLLLLLL),U(U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U,U,U)><S(S(S)LLLLLLLLLLLLLLLL),U(U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U(U),U,U,U)>m,
      Unfolding: InlineRule (2, True, False)
                 (\ (x :: Types.WinningTeamStats) (y :: Types.WinningTeamStats) ->
                  case Types.$fOrdWinningTeamStats_$c<= x y of wild {
                    GHC.Types.False -> y GHC.Types.True -> x }) -}
-d8e0353799ed5c38db27f5da011b679e
+eb082a5069defb13229945d6f039dd5b
+  $fOrdWinningTeamStats_$s$fOrd(,) ::
+    GHC.Classes.Ord (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (GHC.Types.Int, GHC.Types.Int)
+                  Types.$fOrdWinningTeamStats_$s$fOrd(,)_$cp1Ord
+                  (GHC.Classes.$fOrd(,)_$ccompare
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     GHC.Classes.$fOrdInt
+                     GHC.Classes.$fOrdInt)
+                  (GHC.Classes.$fOrd(,)_$c<
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     GHC.Classes.$fOrdInt
+                     GHC.Classes.$fOrdInt)
+                  (GHC.Classes.$fOrd(,)_$c<=
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     GHC.Classes.$fOrdInt
+                     GHC.Classes.$fOrdInt)
+                  (GHC.Classes.$fOrd(,)_$c>
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     GHC.Classes.$fOrdInt
+                     GHC.Classes.$fOrdInt)
+                  (GHC.Classes.$fOrd(,)_$c>=
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     GHC.Classes.$fOrdInt
+                     GHC.Classes.$fOrdInt)
+                  (GHC.Classes.$fOrd(,)_$cmax
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     GHC.Classes.$fOrdInt
+                     GHC.Classes.$fOrdInt)
+                  (GHC.Classes.$fOrd(,)_$cmin
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     GHC.Classes.$fOrdInt
+                     GHC.Classes.$fOrdInt) -}
+53b7e0710c20b4d5fdc4318c7a364340
+  $fOrdWinningTeamStats_$s$fOrd(,)_$cp1Ord ::
+    GHC.Classes.Eq (GHC.Types.Int, GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                Types.$fEqWinningTeamStats_$s$fEq(,) -}
+524bd195092ec0393d7497dbf95f3992
   $fReadGameLogsByTeam :: GHC.Read.Read Types.GameLogsByTeam
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -1195,7 +1259,7 @@ d8e0353799ed5c38db27f5da011b679e
                   Types.$fReadGameLogsByTeam_$creadList
                   Types.$fReadGameLogsByTeam_$creadPrec
                   Types.$fReadGameLogsByTeam_$creadListPrec -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fReadGameLogsByTeam1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -1215,7 +1279,7 @@ d8e0353799ed5c38db27f5da011b679e
                              <Types.GameLogsByTeam>_R))
                    @ b
                    eta1) -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fReadGameLogsByTeam2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP Types.GameLogsByTeam
@@ -1230,7 +1294,7 @@ d8e0353799ed5c38db27f5da011b679e
                                        <Types.GameLogsByTeam>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                   <Types.GameLogsByTeam>_R)))) -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fReadGameLogsByTeam3 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -1265,7 +1329,7 @@ b00b0f810568622ba76f5b228e24c7f2
                    Types.$fReadGameLogsByTeam_$s$fRead[]
                    @ b1
                    w3) -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fReadGameLogsByTeam6 ::
     Text.ParserCombinators.ReadP.P [Types.GameLogsByTeam]
   {- Unfolding: (GHC.Read.$wlist
@@ -1277,14 +1341,14 @@ d8e0353799ed5c38db27f5da011b679e
                    @ [Types.GameLogsByTeam]
                    (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                       @ [Types.GameLogsByTeam])) -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fReadGameLogsByTeam_$creadList ::
     Text.ParserCombinators.ReadP.ReadS [Types.GameLogsByTeam]
   {- Arity: 1,
      Unfolding: (Text.ParserCombinators.ReadP.run
                    @ [Types.GameLogsByTeam]
                    Types.$fReadGameLogsByTeam6) -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fReadGameLogsByTeam_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [Types.GameLogsByTeam]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -1297,7 +1361,7 @@ d8e0353799ed5c38db27f5da011b679e
                                     <[Types.GameLogsByTeam]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                <[Types.GameLogsByTeam]>_R))) -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fReadGameLogsByTeam_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec Types.GameLogsByTeam
   {- Arity: 1,
@@ -1306,7 +1370,7 @@ d8e0353799ed5c38db27f5da011b679e
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                           <Types.GameLogsByTeam>_R)) -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fReadGameLogsByTeam_$creadsPrec ::
     GHC.Types.Int
     -> Text.ParserCombinators.ReadP.ReadS Types.GameLogsByTeam
@@ -1498,7 +1562,7 @@ fe4c82377322beebabc83f52178dd2b6
                       @ Types.GameResult
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                          @ Types.GameResult))) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fReadWinningTeamStats :: GHC.Read.Read Types.WinningTeamStats
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -1508,7 +1572,7 @@ a25f5b9dce3bc18be12d3f778de61299
                   Types.$fReadWinningTeamStats_$creadList
                   Types.$fReadWinningTeamStats_$creadPrec
                   Types.$fReadWinningTeamStats_$creadListPrec -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fReadWinningTeamStats1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -1528,7 +1592,7 @@ a25f5b9dce3bc18be12d3f778de61299
                              <Types.WinningTeamStats>_R))
                    @ b
                    eta1) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fReadWinningTeamStats2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP Types.WinningTeamStats
@@ -1543,7 +1607,7 @@ a25f5b9dce3bc18be12d3f778de61299
                                        <Types.WinningTeamStats>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                   <Types.WinningTeamStats>_R)))) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fReadWinningTeamStats3 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -1557,7 +1621,7 @@ a25f5b9dce3bc18be12d3f778de61299
                           -> Text.ParserCombinators.ReadP.P b) ->
                  case w of ww { GHC.Types.I# ww1 ->
                  Types.$w$creadPrec2 ww1 @ b w1 }) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fReadWinningTeamStats4 ::
     Text.ParserCombinators.ReadP.P [Types.WinningTeamStats]
   {- Unfolding: (GHC.Read.$wlist
@@ -1569,14 +1633,14 @@ a25f5b9dce3bc18be12d3f778de61299
                    @ [Types.WinningTeamStats]
                    (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                       @ [Types.WinningTeamStats])) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fReadWinningTeamStats_$creadList ::
     Text.ParserCombinators.ReadP.ReadS [Types.WinningTeamStats]
   {- Arity: 1,
      Unfolding: (Text.ParserCombinators.ReadP.run
                    @ [Types.WinningTeamStats]
                    Types.$fReadWinningTeamStats4) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fReadWinningTeamStats_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [Types.WinningTeamStats]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -1589,7 +1653,7 @@ a25f5b9dce3bc18be12d3f778de61299
                                     <[Types.WinningTeamStats]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                <[Types.WinningTeamStats]>_R))) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fReadWinningTeamStats_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec Types.WinningTeamStats
   {- Arity: 1,
@@ -1598,7 +1662,7 @@ a25f5b9dce3bc18be12d3f778de61299
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                           <Types.WinningTeamStats>_R)) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fReadWinningTeamStats_$creadsPrec ::
     GHC.Types.Int
     -> Text.ParserCombinators.ReadP.ReadS Types.WinningTeamStats
@@ -1624,7 +1688,7 @@ a25f5b9dce3bc18be12d3f778de61299
                       @ Types.WinningTeamStats
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                          @ Types.WinningTeamStats))) -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fShowGameLogsByTeam :: GHC.Show.Show Types.GameLogsByTeam
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -1633,7 +1697,7 @@ d8e0353799ed5c38db27f5da011b679e
                   Types.$fShowGameLogsByTeam_$cshowsPrec
                   Types.$fShowGameLogsByTeam_$cshow
                   Types.$fShowGameLogsByTeam_$cshowList -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fShowGameLogsByTeam1 :: Types.GameLogsByTeam -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (\ (w :: Types.GameLogsByTeam)
@@ -1705,21 +1769,21 @@ fe4c82377322beebabc83f52178dd2b6
 5521414c37c082e51c6696c406b686c9
   $fShowGameLogsByTeam4 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "GameLogsByTeam "#) -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fShowGameLogsByTeam_$cshow ::
     Types.GameLogsByTeam -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U(1*U)>, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
                 (\ (w :: Types.GameLogsByTeam) ->
                  case w of ww { Types.GameLogsByTeam ww1 -> Types.$w$cshow ww1 }) -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fShowGameLogsByTeam_$cshowList ::
     [Types.GameLogsByTeam] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Types.GameLogsByTeam
                    Types.$fShowGameLogsByTeam1) -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $fShowGameLogsByTeam_$cshowsPrec ::
     GHC.Types.Int -> Types.GameLogsByTeam -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <S(S),1*U(U)><S,1*U(1*U)><L,U>,
@@ -1795,7 +1859,7 @@ fe4c82377322beebabc83f52178dd2b6
                    ww27
                    ww28
                    ww29 } }) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fShowWinningTeamStats :: GHC.Show.Show Types.WinningTeamStats
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -1804,7 +1868,7 @@ a25f5b9dce3bc18be12d3f778de61299
                   Types.$fShowWinningTeamStats_$cshowsPrec
                   Types.$fShowWinningTeamStats_$cshow
                   Types.$fShowWinningTeamStats_$cshowList -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fShowWinningTeamStats1 :: Types.WinningTeamStats -> GHC.Show.ShowS
   {- Arity: 1,
      Unfolding: (\ (w :: Types.WinningTeamStats) ->
@@ -1828,29 +1892,29 @@ a25f5b9dce3bc18be12d3f778de61299
                    ww15
                    ww16
                    ww17 }) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fShowWinningTeamStats_$cshow ::
     Types.WinningTeamStats -> GHC.Base.String
   {- Arity: 1,
-     Strictness: <S,1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U))>,
+     Strictness: <S,1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),U,U,U)>,
      Unfolding: InlineRule (1, True, False)
                 (\ (x :: Types.WinningTeamStats) ->
                  Types.$fShowWinningTeamStats_$cshowsPrec
                    GHC.Show.shows22
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fShowWinningTeamStats_$cshowList ::
     [Types.WinningTeamStats] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Types.WinningTeamStats
                    Types.$fShowWinningTeamStats1) -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $fShowWinningTeamStats_$cshowsPrec ::
     GHC.Types.Int -> Types.WinningTeamStats -> GHC.Show.ShowS
   {- Arity: 2,
-     Strictness: <S(S),1*U(U)><S,1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U))>,
+     Strictness: <S(S),1*U(U)><S,1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),1*U(U),U,U,U)>,
      Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
                 (\ (w :: GHC.Types.Int) (w1 :: Types.WinningTeamStats) ->
@@ -2019,7 +2083,7 @@ c181728336990d85b6658d2eda610e46
   {- Arity: 54, HasNoCafRefs,
      Strictness: <S,U><L,1*U><L,1*U><L,1*U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><S,U><L,1*U><L,1*U><L,1*U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
      Inline: [0] -}
-49b09795b5c23df34c5b5006da7f3025
+685da5e7a76456211b972ce1da1342c9
   $w$c<1 ::
     GHC.Prim.Double#
     -> GHC.Types.Double
@@ -2035,9 +2099,9 @@ c181728336990d85b6658d2eda610e46
     -> GHC.Types.Double
     -> GHC.Types.Double
     -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
     -> GHC.Prim.Double#
     -> GHC.Types.Double
     -> GHC.Types.Double
@@ -2052,12 +2116,12 @@ c181728336990d85b6658d2eda610e46
     -> GHC.Types.Double
     -> GHC.Types.Double
     -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
     -> GHC.Types.Bool
   {- Arity: 34, HasNoCafRefs,
-     Strictness: <S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
+     Strictness: <S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U><L,1*U><L,1*U><S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U><L,1*U><L,1*U>,
      Inline: [0],
      Unfolding: (\ (ww :: GHC.Prim.Double#)
                    (ww1 :: GHC.Types.Double)
@@ -2073,9 +2137,9 @@ c181728336990d85b6658d2eda610e46
                    (ww11 :: GHC.Types.Double)
                    (ww12 :: GHC.Types.Double)
                    (ww13 :: GHC.Types.Double)
-                   (ww14 :: GHC.Types.Double)
-                   (ww15 :: GHC.Types.Double)
-                   (ww16 :: GHC.Types.Double)
+                   (ww14 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww15 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww16 :: [(Types.Team_ID, GHC.Types.Int)])
                    (ww17 :: GHC.Prim.Double#)
                    (ww18 :: GHC.Types.Double)
                    (ww19 :: GHC.Types.Double)
@@ -2090,9 +2154,9 @@ c181728336990d85b6658d2eda610e46
                    (ww28 :: GHC.Types.Double)
                    (ww29 :: GHC.Types.Double)
                    (ww30 :: GHC.Types.Double)
-                   (ww31 :: GHC.Types.Double)
-                   (ww32 :: GHC.Types.Double)
-                   (ww33 :: GHC.Types.Double) ->
+                   (ww31 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww32 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww33 :: [(Types.Team_ID, GHC.Types.Int)]) ->
                  case GHC.Prim.tagToEnum#
                         @ GHC.Types.Bool
                         (GHC.Prim.<## ww ww17) of wild2 {
@@ -2292,45 +2356,38 @@ c181728336990d85b6658d2eda610e46
                                                                                                                                                           GHC.Types.False
                                                                                                                                                           -> GHC.Types.False
                                                                                                                                                           GHC.Types.True
-                                                                                                                                                          -> case ww14 of wild54 { GHC.Types.D# x13 ->
-                                                                                                                                                             case ww31 of wild55 { GHC.Types.D# y13 ->
-                                                                                                                                                             case GHC.Prim.tagToEnum#
-                                                                                                                                                                    @ GHC.Types.Bool
-                                                                                                                                                                    (GHC.Prim.<##
-                                                                                                                                                                       x13
-                                                                                                                                                                       y13) of wild56 {
-                                                                                                                                                               GHC.Types.False
-                                                                                                                                                               -> case GHC.Prim.tagToEnum#
-                                                                                                                                                                         @ GHC.Types.Bool
-                                                                                                                                                                         (GHC.Prim.==##
-                                                                                                                                                                            x13
-                                                                                                                                                                            y13) of wild57 {
-                                                                                                                                                                    GHC.Types.False
-                                                                                                                                                                    -> GHC.Types.False
-                                                                                                                                                                    GHC.Types.True
-                                                                                                                                                                    -> case ww15 of wild58 { GHC.Types.D# x14 ->
-                                                                                                                                                                       case ww32 of wild59 { GHC.Types.D# y14 ->
-                                                                                                                                                                       case GHC.Prim.tagToEnum#
-                                                                                                                                                                              @ GHC.Types.Bool
-                                                                                                                                                                              (GHC.Prim.<##
-                                                                                                                                                                                 x14
-                                                                                                                                                                                 y14) of wild60 {
-                                                                                                                                                                         GHC.Types.False
-                                                                                                                                                                         -> case GHC.Prim.tagToEnum#
-                                                                                                                                                                                   @ GHC.Types.Bool
-                                                                                                                                                                                   (GHC.Prim.==##
-                                                                                                                                                                                      x14
-                                                                                                                                                                                      y14) of wild61 {
-                                                                                                                                                                              GHC.Types.False
-                                                                                                                                                                              -> GHC.Types.False
-                                                                                                                                                                              GHC.Types.True
-                                                                                                                                                                              -> GHC.Classes.$fOrdDouble_$c<
-                                                                                                                                                                                   ww16
-                                                                                                                                                                                   ww33 }
-                                                                                                                                                                         GHC.Types.True
-                                                                                                                                                                         -> GHC.Types.True } } } }
-                                                                                                                                                               GHC.Types.True
-                                                                                                                                                               -> GHC.Types.True } } } }
+                                                                                                                                                          -> case GHC.Classes.$fOrd[]_$ccompare
+                                                                                                                                                                    @ (Types.Team_ID,
+                                                                                                                                                                       GHC.Types.Int)
+                                                                                                                                                                    Types.$fOrdWinningTeamStats_$s$fOrd(,)
+                                                                                                                                                                    ww14
+                                                                                                                                                                    ww31 of wild54 {
+                                                                                                                                                               GHC.Types.LT
+                                                                                                                                                               -> GHC.Types.True
+                                                                                                                                                               GHC.Types.EQ
+                                                                                                                                                               -> case GHC.Classes.$fOrd[]_$ccompare
+                                                                                                                                                                         @ (Types.Team_ID,
+                                                                                                                                                                            GHC.Types.Int)
+                                                                                                                                                                         Types.$fOrdWinningTeamStats_$s$fOrd(,)
+                                                                                                                                                                         ww15
+                                                                                                                                                                         ww32 of wild55 {
+                                                                                                                                                                    GHC.Types.LT
+                                                                                                                                                                    -> GHC.Types.True
+                                                                                                                                                                    GHC.Types.EQ
+                                                                                                                                                                    -> case GHC.Classes.$fOrd[]_$ccompare
+                                                                                                                                                                              @ (Types.Team_ID,
+                                                                                                                                                                                 GHC.Types.Int)
+                                                                                                                                                                              Types.$fOrdWinningTeamStats_$s$fOrd(,)
+                                                                                                                                                                              ww16
+                                                                                                                                                                              ww33 of wild56 {
+                                                                                                                                                                         DEFAULT
+                                                                                                                                                                         -> GHC.Types.False
+                                                                                                                                                                         GHC.Types.LT
+                                                                                                                                                                         -> GHC.Types.True }
+                                                                                                                                                                    GHC.Types.GT
+                                                                                                                                                                    -> GHC.Types.False }
+                                                                                                                                                               GHC.Types.GT
+                                                                                                                                                               -> GHC.Types.False } }
                                                                                                                                                      GHC.Types.True
                                                                                                                                                      -> GHC.Types.True } } } }
                                                                                                                                            GHC.Types.True
@@ -2414,7 +2471,7 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
   {- Arity: 54, HasNoCafRefs,
      Strictness: <S,U><L,1*U><L,1*U><L,1*U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><S,U><L,1*U><L,1*U><L,1*U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
      Inline: [0] -}
-77620f88fb99fc45a92ea4769e035796
+bbc6db799b2fa821da223c955f0a47dc
   $w$c<=1 ::
     GHC.Prim.Double#
     -> GHC.Types.Double
@@ -2430,9 +2487,9 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
     -> GHC.Types.Double
     -> GHC.Types.Double
     -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
     -> GHC.Prim.Double#
     -> GHC.Types.Double
     -> GHC.Types.Double
@@ -2447,12 +2504,12 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
     -> GHC.Types.Double
     -> GHC.Types.Double
     -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
     -> GHC.Types.Bool
   {- Arity: 34, HasNoCafRefs,
-     Strictness: <S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
+     Strictness: <S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U><L,1*U><L,1*U><S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U><L,1*U><L,1*U>,
      Inline: [0],
      Unfolding: (\ (ww :: GHC.Prim.Double#)
                    (ww1 :: GHC.Types.Double)
@@ -2468,9 +2525,9 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
                    (ww11 :: GHC.Types.Double)
                    (ww12 :: GHC.Types.Double)
                    (ww13 :: GHC.Types.Double)
-                   (ww14 :: GHC.Types.Double)
-                   (ww15 :: GHC.Types.Double)
-                   (ww16 :: GHC.Types.Double)
+                   (ww14 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww15 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww16 :: [(Types.Team_ID, GHC.Types.Int)])
                    (ww17 :: GHC.Prim.Double#)
                    (ww18 :: GHC.Types.Double)
                    (ww19 :: GHC.Types.Double)
@@ -2485,9 +2542,9 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
                    (ww28 :: GHC.Types.Double)
                    (ww29 :: GHC.Types.Double)
                    (ww30 :: GHC.Types.Double)
-                   (ww31 :: GHC.Types.Double)
-                   (ww32 :: GHC.Types.Double)
-                   (ww33 :: GHC.Types.Double) ->
+                   (ww31 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww32 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww33 :: [(Types.Team_ID, GHC.Types.Int)]) ->
                  case GHC.Prim.tagToEnum#
                         @ GHC.Types.Bool
                         (GHC.Prim.<## ww ww17) of wild2 {
@@ -2687,45 +2744,38 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
                                                                                                                                                           GHC.Types.False
                                                                                                                                                           -> GHC.Types.False
                                                                                                                                                           GHC.Types.True
-                                                                                                                                                          -> case ww14 of wild54 { GHC.Types.D# x13 ->
-                                                                                                                                                             case ww31 of wild55 { GHC.Types.D# y13 ->
-                                                                                                                                                             case GHC.Prim.tagToEnum#
-                                                                                                                                                                    @ GHC.Types.Bool
-                                                                                                                                                                    (GHC.Prim.<##
-                                                                                                                                                                       x13
-                                                                                                                                                                       y13) of wild56 {
-                                                                                                                                                               GHC.Types.False
-                                                                                                                                                               -> case GHC.Prim.tagToEnum#
-                                                                                                                                                                         @ GHC.Types.Bool
-                                                                                                                                                                         (GHC.Prim.==##
-                                                                                                                                                                            x13
-                                                                                                                                                                            y13) of wild57 {
-                                                                                                                                                                    GHC.Types.False
-                                                                                                                                                                    -> GHC.Types.False
-                                                                                                                                                                    GHC.Types.True
-                                                                                                                                                                    -> case ww15 of wild58 { GHC.Types.D# x14 ->
-                                                                                                                                                                       case ww32 of wild59 { GHC.Types.D# y14 ->
-                                                                                                                                                                       case GHC.Prim.tagToEnum#
-                                                                                                                                                                              @ GHC.Types.Bool
-                                                                                                                                                                              (GHC.Prim.<##
-                                                                                                                                                                                 x14
-                                                                                                                                                                                 y14) of wild60 {
-                                                                                                                                                                         GHC.Types.False
-                                                                                                                                                                         -> case GHC.Prim.tagToEnum#
-                                                                                                                                                                                   @ GHC.Types.Bool
-                                                                                                                                                                                   (GHC.Prim.==##
-                                                                                                                                                                                      x14
-                                                                                                                                                                                      y14) of wild61 {
-                                                                                                                                                                              GHC.Types.False
-                                                                                                                                                                              -> GHC.Types.False
-                                                                                                                                                                              GHC.Types.True
-                                                                                                                                                                              -> GHC.Classes.$fOrdDouble_$c<=
-                                                                                                                                                                                   ww16
-                                                                                                                                                                                   ww33 }
-                                                                                                                                                                         GHC.Types.True
-                                                                                                                                                                         -> GHC.Types.True } } } }
-                                                                                                                                                               GHC.Types.True
-                                                                                                                                                               -> GHC.Types.True } } } }
+                                                                                                                                                          -> case GHC.Classes.$fOrd[]_$ccompare
+                                                                                                                                                                    @ (Types.Team_ID,
+                                                                                                                                                                       GHC.Types.Int)
+                                                                                                                                                                    Types.$fOrdWinningTeamStats_$s$fOrd(,)
+                                                                                                                                                                    ww14
+                                                                                                                                                                    ww31 of wild54 {
+                                                                                                                                                               GHC.Types.LT
+                                                                                                                                                               -> GHC.Types.True
+                                                                                                                                                               GHC.Types.EQ
+                                                                                                                                                               -> case GHC.Classes.$fOrd[]_$ccompare
+                                                                                                                                                                         @ (Types.Team_ID,
+                                                                                                                                                                            GHC.Types.Int)
+                                                                                                                                                                         Types.$fOrdWinningTeamStats_$s$fOrd(,)
+                                                                                                                                                                         ww15
+                                                                                                                                                                         ww32 of wild55 {
+                                                                                                                                                                    GHC.Types.LT
+                                                                                                                                                                    -> GHC.Types.True
+                                                                                                                                                                    GHC.Types.EQ
+                                                                                                                                                                    -> case GHC.Classes.$fOrd[]_$ccompare
+                                                                                                                                                                              @ (Types.Team_ID,
+                                                                                                                                                                                 GHC.Types.Int)
+                                                                                                                                                                              Types.$fOrdWinningTeamStats_$s$fOrd(,)
+                                                                                                                                                                              ww16
+                                                                                                                                                                              ww33 of wild56 {
+                                                                                                                                                                         DEFAULT
+                                                                                                                                                                         -> GHC.Types.True
+                                                                                                                                                                         GHC.Types.GT
+                                                                                                                                                                         -> GHC.Types.False }
+                                                                                                                                                                    GHC.Types.GT
+                                                                                                                                                                    -> GHC.Types.False }
+                                                                                                                                                               GHC.Types.GT
+                                                                                                                                                               -> GHC.Types.False } }
                                                                                                                                                      GHC.Types.True
                                                                                                                                                      -> GHC.Types.True } } } }
                                                                                                                                            GHC.Types.True
@@ -2809,7 +2859,7 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
   {- Arity: 54, HasNoCafRefs,
      Strictness: <S,U><L,1*U><L,1*U><L,1*U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><S,U><L,1*U><L,1*U><L,1*U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
      Inline: [0] -}
-250b44c88f5c65c82b724a3d1bad06fa
+17185b75442e096559667d19454222da
   $w$c==1 ::
     GHC.Prim.Double#
     -> GHC.Types.Double
@@ -2825,9 +2875,9 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
     -> GHC.Types.Double
     -> GHC.Types.Double
     -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
     -> GHC.Prim.Double#
     -> GHC.Types.Double
     -> GHC.Types.Double
@@ -2842,12 +2892,12 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
     -> GHC.Types.Double
     -> GHC.Types.Double
     -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
     -> GHC.Types.Bool
   {- Arity: 34, HasNoCafRefs,
-     Strictness: <S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
+     Strictness: <S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U><L,1*U><L,1*U><S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U><L,1*U><L,1*U>,
      Inline: [0],
      Unfolding: (\ (ww :: GHC.Prim.Double#)
                    (ww1 :: GHC.Types.Double)
@@ -2863,9 +2913,9 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
                    (ww11 :: GHC.Types.Double)
                    (ww12 :: GHC.Types.Double)
                    (ww13 :: GHC.Types.Double)
-                   (ww14 :: GHC.Types.Double)
-                   (ww15 :: GHC.Types.Double)
-                   (ww16 :: GHC.Types.Double)
+                   (ww14 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww15 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww16 :: [(Types.Team_ID, GHC.Types.Int)])
                    (ww17 :: GHC.Prim.Double#)
                    (ww18 :: GHC.Types.Double)
                    (ww19 :: GHC.Types.Double)
@@ -2880,9 +2930,9 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
                    (ww28 :: GHC.Types.Double)
                    (ww29 :: GHC.Types.Double)
                    (ww30 :: GHC.Types.Double)
-                   (ww31 :: GHC.Types.Double)
-                   (ww32 :: GHC.Types.Double)
-                   (ww33 :: GHC.Types.Double) ->
+                   (ww31 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww32 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww33 :: [(Types.Team_ID, GHC.Types.Int)]) ->
                  case GHC.Prim.tagToEnum#
                         @ GHC.Types.Bool
                         (GHC.Prim.==## ww ww17) of wild {
@@ -2993,29 +3043,30 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
                                                                                     GHC.Types.False
                                                                                     -> GHC.Types.False
                                                                                     GHC.Types.True
-                                                                                    -> case ww14 of wild40 { GHC.Types.D# x13 ->
-                                                                                       case ww31 of wild41 { GHC.Types.D# y13 ->
-                                                                                       case GHC.Prim.tagToEnum#
-                                                                                              @ GHC.Types.Bool
-                                                                                              (GHC.Prim.==##
-                                                                                                 x13
-                                                                                                 y13) of wild42 {
+                                                                                    -> case GHC.Classes.$fEq[]_$c==
+                                                                                              @ (Types.Team_ID,
+                                                                                                 GHC.Types.Int)
+                                                                                              Types.$fEqWinningTeamStats_$s$fEq(,)
+                                                                                              ww14
+                                                                                              ww31 of wild40 {
                                                                                          GHC.Types.False
                                                                                          -> GHC.Types.False
                                                                                          GHC.Types.True
-                                                                                         -> case ww15 of wild43 { GHC.Types.D# x14 ->
-                                                                                            case ww32 of wild44 { GHC.Types.D# y14 ->
-                                                                                            case GHC.Prim.tagToEnum#
-                                                                                                   @ GHC.Types.Bool
-                                                                                                   (GHC.Prim.==##
-                                                                                                      x14
-                                                                                                      y14) of wild45 {
+                                                                                         -> case GHC.Classes.$fEq[]_$c==
+                                                                                                   @ (Types.Team_ID,
+                                                                                                      GHC.Types.Int)
+                                                                                                   Types.$fEqWinningTeamStats_$s$fEq(,)
+                                                                                                   ww15
+                                                                                                   ww32 of wild41 {
                                                                                               GHC.Types.False
                                                                                               -> GHC.Types.False
                                                                                               GHC.Types.True
-                                                                                              -> GHC.Classes.eqDouble
+                                                                                              -> GHC.Classes.$fEq[]_$c==
+                                                                                                   @ (Types.Team_ID,
+                                                                                                      GHC.Types.Int)
+                                                                                                   Types.$fEqWinningTeamStats_$s$fEq(,)
                                                                                                    ww16
-                                                                                                   ww33 } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } }) -}
+                                                                                                   ww33 } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } }) -}
 905f397d2eb68e21fea49885b4f88e80
   $w$c> ::
     GHC.Prim.Int#
@@ -3076,7 +3127,7 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
   {- Arity: 54, HasNoCafRefs,
      Strictness: <S,U><L,1*U><L,1*U><L,1*U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><S,U><L,1*U><L,1*U><L,1*U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
      Inline: [0] -}
-9b056295300cac9315d87059898062f8
+774334b75028c91e3de4f6a6e4d090b2
   $w$c>1 ::
     GHC.Prim.Double#
     -> GHC.Types.Double
@@ -3092,9 +3143,9 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
     -> GHC.Types.Double
     -> GHC.Types.Double
     -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
     -> GHC.Prim.Double#
     -> GHC.Types.Double
     -> GHC.Types.Double
@@ -3109,12 +3160,12 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
     -> GHC.Types.Double
     -> GHC.Types.Double
     -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
     -> GHC.Types.Bool
   {- Arity: 34, HasNoCafRefs,
-     Strictness: <S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
+     Strictness: <S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U><L,1*U><L,1*U><S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U><L,1*U><L,1*U>,
      Inline: [0],
      Unfolding: (\ (ww :: GHC.Prim.Double#)
                    (ww1 :: GHC.Types.Double)
@@ -3130,9 +3181,9 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
                    (ww11 :: GHC.Types.Double)
                    (ww12 :: GHC.Types.Double)
                    (ww13 :: GHC.Types.Double)
-                   (ww14 :: GHC.Types.Double)
-                   (ww15 :: GHC.Types.Double)
-                   (ww16 :: GHC.Types.Double)
+                   (ww14 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww15 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww16 :: [(Types.Team_ID, GHC.Types.Int)])
                    (ww17 :: GHC.Prim.Double#)
                    (ww18 :: GHC.Types.Double)
                    (ww19 :: GHC.Types.Double)
@@ -3147,9 +3198,9 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
                    (ww28 :: GHC.Types.Double)
                    (ww29 :: GHC.Types.Double)
                    (ww30 :: GHC.Types.Double)
-                   (ww31 :: GHC.Types.Double)
-                   (ww32 :: GHC.Types.Double)
-                   (ww33 :: GHC.Types.Double) ->
+                   (ww31 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww32 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww33 :: [(Types.Team_ID, GHC.Types.Int)]) ->
                  case GHC.Prim.tagToEnum#
                         @ GHC.Types.Bool
                         (GHC.Prim.<## ww ww17) of wild2 {
@@ -3349,45 +3400,38 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
                                                                                                                                                           GHC.Types.False
                                                                                                                                                           -> GHC.Types.True
                                                                                                                                                           GHC.Types.True
-                                                                                                                                                          -> case ww14 of wild54 { GHC.Types.D# x13 ->
-                                                                                                                                                             case ww31 of wild55 { GHC.Types.D# y13 ->
-                                                                                                                                                             case GHC.Prim.tagToEnum#
-                                                                                                                                                                    @ GHC.Types.Bool
-                                                                                                                                                                    (GHC.Prim.<##
-                                                                                                                                                                       x13
-                                                                                                                                                                       y13) of wild56 {
-                                                                                                                                                               GHC.Types.False
-                                                                                                                                                               -> case GHC.Prim.tagToEnum#
-                                                                                                                                                                         @ GHC.Types.Bool
-                                                                                                                                                                         (GHC.Prim.==##
-                                                                                                                                                                            x13
-                                                                                                                                                                            y13) of wild57 {
-                                                                                                                                                                    GHC.Types.False
-                                                                                                                                                                    -> GHC.Types.True
-                                                                                                                                                                    GHC.Types.True
-                                                                                                                                                                    -> case ww15 of wild58 { GHC.Types.D# x14 ->
-                                                                                                                                                                       case ww32 of wild59 { GHC.Types.D# y14 ->
-                                                                                                                                                                       case GHC.Prim.tagToEnum#
-                                                                                                                                                                              @ GHC.Types.Bool
-                                                                                                                                                                              (GHC.Prim.<##
-                                                                                                                                                                                 x14
-                                                                                                                                                                                 y14) of wild60 {
-                                                                                                                                                                         GHC.Types.False
-                                                                                                                                                                         -> case GHC.Prim.tagToEnum#
-                                                                                                                                                                                   @ GHC.Types.Bool
-                                                                                                                                                                                   (GHC.Prim.==##
-                                                                                                                                                                                      x14
-                                                                                                                                                                                      y14) of wild61 {
-                                                                                                                                                                              GHC.Types.False
-                                                                                                                                                                              -> GHC.Types.True
-                                                                                                                                                                              GHC.Types.True
-                                                                                                                                                                              -> GHC.Classes.$fOrdDouble_$c>
-                                                                                                                                                                                   ww16
-                                                                                                                                                                                   ww33 }
-                                                                                                                                                                         GHC.Types.True
-                                                                                                                                                                         -> GHC.Types.False } } } }
-                                                                                                                                                               GHC.Types.True
-                                                                                                                                                               -> GHC.Types.False } } } }
+                                                                                                                                                          -> case GHC.Classes.$fOrd[]_$ccompare
+                                                                                                                                                                    @ (Types.Team_ID,
+                                                                                                                                                                       GHC.Types.Int)
+                                                                                                                                                                    Types.$fOrdWinningTeamStats_$s$fOrd(,)
+                                                                                                                                                                    ww14
+                                                                                                                                                                    ww31 of wild54 {
+                                                                                                                                                               GHC.Types.LT
+                                                                                                                                                               -> GHC.Types.False
+                                                                                                                                                               GHC.Types.EQ
+                                                                                                                                                               -> case GHC.Classes.$fOrd[]_$ccompare
+                                                                                                                                                                         @ (Types.Team_ID,
+                                                                                                                                                                            GHC.Types.Int)
+                                                                                                                                                                         Types.$fOrdWinningTeamStats_$s$fOrd(,)
+                                                                                                                                                                         ww15
+                                                                                                                                                                         ww32 of wild55 {
+                                                                                                                                                                    GHC.Types.LT
+                                                                                                                                                                    -> GHC.Types.False
+                                                                                                                                                                    GHC.Types.EQ
+                                                                                                                                                                    -> case GHC.Classes.$fOrd[]_$ccompare
+                                                                                                                                                                              @ (Types.Team_ID,
+                                                                                                                                                                                 GHC.Types.Int)
+                                                                                                                                                                              Types.$fOrdWinningTeamStats_$s$fOrd(,)
+                                                                                                                                                                              ww16
+                                                                                                                                                                              ww33 of wild56 {
+                                                                                                                                                                         DEFAULT
+                                                                                                                                                                         -> GHC.Types.False
+                                                                                                                                                                         GHC.Types.GT
+                                                                                                                                                                         -> GHC.Types.True }
+                                                                                                                                                                    GHC.Types.GT
+                                                                                                                                                                    -> GHC.Types.True }
+                                                                                                                                                               GHC.Types.GT
+                                                                                                                                                               -> GHC.Types.True } }
                                                                                                                                                      GHC.Types.True
                                                                                                                                                      -> GHC.Types.False } } } }
                                                                                                                                            GHC.Types.True
@@ -3471,7 +3515,7 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
   {- Arity: 54, HasNoCafRefs,
      Strictness: <S,U><L,1*U><L,1*U><L,1*U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><S,U><L,1*U><L,1*U><L,1*U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
      Inline: [0] -}
-55965487caf8e07fd0b3f6f03a01bd95
+7b1dc0c9d93051390dd2e6b74a2eca59
   $w$c>=1 ::
     GHC.Prim.Double#
     -> GHC.Types.Double
@@ -3487,9 +3531,9 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
     -> GHC.Types.Double
     -> GHC.Types.Double
     -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
     -> GHC.Prim.Double#
     -> GHC.Types.Double
     -> GHC.Types.Double
@@ -3504,12 +3548,12 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
     -> GHC.Types.Double
     -> GHC.Types.Double
     -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
     -> GHC.Types.Bool
   {- Arity: 34, HasNoCafRefs,
-     Strictness: <S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
+     Strictness: <S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U><L,1*U><L,1*U><S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U><L,1*U><L,1*U>,
      Inline: [0],
      Unfolding: (\ (ww :: GHC.Prim.Double#)
                    (ww1 :: GHC.Types.Double)
@@ -3525,9 +3569,9 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
                    (ww11 :: GHC.Types.Double)
                    (ww12 :: GHC.Types.Double)
                    (ww13 :: GHC.Types.Double)
-                   (ww14 :: GHC.Types.Double)
-                   (ww15 :: GHC.Types.Double)
-                   (ww16 :: GHC.Types.Double)
+                   (ww14 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww15 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww16 :: [(Types.Team_ID, GHC.Types.Int)])
                    (ww17 :: GHC.Prim.Double#)
                    (ww18 :: GHC.Types.Double)
                    (ww19 :: GHC.Types.Double)
@@ -3542,9 +3586,9 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
                    (ww28 :: GHC.Types.Double)
                    (ww29 :: GHC.Types.Double)
                    (ww30 :: GHC.Types.Double)
-                   (ww31 :: GHC.Types.Double)
-                   (ww32 :: GHC.Types.Double)
-                   (ww33 :: GHC.Types.Double) ->
+                   (ww31 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww32 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww33 :: [(Types.Team_ID, GHC.Types.Int)]) ->
                  case GHC.Prim.tagToEnum#
                         @ GHC.Types.Bool
                         (GHC.Prim.<## ww ww17) of wild2 {
@@ -3744,45 +3788,38 @@ b1b8e7a7a045fd07ebbd80f42bbd7837
                                                                                                                                                           GHC.Types.False
                                                                                                                                                           -> GHC.Types.True
                                                                                                                                                           GHC.Types.True
-                                                                                                                                                          -> case ww14 of wild54 { GHC.Types.D# x13 ->
-                                                                                                                                                             case ww31 of wild55 { GHC.Types.D# y13 ->
-                                                                                                                                                             case GHC.Prim.tagToEnum#
-                                                                                                                                                                    @ GHC.Types.Bool
-                                                                                                                                                                    (GHC.Prim.<##
-                                                                                                                                                                       x13
-                                                                                                                                                                       y13) of wild56 {
-                                                                                                                                                               GHC.Types.False
-                                                                                                                                                               -> case GHC.Prim.tagToEnum#
-                                                                                                                                                                         @ GHC.Types.Bool
-                                                                                                                                                                         (GHC.Prim.==##
-                                                                                                                                                                            x13
-                                                                                                                                                                            y13) of wild57 {
-                                                                                                                                                                    GHC.Types.False
-                                                                                                                                                                    -> GHC.Types.True
-                                                                                                                                                                    GHC.Types.True
-                                                                                                                                                                    -> case ww15 of wild58 { GHC.Types.D# x14 ->
-                                                                                                                                                                       case ww32 of wild59 { GHC.Types.D# y14 ->
-                                                                                                                                                                       case GHC.Prim.tagToEnum#
-                                                                                                                                                                              @ GHC.Types.Bool
-                                                                                                                                                                              (GHC.Prim.<##
-                                                                                                                                                                                 x14
-                                                                                                                                                                                 y14) of wild60 {
-                                                                                                                                                                         GHC.Types.False
-                                                                                                                                                                         -> case GHC.Prim.tagToEnum#
-                                                                                                                                                                                   @ GHC.Types.Bool
-                                                                                                                                                                                   (GHC.Prim.==##
-                                                                                                                                                                                      x14
-                                                                                                                                                                                      y14) of wild61 {
-                                                                                                                                                                              GHC.Types.False
-                                                                                                                                                                              -> GHC.Types.True
-                                                                                                                                                                              GHC.Types.True
-                                                                                                                                                                              -> GHC.Classes.$fOrdDouble_$c>=
-                                                                                                                                                                                   ww16
-                                                                                                                                                                                   ww33 }
-                                                                                                                                                                         GHC.Types.True
-                                                                                                                                                                         -> GHC.Types.False } } } }
-                                                                                                                                                               GHC.Types.True
-                                                                                                                                                               -> GHC.Types.False } } } }
+                                                                                                                                                          -> case GHC.Classes.$fOrd[]_$ccompare
+                                                                                                                                                                    @ (Types.Team_ID,
+                                                                                                                                                                       GHC.Types.Int)
+                                                                                                                                                                    Types.$fOrdWinningTeamStats_$s$fOrd(,)
+                                                                                                                                                                    ww14
+                                                                                                                                                                    ww31 of wild54 {
+                                                                                                                                                               GHC.Types.LT
+                                                                                                                                                               -> GHC.Types.False
+                                                                                                                                                               GHC.Types.EQ
+                                                                                                                                                               -> case GHC.Classes.$fOrd[]_$ccompare
+                                                                                                                                                                         @ (Types.Team_ID,
+                                                                                                                                                                            GHC.Types.Int)
+                                                                                                                                                                         Types.$fOrdWinningTeamStats_$s$fOrd(,)
+                                                                                                                                                                         ww15
+                                                                                                                                                                         ww32 of wild55 {
+                                                                                                                                                                    GHC.Types.LT
+                                                                                                                                                                    -> GHC.Types.False
+                                                                                                                                                                    GHC.Types.EQ
+                                                                                                                                                                    -> case GHC.Classes.$fOrd[]_$ccompare
+                                                                                                                                                                              @ (Types.Team_ID,
+                                                                                                                                                                                 GHC.Types.Int)
+                                                                                                                                                                              Types.$fOrdWinningTeamStats_$s$fOrd(,)
+                                                                                                                                                                              ww16
+                                                                                                                                                                              ww33 of wild56 {
+                                                                                                                                                                         DEFAULT
+                                                                                                                                                                         -> GHC.Types.True
+                                                                                                                                                                         GHC.Types.LT
+                                                                                                                                                                         -> GHC.Types.False }
+                                                                                                                                                                    GHC.Types.GT
+                                                                                                                                                                    -> GHC.Types.True }
+                                                                                                                                                               GHC.Types.GT
+                                                                                                                                                               -> GHC.Types.True } }
                                                                                                                                                      GHC.Types.True
                                                                                                                                                      -> GHC.Types.False } } } }
                                                                                                                                            GHC.Types.True
@@ -3866,7 +3903,7 @@ bbb71f5ff864de0ca257780670b09476
   {- Arity: 54, HasNoCafRefs,
      Strictness: <S,U><L,1*U><L,1*U><L,1*U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><S,U><L,1*U><L,1*U><L,1*U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
      Inline: [0] -}
-2ed20f91cc367ab83652693bae5adb81
+a315c695356ea1cb1bf0a1e13226eb4c
   $w$ccompare1 ::
     GHC.Prim.Double#
     -> GHC.Types.Double
@@ -3882,9 +3919,9 @@ bbb71f5ff864de0ca257780670b09476
     -> GHC.Types.Double
     -> GHC.Types.Double
     -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
     -> GHC.Prim.Double#
     -> GHC.Types.Double
     -> GHC.Types.Double
@@ -3899,12 +3936,12 @@ bbb71f5ff864de0ca257780670b09476
     -> GHC.Types.Double
     -> GHC.Types.Double
     -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
     -> GHC.Types.Ordering
   {- Arity: 34, HasNoCafRefs,
-     Strictness: <S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
+     Strictness: <S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U><L,1*U><L,1*U><S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U><L,1*U><L,1*U>,
      Inline: [0],
      Unfolding: (\ (ww :: GHC.Prim.Double#)
                    (ww1 :: GHC.Types.Double)
@@ -3920,9 +3957,9 @@ bbb71f5ff864de0ca257780670b09476
                    (ww11 :: GHC.Types.Double)
                    (ww12 :: GHC.Types.Double)
                    (ww13 :: GHC.Types.Double)
-                   (ww14 :: GHC.Types.Double)
-                   (ww15 :: GHC.Types.Double)
-                   (ww16 :: GHC.Types.Double)
+                   (ww14 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww15 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww16 :: [(Types.Team_ID, GHC.Types.Int)])
                    (ww17 :: GHC.Prim.Double#)
                    (ww18 :: GHC.Types.Double)
                    (ww19 :: GHC.Types.Double)
@@ -3937,9 +3974,9 @@ bbb71f5ff864de0ca257780670b09476
                    (ww28 :: GHC.Types.Double)
                    (ww29 :: GHC.Types.Double)
                    (ww30 :: GHC.Types.Double)
-                   (ww31 :: GHC.Types.Double)
-                   (ww32 :: GHC.Types.Double)
-                   (ww33 :: GHC.Types.Double) ->
+                   (ww31 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww32 :: [(Types.Team_ID, GHC.Types.Int)])
+                   (ww33 :: [(Types.Team_ID, GHC.Types.Int)]) ->
                  case GHC.Prim.tagToEnum#
                         @ GHC.Types.Bool
                         (GHC.Prim.<## ww ww17) of wild2 {
@@ -4139,45 +4176,34 @@ bbb71f5ff864de0ca257780670b09476
                                                                                                                                                           GHC.Types.False
                                                                                                                                                           -> GHC.Types.GT
                                                                                                                                                           GHC.Types.True
-                                                                                                                                                          -> case ww14 of wild54 { GHC.Types.D# x13 ->
-                                                                                                                                                             case ww31 of wild55 { GHC.Types.D# y13 ->
-                                                                                                                                                             case GHC.Prim.tagToEnum#
-                                                                                                                                                                    @ GHC.Types.Bool
-                                                                                                                                                                    (GHC.Prim.<##
-                                                                                                                                                                       x13
-                                                                                                                                                                       y13) of wild56 {
-                                                                                                                                                               GHC.Types.False
-                                                                                                                                                               -> case GHC.Prim.tagToEnum#
-                                                                                                                                                                         @ GHC.Types.Bool
-                                                                                                                                                                         (GHC.Prim.==##
-                                                                                                                                                                            x13
-                                                                                                                                                                            y13) of wild57 {
-                                                                                                                                                                    GHC.Types.False
-                                                                                                                                                                    -> GHC.Types.GT
-                                                                                                                                                                    GHC.Types.True
-                                                                                                                                                                    -> case ww15 of wild58 { GHC.Types.D# x14 ->
-                                                                                                                                                                       case ww32 of wild59 { GHC.Types.D# y14 ->
-                                                                                                                                                                       case GHC.Prim.tagToEnum#
-                                                                                                                                                                              @ GHC.Types.Bool
-                                                                                                                                                                              (GHC.Prim.<##
-                                                                                                                                                                                 x14
-                                                                                                                                                                                 y14) of wild60 {
-                                                                                                                                                                         GHC.Types.False
-                                                                                                                                                                         -> case GHC.Prim.tagToEnum#
-                                                                                                                                                                                   @ GHC.Types.Bool
-                                                                                                                                                                                   (GHC.Prim.==##
-                                                                                                                                                                                      x14
-                                                                                                                                                                                      y14) of wild61 {
-                                                                                                                                                                              GHC.Types.False
-                                                                                                                                                                              -> GHC.Types.GT
-                                                                                                                                                                              GHC.Types.True
-                                                                                                                                                                              -> GHC.Classes.$fOrdDouble_$ccompare
-                                                                                                                                                                                   ww16
-                                                                                                                                                                                   ww33 }
-                                                                                                                                                                         GHC.Types.True
-                                                                                                                                                                         -> GHC.Types.LT } } } }
-                                                                                                                                                               GHC.Types.True
-                                                                                                                                                               -> GHC.Types.LT } } } }
+                                                                                                                                                          -> case GHC.Classes.$fOrd[]_$ccompare
+                                                                                                                                                                    @ (Types.Team_ID,
+                                                                                                                                                                       GHC.Types.Int)
+                                                                                                                                                                    Types.$fOrdWinningTeamStats_$s$fOrd(,)
+                                                                                                                                                                    ww14
+                                                                                                                                                                    ww31 of wild54 {
+                                                                                                                                                               GHC.Types.LT
+                                                                                                                                                               -> GHC.Types.LT
+                                                                                                                                                               GHC.Types.EQ
+                                                                                                                                                               -> case GHC.Classes.$fOrd[]_$ccompare
+                                                                                                                                                                         @ (Types.Team_ID,
+                                                                                                                                                                            GHC.Types.Int)
+                                                                                                                                                                         Types.$fOrdWinningTeamStats_$s$fOrd(,)
+                                                                                                                                                                         ww15
+                                                                                                                                                                         ww32 of wild55 {
+                                                                                                                                                                    GHC.Types.LT
+                                                                                                                                                                    -> GHC.Types.LT
+                                                                                                                                                                    GHC.Types.EQ
+                                                                                                                                                                    -> GHC.Classes.$fOrd[]_$ccompare
+                                                                                                                                                                         @ (Types.Team_ID,
+                                                                                                                                                                            GHC.Types.Int)
+                                                                                                                                                                         Types.$fOrdWinningTeamStats_$s$fOrd(,)
+                                                                                                                                                                         ww16
+                                                                                                                                                                         ww33
+                                                                                                                                                                    GHC.Types.GT
+                                                                                                                                                                    -> GHC.Types.GT }
+                                                                                                                                                               GHC.Types.GT
+                                                                                                                                                               -> GHC.Types.GT } }
                                                                                                                                                      GHC.Types.True
                                                                                                                                                      -> GHC.Types.LT } } } }
                                                                                                                                            GHC.Types.True
@@ -4201,7 +4227,7 @@ bbb71f5ff864de0ca257780670b09476
                                        GHC.Types.True -> GHC.Types.LT } } } }
                              GHC.Types.True -> GHC.Types.LT } } } }
                    GHC.Types.True -> GHC.Types.LT }) -}
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   $w$creadPrec ::
     GHC.Prim.Int#
     -> forall b.
@@ -4217,9 +4243,9 @@ d8e0353799ed5c38db27f5da011b679e
                    GHC.Types.False -> Text.ParserCombinators.ReadP.Fail @ b
                    GHC.Types.True
                    -> let {
-                        lvl116 :: Text.ParserCombinators.ReadP.P b
+                        lvl131 :: Text.ParserCombinators.ReadP.P b
                         = let {
-                            lvl117 :: Text.ParserCombinators.ReadP.P b
+                            lvl132 :: Text.ParserCombinators.ReadP.P b
                             = GHC.Read.$wlist
                                 @ (GHC.Types.Int, [Types.GameResult])
                                 Types.$fReadGameLogsByTeam5
@@ -4242,13 +4268,13 @@ d8e0353799ed5c38db27f5da011b679e
                                Text.Read.Lex.Ident a2
                                -> case GHC.Base.eqString a2 Types.$fReadGameLogsByTeam4 of wild1 {
                                     GHC.Types.False -> Text.ParserCombinators.ReadP.Fail @ b
-                                    GHC.Types.True -> lvl117 } })
+                                    GHC.Types.True -> lvl132 } })
                       } in
                       let {
                         k :: () -> Text.ParserCombinators.ReadP.P b
                           {- Arity: 1, Strictness: <L,A>, Inline: INLINE[0],
-                             Unfolding: InlineRule (1, True, True) (\ (w4 :: ()) -> lvl116) -}
-                        = \ (w4 :: ()) -> lvl116
+                             Unfolding: InlineRule (1, True, True) (\ (w4 :: ()) -> lvl131) -}
+                        = \ (w4 :: ()) -> lvl131
                       } in
                       Text.ParserCombinators.ReadP.Look
                         @ b
@@ -4265,7 +4291,7 @@ fe4c82377322beebabc83f52178dd2b6
        (Types.GameResult -> Text.ParserCombinators.ReadP.P b)
        -> Text.ParserCombinators.ReadP.P b
   {- Arity: 2, Strictness: <S,U><L,C(U)>, Inline: [0] -}
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   $w$creadPrec2 ::
     GHC.Prim.Int#
     -> forall b.
@@ -4353,7 +4379,7 @@ a25f5b9dce3bc18be12d3f778de61299
   {- Arity: 28,
      Strictness: <S,U><L,U(U)><L,U><L,U><L,U><L,U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
      Inline: [0] -}
-13a0aa9637e95de62fbeccc8f0818ef2
+9f62e0bfc1f88400a71de1f065803fde
   $w$cshowsPrec2 ::
     GHC.Prim.Int#
     -> GHC.Types.Double
@@ -4370,12 +4396,12 @@ a25f5b9dce3bc18be12d3f778de61299
     -> GHC.Types.Double
     -> GHC.Types.Double
     -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
-    -> GHC.Types.Double
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
+    -> [(Types.Team_ID, GHC.Types.Int)]
     -> GHC.Show.ShowS
   {- Arity: 18,
-     Strictness: <S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
+     Strictness: <S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,U><L,U><L,U>,
      Inline: [0] -}
 74bcfd44f653605b0a0b9095ff9bdc94
   type AwayTeamGameResult = Types.GameResult
@@ -4386,7 +4412,7 @@ bb35b49f74cc1d810e139ef880e8ee92
   type DayDiff = GHC.Integer.Type.Integer
 3b93c766a88f70c74b0a10d2bd2f31dd
   type GameDate = GHC.Base.String
-d8e0353799ed5c38db27f5da011b679e
+524bd195092ec0393d7497dbf95f3992
   data GameLogsByTeam
     = GameLogsByTeam [(Types.Team_ID, [Types.GameResult])]
 fe4c82377322beebabc83f52178dd2b6
@@ -4440,7 +4466,7 @@ b0e0b359a3fe649a806f6b9dc72a9392
   type WinningTeamGameResult = Types.GameResult
 a6098eb3a7fa68c996fa1886168655b0
   type WinningTeamID = GHC.Types.Int
-a25f5b9dce3bc18be12d3f778de61299
+ed30831afd7356e9c1660a6896f81121
   data WinningTeamStats
     = WinningTeamStats {pointDiff :: GHC.Types.Double,
                         fieldGoalPct :: GHC.Types.Double,
@@ -4456,10 +4482,10 @@ a25f5b9dce3bc18be12d3f778de61299
                         blocks :: GHC.Types.Double,
                         eFGPct :: GHC.Types.Double,
                         home :: GHC.Types.Double,
-                        b2b :: GHC.Types.Double,
-                        threeInFour :: GHC.Types.Double,
-                        fourInSix :: GHC.Types.Double}
-e36873ac2f13513426c1eb76feb1eb0d
+                        b2b :: [(Types.Team_ID, GHC.Types.Int)],
+                        threeInFour :: [(Types.Team_ID, GHC.Types.Int)],
+                        fourInSix :: [(Types.Team_ID, GHC.Types.Int)]}
+6ca4cbebc9f4e4b00da3484a74ea20c5
   assists :: Types.WinningTeamStats -> GHC.Types.Double
   RecSel Left Types.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
@@ -4477,11 +4503,11 @@ c0221d5ebdcfa9589de4add349b25ba9
                 (\ (ds :: Types.GameResult) ->
                  case ds of wild { Types.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
                  ds22 }) -}
-0b20781c1c4bc3e25f8e1d8582dfb3f8
-  b2b :: Types.WinningTeamStats -> GHC.Types.Double
+2f7a72940a11198ed1b1bb9c256d8b32
+  b2b :: Types.WinningTeamStats -> [(Types.Team_ID, GHC.Types.Int)]
   RecSel Left Types.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
-     Strictness: <S(LLLLLLLLLLLLLLSLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U),A,A)>m,
+     Strictness: <S(LLLLLLLLLLLLLLSLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U,A,A)>,
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: Types.WinningTeamStats) ->
                  case ds of wild { Types.WinningTeamStats ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ->
@@ -4495,7 +4521,7 @@ b08a67a4a20fbc56b6f4d94d20c4320f
                 (\ (ds :: Types.GameResult) ->
                  case ds of wild { Types.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
                  ds24 }) -}
-d000d2543dae4283e1ee3a87eda3bfcc
+8085c5ab2673a5585110c856d4ecfdc8
   blocks :: Types.WinningTeamStats -> GHC.Types.Double
   RecSel Left Types.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
@@ -4513,7 +4539,7 @@ d000d2543dae4283e1ee3a87eda3bfcc
                 (\ (ds :: Types.GameResult) ->
                  case ds of wild { Types.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
                  ds20 }) -}
-ae12551652199ecfc6358e050df74500
+7d1fd353e9f827e8d159a6d24db2913b
   eFGPct :: Types.WinningTeamStats -> GHC.Types.Double
   RecSel Left Types.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
@@ -4576,7 +4602,7 @@ f3f4bd717fb5004a5eea9ca1d25f9dbe
                 (\ (ds :: Types.GameResult) ->
                  case ds of wild { Types.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
                  ds10 }) -}
-2031eddec9048f61456686edd3e4f72c
+23342673674303d815b1076860123ff5
   fieldGoalPct :: Types.WinningTeamStats -> GHC.Types.Double
   RecSel Left Types.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
@@ -4585,16 +4611,17 @@ f3f4bd717fb5004a5eea9ca1d25f9dbe
                 (\ (ds :: Types.WinningTeamStats) ->
                  case ds of wild { Types.WinningTeamStats ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ->
                  ds2 }) -}
-555045eda040f39313dbf15f5fe575cc
-  fourInSix :: Types.WinningTeamStats -> GHC.Types.Double
+0b74cc3022b0a3146146210714d3b23b
+  fourInSix ::
+    Types.WinningTeamStats -> [(Types.Team_ID, GHC.Types.Int)]
   RecSel Left Types.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
-     Strictness: <S(LLLLLLLLLLLLLLLLS),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U))>m,
+     Strictness: <S(LLLLLLLLLLLLLLLLS),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U)>,
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: Types.WinningTeamStats) ->
                  case ds of wild { Types.WinningTeamStats ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ->
                  ds17 }) -}
-d14fbe6ead9d9734dce6748071599184
+bcdb5d921d5177aaa29cf19db8d0d18a
   freeTAtt :: Types.WinningTeamStats -> GHC.Types.Double
   RecSel Left Types.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
@@ -4603,7 +4630,7 @@ d14fbe6ead9d9734dce6748071599184
                 (\ (ds :: Types.WinningTeamStats) ->
                  case ds of wild { Types.WinningTeamStats ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ->
                  ds10 }) -}
-65740400be83e3287dfb79fa3d7fe931
+c543afb3662432794d5f0c4afbf02a6a
   freeTMade :: Types.WinningTeamStats -> GHC.Types.Double
   RecSel Left Types.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
@@ -4657,7 +4684,7 @@ b1b9a8ff0794cd1fba110b0305028043
                 (\ (ds :: Types.GameResult) ->
                  case ds of wild { Types.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
                  ds3 }) -}
-07ff4cec4fb9511d4d8a5585cec6d4f3
+eac0420b12ebb04048e5f70951e435dc
   home :: Types.WinningTeamStats -> GHC.Types.Double
   RecSel Left Types.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
@@ -4693,7 +4720,7 @@ dfa04a86ec7ed5af3013bedb408a952a
                 (\ (ds :: Types.GameResult) ->
                  case ds of wild { Types.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
                  ds9 }) -}
-93daa941f3d965455bf3a6d7825da5a4
+6accf9f1216f41922f0fd91132ca93ea
   offReb :: Types.WinningTeamStats -> GHC.Types.Double
   RecSel Left Types.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
@@ -4720,7 +4747,7 @@ ef5de1d5bfa5da2941521a6c55f184e6
                 (\ (ds :: Types.GameResult) ->
                  case ds of wild { Types.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
                  ds26 }) -}
-d57ba62f34f9f192fd946d2f96f2bafd
+f40d9ddd8478349ec7db109974adad2c
   pointDiff :: Types.WinningTeamStats -> GHC.Types.Double
   RecSel Left Types.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
@@ -4747,7 +4774,7 @@ f7a787f1ff8ea1576096e9888c53563c
                 (\ (ds :: Types.GameResult) ->
                  case ds of wild { Types.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
                  ds21 }) -}
-7c52bcfeec93d97c7f7b19855f2085b3
+1f563df1e7286832d8f28fc46cb6a996
   rebounds :: Types.WinningTeamStats -> GHC.Types.Double
   RecSel Left Types.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
@@ -4756,7 +4783,7 @@ f7a787f1ff8ea1576096e9888c53563c
                 (\ (ds :: Types.WinningTeamStats) ->
                  case ds of wild { Types.WinningTeamStats ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ->
                  ds3 }) -}
-99b4d78984a4a324875df6102d0f7289
+1cd67513379bec49b331fe0b6e758363
   steals :: Types.WinningTeamStats -> GHC.Types.Double
   RecSel Left Types.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
@@ -5420,7 +5447,7 @@ cddd993d2e8cf64b4a44ba567b7e2b19
 2774922730aa92df1991c229c4126e2f
   teams99 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "LAC"#) -}
-0d26cf4fb296a33a0e7880957d000c84
+70981e7538da4304727e29153a748401
   threeFGA :: Types.WinningTeamStats -> GHC.Types.Double
   RecSel Left Types.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
@@ -5429,7 +5456,7 @@ cddd993d2e8cf64b4a44ba567b7e2b19
                 (\ (ds :: Types.WinningTeamStats) ->
                  case ds of wild { Types.WinningTeamStats ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ->
                  ds8 }) -}
-2143f0696a9a81c0922a56c98085d673
+9f7a5d518455f719ef2e16d7c4d99938
   threeFGM :: Types.WinningTeamStats -> GHC.Types.Double
   RecSel Left Types.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
@@ -5438,11 +5465,12 @@ cddd993d2e8cf64b4a44ba567b7e2b19
                 (\ (ds :: Types.WinningTeamStats) ->
                  case ds of wild { Types.WinningTeamStats ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ->
                  ds9 }) -}
-c5913f692f1bf9c7788dbee4247c9afa
-  threeInFour :: Types.WinningTeamStats -> GHC.Types.Double
+9574c454e60e44113422b8f7cf3b85d2
+  threeInFour ::
+    Types.WinningTeamStats -> [(Types.Team_ID, GHC.Types.Int)]
   RecSel Left Types.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
-     Strictness: <S(LLLLLLLLLLLLLLLSL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U),A)>m,
+     Strictness: <S(LLLLLLLLLLLLLLLSL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U,A)>,
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: Types.WinningTeamStats) ->
                  case ds of wild { Types.WinningTeamStats ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ->
@@ -5456,7 +5484,7 @@ c5913f692f1bf9c7788dbee4247c9afa
                 (\ (ds :: Types.GameResult) ->
                  case ds of wild { Types.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
                  ds25 }) -}
-12d59e07a3e65f75c4fd6a4c56a0f23d
+f04ed5e410386098242fcd9fcc80fbc4
   turnovers :: Types.WinningTeamStats -> GHC.Types.Double
   RecSel Left Types.WinningTeamStats
   {- Arity: 1, HasNoCafRefs,
@@ -5483,29 +5511,43 @@ c5913f692f1bf9c7788dbee4247c9afa
                 (\ (ds :: Types.GameResult) ->
                  case ds of wild { Types.GameResult ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ->
                  ds6 }) -}
-e461ec61d2992dd0e5aae76c51f397cf
+2183009593fa43e6279d9acb2a569e8f
   winningTeamDefault :: Types.WinningTeamStats
   {- HasNoCafRefs,
      Unfolding: (Types.WinningTeamStats
-                   Types.winningTeamDefault1
-                   Types.winningTeamDefault1
-                   Types.winningTeamDefault1
-                   Types.winningTeamDefault1
-                   Types.winningTeamDefault1
-                   Types.winningTeamDefault1
-                   Types.winningTeamDefault1
-                   Types.winningTeamDefault1
-                   Types.winningTeamDefault1
-                   Types.winningTeamDefault1
-                   Types.winningTeamDefault1
-                   Types.winningTeamDefault1
-                   Types.winningTeamDefault1
-                   Types.winningTeamDefault1
+                   Types.winningTeamDefault4
+                   Types.winningTeamDefault4
+                   Types.winningTeamDefault4
+                   Types.winningTeamDefault4
+                   Types.winningTeamDefault4
+                   Types.winningTeamDefault4
+                   Types.winningTeamDefault4
+                   Types.winningTeamDefault4
+                   Types.winningTeamDefault4
+                   Types.winningTeamDefault4
+                   Types.winningTeamDefault4
+                   Types.winningTeamDefault4
+                   Types.winningTeamDefault4
+                   Types.winningTeamDefault4
                    Types.winningTeamDefault1
                    Types.winningTeamDefault1
                    Types.winningTeamDefault1) -}
-64ea998367a1f0b68c1189b08e1eba21
-  winningTeamDefault1 :: GHC.Types.Double
+85dd13146840ef78bd2c3e02bc47f953
+  winningTeamDefault1 :: [(Types.Team_ID, GHC.Types.Int)]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (Types.Team_ID, GHC.Types.Int)
+                   Types.winningTeamDefault2
+                   (GHC.Types.[] @ (Types.Team_ID, GHC.Types.Int))) -}
+580cdcd7e98bf092dc71058d22f4993a
+  winningTeamDefault2 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Types.teams96, Types.winningTeamDefault3)) -}
+87c209252d90f937e7eeb7ef39936d93
+  winningTeamDefault3 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 82#) -}
+49810ba162eb8a4bbfbd2b54aaed9af4
+  winningTeamDefault4 :: GHC.Types.Double
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 0.0##) -}
 d0e48850dabf85c50e5ca18c2a440281
   wl :: Types.GameResult -> GHC.Types.Char
@@ -5540,6 +5582,11 @@ instance [safe] GHC.Show.Show [Types.GameResult]
   = Types.$fShowGameResult
 instance [safe] GHC.Show.Show [Types.WinningTeamStats]
   = Types.$fShowWinningTeamStats
+"SPEC/Types $fEq(,) @ Int @ Int" [ALWAYS] forall ($dEq :: GHC.Classes.Eq
+                                                            GHC.Types.Int)
+                                                 ($dEq1 :: GHC.Classes.Eq GHC.Types.Int)
+  GHC.Classes.$fEq(,) @ GHC.Types.Int @ GHC.Types.Int $dEq $dEq1
+  = Types.$fEqWinningTeamStats_$s$fEq(,)
 "SPEC/Types $fEq(,) @ Int @ [GameResult]" [ALWAYS] forall ($dEq :: GHC.Classes.Eq
                                                                      GHC.Types.Int)
                                                           ($dEq1 :: GHC.Classes.Eq
@@ -5554,6 +5601,11 @@ instance [safe] GHC.Show.Show [Types.WinningTeamStats]
                                                                  Types.GameResult)
   GHC.Classes.$fEq[]_$c/= @ Types.GameResult $dEq
   = Types.$fEqGameLogsByTeam_$s$fEq[]_$c/=
+"SPEC/Types $fOrd(,) @ Int @ Int" [ALWAYS] forall ($dOrd :: GHC.Classes.Ord
+                                                              GHC.Types.Int)
+                                                  ($dOrd1 :: GHC.Classes.Ord GHC.Types.Int)
+  GHC.Classes.$fOrd(,) @ GHC.Types.Int @ GHC.Types.Int $dOrd $dOrd1
+  = Types.$fOrdWinningTeamStats_$s$fOrd(,)
 "SPEC/Types $fOrd(,) @ Int @ [GameResult]" [ALWAYS] forall ($dOrd :: GHC.Classes.Ord
                                                                        GHC.Types.Int)
                                                            ($dOrd1 :: GHC.Classes.Ord
@@ -5563,6 +5615,14 @@ instance [safe] GHC.Show.Show [Types.WinningTeamStats]
                        $dOrd
                        $dOrd1
   = Types.$fOrdGameLogsByTeam_$s$fOrd(,)
+"SPEC/Types $fOrd(,)_$cp1Ord @ Int @ Int" [ALWAYS] forall ($dOrd :: GHC.Classes.Ord
+                                                                      GHC.Types.Int)
+                                                          ($dOrd1 :: GHC.Classes.Ord GHC.Types.Int)
+  GHC.Classes.$fOrd(,)_$cp1Ord @ GHC.Types.Int
+                               @ GHC.Types.Int
+                               $dOrd
+                               $dOrd1
+  = Types.$fOrdWinningTeamStats_$s$fOrd(,)_$cp1Ord
 "SPEC/Types $fOrd(,)_$cp1Ord @ Int @ [GameResult]" [ALWAYS] forall ($dOrd :: GHC.Classes.Ord
                                                                                GHC.Types.Int)
                                                                    ($dOrd1 :: GHC.Classes.Ord

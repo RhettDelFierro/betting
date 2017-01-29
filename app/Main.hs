@@ -65,21 +65,28 @@ main = do
                                    }
   print $ results
 
-checkInterval :: [GameResult] -> [(GameResult,GameResult)] -> DayDiff -> NumGamesPlayed -> [(Team_ID,Int)]
---checkB2B whole tup interval= length $ gameDayInterval whole
---                                (map (\(x,_) -> (team_ID x,game_date x)) tup) interval
-checkInterval whole tup interval games_played = winsThroughDays $
-     gameDayInterval whole (map (\(x,_) -> (team_ID x,game_date x)) tup) interval games_played
+--checkInterval :: [GameResult] -> [(GameResult,GameResult)] -> DayDiff -> NumGamesPlayed -> [(Team_ID,Int)]
+--checkInterval whole tup interval games_played = recordThroughDays $
+--     gameDayInterval whole (map (\(x,_) -> (team_ID x,game_date x)) tup) interval games_played
 
-gameDayInterval :: [GameResult] -> [(WinningTeamID,GameDate)] -> DayDiff -> NumGamesPlayed -> [[GameResult]]
+checkInterval :: [GameResult] -> [(GameResult,GameResult)] -> DayDiff -> NumGamesPlayed -> [(TeamName,Wins,Losses)]
+checkInterval whole tup interval games_played = stretchResults . recordThroughDays $ bothIntervals
+    where bothIntervals = let winningInterval = gameDayInterval whole (map (\(x,_) -> (team_ID x,game_date x)) tup) interval games_played
+                              losingInterval  = gameDayInterval whole (map (\(_,y) -> (team_ID y,game_date y)) tup) interval games_played
+                          in  (winningInterval,losingInterval)
+--     gameDayInterval whole (getOutcomes tup) interval games_played
+--        where getOutcomes tup = let winning_interval =
+--                                    losing_interval  =
+
+stretchResults :: ([(TeamName,Int)],[(TeamName,Int)]) -> [(TeamName,Wins,Losses)]
+stretchResults ts = [fullRecord x y | x <- (fst ts), y <- (snd ts), (fst x) == (fst y)]
+            where fullRecord (t,u) (v,w) = (t,u,w)
+
+gameDayInterval :: [GameResult] -> [(Team_ID,GameDate)] -> DayDiff -> NumGamesPlayed -> [[GameResult]]
 gameDayInterval _ [] _  _ = []
 gameDayInterval grs (x:xs) interval games_played = ((func1 . func2) $ grs) ++ (gameDayInterval grs xs interval games_played)
     where func1 = filter (((>= games_played) . length)) . DL.groupBy ((==) `on` (team_ID ))
-    --where func1 = DL.groupBy ((==) `on` (team_ID ))
           func2 = filter (\g -> ((team_ID g) == (fst x)) && (checkDates (snd x) interval (game_date g)))
-
-intervalOfGames :: NumGamesPlayed -> [[GameResult]] -> [[GameResult]]
-intervalOfGames games_played arr = filter (((>= games_played) . length)) $ trace ("here are the games:" ++ show arr) arr
 
 checkDates :: GameDate -> DayDiff -> GameDate -> Bool
 checkDates day1 dayDiff day2 = let d1 = parseTimeOrError False defaultTimeLocale "%b %d, %Y" day1 :: Day
@@ -112,25 +119,36 @@ getBoxScores (x:xs) =
                  | (wl x) == 'W' = (x,t2)
                  | otherwise      = (t2,x)
 
---checkHomeWinning :: (GameResult -> String) -> [(WinningTeamGameResult,LosingTeamGameResult)] -> Int
---checkHomeWinning f arr = length $ filter (\(x,_) -> elem '@' $ f x) arr
-
 splitHomeAwayTeams :: [GameResult] -> ([HomeTeamGameResult],[AwayTeamGameResult])
 splitHomeAwayTeams = DL.partition ((elem '@') . matchup)
 
 splitWinLossTeams :: [GameResult] -> ([WinningTeamGameResult],[LosingTeamGameResult])
 splitWinLossTeams = DL.partition ((== 'W') . wl)
 
---to separate by records, just check the winning percentage of the other team. Unless you want tiers. But this will give you the team's current place in the league.
---maybe get the total record at the end of the season if you want a comparison. Just get the GameResults of teams 
-
-winsThroughDays :: [[GameResult]] -> [(Team_ID,Int)]
-winsThroughDays gr = frequency $ fmap (team_ID . head) gr
+recordThroughDays :: ([[GameResult]],[[GameResult]]) -> ([(TeamName,Int)],[(TeamName,Int)])
+recordThroughDays gr = let winning_teams = (initTeam teams) . (replaceTeamName teams) . frequency $ fmap (team_ID . head) $ fst gr
+                           losing_teams  = (initTeam teams) . (replaceTeamName teams) . frequency $ fmap (team_ID . head) $ snd gr
+                       in  (winning_teams,losing_teams)
+--recordThroughDays :: [[GameResult]] -> [(Team_ID,Int)]
+--recordThroughDays gr = frequency $ fmap (team_ID . head) gr
 
 frequency :: [Team_ID] -> [(Team_ID, Int)]
 frequency xs = M.toList (M.fromListWith (+) [(x, 1) | x <- xs])
 
+replaceTeamName :: [Teams] -> [(Team_ID, Int)] -> [(TeamName, Int)]
+replaceTeamName ts rs = [makeTeam x y | x@(t,u,v) <- ts, y <- rs, (u) == (fst y)]
+                where makeTeam (t,u,v) b = (t,snd b)
 
+initTeam :: [Teams] -> [(TeamName,Int)] -> [(TeamName,Int)]
+initTeam ts rs = map (\x -> check x) ts
+            where check (a,b,c)
+                    | M.member a (M.fromList rs) = (a, M.findWithDefault 0 a (M.fromList rs))
+                    | otherwise                   = (a,0)
+--add b2b losses. Can use winsThroughDays and frequency to do that. I think all you need to change is the checkInterval to use (\(_,y)
+--add team names to frequency/winsThroughDays
+
+--to separate by records, just check the winning percentage of the other team. Unless you want tiers. But this will give you the team's current place in the league.
+--maybe get the total record at the end of the season if you want a comparison. Just get the GameResults of teams
 
 
 

@@ -9,6 +9,8 @@ type Teams                 = (TeamName,Team_ID,TeamABBR)
 type WinningTeamID         = Int
 type WinPct                = Double
 type TotalGames            = Double
+type Wins                  = Int
+type Losses                = Int
 type WinningTeamGameResult = GameResult
 type LosingTeamGameResult  = GameResult
 type HomeTeamGameResult    = GameResult
@@ -33,9 +35,9 @@ data WinningTeamStats = WinningTeamStats { pointDiff    :: Double
                                          , blocks       :: Double
                                          , eFGPct       :: Double
                                          , home         :: Double
-                                         , b2b          :: [(Team_ID,Int)]
-                                         , threeInFour  :: [(Team_ID,Int)]
-                                         , fourInSix    :: [(Team_ID,Int)]
+                                         , b2b          :: [(TeamName,Wins,Losses)]
+                                         , threeInFour  :: [(TeamName,Wins,Losses)]
+                                         , fourInSix    :: [(TeamName,Wins,Losses)]
                                          } deriving (Show, Eq, Ord, Read)
 winningTeamDefault :: WinningTeamStats
 winningTeamDefault = WinningTeamStats { pointDiff = 0
@@ -53,9 +55,9 @@ winningTeamDefault = WinningTeamStats { pointDiff = 0
                                       , blocks = 0
                                       , eFGPct = 0
                                       , home = 0
-                                      , b2b = [(1610612747, 82)]
-                                      , threeInFour = [(1610612747, 82)]
-                                      , fourInSix = [(1610612747, 82)]
+                                      , b2b = [("Los Angeles Lakers", 82,0),("Los Angeles Lakers", 82,0)]
+                                      , threeInFour = [("Los Angeles Lakers", 82,0),("Los Angeles Lakers", 82,0)]
+                                      , fourInSix = [("Los Angeles Lakers", 82,0),("Los Angeles Lakers", 82,0)]
                                       }
 
 data GameResult = GameResult { team_ID   :: Int

@@ -1,12 +1,12 @@
 
 ==================== FINAL INTERFACE ====================
-2017-01-27 21:32:52.233589 UTC
+2017-01-28 02:36:22.517919 UTC
 
 interface main@main:Main [orphan module] 8001
-  interface hash: cc2f8f21ac910a910689ffa808adeb27
-  ABI hash: ac36d20750302209ac876030455b8df9
-  export-list hash: 1c80b23bc0548b82f3856f2871b630e4
-  orphan hash: d2e5ac0f82a4838786698966cc775386
+  interface hash: 665698aa1bb43fea1dea7a95faa12602
+  ABI hash: 66e0e49e1655fee8e77341ed1b51f24c
+  export-list hash: 36b3c14abb548c64d637ff732aac676a
+  orphan hash: d6e8cdb3bdcf655df5913339346f47b4
   flag hash: 5688540879a7f6bf6c99fd7bb39c8ad1
   sig of: Nothing
   used TH splices: False
@@ -16,10 +16,12 @@ exports:
   Main.checkFullPage
   Main.checkInterval
   Main.effectiveFieldGoalPct
+  Main.frequency
   Main.gameDayInterval
   Main.getBoxScores
   Main.getJSON
   Main.main
+  Main.recordThroughDays
   Main.removeOvertime
   Main.showResult
   Main.splitHomeAwayTeams
@@ -178,11 +180,12 @@ import  -/  bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Lazy a6af578
 import  -/  bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Lazy.Char8 22406b4bf44ab096084a9ba406db8a02
 import  -/  bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Lazy.Internal f0df474bf1747957504b03d816c8df3d
 import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map 8f3eaf1368a7ea27857993e3febae6a3
+import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base 8d095ad71634b5551ba5dc1307b7f9e5
 import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
 import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
 import  -/  http-conduit-2.1.11@http-conduit-2.1.11-EC4vL4GcRJtDqKzYoSe7M2:Network.HTTP.Conduit 20e8a617303d82477b111e8b9bf2d77a
-import  -/  Types 8d56b31631775c52b1de06fc59518db1
-  exports: 2d4c20be6ad519dea7dfb8d542b57b13
+import  -/  Types 02aa191c303dc999e907c2eb2f5a5ade
+  exports: 20dee1ce69657c51d74826e2ed397e4a
   AwayTeamGameResult 74bcfd44f653605b0a0b9095ff9bdc94
   DayDiff bb35b49f74cc1d810e139ef880e8ee92
   GameDate 3b93c766a88f70c74b0a10d2bd2f31dd
@@ -191,53 +194,53 @@ import  -/  Types 8d56b31631775c52b1de06fc59518db1
   HomeTeamGameResult f78742e514b4e9fd794af4746801cd1d
   LosingTeamGameResult f5e5b8491016f1f280a22cf9a305f7c3
   NumGamesPlayed 51ff151c748568059e3807ac8fec55d9
+  Team_ID 2a1f548bd3c14a73a5ad22224027dae8
   WinningTeamGameResult 27b8d4b517d3b0ffbc8a8d5e9dd51732
-  WinningTeamID a6098eb3a7fa68c996fa1886168655b0
-  assists e36873ac2f13513426c1eb76feb1eb0d
+  assists 6ca4cbebc9f4e4b00da3484a74ea20c5
   ast c0221d5ebdcfa9589de4add349b25ba9
-  b2b 0b20781c1c4bc3e25f8e1d8582dfb3f8
+  b2b 2f7a72940a11198ed1b1bb9c256d8b32
   blk b08a67a4a20fbc56b6f4d94d20c4320f
-  blocks d000d2543dae4283e1ee3a87eda3bfcc
+  blocks 8085c5ab2673a5585110c856d4ecfdc8
   dreb 1d3ce95f110bb5a8e7bd03d1cae81106
-  eFGPct ae12551652199ecfc6358e050df74500
+  eFGPct 7d1fd353e9f827e8d159a6d24db2913b
   fg3_pct c49f08a12c80cd2e46082f3d9c92eebc
   fg3a bf006156e0975c692012c2609b581947
   fg3m fb3c14fa742f6545ad4fca58568bfc00
   fg_pct 32ab154662bd499b5fdd7e1226326f54
   fga f3f4bd717fb5004a5eea9ca1d25f9dbe
   fgm 4cbfd69051b05d52aeef58e50438b123
-  fieldGoalPct 2031eddec9048f61456686edd3e4f72c
-  fourInSix 555045eda040f39313dbf15f5fe575cc
-  freeTAtt d14fbe6ead9d9734dce6748071599184
-  freeTMade 65740400be83e3287dfb79fa3d7fe931
+  fieldGoalPct 23342673674303d815b1076860123ff5
+  fourInSix 0b74cc3022b0a3146146210714d3b23b
+  freeTAtt bcdb5d921d5177aaa29cf19db8d0d18a
+  freeTMade c543afb3662432794d5f0c4afbf02a6a
   ft_pct 298d5c2418766d37dbb18751f4d44af4
   fta 8a1650515a4b016a309983c9e6c45acf
   ftm b1b9a8ff0794cd1fba110b0305028043
   game_ID 89e6b05fd3defb2d59bf8da573dd73df
   game_date 354a6820bd2924154c35b956da888d62
-  home 07ff4cec4fb9511d4d8a5585cec6d4f3
+  home eac0420b12ebb04048e5f70951e435dc
   lo f1d8ba0f1209592dbb897f8adb172975
   matchup 00c23e82abb3750546fa7479be58fabd
   minutes dfa04a86ec7ed5af3013bedb408a952a
-  offReb 93daa941f3d965455bf3a6d7825da5a4
+  offReb 6accf9f1216f41922f0fd91132ca93ea
   oreb ef5de1d5bfa5da2941521a6c55f184e6
   pf 1c12d0872237567b24a4abbaffcbcb7f
-  pointDiff d57ba62f34f9f192fd946d2f96f2bafd
+  pointDiff f40d9ddd8478349ec7db109974adad2c
   pts b181d56453d87a6fec9c1b24f495c7e3
   reb f7a787f1ff8ea1576096e9888c53563c
-  rebounds 7c52bcfeec93d97c7f7b19855f2085b3
-  steals 99b4d78984a4a324875df6102d0f7289
+  rebounds 1f563df1e7286832d8f28fc46cb6a996
+  steals 1cd67513379bec49b331fe0b6e758363
   stl abf7670e0c93f29d17b1781a855e9b8b
   team_ID 05a242662ea7c7b8ad1a57bfd840272d
   teams 1519a97f1d5dc903076e4d698a7df16d
-  threeFGA 0d26cf4fb296a33a0e7880957d000c84
-  threeFGM 2143f0696a9a81c0922a56c98085d673
-  threeInFour c5913f692f1bf9c7788dbee4247c9afa
+  threeFGA 70981e7538da4304727e29153a748401
+  threeFGM 9f7a5d518455f719ef2e16d7c4d99938
+  threeInFour 9574c454e60e44113422b8f7cf3b85d2
   tov 5cd795dea29d68d62aeae7d0c51ec7f6
-  turnovers 12d59e07a3e65f75c4fd6a4c56a0f23d
+  turnovers f04ed5e410386098242fcd9fcc80fbc4
   w_pct 74c637e4507479533b99482ec407637d
   wi 9dcfcced1f004a6c448cd4eba2badba7
-  winningTeamDefault e461ec61d2992dd0e5aae76c51f397cf
+  winningTeamDefault 2183009593fa43e6279d9acb2a569e8f
   wl d0e48850dabf85c50e5ca18c2a440281
 import  -/  text-1.2.2.1@text-1.2.2.1-9Yh8rJoh8fO2JMLWffT3Qs:Data.Text 1e73069de2859bae8530c14767b0c6af
 import  -/  time-1.6.0.1@time-1.6.0.1:Data.Time 780e2aecb1fb9ccddcc7e0dc4518a593
@@ -830,18 +833,31 @@ da6c933a911106fd67294705ef1eac90
                    `cast`
                  (Sym (Data.Aeson.Types.Internal.N:Parser[0]
                            <Main.ResultSets>_R))) -}
-a5f503dbc48e3f06915d9e112bd98cb4
-  $sparseJSON10 ::
-    [Data.Aeson.Types.Internal.Parser Data.Aeson.Types.Internal.Value]
-    -> forall (f :: * -> *) r.
-       Data.Aeson.Types.Internal.JSONPath
-       -> Data.Aeson.Types.Internal.Failure f r
-       -> Data.Aeson.Types.Internal.Success
-            [Data.Aeson.Types.Internal.Value] f r
-       -> f r
-  {- Arity: 4, HasNoCafRefs, Strictness: <S,1*U><L,U><L,U><L,C(U)> -}
-ef75ae2a2f7b626cb6d38fc85e4071ed
-  $sparseJSON9 ::
+e4fdc80b6317fe0633ed0cc9729f7bac
+  $sfromListWith_$sfromListWithKey ::
+    (Types.Team_ID -> a -> a -> a)
+    -> [(Types.Team_ID, a)] -> Data.Map.Base.Map Types.Team_ID a
+  {- Arity: 2, Strictness: <L,C(C1(C1(U)))><S,1*U>,
+     Unfolding: (\ @ a
+                   (f :: Types.Team_ID -> a -> a -> a)
+                   (xs :: [(Types.Team_ID, a)]) ->
+                 letrec {
+                   go10 :: Data.Map.Base.Map Types.Team_ID a
+                           -> [(Types.Team_ID, a)] -> Data.Map.Base.Map Types.Team_ID a
+                     {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+                   = \ (z :: Data.Map.Base.Map Types.Team_ID a)
+                       (ds :: [(Types.Team_ID, a)]) ->
+                     case ds of wild {
+                       [] -> z
+                       : x xs1
+                       -> case x of wild1 { (,) k1 x1 ->
+                          case k1 of ww { GHC.Types.I# ww1 ->
+                          case Main.$w$sgo10 @ a f ww1 x1 z of z' { DEFAULT ->
+                          go10 z' xs1 } } } }
+                 } in
+                 go10 (Data.Map.Base.Tip @ Types.Team_ID @ a) xs) -}
+f8e6d4f635ce4b37ac47669d0cc93989
+  $sparseJSON4 ::
     GHC.Types.Int
     -> Data.Aeson.Types.Internal.Value
     -> forall (f :: * -> *) r.
@@ -862,6 +878,16 @@ ef75ae2a2f7b626cb6d38fc85e4071ed
                    (eta2 :: Data.Aeson.Types.Internal.Success
                               Data.Aeson.Types.Internal.Value f r) ->
                  eta2 value) -}
+c49f29181ae911e063df5ce906e2638f
+  $sparseJSON5 ::
+    [Data.Aeson.Types.Internal.Parser Data.Aeson.Types.Internal.Value]
+    -> forall (f :: * -> *) r.
+       Data.Aeson.Types.Internal.JSONPath
+       -> Data.Aeson.Types.Internal.Failure f r
+       -> Data.Aeson.Types.Internal.Success
+            [Data.Aeson.Types.Internal.Value] f r
+       -> f r
+  {- Arity: 4, HasNoCafRefs, Strictness: <S,1*U><L,U><L,U><L,C(U)> -}
 946d1897bcb912073f6c2c04061ea74e
   $tc'FullPage :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
@@ -1051,6 +1077,15 @@ e5e3275cdb0ba8ffbe61db63767fd4cc
                         @ GHC.Types.Char
                         GHC.Show.shows9
                         (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows6 w)) }) -}
+556354b087387083a34cfe45d8944be5
+  $w$sgo10 ::
+    (Types.Team_ID -> a1 -> a1 -> a1)
+    -> GHC.Prim.Int#
+    -> a1
+    -> Data.Map.Base.Map Types.Team_ID a1
+    -> Data.Map.Base.Map Types.Team_ID a1
+  {- Arity: 4, Strictness: <L,1*C1(C1(C1(U)))><L,U><L,U><S,1*U>,
+     Inline: [0] -}
 22952158570f670bf0022a10340dcf8a
   $wgo ::
     [(Types.GameResult, Types.GameResult)]
@@ -1186,43 +1221,71 @@ cdc378a52189da925a1e6464eadcc643
   checkFullPage1 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "Maybe failed somewhere."#) -}
-debf7e3ba3524935189bfa488b7f23eb
+4fb97053c1b18cc9af1c7f01707af301
   checkInterval ::
     [Types.GameResult]
     -> [(Types.GameResult, Types.GameResult)]
     -> Types.DayDiff
     -> Types.NumGamesPlayed
-    -> GHC.Types.Int
-  {- Arity: 4, Strictness: <L,U><S,1*U><L,U><L,U(U)>m,
-     Inline: INLINE[0],
-     Unfolding: InlineRule (4, True, False)
-                (\ (w :: [Types.GameResult])
-                   (w1 :: [(Types.GameResult, Types.GameResult)])
-                   (w2 :: Types.DayDiff)
-                   (w3 :: Types.NumGamesPlayed) ->
-                 case GHC.List.$wlenAcc
-                        @ [Types.GameResult]
-                        (Main.gameDayInterval
-                           w
-                           (GHC.Base.map
-                              @ (Types.GameResult, Types.GameResult)
-                              @ (GHC.Types.Int, GHC.Base.String)
-                              Main.checkInterval1
-                              w1)
-                           w2
-                           w3)
-                        0# of ww { DEFAULT ->
-                 GHC.Types.I# ww }) -}
-eb8e8b073221f56394b550ae3f7ac50c
+    -> [(Types.Team_ID, GHC.Types.Int)]
+  {- Arity: 4, Strictness: <L,U><S,1*U><L,U><L,U(U)>,
+     Unfolding: (\ (whole :: [Types.GameResult])
+                   (tup :: [(Types.GameResult, Types.GameResult)])
+                   (interval :: Types.DayDiff)
+                   (games_played :: Types.NumGamesPlayed) ->
+                 Data.Map.Base.toAscList1
+                   @ GHC.Types.Int
+                   @ GHC.Types.Int
+                   (GHC.Types.[] @ (GHC.Types.Int, GHC.Types.Int))
+                   (Main.$sfromListWith_$sfromListWithKey
+                      @ GHC.Types.Int
+                      Main.checkInterval3
+                      (Main.checkInterval_go
+                         (GHC.Base.map
+                            @ [Types.GameResult]
+                            @ GHC.Types.Int
+                            Main.checkInterval2
+                            (Main.gameDayInterval
+                               whole
+                               (GHC.Base.map
+                                  @ (Types.GameResult, Types.GameResult)
+                                  @ (GHC.Types.Int, GHC.Base.String)
+                                  Main.checkInterval1
+                                  tup)
+                               interval
+                               games_played))))) -}
+8f36ea79010157f558dd784b4edd4e96
   checkInterval1 ::
     (Types.GameResult, Types.GameResult)
     -> (GHC.Types.Int, GHC.Base.String)
   {- Arity: 1, HasNoCafRefs,
-     Strictness: <S,1*U(U(1*U(U),A,1*U,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A),A)>m,
+     Strictness: <S,1*U(A,U(1*U(U),A,1*U,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A))>m,
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: (Types.GameResult, Types.GameResult)) ->
-                 case ds of wild { (,) x ds1 ->
-                 (Types.team_ID x, Types.game_date x) }) -}
+                 case ds of wild { (,) ds1 y ->
+                 (Types.team_ID y, Types.game_date y) }) -}
+9acb14449c3a70bf2784a916eac3d19b
+  checkInterval2 :: [Types.GameResult] -> GHC.Types.Int
+  {- Arity: 1, Strictness: <S,1*U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: [Types.GameResult]) ->
+                 case x of wild {
+                   [] -> case GHC.List.badHead ret_ty GHC.Types.Int of {}
+                   : x1 ds1
+                   -> case x1 of wild1 { Types.GameResult ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ->
+                      ds2 } }) -}
+7efc94754e92b63b2fef6032a620eaff
+  checkInterval3 ::
+    Types.Team_ID -> GHC.Types.Int -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 3, HasNoCafRefs,
+     Unfolding: (\ (ds :: Types.Team_ID)
+                   (x :: GHC.Types.Int)[OneShot]
+                   (y :: GHC.Types.Int)[OneShot] ->
+                 GHC.Num.$fNumInt_$c+ x y) -}
+2bd57fc8ebb9bde4f75030a115cc48ca
+  checkInterval_go ::
+    [Types.Team_ID] -> [(Types.Team_ID, GHC.Types.Int)]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
 531459068699b00c3b4962a8fa7a8729
   effectiveFieldGoalPct ::
     [(Types.GameResult, Types.GameResult)] -> GHC.Types.Double
@@ -1230,10 +1293,22 @@ eb8e8b073221f56394b550ae3f7ac50c
      Unfolding: InlineRule (1, True, False)
                 (\ (w :: [(Types.GameResult, Types.GameResult)]) ->
                  case Main.$wgo w 0.0## of ww { DEFAULT -> GHC.Types.D# ww }) -}
-c9f2161a6ee0c19d399f830d2f2ed1f2
+763d8b9ac78ecef62786414446d54d0a
+  frequency :: [Types.Team_ID] -> [(Types.Team_ID, GHC.Types.Int)]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (xs :: [Types.Team_ID]) ->
+                 Data.Map.Base.toAscList1
+                   @ GHC.Types.Int
+                   @ GHC.Types.Int
+                   (GHC.Types.[] @ (GHC.Types.Int, GHC.Types.Int))
+                   (Main.$sfromListWith_$sfromListWithKey
+                      @ GHC.Types.Int
+                      Main.checkInterval3
+                      (Main.checkInterval_go xs))) -}
+66b4ae85db8f438e57e372e4c4ed9137
   gameDayInterval ::
     [Types.GameResult]
-    -> [(Types.WinningTeamID, Types.GameDate)]
+    -> [(Types.Team_ID, Types.GameDate)]
     -> Types.DayDiff
     -> Types.NumGamesPlayed
     -> [[Types.GameResult]]
@@ -1282,6 +1357,29 @@ b08d228f4059532a99441778635cdde9
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+0cf165f497a33c43dec6621842909992
+  recordThroughDays ::
+    [[Types.GameResult]] -> [(Types.Team_ID, GHC.Types.Int)]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (gr :: [[Types.GameResult]]) ->
+                 Main.frequency
+                   (GHC.Base.build
+                      @ GHC.Types.Int
+                      (\ @ b1
+                         (c :: GHC.Types.Int -> b1 -> b1)[OneShot]
+                         (n :: b1)[OneShot] ->
+                       GHC.Base.foldr
+                         @ [Types.GameResult]
+                         @ b1
+                         (GHC.Base.mapFB
+                            @ GHC.Types.Int
+                            @ b1
+                            @ [Types.GameResult]
+                            c
+                            Main.checkInterval2)
+                         n
+                         gr))) -}
 1cc86e58db3f46103d80127f15e261c9
   removeOvertime :: [Types.GameResult] -> [Types.GameResult]
   {- Arity: 1, HasNoCafRefs,
@@ -1417,6 +1515,10 @@ instance GHC.Read.Read [Main.FullPage] = Main.$fReadFullPage
 instance GHC.Read.Read [Main.ResultSets] = Main.$fReadResultSets
 instance GHC.Show.Show [Main.FullPage] = Main.$fShowFullPage
 instance GHC.Show.Show [Main.ResultSets] = Main.$fShowResultSets
+"SPEC/Main fromListWithKey @ Team_ID _" [ALWAYS] forall @ a
+                                                        ($dOrd :: GHC.Classes.Ord Types.Team_ID)
+  Data.Map.Base.fromListWithKey @ GHC.Types.Int @ a $dOrd
+  = Main.$sfromListWith_$sfromListWithKey @ a
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:
