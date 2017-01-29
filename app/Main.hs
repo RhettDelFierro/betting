@@ -27,7 +27,7 @@ import Debug.Trace
 
 teamURLS :: [String]
 teamURLS = fmap makeURL teams
-    where makeURL = (\(_,team_id,_) -> "http://stats.nba.com/stats/teamgamelog/?Season=2015-16&SeasonType=Regular%20Season&TeamID=" ++ show team_id)
+    where makeURL = (\(_,team_id,_) -> "http://stats.nba.com/stats/teamgamelog/?Season=2016-17&SeasonType=Regular%20Season&TeamID=" ++ show team_id)
 
 getJSON :: IO [B.ByteString]
 getJSON = mapM simpleHttp teamURLS
@@ -58,7 +58,7 @@ main = do
                                    , freeTMade    = (/) (sumInts ftm y)   (fromIntegral $ length y)
                                    , blocks       = (/) (sumInts blk y)   (fromIntegral $ length y)
                                    , eFGPct       = (/) (effectiveFieldGoalPct y)            (fromIntegral $ length y)
-                                   , home         = (/) (fromIntegral (length . fst. splitWinLossTeams . fst . splitHomeAwayTeams $ w)) (fromIntegral $ length y) * 100
+                                   , home         = (/) (fromIntegral (length . snd . splitWinLossTeams . fst . splitHomeAwayTeams $ w)) (fromIntegral $ length y) * 100
                                    , b2b          = checkInterval w y' 1 1
                                    , threeInFour  = checkInterval w y' 4 2
                                    , fourInSix    = checkInterval w y' 6 3
