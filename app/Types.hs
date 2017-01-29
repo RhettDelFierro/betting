@@ -65,28 +65,28 @@ data GameResult = GameResult { team_ID   :: Int
                              , game_date :: String
                              , matchup   :: String
                              , wl        :: Char
-                             , wi         :: Double --
-                             , lo         :: Double --
+                             , wi         :: Double
+                             , lo         :: Double
                              , w_pct     :: Float
-                             , minutes       :: Double --
-                             , fgm       :: Double --
-                             , fga       :: Double --
+                             , minutes       :: Double
+                             , fgm       :: Double
+                             , fga       :: Double
                              , fg_pct    :: Double
-                             , fg3m      :: Double --
-                             , fg3a      :: Double --
+                             , fg3m      :: Double
+                             , fg3a      :: Double
                              , fg3_pct   :: Float
-                             , ftm       :: Double --
-                             , fta       :: Double --
+                             , ftm       :: Double
+                             , fta       :: Double
                              , ft_pct    :: Float
-                             , oreb      :: Double --
-                             , dreb      :: Double --
-                             , reb       :: Double --
-                             , ast       :: Double --
-                             , stl       :: Double --
-                             , blk       :: Double --
-                             , tov       :: Double --
-                             , pf        :: Double --
-                             , pts       :: Double --
+                             , oreb      :: Double
+                             , dreb      :: Double
+                             , reb       :: Double
+                             , ast       :: Double
+                             , stl       :: Double
+                             , blk       :: Double
+                             , tov       :: Double
+                             , pf        :: Double
+                             , pts       :: Double
                              } deriving (Show, Eq, Read, Ord)
 
 teams :: [Teams]
@@ -123,3 +123,56 @@ teams = [ ("Atlanta Hawks",1610612737,"ATL")
         ]
 
 data GameLogsByTeam = GameLogsByTeam [(Team_ID,[GameResult])] deriving (Show, Eq, Read, Ord)
+
+data TeamStats = TeamStats Offense | Defense
+
+data Offense = Offense { wins      :: Double
+                       , losses    :: Double
+                       , fieldGoalsMade       :: Double
+                       , fieldGoalsAttempted       :: Double
+                       , fieldGoalPercentage    :: Double
+                       , threePointersMade      :: Double
+                       , threePointersAttempted      :: Double
+                       , freeThrowsMade       :: Double
+                       , freeThrowsAttempted       :: Double
+                       , oRebounds      :: Double
+                       , totalRebounds       :: Double
+                       , assist       :: Double
+                       , steals      :: Double
+                       , blockedShots       :: Double
+                       , turnovers       :: Double
+                       , personalFouls        :: Double
+                       , points       :: Double
+                       }
+
+data Defense = Defense { oppWins      :: Double
+                       , oppLosses    :: Double
+                       , oppFGM       :: Double
+                       , oppFGA       :: Double
+                       , oppFGP       :: Double
+                       , opp3FGM      :: Double
+                       , opp3FGA      :: Double
+                       , oppFTM       :: Double
+                       , oppFTA       :: Double
+                       , oppOREB      :: Double
+                       , oppREB       :: Double
+                       , oppAST       :: Double
+                       , oppSTL       :: Double
+                       , oppBLK       :: Double
+                       , oppTOV       :: Double
+                       , oppPF        :: Double
+                       , oppPTS       :: Double
+                       }
+
+class TotalStats a where
+
+
+--data WinConditions = WinConditions { home
+--                                   , away
+--                                   , b2bH
+--                                   , b2bA
+--                                   , thirdPerFourH
+--                                   , thirdPerFourA
+--                                   , fourthPerSixH
+--                                   , fourthPerSixA
+--                                   }
