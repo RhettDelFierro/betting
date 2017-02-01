@@ -43,8 +43,11 @@ main = do
       x  = removeOvertime w
       y  = getBoxScores x
       y' = getBoxScores w
-      gamesWon = length $ filter ((=='W') . wl)  w
-      gamesByTeam = getGamesByTeam teams $ w
+      --gamesWon = length $ filter ((=='W') . wl)  w
+      gamesWonByTeam  = getGamesByTeam teams . fst . splitWinLossTeams $ x
+      gamesLostByTeam = getGamesByTeam teams . snd . splitWinLossTeams $ x
+      --now add them up:
+
   --print z
 
   let results = winningTeamDefault { pointDiff    = (/) (sumInts pts y)   (fromIntegral $ length y)
@@ -67,8 +70,8 @@ main = do
                                    }
   print $ results
 
-getGamesByTeam :: [Teams] -> [GameResult] -> [(Team_ID,[Game_ID])]
-getGamesByTeam ts grs = map (\(a,b,c) -> (b, map (game_ID) . filter (\gr -> (team_ID gr == b)) $ grs)) $ ts
+getGamesByTeam :: [Teams] -> [GameResult] -> [(TeamName,[GameResult])]
+getGamesByTeam ts grs = map (\(a,b,c) -> (a, filter (\gr -> (team_ID gr == b)) $ grs)) $ ts
 --getRecords ts grs = [makeMap x y | x@(t,u,v) <- ts, y <- grs, u == team_id y]
 --        where makeMap (a,b,c) d = (b,map team_id d)
 
