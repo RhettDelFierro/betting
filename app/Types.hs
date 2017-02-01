@@ -19,6 +19,7 @@ type BoxScore              = (WinningTeamGameResult,LosingTeamGameResult)
 type DayDiff               = Integer
 type GameDate              = String
 type NumGamesPlayed        = Int
+type Game_ID               = String
 
 data WinningTeamStats = WinningTeamStats { pointDiff    :: Double
                                          , fieldGoalPct :: Double
@@ -124,7 +125,10 @@ teams = [ ("Atlanta Hawks",1610612737,"ATL")
 
 data GameLogsByTeam = GameLogsByTeam [(Team_ID,[GameResult])] deriving (Show, Eq, Read, Ord)
 
-data TeamStats = TeamStats Offense | Defense
+data TeamStats = TeamStats { totalOffense   :: Offense
+                           , totalDefense :: Defense
+                          -- , chances      :: Chance
+                           } deriving (Show, Eq, Read, Ord)
 
 data Offense = Offense { wins      :: Double
                        , losses    :: Double
@@ -138,12 +142,12 @@ data Offense = Offense { wins      :: Double
                        , oRebounds      :: Double
                        , totalRebounds       :: Double
                        , assist       :: Double
-                       , steals      :: Double
+                       , stealsMade      :: Double
                        , blockedShots       :: Double
-                       , turnovers       :: Double
+                       , turnoversCommitted       :: Double
                        , personalFouls        :: Double
                        , points       :: Double
-                       }
+                       } deriving (Show, Eq, Read, Ord)
 
 data Defense = Defense { oppWins      :: Double
                        , oppLosses    :: Double
@@ -162,9 +166,8 @@ data Defense = Defense { oppWins      :: Double
                        , oppTOV       :: Double
                        , oppPF        :: Double
                        , oppPTS       :: Double
-                       }
+                       } deriving (Show, Eq, Read, Ord)
 
-class TotalStats a where
 
 
 --data WinConditions = WinConditions { home

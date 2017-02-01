@@ -44,7 +44,9 @@ main = do
       y  = getBoxScores x
       y' = getBoxScores w
       gamesWon = length $ filter ((=='W') . wl)  w
+      gamesByTeam = getGamesByTeam teams $ w
   --print z
+
   let results = winningTeamDefault { pointDiff    = (/) (sumInts pts y)   (fromIntegral $ length y)
                                    , fieldGoalPct = (/) (sumPct fg_pct y) (fromIntegral $ length y) * 100
                                    , rebounds     = (/) (sumInts reb y)   (fromIntegral $ length y)
@@ -64,6 +66,11 @@ main = do
                                    , fourInSix    = checkInterval w y' 6 3
                                    }
   print $ results
+
+getGamesByTeam :: [Teams] -> [GameResult] -> [(Team_ID,[Game_ID])]
+getGamesByTeam ts grs = map (\(a,b,c) -> (b, map (game_ID) . filter (\gr -> (team_ID gr == b)) $ grs)) $ ts
+--getRecords ts grs = [makeMap x y | x@(t,u,v) <- ts, y <- grs, u == team_id y]
+--        where makeMap (a,b,c) d = (b,map team_id d)
 
 --checkInterval :: [GameResult] -> [(GameResult,GameResult)] -> DayDiff -> NumGamesPlayed -> [(Team_ID,Int)]
 --checkInterval whole tup interval games_played = recordThroughDays $
