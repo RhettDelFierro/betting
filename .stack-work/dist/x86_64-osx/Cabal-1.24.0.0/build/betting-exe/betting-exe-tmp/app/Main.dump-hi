@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-02-01 00:58:50.745147 UTC
+2017-02-01 01:30:12.577308 UTC
 
 interface main@main:Main [orphan module] 8001
-  interface hash: 10a30a0362fa3882b9da712978662d2d
-  ABI hash: ae98a151ee3b111b4bc0c88c795a73bc
+  interface hash: 5c2e5c9a6c45bb0863e364b7f9a4e6fe
+  ABI hash: 6a571ddd0de5409a0b5928e561ba7882
   export-list hash: 0b5b77de2e80575b536d3dee048d2f50
   orphan hash: f9758bca3c0c66269877299a4ebc5b86
   flag hash: 5688540879a7f6bf6c99fd7bb39c8ad1
@@ -1493,18 +1493,18 @@ a2aa9e465e1a5db13afd8d427e50808f
     [Types.GameResult]
     -> [(Types.WinningTeamGameResult, Types.LosingTeamGameResult)]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-2c45e4f169e868cff99d1d557965f2e2
+89ffe976586f21ae17ad3bff2377a16b
   getGamesByTeam ::
     [Types.Teams]
-    -> [Types.GameResult] -> [(Types.Team_ID, [Types.Game_ID])]
+    -> [Types.GameResult] -> [(Types.TeamName, [Types.Game_ID])]
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U>,
      Unfolding: (\ (ts :: [Types.Teams]) (grs :: [Types.GameResult]) ->
                  GHC.Base.map
                    @ (Types.TeamName, GHC.Types.Int, Types.TeamABBR)
-                   @ (GHC.Types.Int, [GHC.Base.String])
+                   @ (Types.TeamName, [GHC.Base.String])
                    (\ (ds :: (Types.TeamName, GHC.Types.Int, Types.TeamABBR)) ->
                     case ds of wild { (,,) a b c ->
-                    (b,
+                    (a,
                      letrec {
                        go1 :: [Types.GameResult] -> [[GHC.Types.Char]]
                          {- Arity: 1, Strictness: <S,1*U> -}

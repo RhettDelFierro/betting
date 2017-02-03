@@ -44,8 +44,8 @@ main = do
       y  = getBoxScores x
       y' = getBoxScores w
       --gamesWon = length $ filter ((=='W') . wl)  w
-      gamesWonByTeam  = getGamesByTeam teams . fst . splitWinLossTeams $ x
-      gamesLostByTeam = getGamesByTeam teams . snd . splitWinLossTeams $ x
+      gamesByTeam  = getGameID teams . getGamesByTeam teams $ x
+      --gamesLostByTeam = getGamesByTeam teams . snd . splitWinLossTeams $ x
       --now add them up:
 
   --print z
@@ -70,8 +70,16 @@ main = do
                                    }
   print $ results
 
-getGamesByTeam :: [Teams] -> [GameResult] -> [(TeamName,[GameResult])]
-getGamesByTeam ts grs = map (\(a,b,c) -> (a, filter (\gr -> (team_ID gr == b)) $ grs)) $ ts
+getGamesByTeam :: [Teams] -> [GameResult] -> [(Team_ID,[Game_ID])]
+getGamesByTeam ts grs = map (\(a,b,c) -> (b, map (game_ID) . filter (\gr -> (team_ID gr == b)) $ grs)) $ ts
+
+getGameID :: [GameResults] -> [(Team_ID,[Game_ID])] -> [[GameResult],[GameResult]]
+getGameID grs tups = map (\(x,y) -> getAllGames y) tups
+            where getAllGames ids =
+
+getGames :: [Game_ID] -> [GameResult] -> [GameResult]
+getGames []   _   = []
+getGames x:xs arr = (filter ((== x) . game_ID) arr) ++ getGames xs arr
 --getRecords ts grs = [makeMap x y | x@(t,u,v) <- ts, y <- grs, u == team_id y]
 --        where makeMap (a,b,c) d = (b,map team_id d)
 
